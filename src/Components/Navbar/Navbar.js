@@ -38,25 +38,24 @@ export default function Navbar() {
               aria-label="search submit"
               type="submit"
             >
-              <BiSearchAlt />
+              {/* <BiSearchAlt /> */}
+              <i className="fas fa-search "></i>
             </button>
           </form>
           <div className="main-header__left">
-            <a href="#" className="main-header__search-btn">
-              <i className="fas fa-search main-header__search-icon"></i>
-            </a>
-            <a href="#" className="main-header__cart-btn">
-              <i className="fas fa-shopping-cart main-header__cart-icon"></i>
+            <a href="#" className="main-header__cart-btn contactBTN">
+              <span class="material-symbols-outlined">contacts</span>
             </a>
 
             {authContext.isLoggedIn ? (
-              <Link to="#" className="main-header__profile">
+              <Link to="#" className="main-header__profile mainProfile">
                 <span className="main-header__profile-text">
                   {authContext.userInfos.name}
                 </span>
               </Link>
             ) : (
-              <Link to="/login" className="main-header__profile">
+              <Link to="/login" className="main-header__profile mainProfile">
+                <span class="material-symbols-outlined">login</span>
                 <span className="main-header__profile-text">
                   ورود / ثبت نام
                 </span>
@@ -64,8 +63,8 @@ export default function Navbar() {
             )}
           </div>
         </div>
-        <a href="#" className="cartBTN">
-          <span className="productCounter">1</span>
+        <a href="#" className="cartBTN shake-button">
+          <span className="productCounter">10</span>
 
           <i className="fas fa-shopping-cart main-header__cart-icon"></i>
         </a>
