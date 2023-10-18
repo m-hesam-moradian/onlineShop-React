@@ -63,8 +63,7 @@ export default function Navbar() {
               </Link>
             ) : (
               <Link to="/login" className="main-header__profile mainProfile">
-                <span class="material-symbols-outlined">login</span>
-                <span className="main-header__profile-text">
+                <span className="main-header__profile-text ">
                   ورود / ثبت نام
                 </span>
               </Link>
@@ -126,7 +125,7 @@ export default function Navbar() {
               </div> */}
               <div class="container text-center">
                 <div class="categoryItems-left row h-100 align-content-around  p-3">
-                  <div class="col-4 categoryparent">
+                  <div class="col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -146,7 +145,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-4 categoryparent">
+                  <div class="col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -161,7 +160,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-4 categoryparent">
+                  <div class="col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -176,7 +175,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-4 categoryparent">
+                  <div class="col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -191,7 +190,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-4 categoryparent">
+                  <div class="col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -206,7 +205,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-4 categoryparent">
+                  <div class="col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
