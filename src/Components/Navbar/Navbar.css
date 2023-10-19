@@ -380,7 +380,9 @@
   font-size: 22px;
   color: var(--white-color);
 }
-
+.active{
+  color: var(--primary-color);
+}
 /* mobile  */
 @media only screen and (max-width: 767px) {
   /* CSS styles for mobile devices */

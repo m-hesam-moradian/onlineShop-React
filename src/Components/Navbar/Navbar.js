@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import "./Navbar.css";
 import { BiSearchAlt } from "react-icons/bi";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 export default function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
@@ -23,18 +25,98 @@ export default function Navbar() {
     //     setAllMenus(menus);
     //   });
   }, []);
+  function OffCanvasExample({ name, ...props }) {
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    return (
+      <>
+        <Button
+          onClick={handleShow}
+          className="d-flex d-md-none align-items-center bg-transparent border-0 text-black btn-outline-secondary  "
+        >
+          {name}
+        </Button>
+        <Offcanvas show={show} onHide={handleClose} {...props}>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title className="d-flex justify-content-center p-4  ">
+              {" "}
+              <img
+                src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/logomain.png"
+                className="w-50"
+                alt="لوگوی سبزلرن"
+              />
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <form className="searchForm w-100 bg-light border-0  " action="">
+              <input
+                type="text"
+                className="searchInput bg-transparent "
+                placeholder="جستجوی محصولات"
+              />
+              <button
+                className="searchBTN bg-transparent "
+                aria-label="search submit"
+                type="submit"
+              >
+                {/* <BiSearchAlt /> */}
+                <i className="fas fa-search "></i>
+              </button>
+            </form>
+            <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
+              <li class="nav-item p-2 active">
+                <a class="nav-link " aria-current="page" href="#">
+                  صفحه اصلی
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#">
+                  فروشگاه
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#">
+                  وبلاگ{" "}
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#">
+                  تماس باما
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#">
+                  درباره ما
+                </a>
+              </li>
+            </ul>
+          </Offcanvas.Body>
+        </Offcanvas>
+      </>
+    );
+  }
   return (
     <div className="main-header">
       <div className="container-fluid">
         <div className="main-header__content p-3 p-sm-5">
-          <div className="main-header__right ">
-            <span class="material-symbols-outlined d-flex d-md-none align-items-center ">
-              menu
-            </span>
-            <img 
+          <div className=" main-header__right ">
+            <a className="d-flex d-md-none align-items-center ">
+              <OffCanvasExample
+              
+                placement="end"
+                name={
+                  <span class="material-symbols-outlined  align-items-center ">
+                    menu
+                  </span>
+                }
+              />
+            </a>
+            <img
               src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/logomain.png"
-              className="main-header__logo w-100 m-2 m-sm-4"
+              className="main-header__logo w-75 m-2 m-sm-4"
               alt="لوگوی سبزلرن"
             />
           </div>
@@ -54,7 +136,10 @@ export default function Navbar() {
             </button>
           </form>
           <div className="main-header__left">
-            <a href="#" className="main-header__cart-btn contactBTN">
+            <a
+              href="#"
+              className="main-header__cart-btn contactBTN d-none d-sm-flex"
+            >
               <span class="material-symbols-outlined">contacts</span>
             </a>
             <a
