@@ -15,12 +15,12 @@ export default function Index(props) {
   return (
     <>
       <Header />
-      <LastCourses />
+      {/* <LastCourses />
       <AboutUs />
       <PopularCourses />
       <PresellCourses />
       <LastArticles />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

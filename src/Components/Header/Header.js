@@ -20,7 +20,7 @@ export default function Header() {
     <header className="header">
         {/* <Topbar info={indexInfo} /> */}
         <Navbar />
-        <Landing info={indexInfo} />
+        {/* <Landing info={indexInfo} /> */}
     </header>
   );
 }

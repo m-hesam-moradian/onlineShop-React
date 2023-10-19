@@ -5,8 +5,8 @@ import "./Navbar.css";
 import { BiSearchAlt } from "react-icons/bi";
 
 export default function Navbar() {
-    const [isHovered, setIsHovered] = useState(false);
-  
+  const [isHovered, setIsHovered] = useState(false);
+
   const [allMenus, setAllMenus] = useState(false);
   const authContext = useContext(AuthContext);
   const handleMouseEnter = () => {
@@ -27,15 +27,18 @@ export default function Navbar() {
   return (
     <div className="main-header">
       <div className="container-fluid">
-        <div className="main-header__content">
-          <div className="main-header__right">
-            <img
+        <div className="main-header__content p-3 p-sm-5">
+          <div className="main-header__right ">
+            <span class="material-symbols-outlined d-flex d-md-none align-items-center ">
+              menu
+            </span>
+            <img 
               src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/logomain.png"
-              className="main-header__logo"
+              className="main-header__logo w-100 m-2 m-sm-4"
               alt="لوگوی سبزلرن"
             />
           </div>
-          <form className="searchForm" action="">
+          <form className="searchForm d-none d-md-flex" action="">
             <input
               type="text"
               className="searchInput"
@@ -54,7 +57,14 @@ export default function Navbar() {
             <a href="#" className="main-header__cart-btn contactBTN">
               <span class="material-symbols-outlined">contacts</span>
             </a>
+            <a
+              href="#"
+              className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
+            >
+              <span className="productCounter">10</span>
 
+              <i className="fas fa-shopping-cart main-header__cart-icon"></i>
+            </a>
             {authContext.isLoggedIn ? (
               <Link to="#" className="main-header__profile mainProfile">
                 <span className="main-header__profile-text">
@@ -62,22 +72,28 @@ export default function Navbar() {
                 </span>
               </Link>
             ) : (
-              <Link to="/login" className="main-header__profile mainProfile">
-                <span className="main-header__profile-text ">
+              <Link
+                to="/login"
+                className="main-header__profile mainProfile p-2 p-sm-4"
+              >
+                <span className="main-header__profile-text  d-none d-sm-flex ">
                   ورود / ثبت نام
+                </span>
+                <span class="material-symbols-outlined d-flex d-sm-none">
+                  login
                 </span>
               </Link>
             )}
           </div>
         </div>
 
-        <a href="#" className="cartBTN shake-button">
+        <a href="#" className="cartBTN shake-button d-none d-md-flex">
           <span className="productCounter">10</span>
 
           <i className="fas fa-shopping-cart main-header__cart-icon"></i>
         </a>
       </div>
-      <div className="navbarMenu">
+      <div className="navbarMenu d-md-flex ">
         <ul>
           <ul className="categories">
             <div
@@ -85,7 +101,7 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
               className="categories-container"
             >
-              <span class="material-symbols-outlined">widgets</span>
+              <span class="material-symbols-outlined ">widgets</span>
               دسته بندی ها{" "}
               <a href="">
                 <span class="material-symbols-outlined">expand_more</span>
@@ -123,9 +139,9 @@ export default function Navbar() {
                   <div>:تومان<span>320,000</span></div>
                 </a>
               </div> */}
-              <div class="container text-center">
+              {/* <div class="container text-center d-none d-lg-flex">
                 <div class="categoryItems-left row h-100 align-content-around  p-3">
-                  <div class="col-md-6 col-xl-4   categoryparent">
+                  <div class=" col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -145,7 +161,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-md-6 col-xl-4   categoryparent">
+                  <div class=" col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -160,7 +176,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-md-6 col-xl-4   categoryparent">
+                  <div class=" col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -175,7 +191,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-md-6 col-xl-4   categoryparent">
+                  <div class=" col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -190,7 +206,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-md-6 col-xl-4   categoryparent">
+                  <div class=" col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -205,7 +221,7 @@ export default function Navbar() {
                       </span>
                     </a>
                   </div>
-                  <div class="col-md-6 col-xl-4   categoryparent">
+                  <div class=" col-md-6 col-xl-4   categoryparent">
                     {" "}
                     <a className="categoryItems-left-item " href="">
                       <img
@@ -222,12 +238,12 @@ export default function Navbar() {
                   </div>
                 </div>
                 <div class="row"></div>
-              </div>
+              </div> */}
             </div>
           </ul>
           <li>
             <a href="">
-              <span class="material-symbols-outlined">home</span> صفحه اصلی{" "}
+              <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
             </a>
           </li>
           <li>
