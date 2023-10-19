@@ -2,24 +2,112 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import LandingCounter from "../LandingCounter/LandingCounter";
-
+import Carousel from "react-bootstrap/Carousel";
+// import ExampleCarouselImage from "components/ExampleCarouselImage";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 import "./Landing.css";
 
 export default function Landing({ info }) {
-
-  const [searchValue, setSearchValue] = useState('')
-  const navigate = useNavigate()
+  const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
 
   const goToSearchPage = () => {
-    navigate(`/search/${searchValue}`)
-  }
+    navigate(`/search/${searchValue}`);
+  };
+  function UncontrolledExample() {
+    return (
+      <Carousel className="my-3" interval={2000}>
+        <Carousel.Item>
+          {/* <ExampleCarouselImage text="First slide" /> */}
+          <BasicExample></BasicExample>
 
+          {/* <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption> */}
+        </Carousel.Item>
+        <Carousel.Item>
+          {/* <ExampleCarouselImage text="Second slide" /> */}
+          <BasicExample></BasicExample>
+          {/* <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption> */}
+        </Carousel.Item>
+        <Carousel.Item>
+          {/* <ExampleCarouselImage text="Third slide" /> */}
+          <BasicExample></BasicExample>
+          {/* <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption> */}
+        </Carousel.Item>
+      </Carousel>
+    );
+  }
+  function BasicExample() {
+    return (
+      <Card
+        className="w-100 d-flex align-items-center rounded-5  "
+        style={{ width: "18rem" }}
+      >
+        <span className="topTitle p-4 text-secondary ">
+          تخفیف های ویژه{" "}
+          <span className="topTitleBold fw-bolder text-danger ">امروز</span>
+        </span>
+        <Card.Img
+          className="w-50"
+          variant="top"
+          src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
+        />
+        <Card.Body className="w-100 ">
+          <Card.Title className="fw-bold ">
+            رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت
+          </Card.Title>
+          <hr />
+          <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
+            <div className="cardTextContainer">
+              <div className="SliderPrice">
+                <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
+                  880,000
+                </span>
+                <div className="SliderPrice-mainPriceContainer">
+                  <span className="SliderPrice-price p-1 fw-bolder ">
+                    {" "}
+                    780,000
+                  </span>
+                  <span className="SliderPrice-toman text-secondary  ">
+                    تومان{" "}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <Button variant="danger">
+              <span class="material-symbols-outlined p-2 ">shopping_bag</span>
+            </Button>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    );
+  }
   return (
-    <section className="landing">
-      
+    <section className="landing py-3">
       <div className="container">
-        <h1 className="landing__title">
+        <a className=" w-100 my-3">
+          {" "}
+          <img
+            className="w-100  rounded-5"
+            src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/Slider-3.jpg"
+            alt=""
+          />
+        </a>
+        <UncontrolledExample></UncontrolledExample>
+
+        {/* <h1 className="landing__title">
           <Typewriter
             onInit={(typeWriter) => {
               typeWriter
@@ -114,7 +202,7 @@ export default function Landing({ info }) {
               دقیقه آموزش تولید کردیم
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
