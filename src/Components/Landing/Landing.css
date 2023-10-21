@@ -1,7 +1,7 @@
 /* Start landing Styles */
 
 .landing {
-height: 200rem;
+height: 100rem;
   background-size: cover;
   background-attachment: fixed;
   text-align: center;
@@ -76,3 +76,22 @@ height: 200rem;
 }
 
 /* Finish landing Styles */
+/* mobile  */
+@media only screen and (max-width: 767px) {
+  /* CSS styles for mobile devices */
+}
+/* tablet  */
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+/* laptop  */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* CSS styles for laptops */
+}
+/* desktop */
+@media only screen and (min-width: 1200px) {
+  /* CSS styles for desktops */
+}

@@ -96,16 +96,22 @@ export default function Landing({ info }) {
   }
   return (
     <section className="landing py-3">
-      <div className="container">
-        <a className=" w-100 my-3">
-          {" "}
-          <img
-            className="w-100  rounded-5"
-            src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/Slider-3.jpg"
-            alt=""
-          />
-        </a>
-        <UncontrolledExample></UncontrolledExample>
+      <div className="containerz  ">
+        <div className="row w-100 ">
+          <div className="col-12 col-md  p-5">
+            <a className=" w-100 my-3">
+              {" "}
+              <img
+                className="w-100 h-100 rounded-5 "
+                src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/Slider-3.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-12 px-5 p-md-0 col-md-3  mx-5 my-3 me-3 rounded-5">
+            <UncontrolledExample></UncontrolledExample>
+          </div>
+        </div>
 
         {/* <h1 className="landing__title">
           <Typewriter

@@ -17,7 +17,7 @@ export default function Header() {
 
 
   return (
-    <header className="header">
+    <header className="header px-3">
         {/* <Topbar info={indexInfo} /> */}
         <Navbar />
         <Landing info={indexInfo} />
