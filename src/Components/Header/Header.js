@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Landing from "../Landing/Landing";
 import Navbar from "../Navbar/Navbar";
+import HeaderBottom from "../HeaderBottom/HeaderBottom";
 import Topbar from "../Topbar/Topbar";
 
 import "./Header.css";
@@ -18,9 +19,10 @@ export default function Header() {
 
   return (
     <header className="header px-3">
-        {/* <Topbar info={indexInfo} /> */}
-        <Navbar />
-        <Landing info={indexInfo} />
+      {/* <Topbar info={indexInfo} /> */}
+      <Navbar />
+      <Landing info={indexInfo} />
+      <HeaderBottom />
     </header>
   );
 }
