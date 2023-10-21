@@ -18,7 +18,7 @@ export default function Landing({ info }) {
   };
   function UncontrolledExample() {
     return (
-      <Carousel className="my-3" interval={2000}>
+      <Carousel className="py-5" interval={2000}>
         <Carousel.Item>
           {/* <ExampleCarouselImage text="First slide" /> */}
           <BasicExample></BasicExample>
@@ -108,7 +108,7 @@ export default function Landing({ info }) {
               />
             </a>
           </div>
-          <div className="col-12 px-5 p-md-0 col-md-3  mx-5 my-3 me-3 rounded-5">
+          <div className="col-12 px-5 p-md-0 col-md-3  mx-5  me-3 rounded-5">
             <UncontrolledExample></UncontrolledExample>
           </div>
         </div>
