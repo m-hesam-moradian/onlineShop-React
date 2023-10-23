@@ -15,6 +15,7 @@ export default function Index(props) {
   return (
     <>
       <Header />
+
       <LastCourses />
       {/* <AboutUs /> */}
       {/* <PopularCourses /> */}
