@@ -8,7 +8,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Contact from "./pages/Contact/Contact";
 import Search from "./pages/Search/Search";
-import Session from './pages/Session/Session'
+import Session from "./pages/Session/Session";
 
 import AdminPanel from "./pages/AdminPanel/index";
 import Users from "./pages/AdminPanel/Users/Users";
@@ -40,17 +40,17 @@ const routes = [
     path: "/p-admin/*",
     element: <AdminPanel />,
     children: [
-        { path: "", element: <PAdminIndex /> },
-        { path: "users", element: <Users /> },
-        { path: "courses", element: <AdminCourses /> },
-        { path: "menus", element: <Menus /> },
-        { path: "articles", element: <AdminArticles /> },
-        { path: "articles/draft/:shortName", element: <Draft /> },
-        { path: "category", element: <AdminCategory /> },
-        { path: "contacts", element: <AdminContact /> },
-        { path: "sessions", element: <Sessions /> },
-        { path: "comments", element: <Comments /> },
-        { path: "offs", element: <Offs /> },
+      { path: "", element: <PAdminIndex /> },
+      { path: "users", element: <Users /> },
+      { path: "courses", element: <AdminCourses /> },
+      { path: "menus", element: <Menus /> },
+      { path: "articles", element: <AdminArticles /> },
+      { path: "articles/draft/:shortName", element: <Draft /> },
+      { path: "category", element: <AdminCategory /> },
+      { path: "contacts", element: <AdminContact /> },
+      { path: "sessions", element: <Sessions /> },
+      { path: "comments", element: <Comments /> },
+      { path: "offs", element: <Offs /> },
     ],
   },
 ];
