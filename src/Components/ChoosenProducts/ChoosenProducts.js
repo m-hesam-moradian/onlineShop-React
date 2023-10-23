@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import "./ChoosenProducts.css";
 
 export default function ChoosenProducts() {
+  
   // const [courses, setCourses] = useState([]);
 
   // useEffect(() => {
