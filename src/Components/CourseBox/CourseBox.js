@@ -4,7 +4,7 @@ import CircleSpinner from "../CircleSpinner/CircleSpinner";
 
 import "./CourseBox.css";
 
-export default function CourseBox(props) {
+export default function CourseBox() {
   const [isImgShow, setIsImgShow] = useState(false);
 
   const onImageLoaded = () => setIsImgShow(true);
@@ -14,11 +14,18 @@ export default function CourseBox(props) {
   };
 
   return (
-    <div className="col-4" style={{ width: `${props.isSlider && "100%"}` }}>
+    <div
+      className="col-4"
+      // style={{ width: `${props.isSlider && "100%"}` }}
+    >
       <div className="course-box">
-        <Link to={`/course-info/${props.shortName}`}>
+        <Link
+          to=""
+          // {`/course-info/${props.shortName}`}
+        >
           <img
-            src={`http://localhost:4000/courses/covers/${props.cover}`}
+            src=""
+            // {`            http://localhost:4000/courses/covers/${props.cover}`}
             // src="https://placeimg.com/295/295/any/tech?t=190129384"
             alt="Course img"
             className="course-box__img"
@@ -29,21 +36,23 @@ export default function CourseBox(props) {
         </Link>
         <div className="course-box__main">
           <Link
-            to={`/course-info/${props.shortName}`}
+            to=""
+            // {`/course-info/${props.shortName}`}
+
             className="course-box__title"
           >
-            {props.name}
+            {/* {props.name} */}
           </Link>
 
           <div className="course-box__rating-teacher">
             <div className="course-box__teacher">
               <i className="fas fa-chalkboard-teacher course-box__teacher-icon"></i>
               <a href="#" className="course-box__teacher-link">
-                {props.creator}
+                {/* {props.creator} */}
               </a>
             </div>
             <div className="course-box__rating">
-              {Array(5 - props.courseAverageScore)
+              {/* {Array(5 - props.courseAverageScore)
                 .fill(0)
                 .map((item) => (
                   <img
@@ -60,24 +69,24 @@ export default function CourseBox(props) {
                     alt="rating"
                     className="course-box__star"
                   />
-                ))}
+                ))} */}
             </div>
           </div>
 
           <div className="course-box__status">
             <div className="course-box__users">
               <i className="fas fa-users course-box__users-icon"></i>
-              <span className="course-box__users-text">{props.registers}</span>
+              {/* <span className="course-box__users-text">{props.registers}</span> */}
             </div>
             <span className="course-box__price">
-              {props.price === 0 ? "رایگان" : props.price.toLocaleString()}
+              {/* {props.price === 0 ? "رایگان" : props.price.toLocaleString()} */}
             </span>
           </div>
         </div>
 
         <div className="course-box__footer">
-          <Link
-            to={`/course-info/${props.shortName}`}
+          <Link to={''}
+            // to={`/course-info/${props.shortName}`}
             className="course-box__footer-link"
           >
             مشاهده اطلاعات

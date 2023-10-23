@@ -3,7 +3,7 @@ import AboutUs from "../../Components/AboutUs/AboutUs";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import LastArticles from "../../Components/LastArticles/LastArticles";
-import LastCourses from "../../Components/LastCourses/LastCourses";
+import ChoosenProducts from "../../Components/ChoosenProducts/ChoosenProducts";
 import PopularCourses from "../../Components/PopularCourses/PopularCourses";
 import PresellCourses from "../../Components/PresellCourses/PresellCourses";
 
@@ -16,7 +16,7 @@ export default function Index(props) {
     <>
       <Header />
 
-      <LastCourses />
+      <ChoosenProducts />
       {/* <AboutUs /> */}
       {/* <PopularCourses /> */}
       {/* <PresellCourses /> */}
