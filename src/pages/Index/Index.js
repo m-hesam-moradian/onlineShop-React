@@ -5,6 +5,7 @@ import Header from "../../Components/Header/Header";
 import LastArticles from "../../Components/LastArticles/LastArticles";
 import ChoosenProducts from "../../Components/ChoosenProducts/ChoosenProducts";
 import CountdownTimer from "../../Components/CountdownTimer/CountdownTimer";
+import NewProducts from "../../Components/NewProducts/NewProducts";
 import PopularCourses from "../../Components/PopularCourses/PopularCourses";
 import PresellCourses from "../../Components/PresellCourses/PresellCourses";
 
@@ -19,6 +20,7 @@ export default function Index(props) {
 
       <ChoosenProducts />
       <CountdownTimer />
+      <NewProducts />
       {/* <AboutUs /> */}
       {/* <PopularCourses /> */}
       {/* <PresellCourses /> */}
