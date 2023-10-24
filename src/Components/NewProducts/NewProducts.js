@@ -79,7 +79,7 @@ export default function NewProducts() {
             محصولاتـــ جـدید
           </span>
           <span className="ChoosenProductsEnglishTitle d-none d-md-inline text-secondary">
-            New Products
+            Recent Products
           </span>
           <hr className="col m-1 text-secondary   " />
           <span className="ChoosenProductsShowMore d-flex  align-items-center text-secondary    ">
@@ -100,7 +100,7 @@ export default function NewProducts() {
                   ))} */}
               {/* <CourseBox /> */}
             </div>
-            <div className="row d-none d-lg-flex  mt-5">
+            <div className="row d-none d-lg-flex  ">
               <ProductCard></ProductCard>
               <ProductCard></ProductCard>
               <ProductCard></ProductCard>

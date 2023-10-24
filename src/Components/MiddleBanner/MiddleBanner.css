@@ -1,0 +1,29 @@
+.BigCursor {
+  background-color: #065dee;
+}
+.InstagramOffers {
+  background-color: #f2e9e8;
+  display: flex;
+}
+
+.MiddleBannerTitle {
+  font-weight: bolder;
+  font-size: 26px;
+  /* color: white; */
+}
+.MiddleBannerContainr img {
+  height: 12rem;
+  margin-top: -8rem;
+  transition: all 0.2s;
+}
+.MiddleBannerContainr {
+  height: 16rem;
+  margin: 6rem 0px;
+}
+.InstagramOffers img {
+  height: 14rem;
+}
+.InstagramOffers:hover img,
+.BigCursor:hover img {
+  scale: 1.2;
+}
