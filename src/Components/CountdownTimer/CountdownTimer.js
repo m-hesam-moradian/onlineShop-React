@@ -9,17 +9,37 @@ export default function CountdownTimer() {
   function UncontrolledExample() {
     return (
       <Carousel className="" interval={2000}>
-        <Carousel.Item className="row w-100  ">
-          <ProductCard></ProductCard>
+        <Carousel.Item className="row ">
+          <div className="row">
+            <ProductCard></ProductCard>
+            <div className="d-none d-md-flex col ">
+              <ProductCard></ProductCard>
+            </div>
+          </div>
         </Carousel.Item>
-        <Carousel.Item className="row w-100 ">
-          <ProductCard></ProductCard>
+        <Carousel.Item className="row ">
+          <div className="row">
+            <ProductCard></ProductCard>
+            <div className="d-none d-md-flex col ">
+              <ProductCard></ProductCard>
+            </div>
+          </div>
         </Carousel.Item>
-        <Carousel.Item className="row w-100 ">
-          <ProductCard></ProductCard>
+        <Carousel.Item className="row ">
+          <div className="row">
+            <ProductCard></ProductCard>
+            <div className="d-none d-md-flex col ">
+              <ProductCard></ProductCard>
+            </div>
+          </div>
         </Carousel.Item>
-        <Carousel.Item className="row w-100 ">
-          <ProductCard></ProductCard>
+        <Carousel.Item className="row ">
+          <div className="row">
+            <ProductCard></ProductCard>
+            <div className="d-none d-md-flex col ">
+              <ProductCard></ProductCard>
+            </div>
+          </div>
         </Carousel.Item>
       </Carousel>
     );
@@ -27,13 +47,13 @@ export default function CountdownTimer() {
   function ProductCard() {
     return (
       <Card
-        className="ProductCard w-auto   d-flex align-items-center rounded-5 col border-0 m-5 shadow-sm "
+        className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col "
         style={{ width: "18rem" }}
       >
-        {/* <span className="topTitle p-4 text-secondary ">
-          تخفیف های ویژه{" "}
-          <span className="topTitleBold fw-bolder text-danger ">امروز</span>
-        </span> */}
+        <span className="topTitle p-4 text-secondary ">
+           حراج ویژه 
+          <span className="topTitleBold fw-bolder text-primary  ">  امروز </span> 
+        </span>
         <Card.Img
           className="w-50 mt-5"
           variant="top"
@@ -77,7 +97,7 @@ export default function CountdownTimer() {
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 ">
       <div className="CountdownTimerContainer row  w-100">
-        <div className="col-12  offerStick row d-flex  justify-content-center align-items-center flex-column  ">
+        <div className="col-12 col-xl-2  offerStick row d-flex  justify-content-center align-items-center flex-column  ">
           <span className="fs-1 fw-bold m-3">چـوب حــراج 🔥 </span>
           <div dir="ltr" className="CountdownTimerNumbers my-2 row">
             <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center   ">
@@ -99,8 +119,16 @@ export default function CountdownTimer() {
             alt=""
           />
         </div>
-        <div className="CountdownTimerProducts ">
-          <UncontrolledExample></UncontrolledExample>
+        <div className="CountdownTimerProducts col row">
+          <div className="d-block d-xl-none">
+            <UncontrolledExample></UncontrolledExample>
+          </div>
+          <div className="row d-none d-xl-flex">
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            {/* <ProductCard></ProductCard> */}
+          </div>
         </div>
       </div>
     </div>
