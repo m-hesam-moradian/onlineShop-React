@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 
 import "./NewProducts.css";
 
-export default function NewProducts() {
+export default function NewProducts({ SecondLine }) {
   // const [courses, setCourses] = useState([]);
 
   // useEffect(() => {
@@ -98,16 +98,15 @@ export default function NewProducts() {
                   ))} */}
               {/* <CourseBox /> */}
             </div>
-            <div className="row d-none d-lg-flex  ">
-              <ProductCard></ProductCard>
-              <ProductCard></ProductCard>
-              <ProductCard></ProductCard>
-              <ProductCard></ProductCard>
-              {/* {courses.splice(0, 6).map((course) => (
-                  <CourseBox {...course} key={course._id} />
-                  ))} */}
-              {/* <CourseBox /> */}
-            </div>
+
+            {SecondLine && (
+              <div className="row d-none d-lg-flex  ">
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+              </div>
+            )}
           </div>
         </div>
       </div>

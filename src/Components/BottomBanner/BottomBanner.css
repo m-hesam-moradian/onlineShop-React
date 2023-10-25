@@ -1,0 +1,44 @@
+.BottomBannerIMG {
+  margin-right: 4rem;
+  margin-top: -2rem;
+  height: 19rem;
+  transition: all 0.3s;
+}
+
+.BottomBannerContainer {
+  background-image: url(https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/banner-3-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15rem;
+
+  margin: 6rem 5rem;
+}
+.BottomBannerBG {
+  background: linear-gradient(89deg, var(--primary-color), rgb(0 0 0 / 81%));
+}
+.BottomBannerBG:hover .BottomBannerIMG {
+  scale: 1.2;
+}
+.BottomBannerleft {
+  margin-left: 4rem;
+}
+.BottomBannerBTNs:hover {
+  /* scale: 1.1; */
+  box-shadow: 0 0 5px 2px white;
+}
+.BottomBannerBTNs {
+  border-radius: 2rem;
+  padding: 7px 12px;
+  font-size: small;
+  background-color: white;
+  transition: all 0.3s;
+}
+.BottomBannercontainer {
+  border-radius: 2rem;
+  background-color: black;
+}
+.BottomBannercontainer .material-symbols-outlined {
+  padding: 6px 2px;
+  color: white;
+}

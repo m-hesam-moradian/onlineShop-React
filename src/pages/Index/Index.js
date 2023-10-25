@@ -5,6 +5,7 @@ import CountdownTimer from "../../Components/CountdownTimer/CountdownTimer";
 import NewProducts from "../../Components/NewProducts/NewProducts";
 import MiddleBanner from "../../Components/MiddleBanner/MiddleBanner";
 import MostSales from "../../Components/MostSales/MostSales";
+import BottomBanner from "../../Components/BottomBanner/BottomBanner";
 
 
 import "./Index.css";
@@ -18,9 +19,11 @@ export default function Index(props) {
 
       <ChoosenProducts />
       <CountdownTimer />
-      <NewProducts />
+      <NewProducts SecondLine={true} />
       <MiddleBanner />
       <MostSales />
+      <NewProducts SecondLine={false} />
+      <BottomBanner />
     </>
   );
 }
