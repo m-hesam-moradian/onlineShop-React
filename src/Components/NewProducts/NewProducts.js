@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CourseBox from "../CourseBox/CourseBox";
-import SectionHeader from "../SectionHeader/SectionHeader";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 

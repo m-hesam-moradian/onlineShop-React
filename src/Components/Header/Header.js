@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Landing from "../Landing/Landing";
 import Navbar from "../Navbar/Navbar";
 import HeaderBottom from "../HeaderBottom/HeaderBottom";
-import Topbar from "../Topbar/Topbar";
 
 import "./Header.css";
 

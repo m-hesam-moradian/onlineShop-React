@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Typewriter from "typewriter-effect";
-import LandingCounter from "../LandingCounter/LandingCounter";
 import Carousel from "react-bootstrap/Carousel";
 // import ExampleCarouselImage from "components/ExampleCarouselImage";
 import Button from "react-bootstrap/Button";
