@@ -1,0 +1,24 @@
+.MostSales {
+  background-image: url("https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/tab-product-sec-bg-pic5-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 40rem;
+}
+.CountdownTimerIMG {
+  max-width: 70%;
+  max-height: 29rem;
+  transition: all 0.3s;
+}
+.MostSalesIMG:hover .CountdownTimerIMG {
+  scale: 1.2;
+}
+.offerStick > * {
+  width: auto;
+}
+.offerStick {
+  margin-top: 12rem;
+}
+.CountdownTimerSecond {
+  background: var(--primary-color);
+}

@@ -5,7 +5,7 @@ import "./MiddleBanner.css";
 export default function MiddleBanner() {
   return (
     <div className="MiddleBanner">
-      <div className="MiddleBannerContainr row ">
+      <div className="MiddleBannerContainr row h-100">
         <div className="col  BigCursor  d-md-flex px-5 rounded-5 m-4 align-items-center py-5">
           <img
             className=""

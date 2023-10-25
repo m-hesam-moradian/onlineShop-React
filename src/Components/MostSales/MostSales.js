@@ -1,11 +1,10 @@
 import React from "react";
-import "./CountdownTimer.css";
-
+import "./MostSales.css";
 import Carousel from "react-bootstrap/Carousel";
-// import ExampleCarouselImage from "components/ExampleCarouselImage";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-export default function CountdownTimer() {
+
+export default function MostSales() {
   function UncontrolledExample() {
     return (
       <Carousel className="" interval={2000}>
@@ -51,8 +50,8 @@ export default function CountdownTimer() {
         style={{ width: "18rem" }}
       >
         <span className="topTitle p-4 text-secondary ">
-           حراج ویژه 
-          <span className="topTitleBold fw-bolder text-warning  ">  امروز </span> 
+          پرفروشترین محصولات
+          <span className="topTitleBold fw-bolder text-primary  "> هفته </span>
         </span>
         <Card.Img
           className="w-50 mt-5"
@@ -95,29 +94,20 @@ export default function CountdownTimer() {
     );
   }
   return (
-    <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 ">
+    <div className=" MostSales d-flex justify-content-center align-items-center h-100 ">
       <div className="CountdownTimerContainer row  w-auto">
-        <div className="col-12 col-xl-2  offerStick row d-flex  justify-content-center align-items-center flex-column  ">
-          <span className="fs-1 fw-bold m-3">چـوب حــراج 🔥 </span>
-          <div dir="ltr" className="CountdownTimerNumbers my-2 row">
-            <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center   ">
-              <span className="fs-3 text-secondary">23</span>
-              <span className="fs-6 text-secondary">ساعت</span>
-            </div>
-            <div className="col-auto d-flex flex-column  mx-3 bg-white rounded-3 align-items-center   ">
-              <span className="fs-3 text-secondary ">18</span>
-              <span className="fs-6 text-secondary">دقیقه</span>
-            </div>
-            <div className="CountdownTimerSecond col-auto d-flex flex-column   rounded-3 align-items-center   ">
-              <span className="fs-3 text-white  ">58</span>
-              <span className="fs-6  text-white">ثانیه</span>
-            </div>
-          </div>
+        <div className="col-12 col-xl-2 MostSalesIMG offerStick row d-flex  justify-content-center align-items-center flex-column  ">
           <img
             className="CountdownTimerIMG"
-            src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/magic-pic-1.png"
+            src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/tab-product-sec-pic1-1.png"
             alt=""
           />
+          <span className="fs-4 fw-bold m-3">پرفروشترین محصولات</span>
+          <span className="ChoosenProductsShowMore d-flex  align-items-center text-secondary    ">
+            {" "}
+            مشاهده همه{" "}
+            <span class="material-symbols-outlined">chevron_left</span>
+          </span>
         </div>
         <div className="CountdownTimerProducts col row">
           <div className="d-block d-xl-none">
