@@ -10,15 +10,35 @@
   max-height: 29rem;
   transition: all 0.3s;
 }
-.MostSalesIMG:hover .CountdownTimerIMG {
+ .CountdownTimerIMG:hover {
   scale: 1.2;
 }
-.offerStick > * {
+.MostSalesIMG > * {
   width: auto;
 }
 .offerStick {
-  margin-top: 12rem;
+  /* margin-top: 12rem; */
 }
 .CountdownTimerSecond {
   background: var(--primary-color);
+}
+.MostSalesCategoryBTN{
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    border-radius: 7px;
+    font-size: 12px;
+  transition: all 0.3s;
+
+}
+.MostSalesCategoryBTNContainer .active ,.MostSalesCategoryBTN:hover{
+  scale: 1.1;
+    /* border: 1px solid var(--white-color); */
+
+  box-shadow: 0 0px 5px var(--primary-color);
+ color: white;
+ background-color:var(--primary-color) ;
+    
+
+
 }

@@ -96,7 +96,7 @@ export default function MostSales() {
   return (
     <div className=" MostSales d-flex justify-content-center align-items-center h-100 ">
       <div className="CountdownTimerContainer row  w-auto">
-        <div className="col-12 col-xl-2 MostSalesIMG offerStick row d-flex  justify-content-center align-items-center flex-column  ">
+        <div className="col-12 col-xl-2 MostSalesIMG  row d-flex  justify-content-center align-items-center flex-column  ">
           <img
             className="CountdownTimerIMG"
             src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/tab-product-sec-pic1-1.png"
@@ -108,11 +108,26 @@ export default function MostSales() {
             مشاهده همه{" "}
             <span class="material-symbols-outlined">chevron_left</span>
           </span>
+          <div className="d-flex justify-content-center MostSalesCategoryBTNContainer align-items-center m-3 mt-5 gap-3 row ">
+            <button type="button" class="MostSalesCategoryBTN col ">
+              مودم و شبکه
+            </button>
+            <button type="button" class="MostSalesCategoryBTN col ">
+              کالای دیجیتال
+            </button>
+            <button type="button" class="MostSalesCategoryBTN col ">
+              سیستم استوک
+            </button>
+            <button type="button" class="MostSalesCategoryBTN col-auto active">
+              تجهیزات ذخیره سازی
+            </button>
+          </div>
         </div>
         <div className="CountdownTimerProducts col row">
           <div className="d-block d-xl-none">
             <UncontrolledExample></UncontrolledExample>
           </div>
+
           <div className="row d-none d-xl-flex">
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
