@@ -13,10 +13,10 @@ export default function RecentArticles() {
   //     .then((allCourses) => setCourses(allCourses));
   // }, []);
 
-  function ProductCard() {
+  function ArtickleCard({ Img }) {
     return (
       <Card
-        className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
+        className="ProductCard ArtickleCard w-100 d-flex align-items-center rounded-5 col border-0  shadow-sm p-3"
         style={{ width: "18rem" }}
       >
         {/* <span className="topTitle p-4 text-secondary ">
@@ -24,9 +24,9 @@ export default function RecentArticles() {
           <span className="topTitleBold fw-bolder text-danger ">امروز</span>
         </span> */}
         <Card.Img
-          className="w-50 mt-5"
+          className="w-100 ArtickleCardIMG rounded-4 "
           variant="top"
-          src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
+          src={Img}
         />
         <Card.Body className="w-100 ">
           <Card.Title className="mx-4">
@@ -67,12 +67,7 @@ export default function RecentArticles() {
     <>
       <div className="ChoosenProductscontainer bg-light p-4 ">
         <div className=" ChoosenProducts d-flex  align-items-center ">
-          {/* <SectionHeader
-            title="جدیدترین دوره ها"
-            desc="سکوی پرتاپ شما به سمت موفقیت"
-            // btnTitle="تمامی دوره ها"
-            btnHref="courses/1"
-          /> */}
+     
           <span className="ChoosenProductsPersianTitle fw-bolder     ">
             محصولاتـــ جـدید
           </span>
@@ -87,12 +82,15 @@ export default function RecentArticles() {
           </span>
         </div>
         <div className="courses-content mt-5 ">
-          <div className="container">
+          <div className="">
             <div className="row">
-              <ProductCard></ProductCard>
-              <ProductCard></ProductCard>
-              <ProductCard></ProductCard>
-              <ProductCard></ProductCard>
+              <div className="col-3">
+                <i aria-hidden="true" class="far fa-comment"></i>
+                <span class="material-symbols-outlined">category</span>
+              </div>
+              <ArtickleCard Img="https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-9.jpg" title='رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود' />
+              <ArtickleCard Img="https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-10.jpg" title='رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود' />
+              <ArtickleCard Img="https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-11.jpg" title='رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود' />
             </div>
           </div>
         </div>

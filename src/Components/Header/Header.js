@@ -9,11 +9,11 @@ export default function Header() {
   
   const [indexInfo, setIndexInfo] = useState({})
 
-  useEffect(() => {
-    fetch('http://localhost:4000/v1/infos/index')
-    .then(res => res.json())
-    .then(allInfos => setIndexInfo(allInfos))
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://localhost:4000/v1/infos/index')
+  //   .then(res => res.json())
+  //   .then(allInfos => setIndexInfo(allInfos))
+  // }, [])
 
 
   return (
