@@ -94,8 +94,8 @@ export default function MostSales() {
     );
   }
   return (
-    <div className=" MostSales d-flex justify-content-center align-items-center h-100 ">
-      <div className="CountdownTimerContainer row  w-auto">
+    <div className=" MostSales d-flex justify-content-center align-items-center h-100 container-flud">
+      <div className="CountdownTimerContainer row m-0 ">
         <div className="col-12 col-xl-2 MostSalesIMG  row d-flex  justify-content-center align-items-center flex-column  ">
           <img
             className="CountdownTimerIMG"

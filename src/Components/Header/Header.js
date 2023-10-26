@@ -6,8 +6,7 @@ import HeaderBottom from "../HeaderBottom/HeaderBottom";
 import "./Header.css";
 
 export default function Header() {
-  
-  const [indexInfo, setIndexInfo] = useState({})
+  const [indexInfo, setIndexInfo] = useState({});
 
   // useEffect(() => {
   //   fetch('http://localhost:4000/v1/infos/index')
@@ -15,9 +14,8 @@ export default function Header() {
   //   .then(allInfos => setIndexInfo(allInfos))
   // }, [])
 
-
   return (
-    <header className="header px-3">
+    <header className="header px-3 container-flud">
       {/* <Topbar info={indexInfo} /> */}
       <Navbar />
       <Landing info={indexInfo} />

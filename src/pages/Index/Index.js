@@ -16,7 +16,6 @@ export default function Index(props) {
   return (
     <>
       <Header />
-
       <ChoosenProducts />
       <CountdownTimer />
       <NewProducts SecondLine={true} />
