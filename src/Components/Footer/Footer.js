@@ -120,8 +120,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className=" FooterMidle border-black border-5 border-primary  col-7">
-          <div class="elementor-widget-container">
+        <div className=" FooterMidle border-black border-5 border-primary  col">
+          <div class="my-4">
             <strong>فروشگاه اینترنتی الکترو شاپ</strong> در قلب ایران فعالیت
             خودش را آغاز نموده است، ما بهترین نوع کالاها را برای مردم شریف ایران
             در این سایت فراهم کرده ایم و برای رضایت و خوشحالی شما تلاش میکنیم.
@@ -133,96 +133,98 @@ export default function Footer() {
             بهترین کیفیت و قیمت را داشته باشند.{" "}
           </div>
           <hr />
-          <div>
-            <i></i>
-            <div>
-              <a>آدرس فروشگـاه</a>
-              <div class="elementor-widget-container">
-                <strong>شهر مهربانان یـزد</strong>، میدان اول ، خیابان دوم ،
-                بن‌بست پنجم، پلاک ۱، طبقه دوم ، واحد 101{" "}
+          <div className=" row m-0 d-flex">
+            {" "}
+            <div className="col-auto">
+              <div>
+                <a className="ChoosenProductsEnglishTitle d-none d-md-inline text-secondary">
+                  آدرس فروشگـاه
+                </a>
+                <div class="elementor-widget-container">
+                  <strong>شهر مهربانان یـزد</strong>، میدان اول ، خیابان دوم ،
+                  بن‌بست پنجم، پلاک ۱، طبقه دوم ، واحد 101{" "}
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <a>انتقاد و پیشنهاد</a>
-            <div class="elementor-widget-container">info@yoursite.com </div>
+            <div dir="ltr" className="FooterMail col  ">
+              <span className="ChoosenProductsEnglishTitle d-none d-md-inline text-secondary">
+                انتقاد و پیشنهاد{" "}
+              </span>
+              <div class="elementor-widget-container">info@yoursite.com </div>
+            </div>
           </div>
           <hr />
-          <div>
-            <div>
-              <span>همراه با حجره</span>
+          <div className="d-flex row mx-3 ">
+            <div className="col">
+              <strong>همراه با حجره</strong>
               <ul>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">مجله الکتروشاپ</a>
                 </li>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">درباره ما</a>
                 </li>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">تماس با ما</a>
                 </li>
               </ul>
             </div>
-            <div>
-              <span>راهنمای خرید</span>
+            <div className="col">
+              <strong>راهنمای خرید</strong>
               <ul>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">نحوه ثبت سفارش</a>
                 </li>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">رویه های ارسال کالا</a>
                 </li>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">شیوه های پرداخت</a>
                 </li>
               </ul>
             </div>
-            <div>
-              <span>خدمات مشتریان</span>
+            <div className="col">
+              <strong>خدمات مشتریان</strong>
               <ul>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">ثبت نام / ورود</a>
                 </li>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">مرجوعی سفارش</a>
                 </li>
                 <li>
                   {" "}
-                  <span>.</span>
                   <a href="">شکایات و پیشنهادات</a>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <div></div>
-              <div></div>
+            <div className="col eNamadIMG d-flex">
+              <div>
+                <img
+                  className="shadow "
+                  src="https://sitekar.com/images/enamad.jpg"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
           <hr />
           <p>تمامی حقوق این وبسایت برای سایت آماده الکترو شاپ محفوظ است.</p>
         </div>
 
-        <div className="  FooterEnd col-auto">
-          <div>
-            arrow
-            <div>
+        <div className="  FooterEnd col-2  ">
+          <div className="FooterEndContainer flex-column d-flex align-content-center  align-items-center">
+            <div class="material-symbols-outlined">expand_less</div>
+            <div className="MainFooterEndContainer">
               <span class="elementor-heading-title elementor-size-default">
                 همـه روزه پاسخگـــــوی شما عـــزیـــزان هـسـتـیـم
               </span>

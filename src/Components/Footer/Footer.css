@@ -12,13 +12,14 @@
   font-size: x-small;
   flex-direction: column;
   align-items: center;
+  padding-top: 1rem;
 }
 .Footerfuture {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3rem;
+  margin: 1rem;
 }
 .FooterStart {
   padding: 4rem;
@@ -27,12 +28,45 @@
   padding: 4rem;
 }
 .Footer div {
-  font-size: small;
+  line-height: 29px;
+  font-size: 12px;
   font-weight: 100;
   color: gray;
 }
 .Footer strong {
-  font-size: small;
+  font-size: 12px;
   font-weight: 600;
   color: black;
+}
+.Footer ul {
+  list-style: circle;
+  margin-right: 2rem;
+}
+.FooterMail {
+  justify-items: end;
+}
+.ChoosenProductsEnglishTitle {
+  font-size: smaller;
+  margin: 0;
+}
+.eNamadIMG img {
+  width: 13rem;
+  /* height: 20rem; */
+  border-radius: 2rem;
+}
+.FooterEndContainer {
+  height: 100%;
+  margin-top: -3rem;
+  background-color: #d6defe;
+  /* padding: 2rem; */
+  padding-top: 3px;
+  border-radius: 2rem;
+}
+.MainFooterEndContainer {
+  background-color: var(--primary-color);
+  height: 100%;
+  border-radius: 2rem;
+  padding: 3rem;
+  color: white;
+  font-size: 2rem;
 }
