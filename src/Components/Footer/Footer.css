@@ -1,0 +1,38 @@
+.FooterIMG {
+  max-width: 16rem;
+  /* padding: 2rem; */
+  margin-top: 2rem;
+}
+.FooterfuturesBox {
+  background: linear-gradient(180deg, #e8e8e8, transparent);
+  border-radius: 2rem;
+  /* padding: 2rem; */
+  margin-top: 2rem;
+  display: flex;
+  font-size: x-small;
+  flex-direction: column;
+  align-items: center;
+}
+.Footerfuture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+}
+.FooterStart {
+  padding: 4rem;
+}
+.FooterMidle {
+  padding: 4rem;
+}
+.Footer div {
+  font-size: small;
+  font-weight: 100;
+  color: gray;
+}
+.Footer strong {
+  font-size: small;
+  font-weight: 600;
+  color: black;
+}
