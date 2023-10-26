@@ -2,3 +2,18 @@
         height: 17rem;
     object-fit: cover;
 }
+.ArtickleCardArrow{
+    margin-right: auto;
+        font-size: small;
+    background: gray;
+    padding: 4px;
+    border-radius: 50%;
+    color: white;
+}
+.MiniArtickleCardIMG{
+    width: 12rem;
+}
+.MiniArtickleCard .card-title{
+        font-size: 12px;
+}
+.MiniArtickleCardsContainer{}

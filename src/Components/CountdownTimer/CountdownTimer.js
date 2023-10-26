@@ -96,7 +96,7 @@ export default function CountdownTimer() {
   }
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 ">
-      <div className="CountdownTimerContainer row  w-auto">
+      <div className="CountdownTimerContainer row  w-100">
         <div className="col-12 col-xl-2  offerStick row d-flex  justify-content-center align-items-center flex-column  ">
           <span className="fs-1 fw-bold m-3">چـوب حــراج 🔥 </span>
           <div dir="ltr" className="CountdownTimerNumbers my-2 row">
