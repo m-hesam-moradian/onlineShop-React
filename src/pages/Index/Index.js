@@ -7,6 +7,7 @@ import MiddleBanner from "../../Components/MiddleBanner/MiddleBanner";
 import MostSales from "../../Components/MostSales/MostSales";
 import BottomBanner from "../../Components/BottomBanner/BottomBanner";
 import RecentArticles from "../../Components/RecentArticles/RecentArticles";
+import Footer from "../../Components/Footer/Footer";
 import "./Index.css";
 
 export default function Index(props) {
@@ -23,7 +24,8 @@ export default function Index(props) {
       <MostSales />
       <NewProducts SecondLine={false} />
       <BottomBanner />
-      <RecentArticles/>
+      <RecentArticles />
+      <Footer />
     </>
   );
 }

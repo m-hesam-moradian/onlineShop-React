@@ -126,7 +126,7 @@ export default function RecentArticles() {
   }
   return (
     <>
-      <div className="ChoosenProductscontainer  p-4 ">
+      <div className="ChoosenProductscontainer  p-4 mb-5  ">
         <div className=" ChoosenProducts d-flex  align-items-center ">
           <span className="ChoosenProductsPersianTitle fw-bolder     ">
             مطالبــــ اخیـر
