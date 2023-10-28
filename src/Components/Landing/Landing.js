@@ -97,8 +97,8 @@ export default function Landing({ info }) {
   return (
     <section className="landing py-3">
       <div className="containerz  ">
-        <div className="row w-100 ">
-          <div className="col-12 col-md  p-5">
+        <div className="row m-auto ">
+          <div className="col-12 col-md  p-5 m-auto">
             <a className=" w-100 my-3">
               {" "}
               <img

@@ -4,8 +4,8 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className=" Footer">
-      <div class=" bg-light    row m-0 ">
-        <div className=" FooterStart  col-auto ">
+      <div class=" bg-light  FooterContainer   row m-0 ">
+        <div className=" FooterStart order-1 order-sm-0  order-xl-1 col col-xl-auto ">
           <img
             className="FooterIMG"
             src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/logo-main.png"
@@ -120,7 +120,29 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className=" FooterMidle border-black border-5 border-primary  col">
+
+        <div className="  FooterEnd order-0 order-sm-1 col col-xl-2 order-xl-3 m-5">
+          <div className="FooterEndContainer flex-column d-flex align-content-center  align-items-center">
+            <div class="material-symbols-outlined fs-1 ">expand_less</div>
+            <div className="MainFooterEndContainer text-white d-flex flex-column justify-content-center  ">
+              <span class="elementor-heading-title elementor-size-default fs-2 fw-bold">
+                همـه روزه پاسخگـــــوی شما عـــزیـــزان هـسـتـیـم
+              </span>
+              <hr />
+              <span className="fs-2 fw-bold d-flex justify-content-center ">
+                {" "}
+                34567890 <span className="fw-lighter  mx-2"> 045 </span>
+              </span>
+              <hr />
+              <img
+                className="w-75 mx-auto   "
+                src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/footer-call-vector.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className=" FooterMidle order-2 order-sm-2 border-black border-5 border-primary order-xl-2  col-12 col-xl">
           <div class="my-4">
             <strong>فروشگاه اینترنتی الکترو شاپ</strong> در قلب ایران فعالیت
             خودش را آغاز نموده است، ما بهترین نوع کالاها را برای مردم شریف ایران
@@ -154,8 +176,8 @@ export default function Footer() {
             </div>
           </div>
           <hr />
-          <div className="d-flex row mx-3 ">
-            <div className="col">
+          <div className="d-flex row mx-3 gap-3">
+            <div className="col-auto m-auto">
               <strong>همراه با حجره</strong>
               <ul>
                 <li>
@@ -172,7 +194,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col">
+            <div className="col-auto m-auto">
               <strong>راهنمای خرید</strong>
               <ul>
                 <li>
@@ -189,7 +211,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col">
+            <div className="col-auto m-auto">
               <strong>خدمات مشتریان</strong>
               <ul>
                 <li>
@@ -207,7 +229,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col eNamadIMG d-flex">
+            <div className="col eNamadIMG d-flex col-auto m-auto">
               <div>
                 <img
                   className="shadow "
@@ -220,25 +242,6 @@ export default function Footer() {
           <hr />
           <p>تمامی حقوق این وبسایت برای سایت آماده الکترو شاپ محفوظ است.</p>
         </div>
-
-        <div className="  FooterEnd col-2  ">
-          <div className="FooterEndContainer flex-column d-flex align-content-center  align-items-center">
-            <div class="material-symbols-outlined">expand_less</div>
-            <div className="MainFooterEndContainer">
-              <span class="elementor-heading-title elementor-size-default">
-                همـه روزه پاسخگـــــوی شما عـــزیـــزان هـسـتـیـم
-              </span>
-              <hr />
-              <span>34567890 035</span>
-              <hr />
-              <img
-                src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/footer-call-vector.svg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-
         {/* 
         <footer class="py-5">
           <div class="row">
