@@ -73,9 +73,9 @@ export default function Navbar() {
                 </a>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="#">
+                <Link class="nav-link" to="/store">
                   فروشگاه
-                </a>
+                </Link>
               </li>
               <li class="nav-item p-2">
                 <a class="nav-link" href="#">
@@ -105,7 +105,6 @@ export default function Navbar() {
           <div className=" main-header__right ">
             <a className="d-flex d-md-none align-items-center ">
               <OffCanvasExample
-              
                 placement="end"
                 name={
                   <span class="material-symbols-outlined  align-items-center ">
@@ -327,14 +326,16 @@ export default function Navbar() {
             </div>
           </ul>
           <li>
-            <a href="">
+          
+            <Link class="nav-link" to="/">
+            
               <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            <Link class="nav-link" to="/store">
               <span class="material-symbols-outlined">storefront</span> فروشگاه{" "}
-            </a>
+            </Link>
           </li>
           <li>
             <a href="">
