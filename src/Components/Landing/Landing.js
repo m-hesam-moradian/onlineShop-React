@@ -92,6 +92,7 @@ export default function Landing({ info }) {
           </Card.Text>
         </Card.Body>
       </Card>
+      
     );
   }
   return (
