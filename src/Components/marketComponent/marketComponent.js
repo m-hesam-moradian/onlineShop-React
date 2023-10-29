@@ -143,6 +143,7 @@ export default function marketComponent() {
         </a>
       </div>
       <div class="col p-5">
+
         
       </div>
     </div>
