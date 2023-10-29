@@ -10,15 +10,43 @@ function ProductCategory() {
     <Dropdown>
       <Dropdown.Toggle
         id="dropdown-basic"
-        className="w-100 bg-white text-dark border-black fs-4"
+        className="w-100 bg-white text-secondary  border-secondary fs-4  d-flex align-items-center gap-3 rounded-4"
       >
-        ProductCategory Button
+        دسته بندی محصولات
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className="w-100">
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+      <Dropdown.Menu className="w-100 fs-5 ">
+        <Dropdown.Item
+          href="#/action-1 "
+          className="d-flex justify-content-start "
+        >
+          انواع کارت حافظه
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#/action-2"
+          className="d-flex justify-content-start "
+        >
+          تجهیزات شبکه
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#/action-3"
+          className="d-flex justify-content-start "
+        >
+          کالای دیجیتال
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#/action-3"
+          className="d-flex justify-content-start "
+        >
+          {" "}
+          کامپیوتر و لوازم جانبی
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#/action-3"
+          className="d-flex justify-content-start "
+        >
+          هدفون، هدست
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );
@@ -28,15 +56,30 @@ function ProductBrand() {
     <Dropdown>
       <Dropdown.Toggle
         id="dropdown-basic"
-        className="w-100 bg-white text-dark border-black fs-4"
+        className="w-100 bg-white text-secondary e border-secondary fs-4 d-flex align-items-center gap-3 rounded-4 "
       >
-        ProductBrand Button
+        برند محصولات
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className="w-100">
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+      <Dropdown.Menu className="w-100 fs-5">
+        <Dropdown.Item
+          href="#/action-1"
+          className="d-flex justify-content-start "
+        >
+          kaku
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#/action-2"
+          className="d-flex justify-content-start "
+        >
+          rapoo
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#/action-3"
+          className="d-flex justify-content-start "
+        >
+          silicon power
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );
@@ -75,26 +118,31 @@ const DoubleSlider = () => {
 export default function marketComponent() {
   return (
     <div className="row">
-      <div class="col-3 p-5 gap-3 d-grid">
+      <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 ">
         <input
           type="text"
-          class="form-control fs-4"
+          class="form-control fs-4 p-3 rounded-4"
           name=""
           id=""
           aria-describedby="helpId"
-          placeholder=""
+          placeholder="جستجو ..."
         />
-        <a class="btn w-100 marketComponentSearchBTN btn-color fs-4">
+        <a class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4">
           جستجو کنید
         </a>
         <DoubleSlider />
         <ProductCategory />
         <ProductBrand />
-        <a class="btn btn-sm w-100 btn-color fs-4" href="#" role="button">
+        <a
+          class="btn btn-sm w-100 btn-color fs-4 p-3 rounded-4"
+          href="#"
+          role="button"
+        >
           {" "}
-          succes{" "}
+          اعمال فیلتر ها{" "}
         </a>
       </div>
+      <div class="col p-5"></div>
     </div>
   );
 }
