@@ -142,7 +142,9 @@ export default function marketComponent() {
           اعمال فیلتر ها{" "}
         </a>
       </div>
-      <div class="col p-5"></div>
+      <div class="col p-5">
+        
+      </div>
     </div>
   );
 }
