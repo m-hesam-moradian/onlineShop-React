@@ -15,6 +15,7 @@ const [BlogCategory, setBlogCategory] = useState([
   // Add more objects as needed
 ]);
     // setBlogCategory([1,2])
+    
 
   return (
     <div>
