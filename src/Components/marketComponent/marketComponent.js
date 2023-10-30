@@ -1,12 +1,12 @@
 // import React from "react";
 import "./marketComponent.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
+import Pagination from "@mui/material/Pagination";
 
 function DropDown({ title, items }) {
   return (
@@ -26,7 +26,7 @@ function DropDown({ title, items }) {
               href="#/action-1 "
               className="d-flex justify-content-start "
             >
-              {console.log(element)}
+              {/* {console.log(element)} */}
               {element}
             </Dropdown.Item>
           );
@@ -116,6 +116,103 @@ function ProductCard() {
     </Card>
   );
 }
+
+// import React, { useEffect, useState } from 'react';
+
+// function Product({ data }) {
+//   // Your ProductCard component here
+//   return (
+//     <div className="product-card">
+//       {/* Render data here */}
+//     </div>
+//   );
+// }
+/////////////////////////////////////////////////////////////////////
+
+// function Market() {
+
+//   return (
+//     <div>
+//       {groupedData.map((group, index) => (
+//         <div key={index} className="marketComponentProductContainer row m-0">
+//           {group.map((item, itemIndex) => (
+//             <ProductCard
+//               className="MarketProductCard"
+//               key={itemIndex}
+//               data={item}
+//             />
+//           ))}
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+const itemsPerPage = 3; // Number of items per page
+
+const MyComponent = () => {
+  // useEffect(() => {
+  //   Replace this with the actual API endpoint
+  //   fetch('https://api.example.com/products')
+  //     .then((response) => response.json())
+  //     .then((data) => setApiData(data))
+  //     .catch((error) => console.error('Error fetching data: ', error));
+  // }, []);
+
+  const apiData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 2, 3, 4, 5, 6, 7, 8, 9, 19];
+
+  const groupedData = [];
+
+  for (let i = 0; i < apiData.length; i += 3) {
+    groupedData.push(apiData.slice(i, i + 3));
+  }
+  const [page, setPage] = useState(1); // Current page
+  const data = groupedData;
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentData = data.slice(startIndex, endIndex);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  return (
+    <div>
+      {currentData.map((group, index) => (
+        <div key={index} className="marketComponentProductContainer row m-0">
+          {group.map((item, itemIndex) => (
+            <ProductCard
+              className="MarketProductCard"
+              key={itemIndex}
+              data={item}
+            />
+          ))}
+        </div>
+      ))}
+      {/* <Market></Market> */}
+
+      {/* Render Pagination component */}
+      <Pagination className="d-flex justify-content-center "
+        count={totalPages}
+        page={page}
+        onChange={handleChangePage}
+        shape="rounded"
+      />
+    </div>
+  );
+};
+
+////////////////////////////////////////////////////////////////
+
+// const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const resultArray = [];
+
+// for (let i = 0; i < originalArray.length; i += 3) {
+//   resultArray.push(originalArray.slice(i, i + 3));
+// }
+
+// Now, you can use resultArray in your JSX code
+
 export default function marketComponent() {
   return (
     <div className="row">
@@ -171,11 +268,13 @@ export default function marketComponent() {
             />
           </div>
         </header>
-        <div className="marketComponentProductContainer row m-0">
+        {/* <div className="marketComponentProductContainer row m-0">
           <ProductCard />
           <ProductCard />
           <ProductCard />
-        </div>
+        </div> */}
+        {/* <Market></Market> */}
+        <MyComponent></MyComponent>
       </div>
     </div>
   );
