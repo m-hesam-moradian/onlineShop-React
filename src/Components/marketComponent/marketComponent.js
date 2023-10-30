@@ -147,7 +147,7 @@ function ProductCard() {
 //     </div>
 //   );
 // }
-const itemsPerPage = 3; // Number of items per page
+const itemsPerPage = 9; // Number of items per page
 
 const MyComponent = () => {
   // useEffect(() => {
@@ -158,15 +158,10 @@ const MyComponent = () => {
   //     .catch((error) => console.error('Error fetching data: ', error));
   // }, []);
 
-  const apiData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 2, 3, 4, 5, 6, 7, 8, 9, 19];
+  const apiData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 2, 3, 4, 5, 6, 7, 8];
 
-  const groupedData = [];
-
-  for (let i = 0; i < apiData.length; i += 3) {
-    groupedData.push(apiData.slice(i, i + 3));
-  }
   const [page, setPage] = useState(1); // Current page
-  const data = groupedData;
+  const data = apiData;
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -177,28 +172,25 @@ const MyComponent = () => {
   };
 
   return (
-    <div>
-      {currentData.map((group, index) => (
-        <div key={index} className="marketComponentProductContainer row m-0">
-          {group.map((item, itemIndex) => (
-            <ProductCard
-              className="MarketProductCard"
-              key={itemIndex}
-              data={item}
-            />
-          ))}
-        </div>
+    <>
+      {currentData.map((item, itemIndex) => (
+        <ProductCard
+          className="MarketProductCard"
+          key={itemIndex}
+          data={item}
+        />
       ))}
       {/* <Market></Market> */}
 
       {/* Render Pagination component */}
-      <Pagination className="d-flex justify-content-center "
+      <Pagination
+        className="d-flex justify-content-center "
         count={totalPages}
         page={page}
         onChange={handleChangePage}
         shape="rounded"
       />
-    </div>
+    </>
   );
 };
 
@@ -216,7 +208,7 @@ const MyComponent = () => {
 export default function marketComponent() {
   return (
     <div className="row">
-      <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 ">
+      <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 col-12 col-lg-auto">
         <input
           type="text"
           class="form-control fs-4 p-3 rounded-4"
@@ -274,7 +266,9 @@ export default function marketComponent() {
           <ProductCard />
         </div> */}
         {/* <Market></Market> */}
-        <MyComponent></MyComponent>
+        <div className="marketComponentProductContainer row m-0">
+          <MyComponent></MyComponent>
+        </div>
       </div>
     </div>
   );

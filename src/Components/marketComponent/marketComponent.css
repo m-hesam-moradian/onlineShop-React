@@ -1,6 +1,6 @@
 .marketComponentFilterPart {
-  max-width: 40rem;
-  min-width: 30rem;
+/* width: 40rem; */
+  min-width: 40rem;
 }
 .dropdown-menu{
   min-width: 100%;
@@ -12,5 +12,8 @@
      padding: 6px 10px;
   background-color: white;
 }
-.marketComponentProducts .ProductCard {    max-width: 34rem;
-}
+/* .MarketProductCard{
+  width: auto !important;
+} */
+/* .marketComponentProducts .ProductCard {    max-width: 34rem;
+} */
