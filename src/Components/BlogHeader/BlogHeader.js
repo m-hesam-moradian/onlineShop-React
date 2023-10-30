@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import "./BlogHeader.css";
-// import { Link } from "react-router-dom";
 
 export default function BlogHeader() {
   const [BlogCategory, setBlogCategory] = useState([
