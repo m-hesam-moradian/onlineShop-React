@@ -326,9 +326,7 @@ export default function Navbar() {
             </div>
           </ul>
           <li>
-          
             <Link class="nav-link" to="/">
-            
               <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
             </Link>
           </li>
@@ -338,9 +336,10 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="">
+            <Link class="nav-link" to="/blog">
               <span class="material-symbols-outlined">receipt_long</span> وبلاگ{" "}
-            </a>
+            </Link>
+            <a href=""></a>
           </li>
           <li>
             <a href="">

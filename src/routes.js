@@ -1,5 +1,8 @@
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 import Index from "./pages/Index/Index";
 import Store from "./pages/Store/Store";
+import Blog from "./pages/Blog/Blog";
 // import CourseInfo from "./pages/CourseInfo/CourseInfo";
 // import Category from "./pages/Category/Category";
 // import ArticleInfo from "./pages/ArticleInfo/ArticleInfo";
@@ -26,7 +29,26 @@ import Register from "./pages/Register/Register";
 
 const routes = [
   { path: "/", element: <Index /> },
-  { path: "/store", element: <Store /> },
+  {
+    path: "/store",
+    element: (
+      <>
+        <Navbar />
+        <Store />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/blog",
+    element: (
+      <>
+        <Navbar />
+        <Blog />
+        <Footer />
+      </>
+    ),
+  },
   // { path: "/course-info/:courseName", element: <CourseInfo /> },
   // { path: "/category-info/:categoryName/:page", element: <Category /> },
   // { path: "/article-info/:articleName", element: <ArticleInfo /> },
