@@ -8,11 +8,11 @@
 
     height: fit-content;
     min-height: 23rem;
-border-radius: 30px;
+border-radius: 10px;
 }
 
 .HeaderArtickle::before {
-border-radius: 30px;
+border-radius: 10px;
 
   content: "";
   position: absolute;
@@ -26,6 +26,7 @@ border-radius: 30px;
 }
 
 .HeaderArtickle {
+  min-width: 30rem;
   /* background-image: url(https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-11.jpg); */
   background-size: cover; /* Adjust as needed to control the image size */
   background-position: center; /* Adjust as needed to control the image position */
@@ -33,4 +34,6 @@ border-radius: 30px;
 }
 .BlogCategory ul{
       height: fit-content;
+          width: -webkit-fill-available;
+
 }

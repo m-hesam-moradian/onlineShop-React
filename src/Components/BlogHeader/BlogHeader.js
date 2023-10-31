@@ -43,7 +43,7 @@ export default function BlogHeader() {
 
   return (
     <div className="bg-light row m-0">
-      <div className="BlogCategory row m-0 col-auto">
+      <div className="BlogCategory row m-0 col col-md-auto ">
         <ul className=" bg-white shadow m-4 p-5 px-5 rounded-4 gap-4  d-flex flex-column col-auto">
           {BlogCategory.map((item, index) => (
             <li>
@@ -55,55 +55,131 @@ export default function BlogHeader() {
           ))}
         </ul>
       </div>
-      <div className="BlogArtickles col row m-0">
-        <div
-          id="miuDesign"
-          className="HeaderArtickle col d-flex  shadow-lg  m-5 d-flex justify-content-center align-items-end  text-white  "
-        >
-          <div className="HeaderArtickleContainer z-1 m-5">
-            <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
-              <span className="d-flex align-content-center align-items-center ">
-                <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                بدون نظر
-              </span>
-              <span className="d-flex align-content-center align-items-center ">
-                <span class="material-symbols-outlined fs-3 mx-2">
-                  category
+      <div className="row col  m-0 m-sm-5 gap-4">
+        <div className="col-lg-12 gap-4 row m-0">
+          <div className="BlogArtickles p-0 col  row m-0">
+            <div
+              id="miuDesign"
+              className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+            >
+              <div className="HeaderArtickleContainer z-1 m-5">
+                <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
+                  <span className="d-flex align-content-center align-items-center ">
+                    <i aria-hidden="true" class="far fa-comment mx-2"></i>
+                    بدون نظر
+                  </span>
+                  <span className="d-flex align-content-center align-items-center ">
+                    <span class="material-symbols-outlined fs-3 mx-2">
+                      category
+                    </span>
+                    دسته: بازی ویدئویی
+                  </span>
                 </span>
-                دسته: بازی ویدئویی
-              </span>
-            </span>
-            <span className="">
-              جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-            </span>
+                <span className="">
+                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="BlogArtickles p-0 col row m-0">
+            <div
+              id="miuDesign"
+              className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+            >
+              <div className="HeaderArtickleContainer z-1 m-5">
+                <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
+                  <span className="d-flex align-content-center align-items-center ">
+                    <i aria-hidden="true" class="far fa-comment mx-2"></i>
+                    بدون نظر
+                  </span>
+                  <span className="d-flex align-content-center align-items-center ">
+                    <span class="material-symbols-outlined fs-3 mx-2">
+                      category
+                    </span>
+                    دسته: بازی ویدئویی
+                  </span>
+                </span>
+                <span className="">
+                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-        
-      </div>
-      <div className="BlogArtickles col row m-0">
-        <div
-          id="miuDesign"
-          className="HeaderArtickle col d-flex  shadow-lg  m-5 d-flex justify-content-center align-items-end  text-white  "
-        >
-          <div className="HeaderArtickleContainer z-1 m-5">
-            <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
-              <span className="d-flex align-content-center align-items-center ">
-                <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                بدون نظر
-              </span>
-              <span className="d-flex align-content-center align-items-center ">
-                <span class="material-symbols-outlined fs-3 mx-2">
-                  category
+        <div className="col row gap-4 m-0">
+          <div className="BlogArtickles p-0 col row m-0">
+            <div
+              id="miuDesign"
+              className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+            >
+              <div className="HeaderArtickleContainer z-1 m-5">
+                <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
+                  <span className="d-flex align-content-center align-items-center ">
+                    <i aria-hidden="true" class="far fa-comment mx-2"></i>
+                    بدون نظر
+                  </span>
+                  <span className="d-flex align-content-center align-items-center ">
+                    <span class="material-symbols-outlined fs-3 mx-2">
+                      category
+                    </span>
+                    دسته: بازی ویدئویی
+                  </span>
                 </span>
-                دسته: بازی ویدئویی
-              </span>
-            </span>
-            <span className="">
-              جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-            </span>
+                <span className="">
+                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="BlogArtickles p-0 col row m-0">
+            <div
+              id="miuDesign"
+              className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+            >
+              <div className="HeaderArtickleContainer z-1 m-5">
+                <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
+                  <span className="d-flex align-content-center align-items-center ">
+                    <i aria-hidden="true" class="far fa-comment mx-2"></i>
+                    بدون نظر
+                  </span>
+                  <span className="d-flex align-content-center align-items-center ">
+                    <span class="material-symbols-outlined fs-3 mx-2">
+                      category
+                    </span>
+                    دسته: بازی ویدئویی
+                  </span>
+                </span>
+                <span className="">
+                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="BlogArtickles p-0 col row m-0">
+            <div
+              id="miuDesign"
+              className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+            >
+              <div className="HeaderArtickleContainer z-1 m-5">
+                <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
+                  <span className="d-flex align-content-center align-items-center ">
+                    <i aria-hidden="true" class="far fa-comment mx-2"></i>
+                    بدون نظر
+                  </span>
+                  <span className="d-flex align-content-center align-items-center ">
+                    <span class="material-symbols-outlined fs-3 mx-2">
+                      category
+                    </span>
+                    دسته: بازی ویدئویی
+                  </span>
+                </span>
+                <span className="">
+                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
