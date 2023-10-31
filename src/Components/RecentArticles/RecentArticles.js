@@ -5,10 +5,10 @@ import ProductShower from "../ProductShower/ProductShower";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-export function ArtickleCard({ Img }) {
+export function ArtickleCard({ Img, addClass="" }) {
   return (
     <Card
-      className="ProductCard ArtickleCard w-100 d-flex align-items-center rounded-5 col border-0  shadow p-3"
+      className={` ProductCard ArtickleCard w-100 d-flex align-items-center rounded-5 col border-0  shadow p-3 ${addClass} `}
       style={{ width: "18rem" }}
     >
       <Card.Img
@@ -27,9 +27,7 @@ export function ArtickleCard({ Img }) {
               بدون نظر
             </span>
             <span className="d-flex align-content-center align-items-center ">
-              <span class="material-symbols-outlined fs-3 mx-2">
-                category
-              </span>
+              <span class="material-symbols-outlined fs-3 mx-2">category</span>
               دسته: بازی ویدئویی
             </span>
             <i
