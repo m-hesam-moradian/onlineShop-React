@@ -39,6 +39,38 @@ export default function BlogHeader() {
 
     // Add more objects as needed
   ]);
+  const [MainBanner, setMainBanner] = useState([
+    {
+      date: "16 مهر 1401",
+      comment: "2 دیدگاه ها",
+      title: "جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند",
+      src: "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-11.jpg",
+    },
+    {
+      date: "15  مهر  1401",
+      comment: "بدون دیدگاه",
+      title: "رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود",
+      src: "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-10.jpg",
+    },
+    {
+      date: "12  مهر  1401",
+      comment: "بدون دیدگاه",
+      title: "۶ تکنولوژی که دیرتر از رقبا به آیفون آمده‌اند",
+      src: "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-9.jpg",
+    },
+    {
+      date: "12 مهر 1401",
+      comment: "2 دیدگاه ها",
+      title: "۱۰ بازیگر که با نقش‌های منفی اسکار گرفتند",
+      src: "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-8.jpg",
+    },
+    {
+      date: "11  مهر  1401",
+      comment: "بدون دیدگاه",
+      title: "بررسی ادوپرفیوم ویکتوریا سکرت",
+      src: "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/perfium-3.jpg",
+    },
+  ]);
   // setBlogCategory([1,2])
 
   return (
@@ -61,121 +93,116 @@ export default function BlogHeader() {
             <div
               id="miuDesign"
               className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+              style={{ backgroundImage: `url(${MainBanner[0].src})` }}
             >
               <div className="HeaderArtickleContainer z-1 m-5">
                 <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
                   <span className="d-flex align-content-center align-items-center ">
                     <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                    بدون نظر
+                    {MainBanner[0].comment}
                   </span>
                   <span className="d-flex align-content-center align-items-center ">
                     <span class="material-symbols-outlined fs-3 mx-2">
                       category
                     </span>
-                    دسته: بازی ویدئویی
+                    {MainBanner[0].date}
                   </span>
                 </span>
-                <span className="">
-                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-                </span>
+                <span className="">{MainBanner[0].title}</span>
               </div>
             </div>
           </div>
-          <div className="BlogArtickles p-0 col row m-0">
+          <div className="BlogArtickles p-0 col  row m-0">
             <div
               id="miuDesign"
               className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+              style={{ backgroundImage: `url(${MainBanner[1].src})` }}
             >
               <div className="HeaderArtickleContainer z-1 m-5">
                 <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
                   <span className="d-flex align-content-center align-items-center ">
                     <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                    بدون نظر
+                    {MainBanner[1].comment}
                   </span>
                   <span className="d-flex align-content-center align-items-center ">
                     <span class="material-symbols-outlined fs-3 mx-2">
                       category
                     </span>
-                    دسته: بازی ویدئویی
+                    {MainBanner[1].date}
                   </span>
                 </span>
-                <span className="">
-                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-                </span>
+                <span className="">{MainBanner[1].title}</span>
               </div>
             </div>
           </div>
         </div>
         <div className="col row gap-4 m-0">
-          <div className="BlogArtickles p-0 col row m-0">
+          <div className="BlogArtickles p-0 col  row m-0">
             <div
               id="miuDesign"
               className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+              style={{ backgroundImage: `url(${MainBanner[2].src})` }}
             >
               <div className="HeaderArtickleContainer z-1 m-5">
                 <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
                   <span className="d-flex align-content-center align-items-center ">
                     <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                    بدون نظر
+                    {MainBanner[2].comment}
                   </span>
                   <span className="d-flex align-content-center align-items-center ">
                     <span class="material-symbols-outlined fs-3 mx-2">
                       category
                     </span>
-                    دسته: بازی ویدئویی
+                    {MainBanner[2].date}
                   </span>
                 </span>
-                <span className="">
-                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-                </span>
+                <span className="">{MainBanner[2].title}</span>
               </div>
             </div>
           </div>
-          <div className="BlogArtickles p-0 col row m-0">
+          <div className="BlogArtickles p-0 col  row m-0">
             <div
               id="miuDesign"
               className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+              style={{ backgroundImage: `url(${MainBanner[3].src})` }}
             >
               <div className="HeaderArtickleContainer z-1 m-5">
                 <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
                   <span className="d-flex align-content-center align-items-center ">
                     <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                    بدون نظر
+                    {MainBanner[3].comment}
                   </span>
                   <span className="d-flex align-content-center align-items-center ">
                     <span class="material-symbols-outlined fs-3 mx-2">
                       category
                     </span>
-                    دسته: بازی ویدئویی
+                    {MainBanner[3].date}
                   </span>
                 </span>
-                <span className="">
-                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-                </span>
+                <span className="">{MainBanner[3].title}</span>
               </div>
             </div>
           </div>
-          <div className="BlogArtickles p-0 col row m-0">
+          <div className="BlogArtickles p-0 col  row m-0">
             <div
               id="miuDesign"
               className="HeaderArtickle col d-flex  shadow-lg   d-flex justify-content-center align-items-end  text-white  "
+              style={{ backgroundImage: `url(${MainBanner[4].src})` }}
             >
               <div className="HeaderArtickleContainer z-1 m-5">
                 <span className="d-flex align-content-center text-white opacity-75 d-flex justify-content-center   fs-6 my-2 gap-3 ">
                   <span className="d-flex align-content-center align-items-center ">
                     <i aria-hidden="true" class="far fa-comment mx-2"></i>
-                    بدون نظر
+                    {MainBanner[4].comment}
                   </span>
                   <span className="d-flex align-content-center align-items-center ">
                     <span class="material-symbols-outlined fs-3 mx-2">
                       category
                     </span>
-                    دسته: بازی ویدئویی
+                    {MainBanner[4].date}
                   </span>
                 </span>
-                <span className="">
-                  جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند
-                </span>
+                <span className="">{MainBanner[4].title}</span>
               </div>
             </div>
           </div>
