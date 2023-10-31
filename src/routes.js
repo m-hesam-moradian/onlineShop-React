@@ -3,6 +3,8 @@ import Footer from "./Components/Footer/Footer";
 import Index from "./pages/Index/Index";
 import Store from "./pages/Store/Store";
 import Blog from "./pages/Blog/Blog";
+import AbloutUs from './pages/AbloutUs/AbloutUs';
+import ContactUs from './pages/ContactUs/ContactUs';
 // import CourseInfo from "./pages/CourseInfo/CourseInfo";
 // import Category from "./pages/Category/Category";
 // import ArticleInfo from "./pages/ArticleInfo/ArticleInfo";
@@ -45,6 +47,26 @@ const routes = [
       <>
         <Navbar />
         <Blog />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/Ablout-Us",
+    element: (
+      <>
+        <Navbar />
+        <AbloutUs />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/Contact-Us",
+    element: (
+      <>
+        <Navbar />
+        <ContactUs />
         <Footer />
       </>
     ),

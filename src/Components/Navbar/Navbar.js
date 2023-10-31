@@ -342,16 +342,17 @@ export default function Navbar() {
             <a href=""></a>
           </li>
           <li>
-            <a href="">
+            <Link class="nav-link" to="/Ablout-Us">
               <span class="material-symbols-outlined">receipt_long</span> درباره
               ما{" "}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            {" "}
+            <Link class="nav-link" to="/Contact-Us">
               <span class="material-symbols-outlined">receipt_long</span> تماس
               با ما{" "}
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
