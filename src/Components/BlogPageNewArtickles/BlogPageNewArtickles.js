@@ -90,7 +90,6 @@ export default function BlogPageNewArtickles() {
           </div>
         }
       />
-      {/* <MyComponent /> */}
     </div>
   );
 }
