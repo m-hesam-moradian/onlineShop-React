@@ -52,6 +52,7 @@ const PaginationContainer = () => {
         <div className="col">
           {" "}
           <ArtickleCard
+            key={itemIndex}
             // addClass="col"
             Img="https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-9.jpg"
             title="رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود"
