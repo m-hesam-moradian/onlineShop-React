@@ -79,8 +79,8 @@ export default function AbloutUsConainer() {
       </div>
 
       {/*  ///////////////////////////////*/}
-      <div className="aboutUsBornStory p-md-5  row m-0 gap-4 ">
-        <div className="col col-md spinner-container ">
+      <div className="spinner p-md-5  row m-0 gap-4 ">
+        <div className="col col-md spinner-container d-flex align-items-center ">
           <div className="solar-system">
             <div className="sun"></div>
             <div className="planet-orbit  planet1-orbit">
@@ -89,6 +89,7 @@ export default function AbloutUsConainer() {
                   src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-box-icon-bg-3-1.png"
                   alt=""
                 />
+                
               </div>
             </div>
             <div className="planet-orbit  planet2-orbit">
@@ -137,6 +138,7 @@ export default function AbloutUsConainer() {
           </p>
         </div>
       </div>
+      <div></div>
     </div>
   );
 }
