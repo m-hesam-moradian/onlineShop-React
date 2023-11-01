@@ -12,22 +12,7 @@ import ContactUs from './pages/ContactUs/ContactUs';
 // import Articles from "./pages/Articles/Articles";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-// import Contact from "./pages/Contact/Contact";
-// import Search from "./pages/Search/Search";
-// import Session from "./pages/Session/Session";
 
-// import AdminPanel from "./pages/AdminPanel/index";
-// import Users from "./pages/AdminPanel/Users/Users";
-// import AdminCourses from "./pages/AdminPanel/Courses/Courses";
-// import Menus from "./pages/AdminPanel/Menus/Menus";
-// import AdminArticles from "./pages/AdminPanel/Articles/Articles";
-// import Draft from "./pages/AdminPanel/Articles/Draft";
-// import AdminCategory from "./pages/AdminPanel/Category/Category";
-// import AdminContact from "./pages/AdminPanel/Contact/Contact";
-// import Sessions from "./pages/AdminPanel/Sessions/Sessions";
-// import Comments from "./pages/AdminPanel/Comments/Comments";
-// import Offs from "./pages/AdminPanel/Offs/Offs";
-// import PAdminIndex from "./pages/AdminPanel/Index/Index";
 
 const routes = [
   { path: "/", element: <Index /> },
