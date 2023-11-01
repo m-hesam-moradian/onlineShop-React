@@ -55,7 +55,7 @@ const routes = [
     path: "/Ablout-Us",
     element: (
       <>
-        <Navbar />
+       
         <AbloutUs />
         <Footer />
       </>

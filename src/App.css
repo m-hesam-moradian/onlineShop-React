@@ -3,3 +3,11 @@
   background: var(--primary-color) !important;
   color: var(--white-color) !important;
 }
+.backColor {
+  /* border: none !important;  */
+  background: var(--primary-color) !important;
+}
+.textColor{
+  
+  color: var(--primary-color) !important;
+}
