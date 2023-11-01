@@ -14,18 +14,168 @@
   bottom: 0;
   width: 8%;
 }
-.AbloutUsConainerDescribtion{
-    max-width: 60rem;
+.AbloutUsConainerDescribtion {
+  max-width: 60rem;
 }
-.AbloutUsConainerDescribtionContainer{
-        display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
+.AbloutUsConainerDescribtionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 
-.AbloutUsConainerContactUsBtn:hover{
-    box-shadow: 0px 0px 20px 0px var(--primary-color);
+.AbloutUsConainerContactUsBtn:hover {
+  box-shadow: 0px 0px 20px 0px var(--primary-color);
+}
 
+/* ///////////// */
+.spinner-container {
+  background-image: url(https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-us-boxicon-bg-pattern-2.png);
+  padding-top: 2rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.solar-system {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 100px auto;
+  border: 2px dashed #cccccc9e;
+  border-radius: 50%;
+  animation: rotate-solar-system 5s linear infinite;
+}
+
+.sun {
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 75px;
+  left: 75px;
+}
+/* 
+.planet-orbit--1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px dashed #ccc;
+  border-radius: 50%;
+  animation: rotate-planet 5s linear infinite;
+}
+.planet-orbit--2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px dashed #ccc;
+  border-radius: 50%;
+  animation: rotate-planet 10s linear infinite;
+}
+.planet-orbit--3 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px dashed #ccc;
+  border-radius: 50%;
+  animation: rotate-planet 2s linear infinite;
+} */
+
+.planet-1 {
+  /* width: 20px; */
+  /* height: 20px; */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 164px;
+  /* left: -123px; */
+}
+.planet-1 img {
+  width: 4rem;
+}
+.planet-2 {
+  /* width: 20px; */
+  /* height: 20px; */
+  border-radius: 50%;
+  position: absolute;
+  top: 120px;
+  /* right: -5rem; */
+}
+.planet-2 img {
+  width: 5rem;
+}
+.planet-3 {
+  /* width: 20px; */
+  /* height: 20px; */
+  border-radius: 50%;
+  position: absolute;
+    bottom: 59px;
+    right: 154px;
+}
+.planet-3 img {
+  width: 3rem;
+}
+
+.planet1 {
+  animation: rotate-planet1 2s linear infinite;
+}
+
+.planet2 {
+  animation: rotate-planet2 5s linear infinite;
+}
+
+.planet3 {
+  animation: rotate-planet3 58s linear infinite;
+}
+
+@keyframes rotate-solar-system {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-planet {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-planet1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-planet2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-planet3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

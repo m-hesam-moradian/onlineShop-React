@@ -69,12 +69,72 @@ export default function AbloutUsConainer() {
             نخواهید یافت.
           </p>
         </div>
-        <div className="col col-md ">
+        <div className="col col-md d-flex justify-content-center align-items-center ">
           <img
-            className="m-5"
+            className="m-lg-5 w-75 "
             src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-pic-2.png"
             alt=""
           />
+        </div>
+      </div>
+
+      {/*  ///////////////////////////////*/}
+      <div className="aboutUsBornStory p-md-5  row m-0 gap-4 ">
+        <div className="col col-md spinner-container ">
+          <div className="solar-system">
+            <div className="sun"></div>
+            <div className="planet-orbit  planet1-orbit">
+              <div className="planet planet-1 planet1">
+                <img
+                  src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-box-icon-bg-3-1.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="planet-orbit  planet2-orbit">
+              <div className="planet planet-2 planet2">
+                {" "}
+                <img
+                  src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-box-icon-bg-2-1.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="planet-orbit  planet3-orbit">
+              <div className="planet planet-3 planet3">
+                <img
+                  src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-box-icon-bg-1-1.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md d-grid p-5 gap-4 justify-content-lg-center  align-content-center  ">
+          {" "}
+          {/* <span className="fs-5 text-secondary opacity-75 ">
+            درباره ما بیشتر بدانید
+          </span> */}
+          <span className="fs-1 fw-bold">
+            <span className="textColor"> الکتروشاپ </span>
+            اینجاست تا لوازم الکترونیکی رو با قیمت مناسب خرید کنی!
+          </span>
+          <p className="AbloutUsConainerDescribtion text-secondary fs-4 ">
+            ما پلتفرمی مبتنی بر تکنولوژی هستیم که ماموریت خود را ایجاد تجربه‌ای
+            خوشایند از خرید و فروش برای تمام مردم ایران می‌دانیم. به عنوان یکی
+            از پر مخاطب ترین فروشگاه های آنلاین ایران و منطقه در مسیر تبدیل شدن
+            به اولین مرجع خرید و فروش آنلاین هستیم.
+          </p>
+          <p className="AbloutUsConainerDescribtion text-secondary fs-4 ">
+            ما پلتفرمی مبتنی بر تکنولوژی هستیم که ماموریت خود را ایجاد تجربه‌ای
+            خوشایند از خرید و فروش برای تمام مردم ایران می‌دانیم. به عنوان یکی
+            از پر مخاطب ترین فروشگاه های آنلاین ایران و منطقه در مسیر تبدیل شدن
+            به اولین مرجع خرید و فروش آنلاین هستیم. ما پلتفرمی مبتنی بر تکنولوژی
+            هستیم که ماموریت خود را ایجاد تجربه‌ای خوشایند از خرید و فروش برای
+            تمام مردم ایران می‌دانیم. به عنوان یکی از پر مخاطب ترین فروشگاه های
+            آنلاین ایران و منطقه در مسیر تبدیل شدن به اولین مرجع خرید و فروش
+            آنلاین هستیم.
+          </p>
         </div>
       </div>
     </div>
