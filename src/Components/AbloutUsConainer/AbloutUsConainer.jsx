@@ -5,7 +5,6 @@ import "./AbloutUsConainer.css";
 export default function AbloutUsConainer() {
   return (
     <div className="AbloutUsConainer">
-      {" "}
       <Navbar />
       <div className="AbloutUsConainerDescribtionContainer gap-4 ">
         <div className="">
