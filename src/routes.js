@@ -71,11 +71,7 @@ const routes = [
       </>
     ),
   },
-  // { path: "/course-info/:courseName", element: <CourseInfo /> },
-  // { path: "/category-info/:categoryName/:page", element: <Category /> },
-  // { path: "/article-info/:articleName", element: <ArticleInfo /> },
-  // { path: "/courses/:page", element: <Courses /> },
-  // { path: "/articles/:page", element: <Articles /> },
+
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
   // { path: "/contact", element: <Contact /> },
