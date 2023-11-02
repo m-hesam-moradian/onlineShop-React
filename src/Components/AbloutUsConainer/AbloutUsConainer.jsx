@@ -77,6 +77,7 @@ export default function AbloutUsConainer() {
           />
         </div>
       </div>
+      
 
       {/*  ///////////////////////////////*/}
       <div className="spinner p-md-5  row m-0 gap-4 ">
