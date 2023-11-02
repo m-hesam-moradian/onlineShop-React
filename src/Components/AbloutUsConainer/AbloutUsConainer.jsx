@@ -92,8 +92,7 @@ export default function AbloutUsConainer() {
                 />
 
                 
-                
-                
+
               </div>
             </div>
             <div className="planet-orbit  planet2-orbit">
