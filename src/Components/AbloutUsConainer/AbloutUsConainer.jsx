@@ -77,7 +77,7 @@ export default function AbloutUsConainer() {
           />
         </div>
       </div>
-      
+
 
       {/*  ///////////////////////////////*/}
       <div className="spinner p-md-5  row m-0 gap-4 ">
@@ -90,6 +90,7 @@ export default function AbloutUsConainer() {
                   src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/about-box-icon-bg-3-1.png"
                   alt=""
                 />
+                
                 
               </div>
             </div>
