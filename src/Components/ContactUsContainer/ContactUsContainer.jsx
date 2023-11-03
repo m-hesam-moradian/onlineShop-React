@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactUsContainer() {
   return (
-    
+
     <div className="ContactUsContainer row m-0">
       <div className="ContactUsForm row mb-5">
         <div className="col-md col-12 d-grid align-content-center  gap-4 p-4">
@@ -80,7 +80,6 @@ export default function ContactUsContainer() {
             className="fs-5
            text-secondary opacity-75 "
                   >
-                      
             ways to contact us
           </span>
         </div>
