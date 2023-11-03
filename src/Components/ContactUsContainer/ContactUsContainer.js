@@ -78,7 +78,8 @@ export default function ContactUsContainer() {
           <span
             className="fs-5
            text-secondary opacity-75 "
-          >
+                  >
+                      
             ways to contact us
           </span>
         </div>
