@@ -11,3 +11,7 @@
   
   color: var(--primary-color) !important;
 }
+
+.jic{
+      justify-items: center;
+}

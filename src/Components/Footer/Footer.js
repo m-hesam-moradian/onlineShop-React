@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className=" Footer">
-      <div class=" bg-light  FooterContainer   row m-0 ">
+      <div class=" bg-light  FooterContainer   row m-0  ">
         <div className=" FooterStart order-1 order-sm-0  order-xl-1 col col-xl-auto ">
           <img
             className="FooterIMG"
