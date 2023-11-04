@@ -23,7 +23,7 @@ export function HeaderBottomCard() {
 
 export default function HeaderBottom() {
   return (
-    <div className="HeaderBottom  row g-3 ">
+    <div className="HeaderBottom  row g-3 p-4">
       <HeaderBottomCard />
       <HeaderBottomCard />
       <HeaderBottomCard />

@@ -17,6 +17,7 @@ export default function ChoosenProducts() {
   return (
     <>
       <ProductShower
+        
         persianTitle="محصولاتـــ منتخب"
         englishTitle="Choosen Products"
       />

@@ -6,50 +6,43 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 import "./Landing.css";
+import { API } from "../../FirebaseDatas";
 
 export default function Landing({ info }) {
   const [searchValue, setSearchValue] = useState("");
+  const [todayOff, setTodayOff] = useState([]);
   const navigate = useNavigate();
 
   const goToSearchPage = () => {
     navigate(`/search/${searchValue}`);
   };
+
+  useEffect(() => {
+    fetch(`${API}todaysOff.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setTodayOff(allData);
+      });
+  }, []);
+  console.log(todayOff);
   function UncontrolledExample() {
     return (
       <Carousel className="py-5" interval={2000}>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="First slide" /> */}
-          <BasicExample></BasicExample>
-
-          {/* <Carousel.Caption>
-            <h3>First slide label</h3>
-
-            
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="Second slide" /> */}
-          <BasicExample></BasicExample>
-          {/* <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="Third slide" /> */}
-          <BasicExample></BasicExample>
-          {/* <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
+        {todayOff.map((todayOffIndex) => (
+          <Carousel.Item>
+            <BasicExample
+              key={todayOffIndex.id}
+              img={todayOffIndex.img}
+              name={todayOffIndex.name}
+              price={todayOffIndex.price}
+              priceBeforeOff={todayOffIndex.priceBeforeOff}
+            ></BasicExample>
+          </Carousel.Item>
+        ))}
       </Carousel>
     );
   }
-  function BasicExample() {
+  function BasicExample({ img, name, price, priceBeforeOff }) {
     return (
       <Card
         className="w-100 d-flex align-items-center rounded-5  "
@@ -59,26 +52,20 @@ export default function Landing({ info }) {
           تخفیف های ویژه{" "}
           <span className="topTitleBold fw-bolder text-danger ">امروز</span>
         </span>
-        <Card.Img
-          className="w-50"
-          variant="top"
-          src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
-        />
+        <Card.Img className="w-50" variant="top" src={img} />
         <Card.Body className="w-100 ">
-          <Card.Title className="fw-bold ">
-            رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت
-          </Card.Title>
+          <Card.Title className="fw-bold ">{name}</Card.Title>
           <hr />
           <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
             <div className="cardTextContainer">
               <div className="SliderPrice">
                 <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
-                  880,000
+                  {priceBeforeOff}
                 </span>
                 <div className="SliderPrice-mainPriceContainer">
                   <span className="SliderPrice-price p-1 fw-bolder ">
                     {" "}
-                    780,000
+                    {price}
                   </span>
                   <span className="SliderPrice-toman text-secondary  ">
                     تومان{" "}
@@ -92,7 +79,6 @@ export default function Landing({ info }) {
           </Card.Text>
         </Card.Body>
       </Card>
-      
     );
   }
   return (

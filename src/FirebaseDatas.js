@@ -1,9 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 
+export const API = "https://dimondshop-6146f-default-rtdb.firebaseio.com/";
 export default function FirebaseDatas() {
-  const API = "https://dimondshop-6146f-default-rtdb.firebaseio.com/";
-
   useEffect(() => {
     //
     //
@@ -35,7 +34,7 @@ export default function FirebaseDatas() {
     //get
     //get
     //get
-    fetch(`https://dimondshop-6146f-default-rtdb.firebaseio.com/users.json`)
+    fetch(`${API}users.json`)
       .then((res) => res.json())
       .then((allData) => {
         console.log(allData);
@@ -211,24 +210,21 @@ export default function FirebaseDatas() {
         category: "MemoryCard , PcAndAccessories",
       },
       {
-        id: 17,
-        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-4.jpg",
-        name: "رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت",
-        model: "Desktop RAM DDR4 single channel 2666",
-        price: "1100000",
-        category: "MemoryCard , PcAndAccessories",
+        id: 3,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg",
+        name: "ماوس وریتی مدل V-MS5128",
+        model: "Verity V-MS5128 Wired Mouse",
+        price: "123,000",
+        category: "DigitalProduct , PcAndAccessories",
       },
     ];
-    fetch(
-      `https://dimondshop-6146f-default-rtdb.firebaseio.com/products.json`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(products),
-      }
-    )
+    fetch(`${API}products.json`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(products),
+    })
       .then((res) => res.json())
       .then((allData) => {
         console.log(allData);
@@ -236,6 +232,156 @@ export default function FirebaseDatas() {
       .catch((error) => {
         console.error("Error:", error);
       });
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //  todayOff
+    //
+    let todayOff = [
+      {
+        id: 1,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/ee736eae5676e99b44e0fbc7251799e8.jpg",
+        name: "هدست بلوتوث مدل Mickey Mouse DR-37",
+        model: "Mickey Mouse DR-37 bluetooth headset",
+        price: 65000000,
+        category: "PcAndAccessories , Headphones",
+        priceBeforeOff: "75000000",
+      },
+      {
+        id: 2,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/5a42381c2aac953ba7fd054d1b5c5178.jpg",
+        name: "فلش مموری وریتی مدل V827 USB3.0 ظرفیت 64 گیگابایت",
+        model: "V827 USB3.0 V827 flash memory with a capacity of 64 GB",
+        price: 890000,
+        category: "MemoryCard , PcAndAccessories",
+        priceBeforeOff: 990000,
+      },
+      {
+        id: 3,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-4.jpg",
+        name: "رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت",
+        model: "Desktop RAM DDR4 single channel 2666",
+        price: 1100000,
+        category: "MemoryCard , PcAndAccessories",
+        priceBeforeOff: 1300000,
+      },
+    ];
+    fetch(`${API}todaysOff.json`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(todayOff),
+    })
+      .then((res) => res.json())
+      .then((allData) => {
+        console.log(allData);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    //
+    //
+    //
+    //
+    //
+    //
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+    // WeeklyMostSales
+
+    let WeeklyMostSales = [
+      {
+        id: 1,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/976d83d1184d5105dfd61f5e84ccdc29.jpg",
+        name: "فلش مموری سیلیکون پاور مدل Touch T06 ظرفیت 32 گیگابایت",
+        model: "Silicon Power flash memory model Touch T06 capacity 32 GB",
+        price: "99000",
+        category: "DigitalProduct , PcAndAccessories",
+      },
+      {
+        id: 2,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/8305a1261130441edf0455f1f3a8d7b8.jpg",
+        name: "هدفون بلوتوثی باسئوس مدل Encok-NGWM01",
+        model: "Basseus bluetooth headphones model Encok-NGWM01",
+        price: "50000",
+        category: "PcAndAccessories , Headphones",
+      },
+
+      {
+        id: 3,
+        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/c1de2c764e7200f14f167501c598f088.jpg",
+        name: "ماوس بی سیم تسکو مدل TM 661W",
+        model: "Tesco wireless mouse model TM 661W",
+        price: "123,200,000",
+        category: "PcAndAccessories",
+      },
+    ];
+    fetch(`${API}WeeklyMostSales.json`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(WeeklyMostSales),
+    })
+      .then((res) => res.json())
+      .then((allData) => {
+        console.log(allData);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    //
     //
     //
     //
@@ -362,16 +508,13 @@ export default function FirebaseDatas() {
       },
     ];
 
-    fetch(
-      `https://dimondshop-6146f-default-rtdb.firebaseio.com/articles.json`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(articles),
-      }
-    )
+    fetch(`${API}articles.json`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(articles),
+    })
       .then((res) => res.json())
       .then((allData) => {
         console.log(allData);
