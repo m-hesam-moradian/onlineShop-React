@@ -28,7 +28,6 @@ export default function FirebaseDatas() {
     //get
     //get
     //get
-    //get
     fetch(`${API}users.json`)
       .then((res) => res.json())
       .then((allData) => {
