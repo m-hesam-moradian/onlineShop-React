@@ -23,7 +23,6 @@ export default function FirebaseDatas() {
     //
     //
     //
-    //
     //get
     //get
     //get
