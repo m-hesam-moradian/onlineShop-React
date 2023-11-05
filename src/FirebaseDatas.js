@@ -284,6 +284,7 @@ export default function FirebaseDatas() {
         category: "MemoryCard , PcAndAccessories",
         priceBeforeOff: 990000,
       },
+      
       {
         id: 3,
         img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-4.jpg",
