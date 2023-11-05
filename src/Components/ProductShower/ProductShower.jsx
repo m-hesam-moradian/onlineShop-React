@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard/ProductCard";
 import "./ProductShower.css";
 
 export default function ProductShower({
+  dataArray,
   persianTitle,
   englishTitle,
   SecondLine = false,
@@ -30,28 +31,29 @@ export default function ProductShower({
             {!InnerContainer ? (
               <>
                 <div className="row">
-                  <ProductCard></ProductCard>
-                  <ProductCard></ProductCard>
-                  <ProductCard></ProductCard>
-                  <ProductCard></ProductCard>
+                  <ProductCard dataArray={dataArray[1]}></ProductCard>
+                  <ProductCard dataArray={dataArray[2]}></ProductCard>
+                  <ProductCard dataArray={dataArray[3]}></ProductCard>
+                  <ProductCard dataArray={dataArray[4]}></ProductCard>
                 </div>
               </>
             ) : (
               InnerContainer
             )}
 
-            {SecondLine && (!InnerContainer ? (
-              <>
-                <div className="row d-none d-lg-flex  ">
-                  <ProductCard></ProductCard>
-                  <ProductCard></ProductCard>
-                  <ProductCard></ProductCard>
-                  <ProductCard></ProductCard>
-                </div>
-              </>
-            ) : (
-              InnerContainer
-            ))}
+            {SecondLine &&
+              (!InnerContainer ? (
+                <>
+                  <div className="row d-none d-lg-flex  ">
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                  </div>
+                </>
+              ) : (
+                InnerContainer
+              ))}
           </div>
         </div>
       </div>

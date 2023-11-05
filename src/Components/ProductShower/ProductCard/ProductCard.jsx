@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-function ProductCard() {
+function ProductCard({ dataArray }) {
+  console.log(dataArray);
+  // {
+  //   img, name, price, priceBeforeOff;
+  // }
   return (
     <Card
       className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
@@ -11,15 +15,9 @@ function ProductCard() {
           تخفیف های ویژه
           <span className="topTitleBold fw-bolder text-danger ">امروز</span>
         </span> */}
-      <Card.Img
-        className="w-50 mt-5"
-        variant="top"
-        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
-      />
+      <Card.Img className="w-50 mt-5" variant="top" src={`${dataArray.img}`} />
       <Card.Body className="w-100 ">
-        <Card.Title className="mx-4">
-          رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت
-        </Card.Title>
+        <Card.Title className="mx-4">{dataArray.name}</Card.Title>
         <hr />
         <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
           <div className="cardTextContainer">
@@ -29,7 +27,7 @@ function ProductCard() {
               </span>
               <div className="SliderPrice-mainPriceContainer">
                 <span className="SliderPrice-price p-1 fw-bolder ">
-                  780,000
+                  {dataArray.price}
                 </span>
                 <span className="SliderPrice-toman text-secondary  ">
                   تومان
