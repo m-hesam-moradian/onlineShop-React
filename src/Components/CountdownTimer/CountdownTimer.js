@@ -17,7 +17,7 @@ export default function CountdownTimer() {
         setTodayOff(allData);
       });
   }, []);
-  console.log(todayOff);
+  // console.log(todayOff);
   function UncontrolledExample() {
     return (
       <Carousel className="" interval={2000}>

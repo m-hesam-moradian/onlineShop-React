@@ -31,7 +31,7 @@ export default function FirebaseDatas() {
     fetch(`${API}users.json`)
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
+        // console.log(allData);
       });
 
     //
@@ -203,14 +203,14 @@ export default function FirebaseDatas() {
         price: "890000",
         category: "MemoryCard , PcAndAccessories",
       },
-      {
-        id: 3,
-        img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg",
-        name: "ماوس وریتی مدل V-MS5128",
-        model: "Verity V-MS5128 Wired Mouse",
-        price: "123,000",
-        category: "DigitalProduct , PcAndAccessories",
-      },
+      // {
+      //   id: 3,
+      //   img: "https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg",
+      //   name: "ماوس وریتی مدل V-MS5128",
+      //   model: "Verity V-MS5128 Wired Mouse",
+      //   price: "123,000",
+      //   category: "DigitalProduct , PcAndAccessories",
+      // },
     ];
     fetch(`${API}products.json`, {
       method: "PUT",
@@ -221,7 +221,7 @@ export default function FirebaseDatas() {
     })
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
+        // console.log(allData);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -298,7 +298,7 @@ export default function FirebaseDatas() {
     })
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
+        // console.log(allData);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -371,7 +371,7 @@ export default function FirebaseDatas() {
     })
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
+        // console.log(allData);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -512,7 +512,7 @@ export default function FirebaseDatas() {
     })
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
+        // console.log(allData);
       })
       .catch((error) => {
         console.error("Error:", error);

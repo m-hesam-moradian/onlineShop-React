@@ -24,7 +24,7 @@ export default function Landing({ info }) {
         setTodayOff(allData);
       });
   }, []);
-  console.log(todayOff);
+  // console.log(todayOff);
   function UncontrolledExample() {
     return (
       <Carousel className="py-5" interval={2000}>

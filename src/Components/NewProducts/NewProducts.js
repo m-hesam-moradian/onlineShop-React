@@ -5,7 +5,7 @@ import ProductShower from "../ProductShower/ProductShower";
 
 import "./NewProducts.css";
 
-export default function NewProducts({ SecondLine }) {
+export default function NewProducts({ SecondLine, dataArray }) {
   // const [courses, setCourses] = useState([]);
 
   // useEffect(() => {
@@ -14,9 +14,9 @@ export default function NewProducts({ SecondLine }) {
   //     .then((allCourses) => setCourses(allCourses));
   // }, []);
 
- 
   return (
     <ProductShower
+      dataArrayContainer={dataArray}
       persianTitle="محصولاتـــ جـدید"
       englishTitle="Recent Products"
       SecondLine={SecondLine}

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./ProductCard.css";
 function ProductCard({ dataArray }) {
-  console.log(dataArray);
+  // console.log(dataArray);
   // {
   //   img, name, price, priceBeforeOff;
   // }

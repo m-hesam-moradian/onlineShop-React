@@ -53,7 +53,7 @@ export default function App() {
         logout,
       }}
     >
-      <FirebaseDatas></FirebaseDatas>
+      {/* <FirebaseDatas></FirebaseDatas> */}
       {router}
     </AuthContext.Provider>
   );
