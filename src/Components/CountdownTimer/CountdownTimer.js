@@ -17,46 +17,53 @@ export default function CountdownTimer() {
         setTodayOff(allData);
       });
   }, []);
+  console.log(todayOff);
   function UncontrolledExample() {
     return (
       <Carousel className="" interval={2000}>
-        <Carousel.Item className="row ">
+        {todayOff &&
+          todayOff.map((data, index) => (
+            <Carousel.Item className="row m-0">
+              <div className="row m-0">
+                <ProductCard dataArray={data}></ProductCard>
+
+                {/* <div className="d-none d-md-flex col ">
+              <ProductCard dataArray={todayOff[0]}></ProductCard>
+            </div> */}
+              </div>
+            </Carousel.Item>
+          ))}
+
+        {/* <Carousel.Item className="row ">
           <div className="row">
-            <ProductCard></ProductCard>
+
+              <ProductCard dataArray={todayOff[1]}></ProductCard>
             <div className="d-none d-md-flex col ">
-              <ProductCard></ProductCard>
+              <ProductCard dataArray={todayOff[1]}></ProductCard>
             </div>
           </div>
         </Carousel.Item>
         <Carousel.Item className="row ">
           <div className="row">
-            <ProductCard></ProductCard>
+            <ProductCard dataArray={todayOff[2]}></ProductCard>
             <div className="d-none d-md-flex col ">
-              <ProductCard></ProductCard>
+              <ProductCard dataArray={todayOff[2]}></ProductCard>
             </div>
           </div>
         </Carousel.Item>
         <Carousel.Item className="row ">
           <div className="row">
-            <ProductCard></ProductCard>
+            <ProductCard dataArray={todayOff[1]}></ProductCard>
             <div className="d-none d-md-flex col ">
-              <ProductCard></ProductCard>
+              <ProductCard dataArray={todayOff[1]}></ProductCard>
             </div>
           </div>
-        </Carousel.Item>
-        <Carousel.Item className="row ">
-          <div className="row">
-            <ProductCard></ProductCard>
-            <div className="d-none d-md-flex col ">
-              <ProductCard></ProductCard>
-            </div>
-          </div>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     );
   }
   function ProductCard({ dataArray }) {
-    console.log(dataArray);
+    // console.log(dataArray);
     return (
       <Card
         className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col "
@@ -131,23 +138,23 @@ export default function CountdownTimer() {
             alt=""
           />
         </div>
-        {/* <div className="row d-none d-xl-flex">
-          {todayOff.length > 1 ? (
-            <>
-              <div className="CountdownTimerProducts col row">
-                <div className="d-block d-xl-none">
-                  <UncontrolledExample></UncontrolledExample>
-                </div>
-
-                <ProductCard dataArray={todayOff[1]}></ProductCard>
-                <ProductCard dataArray={todayOff[1]}></ProductCard>
-                <ProductCard dataArray={todayOff[1]}></ProductCard>
+        {todayOff.length > 1 ? (
+          <>
+            <div className="CountdownTimerProducts col row">
+              <div className="d-block d-lg-none">
+                <UncontrolledExample></UncontrolledExample>
               </div>
-            </>
-          ) : (
-            <p>Loading data...</p>
-          )}
-        </div> */}
+
+              <div className="row d-none d-lg-flex">
+                <ProductCard dataArray={todayOff[1]}></ProductCard>
+                <ProductCard dataArray={todayOff[2]}></ProductCard>
+                <ProductCard dataArray={todayOff[0]}></ProductCard>
+              </div>
+            </div>
+          </>
+        ) : (
+          <p>Loading data...</p>
+        )}
       </div>
     </div>
   );
