@@ -11,10 +11,6 @@ function ProductCard({ dataArray }) {
       className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
       style={{ width: "18rem" }}
     >
-      {/* <span className="topTitle p-4 text-secondary ">
-          تخفیف های ویژه
-          <span className="topTitleBold fw-bolder text-danger ">امروز</span>
-        </span> */}
       <Card.Img className="w-50 mt-5" variant="top" src={`${dataArray.img}`} />
       <Card.Body className="w-100 ">
         <Card.Title className="mx-4">{dataArray.name}</Card.Title>
@@ -23,7 +19,7 @@ function ProductCard({ dataArray }) {
           <div className="cardTextContainer">
             <div className="SliderPrice d-grid ">
               <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
-                880,000
+                {dataArray&& ''}
               </span>
               <div className="SliderPrice-mainPriceContainer">
                 <span className="SliderPrice-price p-1 fw-bolder ">

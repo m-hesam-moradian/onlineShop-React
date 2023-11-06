@@ -4,12 +4,25 @@ import ProductCard from "./ProductCard/ProductCard";
 import "./ProductShower.css";
 
 export default function ProductShower({
-  dataArray,
+
   persianTitle,
   englishTitle,
   SecondLine = false,
   InnerContainer = false,
 }) {
+  const [dataArrayContainer, setDataArrayContainer] = useState([]);
+  const [LetReturner, setLetReturner] = useState(false);
+
+  useEffect(() => {
+    fetch(`https://dimondshop-6146f-default-rtdb.firebaseio.com/products.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setDataArrayContainer(allData);
+        console.log(allData);
+        setLetReturner(true);
+      });
+  }, []);
+  console.log(dataArrayContainer[1]);
   return (
     <>
       <div className="ChoosenProductscontainer bg-light p-4 ">
@@ -27,34 +40,44 @@ export default function ProductShower({
           </span>
         </div>
         <div className="courses-content mt-5 ">
-          <div className="container">
-            {!InnerContainer ? (
-              <>
-                <div className="row">
-                  <ProductCard dataArray={dataArray[1]}></ProductCard>
-                  <ProductCard dataArray={dataArray[2]}></ProductCard>
-                  <ProductCard dataArray={dataArray[3]}></ProductCard>
-                  <ProductCard dataArray={dataArray[4]}></ProductCard>
-                </div>
-              </>
-            ) : (
-              InnerContainer
-            )}
-
-            {SecondLine &&
-              (!InnerContainer ? (
+          {LetReturner && (
+            <div className="container">
+              {!InnerContainer ? (
                 <>
-                  <div className="row d-none d-lg-flex  ">
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
+                  <div className="row">
+                    <ProductCard
+                      dataArray={dataArrayContainer[1]}
+                    ></ProductCard>
+                    <ProductCard
+                      dataArray={dataArrayContainer[2]}
+                    ></ProductCard>
+                    <ProductCard
+                      dataArray={dataArrayContainer[3]}
+                    ></ProductCard>
+                    <ProductCard
+                      dataArray={dataArrayContainer[4]}
+                    ></ProductCard>
                   </div>
                 </>
               ) : (
                 InnerContainer
-              ))}
-          </div>
+              )}
+
+              {SecondLine &&
+                (!InnerContainer ? (
+                  <>
+                    <div className="row d-none d-lg-flex  ">
+                      <ProductCard></ProductCard>
+                      <ProductCard></ProductCard>
+                      <ProductCard></ProductCard>
+                      <ProductCard></ProductCard>
+                    </div>
+                  </>
+                ) : (
+                  InnerContainer
+                ))}
+            </div>
+          )}
         </div>
       </div>
     </>
