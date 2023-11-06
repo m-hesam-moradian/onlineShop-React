@@ -29,7 +29,7 @@ export default function Index(props) {
           // setLetReturner(true);
         });
     }, []);
-  console.log(NewProductsArray);
+  // console.log(NewProductsArray);
   return (
     <>
       <Header />
@@ -40,8 +40,8 @@ export default function Index(props) {
       ) : (
         "Loading..."
       )}
-      {/* <MiddleBanner /> */}
-      {/* <MostSales /> */}
+      <MiddleBanner />
+      <MostSales />
       {/* <NewProducts SecondLine={false} /> */}
       {/* <BottomBanner /> */}
       {/* <RecentArticles /> */}
