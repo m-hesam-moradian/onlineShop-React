@@ -18,14 +18,14 @@ export default function Index(props) {
     <>
       <Header />
       <ChoosenProducts />
-      {/* <CountdownTimer />
-      <NewProducts SecondLine={true} />
-      <MiddleBanner />
-      <MostSales />
-      <NewProducts SecondLine={false} />
-      <BottomBanner />
-      <RecentArticles />
-      <Footer /> */}
+      <CountdownTimer />
+      {/* <NewProducts SecondLine={true} /> */}
+      {/* <MiddleBanner /> */}
+      {/* <MostSales /> */}
+      {/* <NewProducts SecondLine={false} /> */}
+      {/* <BottomBanner /> */}
+      {/* <RecentArticles /> */}
+      {/* <Footer /> */}
     </>
   );
 }

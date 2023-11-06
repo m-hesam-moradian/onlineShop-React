@@ -9,13 +9,13 @@ import "./Landing.css";
 import { API } from "../../FirebaseDatas";
 
 export default function Landing({ info }) {
-  const [searchValue, setSearchValue] = useState("");
+  // const [searchValue, setSearchValue] = useState("");
   const [todayOff, setTodayOff] = useState([]);
   const navigate = useNavigate();
 
-  const goToSearchPage = () => {
-    navigate(`/search/${searchValue}`);
-  };
+  // const goToSearchPage = () => {
+  //   navigate(`/search/${searchValue}`);
+  // };
 
   useEffect(() => {
     fetch(`${API}todaysOff.json`)

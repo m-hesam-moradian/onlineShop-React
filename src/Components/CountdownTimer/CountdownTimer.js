@@ -1,11 +1,24 @@
 import React from "react";
 import "./CountdownTimer.css";
-
 import Carousel from "react-bootstrap/Carousel";
 // import ExampleCarouselImage from "components/ExampleCarouselImage";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { API } from "../../FirebaseDatas";
+import { useEffect } from "react";
+import { useState } from "react";
 export default function CountdownTimer() {
+  const [todayOff, setTodayOff] = useState([]);
+
+
+
+    useEffect(() => {
+    fetch(`${API}todaysOff.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setTodayOff(allData);
+      });
+  }, []);
   function UncontrolledExample() {
     return (
       <Carousel className="" interval={2000}>
