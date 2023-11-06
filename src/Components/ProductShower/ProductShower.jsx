@@ -68,10 +68,18 @@ export default function ProductShower({
                 (!InnerContainer ? (
                   <>
                     <div className="row d-none d-lg-flex  ">
-                      <ProductCard></ProductCard>
-                      <ProductCard></ProductCard>
-                      <ProductCard></ProductCard>
-                      <ProductCard></ProductCard>
+                      <ProductCard
+                        dataArray={dataArrayContainer[5]}
+                      ></ProductCard>
+                      <ProductCard
+                        dataArray={dataArrayContainer[6]}
+                      ></ProductCard>
+                      <ProductCard
+                        dataArray={dataArrayContainer[7]}
+                      ></ProductCard>
+                      <ProductCard
+                        dataArray={dataArrayContainer[8]}
+                      ></ProductCard>
                     </div>
                   </>
                 ) : (

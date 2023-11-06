@@ -19,7 +19,7 @@ export default function Index(props) {
       <Header />
       <ChoosenProducts />
       <CountdownTimer />
-      {/* <NewProducts SecondLine={true} /> */}
+      <NewProducts SecondLine={true} />
       {/* <MiddleBanner /> */}
       {/* <MostSales /> */}
       {/* <NewProducts SecondLine={false} /> */}
