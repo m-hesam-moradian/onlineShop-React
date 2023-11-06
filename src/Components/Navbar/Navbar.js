@@ -67,30 +67,65 @@ export default function Navbar() {
               </button>
             </form>
             <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
-              <li class="nav-item p-2 active">
-                <a class="nav-link " aria-current="page" href="#">
-                  صفحه اصلی
-                </a>
+              {/* <li>
+                <Link class="nav-link" to="/">
+                  <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
+                </Link>
               </li>
-              <li class="nav-item p-2">
+              <li>
                 <Link class="nav-link" to="/store">
-                  فروشگاه
+                  <span class="material-symbols-outlined">storefront</span>{" "}
+                  فروشگاه{" "}
+                </Link>
+              </li>
+              <li>
+                <Link class="nav-link" to="/blog">
+                  <span class="material-symbols-outlined">receipt_long</span>{" "}
+                  وبلاگ{" "}
+                </Link>
+                <a href=""></a>
+              </li>
+              <li>
+                <Link class="nav-link" to="/Ablout-Us">
+                  <span class="material-symbols-outlined">receipt_long</span>{" "}
+                  درباره ما{" "}
+                </Link>
+              </li>
+              <li>
+                {" "}
+                <Link class="nav-link" to="/Contact-Us">
+                  <span class="material-symbols-outlined">receipt_long</span>{" "}
+                  تماس با ما{" "}
+                </Link>
+              </li> */}
+              <li class="nav-item p-2 active">
+                <Link class="nav-link" to="/">
+                  <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
                 </Link>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="#">
+                <Link class="nav-link" to="/store">
+                  <span class="material-symbols-outlined">storefront</span>{" "}
+                  فروشگاه{" "}
+                </Link>
+              </li>
+              <li class="nav-item p-2">
+                <Link class="nav-link" to="/blog">
+                  <span class="material-symbols-outlined">receipt_long</span>{" "}
                   وبلاگ{" "}
-                </a>
+                </Link>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="#">
-                  تماس باما
-                </a>
+                <Link class="nav-link" to="/Ablout-Us">
+                  <span class="material-symbols-outlined">receipt_long</span>{" "}
+                  درباره ما{" "}
+                </Link>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="#">
-                  درباره ما
-                </a>
+                <Link class="nav-link" to="/Contact-Us">
+                  <span class="material-symbols-outlined">receipt_long</span>{" "}
+                  تماس با ما{" "}
+                </Link>
               </li>
             </ul>
           </Offcanvas.Body>

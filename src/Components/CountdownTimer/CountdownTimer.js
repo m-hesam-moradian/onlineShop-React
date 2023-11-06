@@ -34,31 +34,7 @@ export default function CountdownTimer() {
             </Carousel.Item>
           ))}
 
-        {/* <Carousel.Item className="row ">
-          <div className="row">
-
-              <ProductCard dataArray={todayOff[1]}></ProductCard>
-            <div className="d-none d-md-flex col ">
-              <ProductCard dataArray={todayOff[1]}></ProductCard>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item className="row ">
-          <div className="row">
-            <ProductCard dataArray={todayOff[2]}></ProductCard>
-            <div className="d-none d-md-flex col ">
-              <ProductCard dataArray={todayOff[2]}></ProductCard>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item className="row ">
-          <div className="row">
-            <ProductCard dataArray={todayOff[1]}></ProductCard>
-            <div className="d-none d-md-flex col ">
-              <ProductCard dataArray={todayOff[1]}></ProductCard>
-            </div>
-          </div>
-        </Carousel.Item> */}
+      
       </Carousel>
     );
   }
