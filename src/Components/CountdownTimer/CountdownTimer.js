@@ -10,9 +10,7 @@ import { useState } from "react";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
 
-
-
-    useEffect(() => {
+  useEffect(() => {
     fetch(`${API}todaysOff.json`)
       .then((res) => res.json())
       .then((allData) => {
@@ -57,7 +55,8 @@ export default function CountdownTimer() {
       </Carousel>
     );
   }
-  function ProductCard() {
+  function ProductCard({ dataArray }) {
+    console.log(dataArray);
     return (
       <Card
         className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col "
@@ -70,23 +69,23 @@ export default function CountdownTimer() {
         <Card.Img
           className="w-50 mt-5"
           variant="top"
-          src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
+          src={`${dataArray.img}`}
         />
         <Card.Body className="w-100 ">
-          <Card.Title className="mx-4">
-            رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت
-          </Card.Title>
+          <Card.Title className="mx-4">{dataArray.name}</Card.Title>
           <hr />
           <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
             <div className="cardTextContainer">
               <div className="SliderPrice d-grid ">
-                <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
-                  880,000
-                </span>
+                {dataArray && (
+                  <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
+                    {dataArray.priceBeforeOff}
+                  </span>
+                )}
                 <div className="SliderPrice-mainPriceContainer">
                   <span className="SliderPrice-price p-1 fw-bolder ">
                     {" "}
-                    780,000
+                    {dataArray.price}
                   </span>
                   <span className="SliderPrice-toman text-secondary  ">
                     تومان{" "}
@@ -132,17 +131,23 @@ export default function CountdownTimer() {
             alt=""
           />
         </div>
-        <div className="CountdownTimerProducts col row">
-          <div className="d-block d-xl-none">
-            <UncontrolledExample></UncontrolledExample>
-          </div>
-          <div className="row d-none d-xl-flex">
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            {/* <ProductCard></ProductCard> */}
-          </div>
-        </div>
+        {/* <div className="row d-none d-xl-flex">
+          {todayOff.length > 1 ? (
+            <>
+              <div className="CountdownTimerProducts col row">
+                <div className="d-block d-xl-none">
+                  <UncontrolledExample></UncontrolledExample>
+                </div>
+
+                <ProductCard dataArray={todayOff[1]}></ProductCard>
+                <ProductCard dataArray={todayOff[1]}></ProductCard>
+                <ProductCard dataArray={todayOff[1]}></ProductCard>
+              </div>
+            </>
+          ) : (
+            <p>Loading data...</p>
+          )}
+        </div> */}
       </div>
     </div>
   );

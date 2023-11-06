@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard/ProductCard";
 
 import "./ProductShower.css";
+import { API } from "../../FirebaseDatas";
 
 export default function ProductShower({
 
@@ -14,7 +15,7 @@ export default function ProductShower({
   const [LetReturner, setLetReturner] = useState(false);
 
   useEffect(() => {
-    fetch(`https://dimondshop-6146f-default-rtdb.firebaseio.com/products.json`)
+    fetch(`${API}products.json`)
       .then((res) => res.json())
       .then((allData) => {
         setDataArrayContainer(allData);
