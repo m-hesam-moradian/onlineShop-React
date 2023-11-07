@@ -5,7 +5,7 @@ import ProductShower from "../ProductShower/ProductShower";
 
 import "./NewProducts.css";
 
-export default function NewProducts({ SecondLine, dataArray }) {
+export default function NewProducts({   SecondLine = false, dataArray }) {
   // const [courses, setCourses] = useState([]);
 
   // useEffect(() => {

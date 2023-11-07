@@ -1,19 +1,45 @@
 .ArtickleCardIMG {
-        height: 17rem;
-    object-fit: cover;
+  height: 17rem;
+  object-fit: cover;
 }
-.ArtickleCardArrow{
-    margin-right: auto;
-        font-size: small;
-    background: gray;
-    padding: 4px;
-    border-radius: 50%;
-    color: white;
+.ArtickleCardArrow {
+  margin-right: auto;
+  font-size: small;
+  background: gray;
+  padding: 4px;
+  border-radius: 50%;
+  color: white;
 }
-.MiniArtickleCardIMG{
-    width: 12rem;
+.MiniArtickleCardIMG {
+  width: 12rem;
 }
-.MiniArtickleCard .card-title{
-        font-size: 12px;
+.MiniArtickleCard .card-title {
+  font-size: 12px;
 }
-.MiniArtickleCardsContainer{}
+.MiniArtickleCardsContainer {
+}
+.ArtickleCard:hover .ArtickleCardIMG {
+  filter: brightness(50%) blur(1px);
+}
+.ArtickleCardIMG {
+  transition: all 0.3s;
+}
+.ArtickleCardIMGcontainer {
+  position: relative;
+  display: inline-block;
+}
+.ArtickleCardIMGcontainer::after {
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  content: "اطلاعات بیشتر ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.ArtickleCard:hover .ArtickleCardIMGcontainer::after {
+  opacity: 1;
+}

@@ -42,10 +42,14 @@ export default function Index(props) {
       )}
       <MiddleBanner />
       <MostSales />
-      {/* <NewProducts SecondLine={false} /> */}
-      {/* <BottomBanner /> */}
-      {/* <RecentArticles /> */}
-      {/* <Footer /> */}
+      {NewProductsArray.length > 0 ? (
+        <NewProducts dataArray={NewProductsArray} />
+      ) : (
+        "Loading..."
+      )}
+      <BottomBanner />
+      <RecentArticles />
+      <Footer />
     </>
   );
 }
