@@ -1,4 +1,3 @@
-// import React from "react";
 import "./marketComponent.css";
 import React, { useEffect, useState } from "react";
 import Slider from "@mui/material/Slider";
