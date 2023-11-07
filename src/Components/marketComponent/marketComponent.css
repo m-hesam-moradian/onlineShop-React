@@ -1,16 +1,60 @@
 .marketComponentFilterPart {
-/* width: 40rem; */
+  /* width: 40rem; */
   min-width: 40rem;
 }
-.dropdown-menu{
+.dropdown-menu {
   min-width: 100%;
 }
-.dropdown-item{
+.dropdown-item {
   transition: all 0.3s;
 }
-.dropdown-item:hover{
-     padding: 6px 10px;
+.dropdown-item:hover {
+  padding: 6px 10px;
   background-color: white;
 }
+.searchContainer {
+  position: relative;
+}
+.searchList {
+  position: absolute;
+  background-color: rgba(228, 228, 228, 0.94);
+  overflow-x: auto;
+  width: 100%;
+  z-index: 1;
+  /* overflow-y: scroll;2 */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+  /* direction: rtl; */
+}
+.searchList a {
+  display: flex;
+  align-items: center;
+  /* color: gray; */
+  text-wrap: balance;
+  transition: all 0.3s;
+}
+.searchList a:hover {
+  scale: 1.1;
+  background-color: white;
+}
+.searchList a img {
+  border-radius: 10px;
+  width: 10rem;
+  margin: 1rem;
+}
+.searchList a :hover {
+}
 
+ul::-webkit-scrollbar {
+  width: 4px;
+}
 
+ul::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  border: 3px solid #f5f5f5;
+}

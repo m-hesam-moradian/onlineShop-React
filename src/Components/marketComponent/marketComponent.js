@@ -223,6 +223,7 @@ const MyComponent = ({ ProductArray }) => {
 
 export default function MarketComponent() {
   const [ProductArray, setProductArray] = useState([]);
+  const [searchResult, setsearchResult] = useState([]);
   useEffect(() => {
     fetch(`${API}products.json`)
       .then((res) => res.json())
@@ -235,22 +236,40 @@ export default function MarketComponent() {
   return (
     <div className="row">
       <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 col-12 col-lg-auto">
-        <input
-          type="text"
-          class="form-control fs-4 p-3 rounded-4"
-          name=""
-          id=""
-          aria-describedby="helpId"
-          placeholder="جستجو ..."
-          onChange={(event) => {
-            console.log(event.target.value);
-            let result = ProductArray.filter((product) =>
-              product.name.includes(event.target.value)
-            );
+        <div className="searchContainer   ">
+          {" "}
+          <input
+            type="text"
+            class="form-control fs-4 p-3 rounded-4"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder="جستجو ..."
+            onChange={(event) => {
+              console.log(event.target.value);
+              let result = ProductArray.filter((product) =>
+                product.name
+                  .toUpperCase()
+                  .includes(event.target.value.toUpperCase())
+              );
+              if (!event.target.value) {
+                result = [];
+              }
+              setsearchResult(result);
 
-            console.log(result);
-          }}
-        />
+              console.log(result);
+            }}
+          />
+          <ul className="searchList rounded-4 d-grid gap-3">
+            {searchResult &&
+              searchResult.map((event) => (
+                <a href="#" className=" searchListItem">
+                  <img src={event.img} alt="" />
+                  <span>{event.name}</span>
+                </a>
+              ))}
+          </ul>
+        </div>
         <a class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4">
           جستجو کنید
         </a>
