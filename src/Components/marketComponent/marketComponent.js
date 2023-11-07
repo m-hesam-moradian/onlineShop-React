@@ -10,6 +10,120 @@ import Pagination from "@mui/material/Pagination";
 import ProductCard from "../ProductShower/ProductCard/ProductCard";
 import { API } from "../../FirebaseDatas";
 
+export default function MarketComponent() {
+  const [ProductArray, setProductArray] = useState([]);
+  const [OrginalDatas, setOrginalDatas] = useState();
+  const [searchResult, setsearchResult] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API}products.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setProductArray(allData);
+        setOrginalDatas(allData);
+        console.log(OrginalDatas);
+      });
+  }, []);
+  return (
+    <div className="row">
+      <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 col-12 col-lg-auto">
+        <div className="searchContainer   ">
+          {" "}
+          <input
+            type="text"
+            class="form-control fs-4 p-3 rounded-4"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder="جستجو ..."
+            onChange={(event) => {
+              // console.log(event.target.value);
+              let result = ProductArray.filter((product) =>
+                product.name
+                  .toUpperCase()
+                  .includes(event.target.value.toUpperCase())
+              );
+              if (!event.target.value) {
+                result = [];
+              }
+              setsearchResult(result);
+
+              // console.log(result);
+            }}
+          />
+          <ul className="searchList rounded-4 d-grid gap-3">
+            {searchResult &&
+              searchResult.map((event) => (
+                <a href="#" className=" searchListItem">
+                  <img src={event.img} alt="" />
+                  <span>{event.name}</span>
+                </a>
+              ))}
+          </ul>
+        </div>
+        <a class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4">
+          جستجو کنید
+        </a>
+        <DoubleSlider
+          setProductArray={setProductArray}
+          OrginalDatas={OrginalDatas && OrginalDatas}
+        />
+        <DropDown
+          title="دسته بندی محصولات"
+          items={[
+            "انواع کارت حافظه",
+            "تجهیزات شبکه",
+            "کالای دیجیتال",
+            "کامپیوتر و لوازم جانبی",
+            "هدفون، هدست",
+          ]}
+        />
+        <DropDown
+          title="برند محصولات"
+          items={["kaku", "rapoo", "silicon power", "verity", "تسکو"]}
+        />
+
+        <a
+          class="btn btn-sm w-100 btn-color fs-4 p-3 rounded-4"
+          href="#"
+          role="button"
+        >
+          {" "}
+          اعمال فیلتر ها{" "}
+        </a>
+      </div>
+      <div class="col p-5 marketComponentProducts">
+        <header className="d-flex justify-content-between border p-5 rounded-5">
+          <h2 className="fs-2 fw-bold text-dark opacity-75 ">فروشگاه</h2>
+          <div className="">
+            <DropDown
+              title="مرتب سازی براساس ..."
+              items={[
+                "براساس قیمت از ارزان ترین به گران ترین",
+                "براساس قیمت از گران ترین به ارزان ترین",
+                "براساس تاریخ از قدیمی ترین به جدیدترین",
+                "براساس تاریخ از جدیدترین به قدیمی ترین",
+              ]}
+            />
+          </div>
+        </header>
+        {/* <div className="marketComponentProductContainer row m-0">
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div> */}
+        {/* <Market></Market> */}
+        <div className="marketComponentProductContainer row m-0">
+          <MyComponent
+            ProductArray={ProductArray}
+            // setProductArray={setProductArray}
+          ></MyComponent>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function DropDown({ title, items }) {
   return (
     <Dropdown>
@@ -25,6 +139,7 @@ function DropDown({ title, items }) {
           // {console.log(element)}
           return (
             <Dropdown.Item
+              key={element}
               href="#/action-1 "
               className="d-flex justify-content-start "
             >
@@ -38,11 +153,31 @@ function DropDown({ title, items }) {
   );
 }
 
-const DoubleSlider = () => {
+const DoubleSlider = ({ OrginalDatas, setProductArray }) => {
+  // const productsWithNumberPrices = OrginalDatas.map((product) => ({
+  //   ...product,
+  //   price: parseInt(product.price.replace(/,/g, "")),
+  // }));
+
+  // console.log(productsWithNumberPrices);
+
+  // console.log(OrginalDatas);
+  // const prices = OrginalDatas.map((product) => product.price);
+  // const maxPrice = Math.max(...prices);
+  // const minPrice = Math.min(...prices);
+
   const [range, setRange] = useState([2500, 5000]);
 
   const handleChange = (event, newValue) => {
     setRange(newValue);
+    let filteredPrices =
+      OrginalDatas &&
+      OrginalDatas.filter(
+        (index) => index.price >= newValue[0] && index.price <= newValue[1]
+      );
+    // console.log(filteredPrices);
+    // console.log(newValue[0].toLocaleString("en-US"));
+    setProductArray(filteredPrices);
   };
 
   return (
@@ -60,7 +195,8 @@ const DoubleSlider = () => {
         max={10000}
       />
       <span className="m-auto d-flex justify-content-center text-secondary ">
-        {range[1]} تومان — {range[0]} تومان
+        {range[1].toLocaleString("en-US")} تومان —{" "}
+        {range[0].toLocaleString("en-US")} تومان
       </span>
       {/* <Typography className="d-flex">
       </Typography> */}
@@ -220,112 +356,3 @@ const MyComponent = ({ ProductArray }) => {
 // }
 
 // Now, you can use resultArray in your JSX code
-
-export default function MarketComponent() {
-  const [ProductArray, setProductArray] = useState([]);
-  const [searchResult, setsearchResult] = useState([]);
-  useEffect(() => {
-    fetch(`${API}products.json`)
-      .then((res) => res.json())
-      .then((allData) => {
-        setProductArray(allData);
-        console.log(allData);
-        // setLetReturner(true);
-      });
-  }, []);
-  return (
-    <div className="row">
-      <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 col-12 col-lg-auto">
-        <div className="searchContainer   ">
-          {" "}
-          <input
-            type="text"
-            class="form-control fs-4 p-3 rounded-4"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder="جستجو ..."
-            onChange={(event) => {
-              console.log(event.target.value);
-              let result = ProductArray.filter((product) =>
-                product.name
-                  .toUpperCase()
-                  .includes(event.target.value.toUpperCase())
-              );
-              if (!event.target.value) {
-                result = [];
-              }
-              setsearchResult(result);
-
-              console.log(result);
-            }}
-          />
-          <ul className="searchList rounded-4 d-grid gap-3">
-            {searchResult &&
-              searchResult.map((event) => (
-                <a href="#" className=" searchListItem">
-                  <img src={event.img} alt="" />
-                  <span>{event.name}</span>
-                </a>
-              ))}
-          </ul>
-        </div>
-        <a class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4">
-          جستجو کنید
-        </a>
-        <DoubleSlider />
-        <DropDown
-          title="دسته بندی محصولات"
-          items={[
-            "انواع کارت حافظه",
-            "تجهیزات شبکه",
-            "کالای دیجیتال",
-            "کامپیوتر و لوازم جانبی",
-            "هدفون، هدست",
-          ]}
-        />
-        <DropDown
-          title="برند محصولات"
-          items={["kaku", "rapoo", "silicon power", "verity", "تسکو"]}
-        />
-
-        <a
-          class="btn btn-sm w-100 btn-color fs-4 p-3 rounded-4"
-          href="#"
-          role="button"
-        >
-          {" "}
-          اعمال فیلتر ها{" "}
-        </a>
-      </div>
-      <div class="col p-5 marketComponentProducts">
-        <header className="d-flex justify-content-between border p-5 rounded-5">
-          <h2 className="fs-2 fw-bold text-dark opacity-75 ">فروشگاه</h2>
-          <div className="">
-            <DropDown
-              title="مرتب سازی براساس ..."
-              items={[
-                "براساس قیمت از ارزان ترین به گران ترین",
-                "براساس قیمت از گران ترین به ارزان ترین",
-                "براساس تاریخ از قدیمی ترین به جدیدترین",
-                "براساس تاریخ از جدیدترین به قدیمی ترین",
-              ]}
-            />
-          </div>
-        </header>
-        {/* <div className="marketComponentProductContainer row m-0">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div> */}
-        {/* <Market></Market> */}
-        <div className="marketComponentProductContainer row m-0">
-          <MyComponent
-            ProductArray={ProductArray}
-            // setProductArray={setProductArray}
-          ></MyComponent>
-        </div>
-      </div>
-    </div>
-  );
-}
