@@ -74,6 +74,7 @@ export function MiniArtickleCard({ ArtickleArray }) {
                       category
                     </span>
                     دسته: {ArtickleArray.category} */}
+                    
                   </span>
                 </span>
               </Card.Title>
