@@ -7,6 +7,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Pagination from "@mui/material/Pagination";
+import ProductCard from "../ProductShower/ProductCard/ProductCard";
+import { API } from "../../FirebaseDatas";
 
 function DropDown({ title, items }) {
   return (
@@ -66,56 +68,56 @@ const DoubleSlider = () => {
   );
 };
 
-function ProductCard() {
-  return (
-    <Card
-      className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
-      style={{ width: "18rem" }}
-    >
-      {/* <span className="topTitle p-4 text-secondary ">
-          تخفیف های ویژه{" "}
-          <span className="topTitleBold fw-bolder text-danger ">امروز</span>
-        </span> */}
-      <Card.Img
-        className="w-50 mt-5"
-        variant="top"
-        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
-      />
-      <Card.Body className="w-100 ">
-        <Card.Title className="mx-4">
-          رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت
-        </Card.Title>
-        <hr />
-        <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
-          <div className="cardTextContainer">
-            <div className="SliderPrice d-grid ">
-              <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
-                880,000
-              </span>
-              <div className="SliderPrice-mainPriceContainer">
-                <span className="SliderPrice-price p-1 fw-bolder ">
-                  {" "}
-                  780,000
-                </span>
-                <span className="SliderPrice-toman text-secondary  ">
-                  تومان{" "}
-                </span>
-              </div>
-            </div>
-          </div>
-          <Button
-            variant="white"
-            className="ProductCardBTN border-secondary rounded-4  "
-          >
-            <span class="ProductCardBTNSpan material-symbols-outlined p-1 text-secondary ">
-              shopping_bag
-            </span>
-          </Button>
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  );
-}
+// function ProductCard() {
+//   return (
+//     <Card
+//       className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
+//       style={{ width: "18rem" }}
+//     >
+//       {/* <span className="topTitle p-4 text-secondary ">
+//           تخفیف های ویژه{" "}
+//           <span className="topTitleBold fw-bolder text-danger ">امروز</span>
+//         </span> */}
+//       <Card.Img
+//         className="w-50 mt-5"
+//         variant="top"
+//         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-2.jpg"
+//       />
+//       <Card.Body className="w-100 ">
+//         <Card.Title className="mx-4">
+//           رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت
+//         </Card.Title>
+//         <hr />
+//         <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
+//           <div className="cardTextContainer">
+//             <div className="SliderPrice d-grid ">
+//               <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
+//                 880,000
+//               </span>
+//               <div className="SliderPrice-mainPriceContainer">
+//                 <span className="SliderPrice-price p-1 fw-bolder ">
+//                   {" "}
+//                   780,000
+//                 </span>
+//                 <span className="SliderPrice-toman text-secondary  ">
+//                   تومان{" "}
+//                 </span>
+//               </div>
+//             </div>
+//           </div>
+//           <Button
+//             variant="white"
+//             className="ProductCardBTN border-secondary rounded-4  "
+//           >
+//             <span class="ProductCardBTNSpan material-symbols-outlined p-1 text-secondary ">
+//               shopping_bag
+//             </span>
+//           </Button>
+//         </Card.Text>
+//       </Card.Body>
+//     </Card>
+//   );
+// }
 
 // import React, { useEffect, useState } from 'react';
 
@@ -150,6 +152,17 @@ function ProductCard() {
 const itemsPerPage = 9; // Number of items per page
 
 const MyComponent = () => {
+  const [ProductArray, setProductArray] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API}products.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setProductArray(allData);
+        console.log(allData);
+        // setLetReturner(true);
+      });
+  }, []);
   // useEffect(() => {
   //   Replace this with the actual API endpoint
   //   fetch('https://api.example.com/products')
@@ -158,8 +171,7 @@ const MyComponent = () => {
   //     .catch((error) => console.error('Error fetching data: ', error));
   // }, []);
 
-  const apiData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 2, 3, 4, 5, 6, 7, 8];
-
+  const apiData = ProductArray;
   const [page, setPage] = useState(1); // Current page
   const data = apiData;
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -173,13 +185,17 @@ const MyComponent = () => {
 
   return (
     <>
-      {currentData.map((item, itemIndex) => (
-        <ProductCard
-          className="MarketProductCard"
-          key={itemIndex}
-          data={item}
-        />
-      ))}
+      {console.log("")}
+      {ProductArray &&
+        currentData.map((item, itemIndex) => (
+          <ProductCard
+            dataArray={item}
+            className="MarketProductCard"
+            key={itemIndex}
+            data={item}
+          />
+        ))}
+
       {/* <Market></Market> */}
 
       {/* Render Pagination component */}

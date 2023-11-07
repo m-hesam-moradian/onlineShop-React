@@ -6,7 +6,7 @@
 // import "./BlogPageNewArtickles.css";
 // import { ArtickleCard } from "../RecentArticles/RecentArticles";
 
-import React from "react";
+import React, { useEffect } from "react";
 // import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Card";
 import ProductShower from "../ProductShower/ProductShower";
@@ -22,9 +22,22 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Pagination from "@mui/material/Pagination";
 import { useState } from "react";
+import { API } from "../../FirebaseDatas";
 // import { MyComponent } from "../marketComponent/marketComponent";
 const itemsPerPage = 8;
 const PaginationContainer = () => {
+  const [ArtickleArray, setArtickleArray] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API}articles.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setArtickleArray(allData);
+        console.log(allData);
+        // setLetReturner(true);
+      });
+  }, []);
+
   // useEffect(() => {
   //   Replace this with the actual API endpoint
   //   fetch('https://api.example.com/products')
@@ -33,7 +46,7 @@ const PaginationContainer = () => {
   //     .catch((error) => console.error('Error fetching data: ', error));
   // }, []);
 
-  const apiData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 2, 3, 4, 5];
+  const apiData = ArtickleArray;
 
   const [page, setPage] = useState(1); // Current page
   const data = apiData;
@@ -48,22 +61,22 @@ const PaginationContainer = () => {
 
   return (
     <>
-      {currentData.map((item, itemIndex) => (
-        <div className="col">
-          {" "}
-          <ArtickleCard
-            key={itemIndex}
-            // addClass="col"
-            Img="https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-9.jpg"
-            title="رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود"
-          />
-        </div>
-        // <ProductCard
-        //   className="MarketProductCard"
-        //   key={itemIndex}
-        //   data={item}
-        // />
-      ))}
+      {ArtickleArray &&
+        currentData.map((item, itemIndex) => (
+          <div className="col">
+            {" "}
+            <ArtickleCard
+              ArtickleArray={item}
+              key={itemIndex}
+              // addClass="col"
+            />
+          </div>
+          // <ProductCard
+          //   className="MarketProductCard"
+          //   key={itemIndex}
+          //   data={item}
+          // />
+        ))}
       {/* <Market></Market> */}
 
       {/* Render Pagination component */}
