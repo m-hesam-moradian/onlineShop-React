@@ -151,18 +151,18 @@ const DoubleSlider = () => {
 // }
 const itemsPerPage = 9; // Number of items per page
 
-const MyComponent = () => {
-  const [ProductArray, setProductArray] = useState([]);
+const MyComponent = ({ ProductArray }) => {
+  // const [ProductArray, setProductArray] = useState([]);
+  // useEffect(() => {
+  //   fetch(`${API}products.json`)
+  //     .then((res) => res.json())
+  //     .then((allData) => {
+  //       setProductArray(allData);
+  //       console.log(allData);
+  //       // setLetReturner(true);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    fetch(`${API}products.json`)
-      .then((res) => res.json())
-      .then((allData) => {
-        setProductArray(allData);
-        console.log(allData);
-        // setLetReturner(true);
-      });
-  }, []);
   // useEffect(() => {
   //   Replace this with the actual API endpoint
   //   fetch('https://api.example.com/products')
@@ -185,7 +185,7 @@ const MyComponent = () => {
 
   return (
     <>
-      {console.log("")}
+      {/* {console.log("")} */}
       {ProductArray &&
         currentData.map((item, itemIndex) => (
           <ProductCard
@@ -221,7 +221,17 @@ const MyComponent = () => {
 
 // Now, you can use resultArray in your JSX code
 
-export default function marketComponent() {
+export default function MarketComponent() {
+  const [ProductArray, setProductArray] = useState([]);
+  useEffect(() => {
+    fetch(`${API}products.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setProductArray(allData);
+        console.log(allData);
+        // setLetReturner(true);
+      });
+  }, []);
   return (
     <div className="row">
       <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 col-12 col-lg-auto">
@@ -232,6 +242,14 @@ export default function marketComponent() {
           id=""
           aria-describedby="helpId"
           placeholder="جستجو ..."
+          onChange={(event) => {
+            console.log(event.target.value);
+            let result = ProductArray.filter((product) =>
+              product.name.includes(event.target.value)
+            );
+
+            console.log(result);
+          }}
         />
         <a class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4">
           جستجو کنید
@@ -283,7 +301,10 @@ export default function marketComponent() {
         </div> */}
         {/* <Market></Market> */}
         <div className="marketComponentProductContainer row m-0">
-          <MyComponent></MyComponent>
+          <MyComponent
+            ProductArray={ProductArray}
+            // setProductArray={setProductArray}
+          ></MyComponent>
         </div>
       </div>
     </div>
