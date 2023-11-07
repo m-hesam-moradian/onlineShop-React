@@ -36,7 +36,6 @@ export default function MarketComponent() {
             aria-describedby="helpId"
             placeholder="جستجو ..."
             onChange={(event) => {
-              // console.log(event.target.value);
               let result = ProductArray.filter((product) =>
                 product.name
                   .toUpperCase()
