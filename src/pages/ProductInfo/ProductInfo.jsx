@@ -53,7 +53,7 @@ export default function ProductInfo() {
         </Breadcrumb.Item>
 
         <Breadcrumb.Item  >
-          {ProductData && ProductData.name}
+          {ProductData.name}
         </Breadcrumb.Item>
       </Breadcrumb>
       <Footer />
