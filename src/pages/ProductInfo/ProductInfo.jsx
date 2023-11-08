@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import "./ProductInfo.css";
 
 export default function ProductInfo() {
   const [ProductArray, setProductArray] = useState([]);
@@ -34,26 +35,26 @@ export default function ProductInfo() {
       });
   }, []);
 
-  console.log(ProductArray, productID, ProductData);
+  console.log( ProductData);
   {
     console.log();
   }
   return (
     <div>
       <Navbar />
-      <Breadcrumb dir="ltr" className="">
-        <Breadcrumb.Item dir="" href="#">
+      <Breadcrumb dir="ltr" className="backColor fs-3 m-5 p-2 rounded-4 d-grid">
+        <Breadcrumb.Item  href="#">
           خانه{" "}
         </Breadcrumb.Item>
 
         <Breadcrumb.Item
-          dir=""
+          
           href="https://getbootstrap.com/docs/4.0/components/breadcrumb/"
         >
           کالای دیجیتال
         </Breadcrumb.Item>
 
-        <Breadcrumb.Item dir="" active>
+        <Breadcrumb.Item  >
           {ProductData && ProductData.name}
         </Breadcrumb.Item>
       </Breadcrumb>

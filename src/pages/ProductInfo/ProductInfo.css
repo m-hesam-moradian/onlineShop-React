@@ -1,0 +1,7 @@
+.breadcrumb{
+        margin: 0;
+    padding: 5px 1rem;
+}
+.breadcrumb-item a{
+    color: rgba(255, 255, 255, 0.86);
+}
