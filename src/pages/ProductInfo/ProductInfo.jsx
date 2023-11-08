@@ -39,7 +39,7 @@ export default function ProductInfo() {
       <Breadcrumb dir="ltr" className="backColor fs-3 m-5 p-2 rounded-4 d-grid">
         <Breadcrumb.Item href="#">خانه </Breadcrumb.Item>
 
-        <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+        <Breadcrumb.Item href="#">
           کالای دیجیتال
         </Breadcrumb.Item>
 
