@@ -11,7 +11,7 @@ import { API } from "../../FirebaseDatas";
 
 export default function MarketComponent() {
   const [ProductArray, setProductArray] = useState([]);
-  const [OrginalDatas, setOrginalDatas] = useState();
+  const [OrginalDatas, setOrginalDatas] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
 
   useEffect(() => {
@@ -20,11 +20,11 @@ export default function MarketComponent() {
       .then((allData) => {
         setProductArray(allData);
         setOrginalDatas(allData);
-        console.log(OrginalDatas);
+        // console.log(OrginalDatas);
       });
   }, []);
   return (
-    <div className="row">
+    <div className="row m-0">
       <div class="marketComponentFilterPart p-5 gap-4 d-grid h-100 col-12 col-lg-auto">
         <div className="searchContainer   ">
           {" "}
@@ -67,19 +67,36 @@ export default function MarketComponent() {
           OrginalDatas={OrginalDatas && OrginalDatas}
         />
         <DropDown
+          setProductArray={setProductArray}
+          OrginalDatas={OrginalDatas}
           title="دسته بندی محصولات"
           items={[
-            "انواع کارت حافظه",
-            "تجهیزات شبکه",
-            "کالای دیجیتال",
-            "کامپیوتر و لوازم جانبی",
-            "هدفون، هدست",
+            {
+              title: "انواع کارت حافظه",
+              category: `MemoryCard`,
+            },
+            {
+              title: "تجهیزات شبکه",
+              category: `NetworkTools`,
+            },
+            {
+              title: "کالای دیجیتال",
+              category: `DigitalProduct`,
+            },
+            {
+              title: "کامپیوتر و لوازم جانبی",
+              category: `PcAndAccessories`,
+            },
+            {
+              title: "هدفون، هدست",
+              category: `Headphones`,
+            },
           ]}
         />
-        <DropDown
+        {/* <DropDown
           title="برند محصولات"
           items={["kaku", "rapoo", "silicon power", "verity", "تسکو"]}
-        />
+        /> */}
 
         <a
           class="btn btn-sm w-100 btn-color fs-4 p-3 rounded-4"
@@ -97,10 +114,22 @@ export default function MarketComponent() {
             <DropDown
               title="مرتب سازی براساس ..."
               items={[
-                "براساس قیمت از ارزان ترین به گران ترین",
-                "براساس قیمت از گران ترین به ارزان ترین",
-                "براساس تاریخ از قدیمی ترین به جدیدترین",
-                "براساس تاریخ از جدیدترین به قدیمی ترین",
+                {
+                  title: "براساس قیمت از ارزان ترین به گران ترین",
+                  category: `cte`,
+                },
+                {
+                  title: "براساس قیمت از گران ترین به ارزان ترین",
+                  category: `etc`,
+                },
+                {
+                  title: "براساس تاریخ از قدیمی ترین به جدیدترین",
+                  category: `otn`,
+                },
+                {
+                  title: "براساس تاریخ از جدیدترین به قدیمی ترین",
+                  category: `nto`,
+                },
               ]}
             />
           </div>
@@ -121,8 +150,14 @@ export default function MarketComponent() {
     </div>
   );
 }
+// const targetCategory = '';
 
-function DropDown({ title, items }) {
+function DropDown({ title, items, setProductArray, OrginalDatas }) {
+  // const [targetCategory, setTargetCategory] = useState("PcAndAccessories");
+
+       console.log(OrginalDatas);
+  
+const products = OrginalDatas;
   return (
     <Dropdown>
       <Dropdown.Toggle
@@ -133,6 +168,7 @@ function DropDown({ title, items }) {
       </Dropdown.Toggle>
 
       <Dropdown.Menu className=" rounded-4 bg-light border-0 shadow fs-5 ">
+   
         {items.map((element) => {
           // {console.log(element)}
           return (
@@ -140,9 +176,52 @@ function DropDown({ title, items }) {
               key={element}
               href="#/action-1 "
               className="d-flex justify-content-start "
+              onClick={() => {
+                const targetCategory = element.category;
+
+                if (targetCategory == "cte") {
+                  console.log(products);
+                  // setProductArray(filteredObjects)
+                } else if (targetCategory == "etc") {
+                  // setProductArray(filteredObjects)
+                } else if (targetCategory == "otn") {
+                  // setProductArray(filteredObjects)
+                } else if (targetCategory == "nto") {
+                  // setProductArray(filteredObjects)
+                } else {
+                  // else if () { }
+                  // else if () { }
+                  // else if () { }
+                  // else if () { }
+                  // else if () { }
+                  const filteredObjects =
+                    targetCategory &&
+                    OrginalDatas &&
+                    OrginalDatas.filter((object) =>
+                      object.category.includes(targetCategory)
+                    );
+
+                  filteredObjects && setProductArray(filteredObjects);
+                  console.log(OrginalDatas && filteredObjects);
+                }
+                // if (element === "براساس قیمت") {
+                //   let tempArr;
+                //   switch (targetCategory) {
+                //     case "Electronics":
+                //       tempArr = OrginalDatas.sort((a, b) => a.price - b.price);
+                //       break;
+                //     case "Furniture":
+                //       tempArr = OrginalDatas.sort((a, b) => a.price - b.price);
+                //       break;
+                //     default:
+                //       tempArr = OrginalDatas.sort((a, b) => a.price - b.price);
+                //       break;
+                //   }
+                // }
+              }}
             >
               {/* {console.log(element)} */}
-              {element}
+              {element.title}
             </Dropdown.Item>
           );
         })}
@@ -164,7 +243,7 @@ const DoubleSlider = ({ OrginalDatas, setProductArray }) => {
   // const maxPrice = Math.max(...prices);
   // const minPrice = Math.min(...prices);
 
-  const [range, setRange] = useState([2500, 5000]);
+  const [range, setRange] = useState([10000, 1000000]);
 
   const handleChange = (event, newValue) => {
     setRange(newValue);
@@ -190,7 +269,7 @@ const DoubleSlider = ({ OrginalDatas, setProductArray }) => {
         getAriaValueText={(value) => `${value}`}
         step={1}
         min={0}
-        max={10000}
+        max={2000000}
       />
       <span className="m-auto d-flex justify-content-center text-secondary ">
         {range[1].toLocaleString("en-US")} تومان —{" "}
