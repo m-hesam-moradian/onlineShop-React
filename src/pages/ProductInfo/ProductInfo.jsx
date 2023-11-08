@@ -6,10 +6,9 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
-
 export default function ProductInfo() {
   const [ProductArray, setProductArray] = useState([]);
-  const [OrginalDatas, setOrginalDatas] = useState([]);
+  const [ProductData, setProductData] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
   const { productID } = useParams();
   const navigate = useNavigate();
@@ -23,18 +22,18 @@ export default function ProductInfo() {
         return res.json();
       })
       .then((allData) => {
-        setProductArray(allData);
-        setOrginalDatas(allData);
+        // setProductArray(allData);
+        // setOrginalDatas(allData);
         // console.log(allData);
-      })
-      .catch((error) => {
+        setProductData(
+          allData.find((item) => parseInt(item.id) == parseInt(productID))
+        );
+    })
+    .catch((error) => {
         console.error("Error fetching data:", error);
       });
   }, []);
 
-  const ProductData = ProductArray.find(
-    (item) => parseInt(item.id) == parseInt(productID)
-  );
   console.log(ProductArray, productID, ProductData);
   {
     console.log();
@@ -55,12 +54,10 @@ export default function ProductInfo() {
         </Breadcrumb.Item>
 
         <Breadcrumb.Item dir="" active>
-          {ProductData&&ProductData.name}
+          {ProductData && ProductData.name}
         </Breadcrumb.Item>
       </Breadcrumb>
       <Footer />
     </div>
   );
 }
-
-
