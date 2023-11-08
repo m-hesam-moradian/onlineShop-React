@@ -23,9 +23,7 @@ export default function ProductInfo() {
         return res.json();
       })
       .then((allData) => {
-        // setProductArray(allData);
-        // setOrginalDatas(allData);
-        // console.log(allData);
+ 
         setProductData(
           allData.find((item) => parseInt(item.id) == parseInt(productID))
         );
