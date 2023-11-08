@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./ProductCard.css";
+import { Navigate, useNavigate } from "react-router-dom";
 function ProductCard({ dataArray }) {
+      const navigate = useNavigate();
   // console.log(dataArray);
   // {
   //   img, name, price, priceBeforeOff;
   // }
   return (
     <Card
+      onClick={() => navigate(`/products/${dataArray.id}`)}
       className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
       style={{ width: "18rem" }}
     >

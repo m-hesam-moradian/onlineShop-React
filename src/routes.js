@@ -12,6 +12,7 @@ import ContactUs from './pages/ContactUs/ContactUs';
 // import Articles from "./pages/Articles/Articles";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import ProductInfo from "./pages/ProductInfo/ProductInfo";
 
 
 const routes = [
@@ -40,7 +41,6 @@ const routes = [
     path: "/Ablout-Us",
     element: (
       <>
-       
         <AbloutUs />
         <Footer />
       </>
@@ -57,11 +57,11 @@ const routes = [
     ),
   },
 
+  { path: "/products/:productID", element: <ProductInfo /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
   // { path: "/contact", element: <Contact /> },
   // { path: "/search/:value", element: <Search /> },
-  // { path: "/:courseName/:sessionID", element: <Session /> },
 
   // {
   //   path: "/p-admin/*",

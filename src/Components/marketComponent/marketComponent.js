@@ -155,9 +155,9 @@ export default function MarketComponent() {
 function DropDown({ title, items, setProductArray, OrginalDatas }) {
   // const [targetCategory, setTargetCategory] = useState("PcAndAccessories");
 
-       console.log(OrginalDatas);
-  
-const products = OrginalDatas;
+  //        console.log(OrginalDatas);
+
+  // const products = OrginalDatas;
   return (
     <Dropdown>
       <Dropdown.Toggle
@@ -168,27 +168,25 @@ const products = OrginalDatas;
       </Dropdown.Toggle>
 
       <Dropdown.Menu className=" rounded-4 bg-light border-0 shadow fs-5 ">
-   
         {items.map((element) => {
           // {console.log(element)}
           return (
             <Dropdown.Item
               key={element}
-              href="#/action-1 "
               className="d-flex justify-content-start "
               onClick={() => {
                 const targetCategory = element.category;
 
-                if (targetCategory == "cte") {
-                  console.log(products);
-                  // setProductArray(filteredObjects)
-                } else if (targetCategory == "etc") {
-                  // setProductArray(filteredObjects)
-                } else if (targetCategory == "otn") {
-                  // setProductArray(filteredObjects)
-                } else if (targetCategory == "nto") {
-                  // setProductArray(filteredObjects)
-                } else {
+                // if (targetCategory == "cte") {
+                //   // console.log(products);
+                //   // setProductArray(filteredObjects)
+                // } else if (targetCategory == "etc") {
+                //   // setProductArray(filteredObjects)
+                // } else if (targetCategory == "otn") {
+                //   // setProductArray(filteredObjects)
+                // } else if (targetCategory == "nto") {
+                //   // setProductArray(filteredObjects)
+                // } else {
                   // else if () { }
                   // else if () { }
                   // else if () { }
@@ -203,7 +201,7 @@ const products = OrginalDatas;
 
                   filteredObjects && setProductArray(filteredObjects);
                   console.log(OrginalDatas && filteredObjects);
-                }
+                // }
                 // if (element === "براساس قیمت") {
                 //   let tempArr;
                 //   switch (targetCategory) {
@@ -243,7 +241,7 @@ const DoubleSlider = ({ OrginalDatas, setProductArray }) => {
   // const maxPrice = Math.max(...prices);
   // const minPrice = Math.min(...prices);
 
-  const [range, setRange] = useState([10000, 1000000]);
+  const [range, setRange] = useState([100000, 500000]);
 
   const handleChange = (event, newValue) => {
     setRange(newValue);
@@ -269,7 +267,7 @@ const DoubleSlider = ({ OrginalDatas, setProductArray }) => {
         getAriaValueText={(value) => `${value}`}
         step={1}
         min={0}
-        max={2000000}
+        max={1000000}
       />
       <span className="m-auto d-flex justify-content-center text-secondary ">
         {range[1].toLocaleString("en-US")} تومان —{" "}
