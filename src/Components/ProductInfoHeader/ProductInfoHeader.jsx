@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductInfoHeader.css";
 
 export default function ProductInfoHeader({ ProductData }) {
-  console.log(ProductData);
+  // console.log(ProductData);
   return (
     <div className="row m-0 ProductInfoHeader  ">
       <div className="col-12 col-md col-lg-3 rounded-5 shadow m-md-5 p-5 d-grid align-content-center ">
