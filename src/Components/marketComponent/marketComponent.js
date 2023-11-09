@@ -8,11 +8,14 @@ import Card from "react-bootstrap/Card";
 import Pagination from "@mui/material/Pagination";
 import ProductCard from "../ProductShower/ProductCard/ProductCard";
 import { API } from "../../FirebaseDatas";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 export default function MarketComponent() {
   const [ProductArray, setProductArray] = useState([]);
   const [OrginalDatas, setOrginalDatas] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${API}products.json`)
@@ -52,7 +55,11 @@ export default function MarketComponent() {
           <ul className="searchList rounded-4 d-grid gap-3">
             {searchResult &&
               searchResult.map((event) => (
-                <a href="#" className=" searchListItem">
+                <a
+                  onClick={() => navigate(`/products/${event.id}`)}
+                  href=""
+                  className=" searchListItem"
+                >
                   <img src={event.img} alt="" />
                   <span>{event.name}</span>
                 </a>

@@ -17,7 +17,7 @@ export default function MostSales() {
       .then((allData) => {
         setTodayOff(allData);
         // setarticles(allData);
-        console.log(allData);
+        // console.log(allData);
       });
   }, []);
   function UncontrolledExample({ dataArraypromp }) {

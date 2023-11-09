@@ -96,7 +96,7 @@ export default function RecentArticles() {
         // setLetReturner(true);
       });
   }, []);
-  console.log(ArtickleArray);
+  // console.log(ArtickleArray);
   return (
     <>
       <ProductShower

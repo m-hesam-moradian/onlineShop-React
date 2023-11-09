@@ -5,8 +5,23 @@ import "./Navbar.css";
 import { BiSearchAlt } from "react-icons/bi";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { API } from "../../FirebaseDatas";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const [ProductArray, setProductArray] = useState([]);
+  const [OrginalDatas, setOrginalDatas] = useState([]);
+  const [searchResult, setsearchResult] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API}products.json`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setProductArray(allData);
+        setOrginalDatas(allData);
+        // console.log(OrginalDatas);
+      });
+  }, []);
   const [isHovered, setIsHovered] = useState(false);
 
   const [allMenus, setAllMenus] = useState(false);
@@ -56,7 +71,20 @@ export default function Navbar() {
                 type="text"
                 className="searchInput bg-transparent "
                 placeholder="جستجوی محصولات"
+                onChange={(event) => {
+                  let result = ProductArray.filter((product) =>
+                    product.name
+                      .toUpperCase()
+                      .includes(event.target.value.toUpperCase())
+                  );
+                  if (!event.target.value) {
+                    result = [];
+                  }
+                  setsearchResult(result);
+                  // console.log(result);
+                }}
               />
+
               <button
                 className="searchBTN bg-transparent "
                 aria-label="search submit"
@@ -65,7 +93,21 @@ export default function Navbar() {
                 {/* <BiSearchAlt /> */}
                 <i className="fas fa-search "></i>
               </button>
+              <ul className="searchList rounded-4 d-grid gap-3">
+                {searchResult &&
+                  searchResult.map((event) => (
+                    <a
+                      onClick={() => navigate(`/products/${event.id}`)}
+                      href=""
+                      className=" searchListItem"
+                    >
+                      <img src={event.img} alt="" />
+                      <span>{event.name}</span>
+                    </a>
+                  ))}
+              </ul>
             </form>
+
             <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
               {/* <li>
                 <Link class="nav-link" to="/">
@@ -133,6 +175,8 @@ export default function Navbar() {
       </>
     );
   }
+  const navigate = useNavigate();
+
   return (
     <div className="main-header">
       <div className="container-fluid">
@@ -159,7 +203,20 @@ export default function Navbar() {
               type="text"
               className="searchInput"
               placeholder="جستجوی محصولات"
+              onChange={(event) => {
+                let result = ProductArray.filter((product) =>
+                  product.name
+                    .toUpperCase()
+                    .includes(event.target.value.toUpperCase())
+                );
+                if (!event.target.value) {
+                  result = [];
+                }
+                setsearchResult(result);
+                // console.log(result);
+              }}
             />
+
             <button
               className="searchBTN"
               aria-label="search submit"
@@ -168,7 +225,21 @@ export default function Navbar() {
               {/* <BiSearchAlt /> */}
               <i className="fas fa-search "></i>
             </button>
+            <ul className="searchList rounded-4 d-grid gap-3">
+              {searchResult &&
+                searchResult.map((event) => (
+                  <a
+                    onClick={() => navigate(`/products/${event.id}`)}
+                    href=""
+                    className=" searchListItem"
+                  >
+                    <img src={event.img} alt="" />
+                    <span>{event.name}</span>
+                  </a>
+                ))}
+            </ul>
           </form>
+
           <div className="main-header__left">
             <a
               href="#"
