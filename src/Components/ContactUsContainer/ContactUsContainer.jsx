@@ -1,6 +1,15 @@
 import React from "react";
 import "./ContactUsContainer.css";
+import { useState } from "react";
+import { API } from "../../FirebaseDatas";
+import { Alert } from "react-bootstrap";
+
 export default function ContactUsContainer() {
+  const [Name, setName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Message, setMessage] = useState("");
+  const [active, setactive] = useState(false);
+
   return (
     <div className="ContactUsContainer row m-0">
       <div className="ContactUsForm row mb-5">
@@ -22,6 +31,10 @@ export default function ContactUsContainer() {
                 id=""
                 aria-describedby="helpId"
                 placeholder="نام و نام خانوادگی شما"
+                onChange={(event) => {
+                  setName(event.target.value);
+                  console.log("Name: " + Name);
+                }}
               />
             </div>
             <div class=" col ">
@@ -35,6 +48,10 @@ export default function ContactUsContainer() {
                 id=""
                 aria-describedby="helpId"
                 placeholder="شماره تلفن شما"
+                onChange={(event) => {
+                  setNumber(event.target.value);
+                  console.log("Number: " + Number);
+                }}
               />
             </div>
             <div className="col-12">
@@ -48,6 +65,10 @@ export default function ContactUsContainer() {
                   id=""
                   rows="3"
                   placeholder="سوالتان در در این قسمت مطرح کنید"
+                  onChange={(event) => {
+                    setMessage(event.target.value);
+                    console.log("Message: " + Message);
+                  }}
                 ></textarea>
               </div>
             </div>
@@ -56,9 +77,54 @@ export default function ContactUsContainer() {
               class=" AbloutUsConainerContactUsBtn btn fs-3  btn-color px-4 py-2 rounded-4 mt-3"
               href="#"
               role="button"
+              onClick={(event) => {
+                event.preventDefault();
+                console.log("Name: " + Name);
+                console.log("Number: " + Number);
+                console.log("Message: " + Message);
+                const obj = {
+                  Name: Name,
+                  Number: Number,
+                  Message: Message,
+                };
+                fetch(`${API}ContactUsMessages.json`)
+                  .then((res) => res.json())
+                  .then((data) => {
+                    // Append new data to existing data
+                    data.push(obj);
+
+                    // Update the file with the new data
+                    fetch(`${API}ContactUsMessages.json`, {
+                      method: "PUT",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(data),
+                    })
+                      .then((res) => res.json())
+                      .then((allData) => {
+                        // console.log(allData);
+                        setactive(true);
+                        setTimeout(() => {
+                          setactive(false);
+                        }, 3000);
+                      })
+                      .catch((error) => {
+                        console.error("Error:", error);
+                      });
+                  })
+                  .catch((error) => {
+                    console.error("Error:", error);
+                  });
+
+                console.log(obj);
+              }}
             >
               ارســال پـیــام
             </a>
+            <Alert variant="success" className={`${!active && "d-none "}`}>
+              پیام شما با موفقیت ارسال شد{" "}
+            </Alert>
           </div>
         </div>
         <div className="col-md col-12 d-flex justify-content-center ">
@@ -302,7 +368,8 @@ export default function ContactUsContainer() {
         </div>
       </div>
       <div className="row m-0 mb-5 p-5">
-        <img className="col w-100 rounded-5"
+        <img
+          className="col w-100 rounded-5"
           src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/map-pic-1.jpg"
           alt=""
         />
