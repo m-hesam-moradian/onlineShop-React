@@ -36,7 +36,7 @@ export default function ProductInfo() {
         console.error("Error fetching data:", error);
       });
   }, []);
-  console.log(AllDatas);
+  // console.log(AllDatas);
   function Description({ ProductData }) {
     return (
       <Tabs
@@ -78,7 +78,7 @@ export default function ProductInfo() {
 
   // console.log(ProductData);
   {
-    console.log([...AllDatas]);
+    // console.log([...AllDatas]);
   }
   return (
     <div>
