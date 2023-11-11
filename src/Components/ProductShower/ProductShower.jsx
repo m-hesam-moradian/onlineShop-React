@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard/ProductCard";
 
 import "./ProductShower.css";
+import { useNavigate } from "react-router-dom";
 // import { API } from "../../FirebaseDatas";
 
 export default function ProductShower({
@@ -11,9 +12,8 @@ export default function ProductShower({
   SecondLine = false,
   InnerContainer = false,
 }) {
-
   // const [LetReturner, setLetReturner] = useState(false);
-
+const navigate = useNavigate();
 
   // console.log(dataArrayContainer[1]);
   return (
@@ -27,7 +27,11 @@ export default function ProductShower({
             {englishTitle}
           </span>
           <hr className="col m-1 text-secondary   " />
-          <span className="ChoosenProductsShowMore d-flex  align-items-center text-secondary    ">
+          <span
+            role="button"
+            onClick={() => navigate(`/store`)}
+            className="ChoosenProductsShowMore d-flex  align-items-center text-secondary    "
+          >
             مشاهده همه
             <span class="material-symbols-outlined">chevron_left</span>
           </span>

@@ -27,11 +27,12 @@ export default function Landing({ info }) {
   // console.log(todayOff);
   function UncontrolledExample() {
     return (
-      <Carousel className="py-5" interval={2000}>
+      <Carousel className="py-5" interval={2000} role="button">
         {todayOff.map((todayOffIndex) => (
-          <Carousel.Item>
+          <Carousel.Item key={todayOffIndex.id}>
             <BasicExample
               key={todayOffIndex.id}
+              id={todayOffIndex.id}
               img={todayOffIndex.img}
               name={todayOffIndex.name}
               price={todayOffIndex.price}
@@ -42,9 +43,10 @@ export default function Landing({ info }) {
       </Carousel>
     );
   }
-  function BasicExample({ img, name, price, priceBeforeOff }) {
+  function BasicExample({ id,img, name, price, priceBeforeOff }) {
     return (
       <Card
+      onClick={() => navigate(`/products/${id}`)}
         className="w-100 d-flex align-items-center rounded-5  "
         style={{ width: "18rem" }}
       >
@@ -89,6 +91,8 @@ export default function Landing({ info }) {
             <a className=" w-100 my-3">
               {" "}
               <img
+                role="button"
+                onClick={() => navigate(`/store`)}
                 className="w-100 h-100 rounded-5 "
                 src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/Slider-3.jpg"
                 alt=""

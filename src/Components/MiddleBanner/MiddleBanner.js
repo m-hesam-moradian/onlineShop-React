@@ -1,11 +1,17 @@
 import React from "react";
 
 import "./MiddleBanner.css";
+import { useNavigate } from "react-router-dom";
 
 export default function MiddleBanner() {
+  const navigate = useNavigate();
   return (
     <div className="MiddleBanner">
-      <div className="MiddleBannerContainr row h-100">
+      <div
+        role="button"
+        onClick={() => navigate(`/store`)}
+        className="MiddleBannerContainr row h-100"
+      >
         <div className="col  BigCursor  d-md-flex px-5 rounded-5 m-4 align-items-center py-5">
           <img
             className=""

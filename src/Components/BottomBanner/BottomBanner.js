@@ -1,9 +1,15 @@
 import React from "react";
 import "./BottomBanner.css";
+import { useNavigate } from "react-router-dom";
 
 export default function BottomBanner() {
+  const navigate = useNavigate();
   return (
-    <div className="BottomBanner">
+    <div
+      role="button"
+      onClick={() => navigate(`/store`)}
+      className="BottomBanner"
+    >
       <div className="BottomBannerContainer rounded-5 ">
         <div className="BottomBannerBG flex-md-row  flex-column   d-flex justify-content-between  h-100 w-100  rounded-5 ">
           <div className="BottomBannerRight col-auto d-md-flex d-grid  text-white ">

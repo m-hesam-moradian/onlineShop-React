@@ -5,6 +5,7 @@ import ProductShower from "../ProductShower/ProductShower";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { API } from "../../FirebaseDatas";
+import { useNavigate } from "react-router-dom";
 
 export function ArtickleCard({ Img, addClass = "", ArtickleArray }) {
   return (
@@ -86,6 +87,8 @@ export function MiniArtickleCard({ ArtickleArray }) {
   );
 }
 export default function RecentArticles() {
+       const navigate = useNavigate();
+
   const [ArtickleArray, setArtickleArray] = useState([]);
 
   useEffect(() => {
@@ -105,7 +108,11 @@ export default function RecentArticles() {
         SecondLine={false}
         InnerContainer={
           ArtickleArray && (
-            <div className="d-flex  gap-5 row">
+            <div
+              // role="button"
+              onClick={() => navigate(`/blog`)}
+              className="d-flex  gap-5 row"
+            >
               <div className="col col-lg-3 d-grid gap-4 MiniArtickleCardsContainer ">
                 {ArtickleArray.reverse()
                   .slice(0, 3)

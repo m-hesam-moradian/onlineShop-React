@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { API } from "../../FirebaseDatas";
 import ProductCard from "../ProductShower/ProductCard/ProductCard";
+import { useNavigate } from "react-router-dom";
 
 export default function MostSales() {
   const [todayOff, setTodayOff] = useState([]);
@@ -39,8 +40,11 @@ export default function MostSales() {
     );
   }
   function ProductCard({ dataArray }) {
+    const navigate = useNavigate();
     return (
       <Card
+        role="button"
+        onClick={() => navigate(`/products/${dataArray.id}`)}
         className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col "
         style={{ width: "18rem" }}
       >

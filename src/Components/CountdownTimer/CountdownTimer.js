@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import { API } from "../../FirebaseDatas";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
 
@@ -33,15 +34,17 @@ export default function CountdownTimer() {
               </div>
             </Carousel.Item>
           ))}
-
-      
       </Carousel>
     );
   }
   function ProductCard({ dataArray }) {
+    const navigate = useNavigate();
+
     // console.log(dataArray);
     return (
       <Card
+        role="button"
+        onClick={() => navigate(`/products/${dataArray.id}`)}
         className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col "
         style={{ width: "18rem" }}
       >
