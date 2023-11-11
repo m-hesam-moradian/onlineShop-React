@@ -57,7 +57,6 @@ export default function Navbar() {
         <Offcanvas show={show} onHide={handleClose} {...props}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title className="d-flex justify-content-center p-4  ">
-              {" "}
               <img
                 src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/logomain.png"
                 className="w-50"
@@ -111,62 +110,62 @@ export default function Navbar() {
             <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
               {/* <li>
                 <Link class="nav-link" to="/">
-                  <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
+                  <span class="material-symbols-outlined ">home</span> صفحه اصلی
                 </Link>
               </li>
               <li>
                 <Link class="nav-link" to="/store">
-                  <span class="material-symbols-outlined">storefront</span>{" "}
-                  فروشگاه{" "}
+                  <span class="material-symbols-outlined">storefront</span>
+                  فروشگاه
                 </Link>
               </li>
               <li>
                 <Link class="nav-link" to="/blog">
-                  <span class="material-symbols-outlined">receipt_long</span>{" "}
-                  وبلاگ{" "}
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  وبلاگ
                 </Link>
                 <a href=""></a>
               </li>
               <li>
                 <Link class="nav-link" to="/Ablout-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>{" "}
-                  درباره ما{" "}
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  درباره ما
                 </Link>
               </li>
               <li>
-                {" "}
+                
                 <Link class="nav-link" to="/Contact-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>{" "}
-                  تماس با ما{" "}
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  تماس با ما
                 </Link>
               </li> */}
               <li class="nav-item p-2 active">
                 <Link class="nav-link" to="/">
-                  <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
+                  <span class="material-symbols-outlined ">home</span> صفحه اصلی
                 </Link>
               </li>
               <li class="nav-item p-2">
                 <Link class="nav-link" to="/store">
-                  <span class="material-symbols-outlined">storefront</span>{" "}
-                  فروشگاه{" "}
+                  <span class="material-symbols-outlined">storefront</span>
+                  فروشگاه
                 </Link>
               </li>
               <li class="nav-item p-2">
                 <Link class="nav-link" to="/blog">
-                  <span class="material-symbols-outlined">receipt_long</span>{" "}
-                  وبلاگ{" "}
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  وبلاگ
                 </Link>
               </li>
               <li class="nav-item p-2">
                 <Link class="nav-link" to="/Ablout-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>{" "}
-                  درباره ما{" "}
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  درباره ما
                 </Link>
               </li>
               <li class="nav-item p-2">
                 <Link class="nav-link" to="/Contact-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>{" "}
-                  تماس با ما{" "}
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  تماس با ما
                 </Link>
               </li>
             </ul>
@@ -292,32 +291,28 @@ export default function Navbar() {
               className="categories-container"
             >
               <span class="material-symbols-outlined ">widgets</span>
-              دسته بندی ها{" "}
+              دسته بندی ها
               <a href="">
                 <span class="material-symbols-outlined">expand_more</span>
               </a>
             </div>
             <div
+              role="button"
+              onClick={() => navigate(`/store`)}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className={`categoryItems ${!isHovered && "d-none"} `}
             >
               <div className="categoryItems-right">
-                <a className="categoryItems-right-item active" href="">
-                  انواع کارت حافظه{" "}
+                <a className="categoryItems-right-item active">
+                  انواع کارت حافظه
                 </a>
-                <a className="categoryItems-right-item" href="">
-                  تجهیزات شبکه{" "}
+                <a className="categoryItems-right-item">تجهیزات شبکه </a>
+                <a className="categoryItems-right-item">کالای دیجیتال </a>
+                <a className="categoryItems-right-item">
+                  کامپیوتر و لوازم جانبی
                 </a>
-                <a className="categoryItems-right-item" href="">
-                  کالای دیجیتال{" "}
-                </a>
-                <a className="categoryItems-right-item" href="">
-                  کامپیوتر و لوازم جانبی{" "}
-                </a>
-                <a className="categoryItems-right-item" href="">
-                  هدفون، هدست{" "}
-                </a>
+                <a className="categoryItems-right-item">هدفون، هدست </a>
               </div>
               {/* <div className="categoryItems-left">
                 <a className="categoryItems-right-itemz" href="">
@@ -332,7 +327,7 @@ export default function Navbar() {
               {/* <div class="container text-center d-none d-lg-flex">
                 <div class="categoryItems-left row h-100 align-content-around  p-3">
                   <div class=" col-md-6 col-xl-4   categoryparent">
-                    {" "}
+                    
                     <a className="categoryItems-left-item " href="">
                       <img
                         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
@@ -352,7 +347,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div class=" col-md-6 col-xl-4   categoryparent">
-                    {" "}
+                    
                     <a className="categoryItems-left-item " href="">
                       <img
                         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
@@ -367,7 +362,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div class=" col-md-6 col-xl-4   categoryparent">
-                    {" "}
+                    
                     <a className="categoryItems-left-item " href="">
                       <img
                         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
@@ -382,7 +377,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div class=" col-md-6 col-xl-4   categoryparent">
-                    {" "}
+                    
                     <a className="categoryItems-left-item " href="">
                       <img
                         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
@@ -397,7 +392,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div class=" col-md-6 col-xl-4   categoryparent">
-                    {" "}
+                    
                     <a className="categoryItems-left-item " href="">
                       <img
                         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
@@ -412,7 +407,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div class=" col-md-6 col-xl-4   categoryparent">
-                    {" "}
+                    
                     <a className="categoryItems-left-item " href="">
                       <img
                         src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
@@ -433,31 +428,30 @@ export default function Navbar() {
           </ul>
           <li>
             <Link class="nav-link" to="/">
-              <span class="material-symbols-outlined ">home</span> صفحه اصلی{" "}
+              <span class="material-symbols-outlined ">home</span> صفحه اصلی
             </Link>
           </li>
           <li>
             <Link class="nav-link" to="/store">
-              <span class="material-symbols-outlined">storefront</span> فروشگاه{" "}
+              <span class="material-symbols-outlined">storefront</span> فروشگاه
             </Link>
           </li>
           <li>
             <Link class="nav-link" to="/blog">
-              <span class="material-symbols-outlined">receipt_long</span> وبلاگ{" "}
+              <span class="material-symbols-outlined">receipt_long</span> وبلاگ
             </Link>
             <a href=""></a>
           </li>
           <li>
             <Link class="nav-link" to="/Ablout-Us">
               <span class="material-symbols-outlined">receipt_long</span> درباره
-              ما{" "}
+              ما
             </Link>
           </li>
           <li>
-            {" "}
             <Link class="nav-link" to="/Contact-Us">
               <span class="material-symbols-outlined">receipt_long</span> تماس
-              با ما{" "}
+              با ما
             </Link>
           </li>
         </ul>
