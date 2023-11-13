@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { API } from "../../FirebaseDatas";
 import { Navigate, useNavigate } from "react-router-dom";
+// import { tokenLocalhost } from "../auth/SignIn";
 
 export default function Navbar() {
   const [ProductArray, setProductArray] = useState([]);
@@ -192,6 +193,8 @@ export default function Navbar() {
               />
             </a>
             <img
+              role="button"
+              onClick={() => navigate(`/`)}
               src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/logomain.png"
               className="main-header__logo w-75 m-2 m-sm-4"
               alt="لوگوی سبزلرن"
@@ -266,7 +269,11 @@ export default function Navbar() {
                 className="main-header__profile mainProfile p-2 p-sm-4"
               >
                 <span className="main-header__profile-text  d-none d-sm-flex ">
-                  ورود / ثبت نام
+                  {}
+                  {localStorage.getItem("UserName")
+                    ? localStorage.getItem("UserName")
+                    : " ورود / ثبت نام"}
+                  {/* {console.log(localStorage.getItem("UserName"))} */}
                 </span>
                 <span class="material-symbols-outlined d-flex d-sm-none">
                   login

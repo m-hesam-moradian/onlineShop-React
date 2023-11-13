@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 
-export const API = "https://dimondshop-6146f-default-rtdb.firebaseio.com/";
+export const API =
+  "https://dimondshop2-3c83d-default-rtdb.europe-west1.firebasedatabase.app/";
 export default function FirebaseDatas() {
   useEffect(() => {
     //
