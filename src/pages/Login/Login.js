@@ -28,7 +28,6 @@ export default function Login() {
       //     });
       //   });
       
-
       const res = await fetch(`${API}/registered.json`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
