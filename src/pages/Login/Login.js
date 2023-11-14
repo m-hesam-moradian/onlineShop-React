@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { ModalFooter } from "react-bootstrap";
-
+import Swal from "sweetalert2";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -51,8 +51,15 @@ export default function Login() {
       localStorage.setItem("UserPassword", password);
       //  tokenLocalhost = localStorage.getItem("token");
       // console.log(localStorage.getItem("token"));
-      navigate(`/`);
-
+      Swal.fire({
+        title: "حساب شما با موفقیت ساخته شد",
+        // text: "Your file has been deleted.",
+        icon: "success",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate(`/`);
+        }
+      });
       // const [email, password] = localStorage.getItem("token").split("/");
       // console.log(email); // Output: hesamiwx@gmail.com
       // console.log(password); // Output: mohammadhesam
@@ -70,22 +77,17 @@ export default function Login() {
       });
   }, []);
 
-
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
-
-  
-
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
@@ -96,10 +98,22 @@ const style = {
           localStorage.setItem("UserEmail", dataObj.email);
           localStorage.setItem("UserName", dataObj.Name);
           localStorage.setItem("UserPassword", dataObj.password);
-          // setTimeout(() => , 3000);
-        } else {
-          console.log("not found");
-        }
+          // Swal.fire({
+          //   title: "با موفقیت وارد اکانت خود شدید",
+          //   // text: "Your file has been deleted.",
+          //   icon: "success",
+          // });
+
+          Swal.fire({
+            title: "با موفقیت وارد اکانت خود شدید",
+            // text: "Your file has been deleted.",
+            icon: "success",
+          }).then((result) => {
+        if (result.isConfirmed) {
+              navigate(`/`);
+            }
+          });
+        } 
       });
       // const res = await fetch(`${API}/registered.json`, {
       //   method: "GET",
@@ -128,7 +142,7 @@ const style = {
   return (
     <>
       <Navbar />
-    
+
       {/* <SignIn></SignIn> */}
       <div className="row m-0 LoginPage">
         <div className="col m-4 ">
@@ -238,7 +252,13 @@ const style = {
               ورود
             </button>
 
-            <a href="#" className="me-5 fs-4 text-secondary">
+            <a
+              onClick={() => {
+                Swal.fire("SweetAlert2 is working!");
+              }}
+              href="#"
+              className="me-5 fs-4 text-secondary"
+            >
               گذرواژه خود را فراموش کرده اید؟
             </a>
           </form>

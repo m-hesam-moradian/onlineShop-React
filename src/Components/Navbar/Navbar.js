@@ -86,12 +86,16 @@ export default function Navbar() {
               />
 
               <button
-                className="searchBTN bg-transparent "
+                href=""
+                className="searchBTN bg-transparent"
                 aria-label="search submit"
-                type="submit"
+                // type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
               >
                 {/* <BiSearchAlt /> */}
-                <i className="fas fa-search "></i>
+                <i className="fas fa-search"></i>
               </button>
               <ul className="searchList rounded-4 d-grid gap-3">
                 {searchResult &&
@@ -223,6 +227,9 @@ export default function Navbar() {
               className="searchBTN"
               aria-label="search submit"
               type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
             >
               {/* <BiSearchAlt /> */}
               <i className="fas fa-search "></i>
@@ -243,12 +250,12 @@ export default function Navbar() {
           </form>
 
           <div className="main-header__left">
-            <a
-              href="#"
+            <Link
+              to="/Contact-Us"
               className="main-header__cart-btn contactBTN d-none d-sm-flex"
             >
               <span class="material-symbols-outlined">contacts</span>
-            </a>
+            </Link>
             <a
               href="#"
               className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
@@ -282,12 +289,11 @@ export default function Navbar() {
             )}
           </div>
         </div>
-
-        <a href="#" className="cartBTN shake-button d-none d-md-flex">
-          <span className="productCounter">10</span>
+        <Link to="/login" className="cartBTN shake-button d-none d-md-flex">
+          <span className="productCounter">1</span>
 
           <i className="fas fa-shopping-cart main-header__cart-icon"></i>
-        </a>
+        </Link>
       </div>
       <div className="navbarMenu d-md-flex ">
         <ul>
