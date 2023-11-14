@@ -7,14 +7,15 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCDMt-VoUEGZihN5jjIcSL_pC_xORilcVM",
-  authDomain: "dimondshop-6146f.firebaseapp.com",
-  databaseURL: "https://dimondshop-6146f-default-rtdb.firebaseio.com",
-  projectId: "dimondshop-6146f",
-  storageBucket: "dimondshop-6146f.appspot.com",
-  messagingSenderId: "886155626101",
-  appId: "1:886155626101:web:bc0e78dfa184959c699a3c",
-  measurementId: "G-4MWB00DW41",
+  apiKey: "AIzaSyD-wsxekk_ue-l06FPjrrjOwNwS7y6Dr8Y",
+  authDomain: "dimondshop2-3c83d.firebaseapp.com",
+  databaseURL:
+    "https://dimondshop2-3c83d-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "dimondshop2-3c83d",
+  storageBucket: "dimondshop2-3c83d.appspot.com",
+  messagingSenderId: "956226477493",
+  appId: "1:956226477493:web:e32069a028827d2c218dfc",
+  measurementId: "G-R9KHT2EGJW",
 };
 
 // Initialize Firebase

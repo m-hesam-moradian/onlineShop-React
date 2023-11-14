@@ -6,11 +6,21 @@ import { SignIn } from "../../Components/auth/SignIn";
 import { API } from "../../FirebaseDatas";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+// import * as React from "react";
+// import Box from "@mui/material/Box";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
+// import Modal from "@mui/material/Modal";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { ModalFooter } from "react-bootstrap";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [Name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [Login, setLogin] = useState([]);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,16 +38,13 @@ export default function Login() {
       //     });
       //   });
 
-      
       const res = await fetch(`${API}/registered.json`, {
-        method: "PUT",
+        method: "post",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          Name,
-          password,
+        body: JSON.stringify(
+          { email: email, Name: Name, password: password }
           // token: email + "/" + password,
-        }),
+        ),
       });
       localStorage.setItem("UserEmail", email);
       localStorage.setItem("UserName", Name);
@@ -58,13 +65,42 @@ export default function Login() {
     fetch(`${API}registered.json`)
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
+        // console.log(Object.values(allData));
+        setLogin(Object.values(allData));
       });
   }, []);
+
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
+  
+
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
+      Login.map((dataObj) => {
+        if (dataObj.email == email && dataObj.password == password) {
+          console.log(dataObj);
+          localStorage.setItem("UserEmail", dataObj.email);
+          localStorage.setItem("UserName", dataObj.Name);
+          localStorage.setItem("UserPassword", dataObj.password);
+          // setTimeout(() => , 3000);
+        } else {
+          console.log("not found");
+        }
+      });
       // const res = await fetch(`${API}/registered.json`, {
       //   method: "GET",
       //   headers: { "Content-Type": "application/json" },
@@ -92,6 +128,7 @@ export default function Login() {
   return (
     <>
       <Navbar />
+    
       {/* <SignIn></SignIn> */}
       <div className="row m-0 LoginPage">
         <div className="col m-4 ">
@@ -160,7 +197,7 @@ export default function Login() {
         <div className="col m-4 ">
           <span className="mb-4 ">ورود</span>
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmitLogin}
             className="bg-light rounded-5 pb-5 px-5 mt-5"
           >
             <div className=" pt-5">
@@ -173,9 +210,9 @@ export default function Login() {
                 name=""
                 id=""
                 aria-describedby="helpId"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className=" pt-5">
@@ -192,14 +229,15 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-
-            <a
-              class="btn my-5 btn-sm  btn-color fs-4 p-3 rounded-4"
+            <button
+              class="btn btn-sm  btn-color fs-4 p-3 rounded-4"
               href="#"
               role="button"
+              type="submit"
             >
               ورود
-            </a>
+            </button>
+
             <a href="#" className="me-5 fs-4 text-secondary">
               گذرواژه خود را فراموش کرده اید؟
             </a>
@@ -210,3 +248,29 @@ export default function Login() {
     </>
   );
 }
+
+function LoginModal() {
+  return (
+    <div
+      className="modal show"
+      style={{ display: "block", position: "initial" }}
+    >
+      <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Modal body text goes here.</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary">Close</Button>
+          <Button variant="primary">Save changes</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    </div>
+  );
+}
+
+//  default StaticExample;
