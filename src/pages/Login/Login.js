@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import "./Login.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import { SignIn } from "../../Components/auth/SignIn";
 import { API } from "../../FirebaseDatas";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -13,7 +12,6 @@ import { useEffect } from "react";
 // import Modal from "@mui/material/Modal";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { ModalFooter } from "react-bootstrap";
 import Swal from "sweetalert2";
 
 export default function Login() {
