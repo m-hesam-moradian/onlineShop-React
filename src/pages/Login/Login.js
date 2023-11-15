@@ -35,8 +35,6 @@ export default function Login() {
       localStorage.setItem("UserEmail", email);
       localStorage.setItem("UserName", Name);
       localStorage.setItem("UserPassword", password);
-      //  tokenLocalhost = localStorage.getItem("token");
-      // console.log(localStorage.getItem("token"));
       Swal.fire({
         title: "حساب شما با موفقیت ساخته شد",
         // text: "Your file has been deleted.",
