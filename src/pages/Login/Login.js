@@ -37,7 +37,6 @@ export default function Login() {
       localStorage.setItem("UserPassword", password);
       Swal.fire({
         title: "حساب شما با موفقیت ساخته شد",
-        // text: "Your file has been deleted.",
         icon: "success",
       }).then((result) => {
         if (result.isConfirmed) {
