@@ -30,7 +30,6 @@ export default function Login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
           { email: email, Name: Name, password: password }
-          // token: email + "/" + password,
         ),
       });
       localStorage.setItem("UserEmail", email);
