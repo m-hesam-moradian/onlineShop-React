@@ -23,18 +23,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // fetch("https://example.com/api")
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     data.push(4);
-      //     fetch("https://example.com/api", {
-      //       method: "PUT",
-      //       body: JSON.stringify(data),
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //       },
-      //     });
-      //   });
+     
 
       const res = await fetch(`${API}/registered.json`, {
         method: "post",
