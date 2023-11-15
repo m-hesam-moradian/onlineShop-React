@@ -77,11 +77,7 @@ export default function Login() {
           localStorage.setItem("UserEmail", dataObj.email);
           localStorage.setItem("UserName", dataObj.Name);
           localStorage.setItem("UserPassword", dataObj.password);
-          // Swal.fire({
-          //   title: "با موفقیت وارد اکانت خود شدید",
-          //   // text: "Your file has been deleted.",
-          //   icon: "success",
-          // });
+    
 
           Swal.fire({
             title: "با موفقیت وارد اکانت خود شدید",
