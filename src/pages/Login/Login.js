@@ -43,10 +43,7 @@ export default function Login() {
           navigate(`/`);
         }
       });
-      // const [email, password] = localStorage.getItem("token").split("/");
-      // console.log(email); // Output: hesamiwx@gmail.com
-      // console.log(password); // Output: mohammadhesam
-      // history.push("/login");
+   
     } catch (err) {
       console.log(err);
     }
