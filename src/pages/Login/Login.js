@@ -52,7 +52,6 @@ export default function Login() {
     fetch(`${API}registered.json`)
       .then((res) => res.json())
       .then((allData) => {
-        // console.log(Object.values(allData));
         setLogin(Object.values(allData));
       });
   }, []);
