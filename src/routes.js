@@ -3,12 +3,11 @@ import Footer from "./Components/Footer/Footer";
 import Index from "./pages/Index/Index";
 import Store from "./pages/Store/Store";
 import Blog from "./pages/Blog/Blog";
-import AbloutUs from './pages/AbloutUs/AbloutUs';
-import ContactUs from './pages/ContactUs/ContactUs';
+import AbloutUs from "./pages/AbloutUs/AbloutUs";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import ProductInfo from "./pages/ProductInfo/ProductInfo";
-
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -55,7 +54,6 @@ const routes = [
   { path: "/products/:productID", element: <ProductInfo /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
-  
 ];
 
 export default routes;
