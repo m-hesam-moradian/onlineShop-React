@@ -247,4 +247,3 @@ function LoginModal() {
   );
 }
 
-//  default StaticExample;
