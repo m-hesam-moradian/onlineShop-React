@@ -60,26 +60,7 @@ const routes = [
   { path: "/products/:productID", element: <ProductInfo /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
-  // { path: "/contact", element: <Contact /> },
-  // { path: "/search/:value", element: <Search /> },
-
-  // {
-  //   path: "/p-admin/*",
-  //   element: <AdminPanel />,
-  //   children: [
-  //     { path: "", element: <PAdminIndex /> },
-  //     { path: "users", element: <Users /> },
-  //     { path: "courses", element: <AdminCourses /> },
-  //     { path: "menus", element: <Menus /> },
-  //     { path: "articles", element: <AdminArticles /> },
-  //     { path: "articles/draft/:shortName", element: <Draft /> },
-  //     { path: "category", element: <AdminCategory /> },
-  //     { path: "contacts", element: <AdminContact /> },
-  //     { path: "sessions", element: <Sessions /> },
-  //     { path: "comments", element: <Comments /> },
-  //     { path: "offs", element: <Offs /> },
-  //   ],
-  // },
+  
 ];
 
 export default routes;
