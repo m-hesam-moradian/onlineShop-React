@@ -98,7 +98,6 @@ export default function Login() {
     <>
       <Navbar />
 
-      {/* <SignIn></SignIn> */}
       <div className="row m-0 LoginPage">
         <div className="col m-4 ">
           <span className="mb-4 ">عضویت</span>
