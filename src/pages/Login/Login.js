@@ -81,7 +81,6 @@ export default function Login() {
 
           Swal.fire({
             title: "با موفقیت وارد اکانت خود شدید",
-            // text: "Your file has been deleted.",
             icon: "success",
           }).then((result) => {
         if (result.isConfirmed) {
