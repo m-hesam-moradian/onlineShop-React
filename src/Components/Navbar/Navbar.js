@@ -7,11 +7,9 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { API } from "../../FirebaseDatas";
 import { Navigate, useNavigate } from "react-router-dom";
-// import { tokenLocalhost } from "../auth/SignIn";
 
 export default function Navbar() {
   const [ProductArray, setProductArray] = useState([]);
-  const [OrginalDatas, setOrginalDatas] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
 
   useEffect(() => {
@@ -20,7 +18,6 @@ export default function Navbar() {
       .then((allData) => {
         setProductArray(allData);
         setOrginalDatas(allData);
-        // console.log(OrginalDatas);
       });
   }, []);
   const [isHovered, setIsHovered] = useState(false);
@@ -35,11 +32,7 @@ export default function Navbar() {
     setIsHovered(false);
   };
   useEffect(() => {
-    // fetch(`http://localhost:4000/v1/menus`)
-    //   .then((res) => res.json())
-    //   .then((menus) => {
-    //     setAllMenus(menus);
-    //   });
+
   }, []);
   function OffCanvasExample({ name, ...props }) {
     const [show, setShow] = useState(false);
@@ -81,7 +74,6 @@ export default function Navbar() {
                     result = [];
                   }
                   setsearchResult(result);
-                  // console.log(result);
                 }}
               />
 
@@ -94,7 +86,6 @@ export default function Navbar() {
                   e.preventDefault();
                 }}
               >
-                {/* <BiSearchAlt /> */}
                 <i className="fas fa-search"></i>
               </button>
               <ul className="searchList rounded-4 d-grid gap-3">
@@ -113,37 +104,7 @@ export default function Navbar() {
             </form>
 
             <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
-              {/* <li>
-                <Link class="nav-link" to="/">
-                  <span class="material-symbols-outlined ">home</span> صفحه اصلی
-                </Link>
-              </li>
-              <li>
-                <Link class="nav-link" to="/store">
-                  <span class="material-symbols-outlined">storefront</span>
-                  فروشگاه
-                </Link>
-              </li>
-              <li>
-                <Link class="nav-link" to="/blog">
-                  <span class="material-symbols-outlined">receipt_long</span>
-                  وبلاگ
-                </Link>
-                <a href=""></a>
-              </li>
-              <li>
-                <Link class="nav-link" to="/Ablout-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>
-                  درباره ما
-                </Link>
-              </li>
-              <li>
-                
-                <Link class="nav-link" to="/Contact-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>
-                  تماس با ما
-                </Link>
-              </li> */}
+              
               <li class="nav-item p-2 active">
                 <Link class="nav-link" to="/">
                   <span class="material-symbols-outlined ">home</span> صفحه اصلی
@@ -219,7 +180,6 @@ export default function Navbar() {
                   result = [];
                 }
                 setsearchResult(result);
-                // console.log(result);
               }}
             />
 
@@ -231,7 +191,6 @@ export default function Navbar() {
                 e.preventDefault();
               }}
             >
-              {/* <BiSearchAlt /> */}
               <i className="fas fa-search "></i>
             </button>
             <ul className="searchList rounded-4 d-grid gap-3">
@@ -280,7 +239,6 @@ export default function Navbar() {
                   {localStorage.getItem("UserName")
                     ? localStorage.getItem("UserName")
                     : " ورود / ثبت نام"}
-                  {/* {console.log(localStorage.getItem("UserName"))} */}
                 </span>
                 <span class="material-symbols-outlined d-flex d-sm-none">
                   login
@@ -327,116 +285,7 @@ export default function Navbar() {
                 </a>
                 <a className="categoryItems-right-item">هدفون، هدست </a>
               </div>
-              {/* <div className="categoryItems-left">
-                <a className="categoryItems-right-itemz" href="">
-                  <img
-                    src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                    alt=""
-                    <p>هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت</p>
-                  />
-                  <div>:تومان<span>320,000</span></div>
-                </a>
-              </div> */}
-              {/* <div class="container text-center d-none d-lg-flex">
-                <div class="categoryItems-left row h-100 align-content-around  p-3">
-                  <div class=" col-md-6 col-xl-4   categoryparent">
-                    
-                    <a className="categoryItems-left-item " href="">
-                      <img
-                        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                        alt=""
-                      />
-
-                      <span>
-                        <div>
-                          <div>
-                            هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت
-                          </div>
-                        </div>
-                        <div className="categoryItems-price">
-                          <span>320,000 </span> تومان
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                  <div class=" col-md-6 col-xl-4   categoryparent">
-                    
-                    <a className="categoryItems-left-item " href="">
-                      <img
-                        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                        alt=""
-                      />
-                      <span>
-                        <p>هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت</p>
-                        <div className="categoryItems-price">
-                          <span>320,000 </span> تومان
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                  <div class=" col-md-6 col-xl-4   categoryparent">
-                    
-                    <a className="categoryItems-left-item " href="">
-                      <img
-                        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                        alt=""
-                      />
-                      <span>
-                        <p>هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت</p>
-                        <div className="categoryItems-price">
-                          <span>320,000 </span> تومان
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                  <div class=" col-md-6 col-xl-4   categoryparent">
-                    
-                    <a className="categoryItems-left-item " href="">
-                      <img
-                        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                        alt=""
-                      />
-                      <span>
-                        <p>هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت</p>
-                        <div className="categoryItems-price">
-                          <span>320,000 </span> تومان
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                  <div class=" col-md-6 col-xl-4   categoryparent">
-                    
-                    <a className="categoryItems-left-item " href="">
-                      <img
-                        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                        alt=""
-                      />
-                      <span>
-                        <p>هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت</p>
-                        <div className="categoryItems-price">
-                          <span>320,000 </span> تومان
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                  <div class=" col-md-6 col-xl-4   categoryparent">
-                    
-                    <a className="categoryItems-left-item " href="">
-                      <img
-                        src="https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/product-image-1.jpg"
-                        alt=""
-                      />
-                      <span>
-                        <p>هارد اکسترنال ای دیتا مدل HD770G ظرفیت 2 ترابایت</p>
-                        <div className="categoryItems-price">
-                          <span>320,000 </span> تومان
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div class="row"></div>
-              </div> */}
+              
             </div>
           </ul>
           <li>
