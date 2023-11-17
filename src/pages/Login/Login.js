@@ -89,26 +89,7 @@ export default function Login() {
           });
         } 
       });
-      // const res = await fetch(`${API}/registered.json`, {
-      //   method: "GET",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     email,
-      //     Name,
-      //     password,
-      //     // token: email + "/" + password,
-      //   }),
-      // });
-      // localStorage.setItem("UserEmail", email);
-      // localStorage.setItem("UserName", Name);
-      // localStorage.setItem("UserPassword", password);
-      // //  tokenLocalhost = localStorage.getItem("token");
-      // // console.log(localStorage.getItem("token"));
-      // navigate(`/`);
-      // const [email, password] = localStorage.getItem("token").split("/");
-      // console.log(email); // Output: hesamiwx@gmail.com
-      // console.log(password); // Output: mohammadhesam
-      // history.push("/login");
+      
     } catch (err) {
       console.log(err);
     }
