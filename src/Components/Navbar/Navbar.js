@@ -17,7 +17,7 @@ export default function Navbar() {
       .then((res) => res.json())
       .then((allData) => {
         setProductArray(allData);
-        // setOrginalDatas(allData);
+        
       });
   }, []);
   const [isHovered, setIsHovered] = useState(false);
