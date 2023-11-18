@@ -90,10 +90,9 @@ export default function ContactUsContainer() {
                 fetch(`${API}ContactUsMessages.json`)
                   .then((res) => res.json())
                   .then((data) => {
-                    // Append new data to existing data
+               
                     data.push(obj);
 
-                    // Update the file with the new data
                     fetch(`${API}ContactUsMessages.json`, {
                       method: "PUT",
                       headers: {
