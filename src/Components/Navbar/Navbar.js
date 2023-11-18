@@ -81,7 +81,7 @@ export default function Navbar() {
                 href=""
                 className="searchBTN bg-transparent"
                 aria-label="search submit"
-                // type="submit"
+               
                 onClick={(e) => {
                   e.preventDefault();
                 }}
