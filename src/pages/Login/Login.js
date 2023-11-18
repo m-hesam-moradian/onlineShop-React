@@ -5,11 +5,7 @@ import Footer from "../../Components/Footer/Footer";
 import { API } from "../../FirebaseDatas";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-// import * as React from "react";
-// import Box from "@mui/material/Box";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
-// import Modal from "@mui/material/Modal";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Swal from "sweetalert2";
