@@ -15,8 +15,6 @@ export default function AbloutUsConainer() {
           </div>
           <div>
             <p className="AbloutUsConainerDescribtion text-black-50 fs-4 mx-5">
-
-              
               <span className="fw-bolder">فروشگاه اینترنتی الکترو شاپ</span> در
               قلب ایران فعالیت خودش را آغاز نموده است، ما بهترین نوع کالاها را
               برای مردم شریف ایران در این سایت فراهم کرده ایم و برای رضایت و
