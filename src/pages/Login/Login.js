@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
@@ -18,28 +18,51 @@ export default function Login() {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-     
 
-      const res = await fetch(`${API}/registered.json`, {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(
-          { email: email, Name: Name, password: password }
-        ),
-      });
-      localStorage.setItem("UserEmail", email);
-      localStorage.setItem("UserName", Name);
-      localStorage.setItem("UserPassword", password);
-      Swal.fire({
-        title: "حساب شما با موفقیت ساخته شد",
-        icon: "success",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate(`/`);
+    try {
+      if ((email.length > 5) && (Name.length > 3) && (password.length > 5)) {
+        const res = await fetch(`${API}/registered.json`, {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email,
+            Name: Name,
+            password: password,
+          }),
+        });
+        localStorage.setItem("UserEmail", email);
+        localStorage.setItem("UserName", Name);
+        localStorage.setItem("UserPassword", password);
+        Swal.fire({
+          title: "حساب شما با موفقیت ساخته شد",
+          icon: "success",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate(`/`);
+          }
+        });
+      } else {
+        if (email.length <= 5) {
+          Swal.fire({
+            title: "تعداد کاراکتر ایمیل باید بیشتر از 5 باشد",
+            icon: "error",
+          });
         }
-      });
-   
+        if (Name.length <= 3) {
+          Swal.fire({
+            title: "تعداد کاراکتر نام باید بیشتر از 3 باشد",
+
+            icon: "error",
+          });
+        }
+        if (password.length <= 5) {
+          Swal.fire({
+            title: "تعداد کاراکتر رمز باید بیشتر از 5 باشد",
+
+            icon: "error",
+          });
+        }
+      }
     } catch (err) {
       console.log(err);
     }
@@ -67,25 +90,39 @@ export default function Login() {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
-      Login.map((dataObj) => {
-        if (dataObj.email == email && dataObj.password == password) {
-          console.log(dataObj);
-          localStorage.setItem("UserEmail", dataObj.email);
-          localStorage.setItem("UserName", dataObj.Name);
-          localStorage.setItem("UserPassword", dataObj.password);
-    
+      if (email.length > 5 && password.length > 4) {
+        Login.map((dataObj) => {
+          if (dataObj.email == email && dataObj.password == password) {
+            console.log(dataObj);
+            localStorage.setItem("UserEmail", dataObj.email);
+            localStorage.setItem("UserName", dataObj.Name);
+            localStorage.setItem("UserPassword", dataObj.password);
 
+            Swal.fire({
+              title: "با موفقیت وارد اکانت خود شدید",
+              icon: "success",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate(`/`);
+              }
+            });
+          }
+        });
+      } else {
+        if (email.length <= 5) {
           Swal.fire({
-            title: "با موفقیت وارد اکانت خود شدید",
-            icon: "success",
-          }).then((result) => {
-        if (result.isConfirmed) {
-              navigate(`/`);
-            }
+            title: "تعداد کاراکتر ایمیل باید بیشتر از 5 باشد",
+            icon: "error",
           });
-        } 
-      });
-      
+        }
+        if (password.length <= 4) {
+          Swal.fire({
+            title: "تعداد کاراکتر رمز باید بیشتر از 5 باشد",
+
+            icon: "error",
+          });
+        }
+      }
     } catch (err) {
       console.log(err);
     }
@@ -204,7 +241,7 @@ export default function Login() {
 
             <a
               onClick={() => {
-                Swal.fire("SweetAlert2 is working!");
+                Swal.fire("سعی کنید به یاد بیارید چون این سایت بک اند ندارد!!");
               }}
               href="#"
               className="me-5 fs-4 text-secondary"
@@ -212,6 +249,22 @@ export default function Login() {
               گذرواژه خود را فراموش کرده اید؟
             </a>
           </form>
+          {
+            <form className="  mt-5">
+              <button
+                class="btn btn-sm w-100  fs-4 p-3 rounded-4 btn-outline"
+                href="#"
+                role="button"
+                type="submit"
+                onClick={() => {
+                  localStorage.clear();
+                  navigate(`/`);
+                }}
+              >
+                خروج از اکانت
+              </button>
+            </form>
+          }
         </div>
       </div>
       <Footer />
@@ -242,4 +295,3 @@ function LoginModal() {
     </div>
   );
 }
-

@@ -3,6 +3,8 @@ import "./ContactUsContainer.css";
 import { useState } from "react";
 import { API } from "../../FirebaseDatas";
 import { Alert } from "react-bootstrap";
+import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 export default function ContactUsContainer() {
   const [Name, setName] = useState("");
@@ -79,6 +81,10 @@ export default function ContactUsContainer() {
               role="button"
               onClick={(event) => {
                 event.preventDefault();
+                Swal.fire({
+                  title: "پیام شما با موفقیت ارسال شد",
+                  icon: "success",
+                });
                 console.log("Name: " + Name);
                 console.log("Number: " + Number);
                 console.log("Message: " + Message);

@@ -17,7 +17,6 @@ export default function Navbar() {
       .then((res) => res.json())
       .then((allData) => {
         setProductArray(allData);
-        
       });
   }, []);
   const [isHovered, setIsHovered] = useState(false);
@@ -31,9 +30,7 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
   function OffCanvasExample({ name, ...props }) {
     const [show, setShow] = useState(false);
 
@@ -81,7 +78,6 @@ export default function Navbar() {
                 href=""
                 className="searchBTN bg-transparent"
                 aria-label="search submit"
-               
                 onClick={(e) => {
                   e.preventDefault();
                 }}
@@ -104,7 +100,6 @@ export default function Navbar() {
             </form>
 
             <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
-              
               <li class="nav-item p-2 active">
                 <Link class="nav-link" to="/">
                   <span class="material-symbols-outlined ">home</span> صفحه اصلی
@@ -247,8 +242,17 @@ export default function Navbar() {
             )}
           </div>
         </div>
-        <Link to="/login" className="cartBTN shake-button d-none d-md-flex">
-          <span className="productCounter">1</span>
+        <Link
+          to={localStorage.getItem("UserName") ? "/" : `/login`}
+          className={`cartBTN ${
+            localStorage.getItem("UserName") ? "cartBTNActive " : "shake-button"
+          } d-none d-md-flex`}
+        >
+          {localStorage.getItem("UserName") ? (
+            <span className="productCounter">1</span>
+          ) : (
+            ""
+          )}
 
           <i className="fas fa-shopping-cart main-header__cart-icon"></i>
         </Link>
@@ -285,7 +289,6 @@ export default function Navbar() {
                 </a>
                 <a className="categoryItems-right-item">هدفون، هدست </a>
               </div>
-              
             </div>
           </ul>
           <li>

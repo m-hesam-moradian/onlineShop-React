@@ -199,7 +199,10 @@
   margin-bottom: 0;
   margin-left: 0;
 }
-
+.cartBTNActive:hover{
+      box-shadow: 0px 0px 6px 2px #00000047;
+      scale: 1.1;
+}
 .cartBTN svg {
   color: var(--primary-color);
   font-size: 3rem;
