@@ -185,6 +185,7 @@
   display: flex;
 }
 /* Finish Navbar Styles */
+
 .cartBTN {
   display: flex;
   flex-direction: column;
@@ -409,5 +410,4 @@
 }
 /* desktop */
 @media only screen and (min-width: 1200px) {
-  /* CSS styles for desktops */
 }
