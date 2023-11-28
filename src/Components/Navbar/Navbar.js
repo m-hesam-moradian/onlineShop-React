@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/authContext";
-import "./Navbar.css";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { API } from "../../FirebaseDatas";
 import { Navigate, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   const [ProductArray, setProductArray] = useState([]);
