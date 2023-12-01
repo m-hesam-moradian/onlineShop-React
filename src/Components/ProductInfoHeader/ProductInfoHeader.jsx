@@ -1,8 +1,13 @@
 import React from "react";
 import "./ProductInfoHeader.css";
+import { handleClick } from "../ProductShower/ProductCard/ProductCard";
+import { useState } from "react";
+import { useContext } from "react";
+import CounterContext from "../../context/CounterContext";
 
 export default function ProductInfoHeader({ ProductData }) {
-  // console.log(ProductData);
+  const { incrementCount } = useContext(CounterContext);
+
   return (
     <div className="row m-0 ProductInfoHeader  ">
       <div className="col-12 col-md col-lg-3 rounded-5 shadow m-md-5 p-5 d-grid align-content-center ">
@@ -74,7 +79,13 @@ export default function ProductInfoHeader({ ProductData }) {
             {ProductData.price}{" "}
             <span className="text-secondary fw-light fs-4">تومان</span>
           </span>
-          <a class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4">
+          <a
+            onClick={() => {
+              handleClick(ProductData);
+              incrementCount();
+            }}
+            class="btn w-100 marketComponentSearchBTN btn-color fs-4 p-3 rounded-4"
+          >
             افزودن به سبد خرید
           </a>
         </div>

@@ -6,14 +6,18 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import CounterContext from "../../../context/CounterContext";
 
-function ProductCard({ dataArray }) {
-  const navigate = useNavigate();
-  const handleClick = (data) => {
-    const items= JSON.parse(localStorage.getItem("cards"))?JSON.parse(localStorage.getItem("cards")):[];
+export const handleClick = (data) => {
+  const items = JSON.parse(localStorage.getItem("cards"))
+    ? JSON.parse(localStorage.getItem("cards"))
+    : [];
 
-    // Store the updated array in local storage
-    localStorage.setItem("cards", JSON.stringify([...items, data]));
-  };
+  // Store the updated array in local storage
+  localStorage.setItem("cards", JSON.stringify([...items, data]));
+};
+
+function ProductCard({ dataArray }) {
+   
+  const navigate = useNavigate();
   const { incrementCount } = useContext(CounterContext);
   return (
     <Card
@@ -21,7 +25,10 @@ function ProductCard({ dataArray }) {
       style={{ width: "18rem" }}
     >
       <Card.Img
-        onClick={() => navigate(`/products/${dataArray.id}`)}
+        onClick={() => {
+         
+          navigate(`/products/${dataArray.id}`)
+        }}
         className="w-50 mt-5 h-100"
         variant="top"
         src={`${dataArray.img}`}

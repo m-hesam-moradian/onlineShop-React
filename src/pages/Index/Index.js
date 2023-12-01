@@ -14,16 +14,7 @@ import CounterContext from "../../context/CounterContext";
 
 export default function Index(props) {
   const [show, setModalShow] = useState(true);
-  const card =
-    JSON.parse(localStorage.getItem("cards")).length > 0
-      ? JSON.parse(localStorage.getItem("cards")).length
-      : 0;
-  const [count, setCount] = useState(card);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-
-  };
+ 
   const [NewProductsArray, setModalNewProductsArray] = useState(true);
 
   useEffect(() => {
@@ -38,12 +29,7 @@ export default function Index(props) {
   // console.log(NewProductsArray);
   return (
     <>
-      <CounterContext.Provider
-        value={{
-          count,
-          incrementCount,
-        }}
-      >
+
         <Header />
         <ChoosenProducts />
         <CountdownTimer />
@@ -62,7 +48,7 @@ export default function Index(props) {
         <BottomBanner />
         <RecentArticles />
         <Footer />
-      </CounterContext.Provider>
+   
     </>
   );
 }
