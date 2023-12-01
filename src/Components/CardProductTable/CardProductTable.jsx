@@ -1,7 +1,9 @@
 import React from "react";
 import "./CardProductTable.css";
+import NumericInput from "react-numeric-input";
 export default function CardProductTable() {
   const CardProducts = JSON.parse(localStorage.getItem("cards"));
+  
 
   return (
     <>
@@ -73,7 +75,7 @@ export default function CardProductTable() {
           ))}
         </tbody>
       </table> */}
-
+      {/* 
       <table class="product-table">
         <tr className="cardProductHeader">
           <td class="text-center">عکس محصول</td>
@@ -86,48 +88,75 @@ export default function CardProductTable() {
         {CardProducts.map((product, index) => (
           <>
             <tr>
-              {/* <th class="text-center justify-content-center align-content-center d-flex">
-              <div>
-                <span class="material-symbols-outlined d-flex ">close</span>
-              </div>
-            </th> */}
-
               <th>
                 <span class="material-symbols-outlined  ">close</span>
                 <img className="card-product-img" src={product.img} alt="" />
               </th>
               <th class="">
-                {/* <div className="row m-0 ">
-                <div className="col-auto ">
-                  <img className="card-product-img" src={product.img} alt="" />
-                </div>
-                <div className="col ">
-                </div>
-              </div> */}
                 <span>{product.name}</span>
               </th>
               <th class="text-center">{product.price}</th>
               <th class="text-center">4</th>
               <th class="text-center">{"۱,۲۸۰,۰۰۰"}</th>
             </tr>
-            {/* {console.log(index+1)}
-            {index + 1 < CardProducts.length && <hr className="w-100" />} */}
           </>
         ))}
-        {/* <tr> */}
-        {/* <td>
-            <img
-              src="product-image.jpg"
-              alt="ماوس وریتی"
-              //   style="width:100px;"
-            />
-          </td>
-          <td>ماوس وریتی مدل V-MS۵۱۲۸</td>
-          <td>۳۲۰,۰۰۰</td>
-          <td>4</td>
-          <td>۱,۲۸۰,۰۰۰</td>
-        </tr> */}
-      </table>
+      </table> */}
+      <div class="grid">
+        <div class="cell"></div>
+
+        <div class="cell fw-bold ">نام محصول</div>
+
+        <div class="cell fw-bold">قیمت به تومان</div>
+
+        <div class="cell fw-bold">تعداد</div>
+        
+        <div class="cell fw-bold">جمع جزء به تومان</div>
+
+        {CardProducts.map((product, index) => (
+          <>
+            {/* <div class="grid"> */}
+            <div class="cell">
+              {" "}
+              <span class="material-symbols-outlined  ">close</span>
+              <img className="card-product-img" src={product.img} alt="" />
+            </div>
+
+            <div class="cell">
+              <span className="fw-light  fs-5 ">{product.name}</span>
+            </div>
+
+            <div class="cell">
+              {" "}
+              <span className="textColor">
+                {product.price.toLocaleString()}{" "}
+                <span className="fs-5 text-black ">تومان</span>
+              </span>
+            </div>
+
+            <div class="cell">
+              <span>
+                <NumericInput
+                  className="form-control"
+                  value={0}
+                  min={0}
+                  max={100}
+                  step={1}
+                  precision={0}
+                  size={5}
+                />
+              </span>
+            </div>
+            <div class="cell">
+              <span className="textColor">
+                {product.price.toLocaleString()}{" "}
+                <span className="fs-5 text-black ">تومان</span>
+              </span>
+            </div>
+            {/* </div> */}
+          </>
+        ))}
+      </div>
     </>
   );
 }
