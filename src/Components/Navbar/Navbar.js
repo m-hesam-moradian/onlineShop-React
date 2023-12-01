@@ -213,14 +213,14 @@ export default function Navbar() {
             >
               <span class="material-symbols-outlined">contacts</span>
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/Card"
               className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
             >
               <span className="productCounter">{count}</span>
 
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
-            </a>
+            </Link>
             {authContext.isLoggedIn ? (
               <Link to="#" className="main-header__profile mainProfile">
                 <span className="main-header__profile-text">
@@ -246,7 +246,7 @@ export default function Navbar() {
           </div>
         </div>
         <Link
-          to={localStorage.getItem("UserName") ? "/" : `/login`}
+          to={localStorage.getItem("UserName") ? "/Card" : `/login`}
           className={`cartBTN ${
             localStorage.getItem("UserName") ? "cartBTNActive " : "shake-button"
           } d-none d-md-flex`}

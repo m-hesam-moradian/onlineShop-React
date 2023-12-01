@@ -18,7 +18,7 @@ export default function Landing({ info }) {
   // };
 
   useEffect(() => {
-    fetch(`${API}todaysOff.json`)
+    fetch(`${API}products.json`)
       .then((res) => res.json())
       .then((allData) => {
         setTodayOff(allData);
@@ -30,20 +30,20 @@ export default function Landing({ info }) {
       <Carousel className="py-5" interval={2000} role="button">
         {todayOff.map((todayOffIndex) => (
           <Carousel.Item key={todayOffIndex.id}>
-            <BasicExample
+            <OffCarousel
               key={todayOffIndex.id}
               id={todayOffIndex.id}
               img={todayOffIndex.img}
               name={todayOffIndex.name}
               price={todayOffIndex.price}
               priceBeforeOff={todayOffIndex.priceBeforeOff}
-            ></BasicExample>
+            ></OffCarousel>
           </Carousel.Item>
         ))}
       </Carousel>
     );
   }
-  function BasicExample({ id,img, name, price, priceBeforeOff }) {
+  function OffCarousel({ id,img, name, price, priceBeforeOff }) {
     return (
       <Card
       onClick={() => navigate(`/products/${id}`)}

@@ -8,6 +8,7 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import ProductInfo from "./pages/ProductInfo/ProductInfo";
+import Card from "./pages/Card/Card";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -52,6 +53,7 @@ const routes = [
   },
 
   { path: "/products/:productID", element: <ProductInfo /> },
+  { path: "/Card", element: <Card /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
 ];
