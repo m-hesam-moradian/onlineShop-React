@@ -10,13 +10,25 @@ export const handleClick = (data) => {
   const items = JSON.parse(localStorage.getItem("cards"))
     ? JSON.parse(localStorage.getItem("cards"))
     : [];
-
-  // Store the updated array in local storage
+  // console.log(items.length );
+  //   if (items.length >= 0) {
+  //     items.map((item) => {
+  //       console.log(item.name + "==" + data.name);
+  //       console.log(item.name == data.name);
+  //       if (item.name == data.name) {
+  //         item.count++;
+  //         console.log(item.count);
+  //       } else {
+  //         localStorage.setItem("cards", JSON.stringify([...items, data]));
+  //       }
+  //     });
+  //   } else {
+  //     localStorage.setItem("cards", JSON.stringify([...items, data]));
+  //   }
   localStorage.setItem("cards", JSON.stringify([...items, data]));
 };
 
 function ProductCard({ dataArray }) {
-   
   const navigate = useNavigate();
   const { incrementCount } = useContext(CounterContext);
   return (
@@ -26,8 +38,7 @@ function ProductCard({ dataArray }) {
     >
       <Card.Img
         onClick={() => {
-         
-          navigate(`/products/${dataArray.id}`)
+          navigate(`/products/${dataArray.id}`);
         }}
         className="w-50 mt-5 h-100"
         variant="top"
