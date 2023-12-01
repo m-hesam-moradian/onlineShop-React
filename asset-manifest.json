@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/onlineShop-React-Firebase/static/css/main.e390b672.css",
+    "main.js": "/onlineShop-React-Firebase/static/js/main.47950c2e.js",
+    "static/media/IRANSans.ttf": "/onlineShop-React-Firebase/static/media/IRANSans.623768ac2bdc3c1f78df.ttf",
+    "index.html": "/onlineShop-React-Firebase/index.html",
+    "main.e390b672.css.map": "/onlineShop-React-Firebase/static/css/main.e390b672.css.map",
+    "main.47950c2e.js.map": "/onlineShop-React-Firebase/static/js/main.47950c2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e390b672.css",
+    "static/js/main.47950c2e.js"
+  ]
+}
