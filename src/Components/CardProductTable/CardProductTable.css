@@ -1,3 +1,23 @@
-.TableHead {
-margin: auto;
+.card-product-img {
+    margin-bottom: -36px;
+    width: 73px;
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.product-table th,
+.product-table td {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: right;
+}
+.product-table th {
+  /* background-color: #f2f2f2; */
+}
+tr{
+    height: 8rem;
+}
+.cardProductHeader{
+    height: 100%;
 }
