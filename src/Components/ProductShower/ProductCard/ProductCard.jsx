@@ -3,27 +3,36 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./ProductCard.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import CounterContext from "../../../context/CounterContext";
+
 function ProductCard({ dataArray }) {
-      const navigate = useNavigate();
-  // console.log(dataArray);
-  // {
-  //   img, name, price, priceBeforeOff;
-  // }
+  const navigate = useNavigate();
+
+  const { incrementCount } = useContext(CounterContext);
   return (
     <Card
-      onClick={() => navigate(`/products/${dataArray.id}`)}
       className="ProductCard w-100 d-flex align-items-center rounded-5 col border-0 m-3 shadow-sm "
       style={{ width: "18rem" }}
     >
       <Card.Img
+        onClick={() => navigate(`/products/${dataArray.id}`)}
         className="w-50 mt-5 h-100"
         variant="top"
         src={`${dataArray.img}`}
       />
       <Card.Body className="w-100 ">
-        <Card.Title className="mx-4">{dataArray.name}</Card.Title>
+        <Card.Title
+          onClick={() => navigate(`/products/${dataArray.id}`)}
+          className="mx-4"
+        >
+          {dataArray.name}
+        </Card.Title>
         <hr />
-        <Card.Text className="d-flex justify-content-between flex-row-reverse p-4 align-items-center ">
+        <Card.Text
+          // onClick={() => navigate(`/products/${dataArray.id}`)}
+          className="d-flex justify-content-between flex-row-reverse p-4 align-items-center "
+        >
           <div className="cardTextContainer">
             <div className="SliderPrice d-grid ">
               {dataArray && (
@@ -42,6 +51,7 @@ function ProductCard({ dataArray }) {
             </div>
           </div>
           <Button
+            onClick={incrementCount}
             variant="white"
             className="ProductCardBTN border-secondary rounded-4  "
           >

@@ -217,12 +217,12 @@ export default function Navbar() {
               href="#"
               className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
             >
-              <span className="productCounter">{count}222</span>
+              <span className="productCounter">{count}</span>
 
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
             </a>
             {authContext.isLoggedIn ? (
-              <Link to="#" className="main-header__profile mainProfile">  
+              <Link to="#" className="main-header__profile mainProfile">
                 <span className="main-header__profile-text">
                   {authContext.userInfos.name}
                 </span>
@@ -252,7 +252,7 @@ export default function Navbar() {
           } d-none d-md-flex`}
         >
           {localStorage.getItem("UserName") ? (
-            <span className="productCounter">1</span>
+            <span className="productCounter">{count}</span>
           ) : (
             ""
           )}
