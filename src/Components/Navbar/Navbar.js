@@ -6,10 +6,14 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { API } from "../../FirebaseDatas";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import CounterContext from "../../context/CounterContext";
+
 
 export default function Navbar() {
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
+
+  const { count, incrementCount } = useContext(CounterContext);
 
   useEffect(() => {
     fetch(`${API}products.json`)
@@ -213,12 +217,12 @@ export default function Navbar() {
               href="#"
               className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
             >
-              <span className="productCounter">10</span>
+              <span className="productCounter">{count}222</span>
 
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
             </a>
             {authContext.isLoggedIn ? (
-              <Link to="#" className="main-header__profile mainProfile">
+              <Link to="#" className="main-header__profile mainProfile">  
                 <span className="main-header__profile-text">
                   {authContext.userInfos.name}
                 </span>
