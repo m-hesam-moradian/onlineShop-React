@@ -14,10 +14,15 @@ import CounterContext from "../../context/CounterContext";
 
 export default function Index(props) {
   const [show, setModalShow] = useState(true);
-  const [count, setCount] = useState(0);
+  const card =
+    JSON.parse(localStorage.getItem("cards")).length > 0
+      ? JSON.parse(localStorage.getItem("cards")).length
+      : 0;
+  const [count, setCount] = useState(card);
 
   const incrementCount = () => {
     setCount(count + 1);
+
   };
   const [NewProductsArray, setModalNewProductsArray] = useState(true);
 

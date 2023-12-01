@@ -8,7 +8,12 @@ import CounterContext from "../../../context/CounterContext";
 
 function ProductCard({ dataArray }) {
   const navigate = useNavigate();
+  const handleClick = (data) => {
+    const items= JSON.parse(localStorage.getItem("cards"))?JSON.parse(localStorage.getItem("cards")):[];
 
+    // Store the updated array in local storage
+    localStorage.setItem("cards", JSON.stringify([...items, data]));
+  };
   const { incrementCount } = useContext(CounterContext);
   return (
     <Card
@@ -51,7 +56,10 @@ function ProductCard({ dataArray }) {
             </div>
           </div>
           <Button
-            onClick={incrementCount}
+            onClick={() => {
+              handleClick(dataArray);
+              incrementCount();
+            }}
             variant="white"
             className="ProductCardBTN border-secondary rounded-4  "
           >
