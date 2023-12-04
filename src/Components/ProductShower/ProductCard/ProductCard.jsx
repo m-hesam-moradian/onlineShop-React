@@ -11,7 +11,6 @@ export const handleClick = (data) => {
     ? JSON.parse(localStorage.getItem("cards"))
     : [];
  
-  //         item.count++;
   //         console.log(item.count);
   //       } else {
   //         localStorage.setItem("cards", JSON.stringify([...items, data]));
