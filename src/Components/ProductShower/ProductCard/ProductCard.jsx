@@ -10,7 +10,7 @@ export const handleClick = (data) => {
   const items = JSON.parse(localStorage.getItem("cards"))
     ? JSON.parse(localStorage.getItem("cards"))
     : [];
-  // console.log(items.length );
+ 
   //   if (items.length >= 0) {
   //     items.map((item) => {
   //       console.log(item.name + "==" + data.name);
