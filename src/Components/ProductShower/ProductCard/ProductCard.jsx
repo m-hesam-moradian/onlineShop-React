@@ -11,14 +11,7 @@ export const handleClick = (data) => {
     ? JSON.parse(localStorage.getItem("cards"))
     : [];
  
-  //         console.log(item.count);
-  //       } else {
-  //         localStorage.setItem("cards", JSON.stringify([...items, data]));
-  //       }
-  //     });
-  //   } else {
-  //     localStorage.setItem("cards", JSON.stringify([...items, data]));
-  //   }
+
   localStorage.setItem("cards", JSON.stringify([...items, data]));
 };
 
