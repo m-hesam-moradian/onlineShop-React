@@ -10,7 +10,7 @@ export default function Card() {
           <Navbar />
           <div className="p-5"></div>
       <div className="col-7 ">
-        <CardProductTable clas="col-6 bg-black "></CardProductTable>
+       { JSON.parse(localStorage.getItem("cards"))&& <CardProductTable clas="col-6 bg-black "></CardProductTable>}
       </div>
       <Footer />
     </>
