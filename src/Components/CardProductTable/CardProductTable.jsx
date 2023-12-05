@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
-export default function CardProductTable() {
+
+export default function CardProductTable({ className }) {
+
+
+
+
   const CardProducts = JSON.parse(localStorage.getItem("cards"));
-  const [count, setCount] = useState(0);
   const countsCardProducts = CardProducts.reduce((acc, curr) => {
     const found = acc.find((item) => item.id === curr.id);
     if (found) {
@@ -13,15 +17,12 @@ export default function CardProductTable() {
     }
     return acc;
   }, []);
+ localStorage.setItem("countsCardProducts", JSON.stringify(countsCardProducts));
 
-  console.log(countsCardProducts);
 
-  function forceRerender() {
-    setCount(count); // This will trigger a re-render
-  }
   return (
     <>
-      <div class="grid">
+      <div class={`grid ${className}`}>
         <div class="cell"></div>
 
         <div class="cell fw-bold ">نام محصول</div>
@@ -74,10 +75,7 @@ export default function CardProductTable() {
                       countsCardProducts[index].sumPrice = newPrice;
 
                       // Log the new count and price
-                      console.log(
-                        product.count,
-                        product.sumPrice
-                      );
+                      console.log(product.count, product.sumPrice);
                       localStorage.setItem(
                         "countsCardProducts",
                         JSON.stringify(countsCardProducts)
@@ -89,9 +87,8 @@ export default function CardProductTable() {
               <div class="cell">
                 <span className={`textColor num${index}`}>
                   {(product.price * product.count).toLocaleString()}
-
                 </span>
-                  <span className="fs-5 text-black ">تومان</span>
+                <span className="fs-5 text-black ">تومان</span>
               </div>
               {/* </div> */}
             </>
