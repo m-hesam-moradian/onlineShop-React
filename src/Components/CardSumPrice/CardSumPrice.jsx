@@ -3,19 +3,17 @@ import "./CardSumPrice.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
+
 export default function CardSumPrice({ className, sums }) {
   const navigate = useNavigate();
   let sum = 0;
-  console.log(JSON.parse(localStorage.getItem("countsCardProducts")));
   JSON.parse(localStorage.getItem("countsCardProducts")).map((obj, index) => {
-    console.log(sums);
     obj.sumPrice
       ? (sum += obj.sumPrice)
       : (sum += JSON.parse(localStorage.getItem("countsCardProducts"))[index]
           .price);
   });
 
-  console.log(sum);
   return (
     <div>
       <div class={`grid2 ${className}`}>
