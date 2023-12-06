@@ -13,10 +13,7 @@ export default function CardProductTable({ className }) {
     }
     return acc;
   }, []);
-  // localStorage.setItem(
-  //   "countsCardProducts",
-  //   JSON.stringify(countsCardProducts)
-  // );
+
 
   return (
     <>
