@@ -4,8 +4,10 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import CardProductTable from "../../Components/CardProductTable/CardProductTable";
 import CardSumPrice from "../../Components/CardSumPrice/CardSumPrice";
+import { useState } from "react";
 
 export default function Card() {
+  [sum,setSum]=useState(0)
   return (
     <>
       <Navbar />
