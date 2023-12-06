@@ -1,7 +1,10 @@
 import React from "react";
 import "./CardSumPrice.css";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function CardSumPrice({ className, sums }) {
+  const navigate = useNavigate();
   let sum = 0;
   console.log(JSON.parse(localStorage.getItem("countsCardProducts")));
   JSON.parse(localStorage.getItem("countsCardProducts")).map((obj, index) => {
@@ -41,6 +44,21 @@ export default function CardSumPrice({ className, sums }) {
         <a
           className=" AbloutUsConainerContactUsBtn btn fs-4  btn-color px-4 py-2 rounded-4 mt-4 w-100 "
           href=""
+          onClick={(e) => {
+            e.preventDefault();
+            //
+
+            Swal.fire({
+              title: "به دلیل نداشتن بک اند پروژه این قسمت هنوز ساخته نشده است",
+              icon: "warning",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate(`/`);
+              }
+            });
+
+            //
+          }}
         >
           ادامه جهت تسویه حساب
         </a>
