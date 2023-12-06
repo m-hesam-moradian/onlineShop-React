@@ -11,12 +11,12 @@ export default function Card() {
       <Navbar />
       <div className="row m-0">
         <div className="p-5"></div>
-        <div className="col-7 ">
+        <div className="col-sm-12  ">
           {JSON.parse(localStorage.getItem("cards")) && (
             <CardProductTable className="  m-5"></CardProductTable>
           )}
         </div>
-        <div className="col-3 ">
+        <div className="col-sm-12 ">
           {JSON.parse(localStorage.getItem("cards")) && (
             <CardSumPrice className="  m-5"></CardSumPrice>
           )}

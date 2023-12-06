@@ -36,7 +36,7 @@ export default function CardProductTable({ className }) {
         {CardProducts &&
           countsCardProducts.map((product, index) => (
             <>
-              <div class="cell">
+              <div class="cell ">
                 <span class="material-symbols-outlined  ">close</span>
                 <img className="card-product-img" src={product.img} alt="" />
               </div>
@@ -90,7 +90,7 @@ export default function CardProductTable({ className }) {
                 </span>
                 <span className="fs-5 text-black ">تومان</span>
               </div>
-              {/* </div> */}
+              
             </>
           ))}
       </div>
