@@ -3,10 +3,6 @@ import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
 
 export default function CardProductTable({ className }) {
-
-
-
-
   const CardProducts = JSON.parse(localStorage.getItem("cards"));
   const countsCardProducts = CardProducts.reduce((acc, curr) => {
     const found = acc.find((item) => item.id === curr.id);
@@ -17,35 +13,38 @@ export default function CardProductTable({ className }) {
     }
     return acc;
   }, []);
- localStorage.setItem("countsCardProducts", JSON.stringify(countsCardProducts));
-
+  // localStorage.setItem(
+  //   "countsCardProducts",
+  //   JSON.stringify(countsCardProducts)
+  // );
 
   return (
     <>
       <div class={`grid ${className}`}>
         <div class="cell"></div>
 
-        <div class="cell fw-bold ">نام محصول</div>
+        <div class="cell fw-bold d-none d-md-flex  ">نام محصول</div>
 
-        <div class="cell fw-bold">قیمت به تومان</div>
+        <div class="cell fw-bold d-none d-lg-flex">قیمت به تومان</div>
 
         <div class="cell fw-bold">تعداد</div>
 
-        <div class="cell fw-bold">جمع جزء به تومان</div>
+        <div class="cell fw-bold ">جمع جزء به تومان</div>
 
         {CardProducts &&
           countsCardProducts.map((product, index) => (
             <>
               <div class="cell ">
+                {console.log(countsCardProducts)}
                 <span class="material-symbols-outlined  ">close</span>
                 <img className="card-product-img" src={product.img} alt="" />
               </div>
 
-              <div class="cell">
+              <div class="cell d-none d-md-flex">
                 <span className="fw-light  fs-5 ">{product.name}</span>
               </div>
 
-              <div class="cell">
+              <div class="cell d-none d-lg-flex">
                 <span className="textColor">
                   {product.price.toLocaleString()}{" "}
                   <span className="fs-5 text-black ">تومان</span>
@@ -84,13 +83,12 @@ export default function CardProductTable({ className }) {
                   />
                 </span>
               </div>
-              <div class="cell">
+              <div class="cell ">
                 <span className={`textColor num${index}`}>
                   {(product.price * product.count).toLocaleString()}
                 </span>
                 <span className="fs-5 text-black ">تومان</span>
               </div>
-              
             </>
           ))}
       </div>
