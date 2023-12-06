@@ -1,11 +1,11 @@
 import React from "react";
 import "./CardSumPrice.css";
 
-export default function CardSumPrice({ className }) {
+export default function CardSumPrice({ className, sums }) {
   let sum = 0;
   console.log(JSON.parse(localStorage.getItem("countsCardProducts")));
   JSON.parse(localStorage.getItem("countsCardProducts")).map((obj, index) => {
-    // console.log(obj.sumPrice);
+    console.log(sums);
     obj.sumPrice
       ? (sum += obj.sumPrice)
       : (sum += JSON.parse(localStorage.getItem("countsCardProducts"))[index]

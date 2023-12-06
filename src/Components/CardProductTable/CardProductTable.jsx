@@ -2,9 +2,9 @@ import React from "react";
 import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
 
-export default function CardProductTable({ className }) {
+export default function CardProductTable({ className, setSum }) {
   const CardProducts = JSON.parse(localStorage.getItem("cards"));
-  const countsCardProducts = CardProducts.reduce((acc, curr) => {
+  const countsCardProducts =JSON.parse(localStorage.getItem("countsCardProducts"))|| CardProducts.reduce((acc, curr) => {
     const found = acc.find((item) => item.id === curr.id);
     if (found) {
       found.count++;
@@ -13,7 +13,6 @@ export default function CardProductTable({ className }) {
     }
     return acc;
   }, []);
-
 
   return (
     <>
@@ -53,7 +52,7 @@ export default function CardProductTable({ className }) {
                   <NumericInput
                     className="form-control"
                     value={product.count}
-                    min={0}
+                    min={1}
                     max={100}
                     step={1}
                     precision={0}
@@ -76,6 +75,7 @@ export default function CardProductTable({ className }) {
                         "countsCardProducts",
                         JSON.stringify(countsCardProducts)
                       );
+                      setSum((e) => (e += product.sumPrice));
                     }}
                   />
                 </span>

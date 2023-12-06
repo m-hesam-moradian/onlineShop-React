@@ -7,7 +7,7 @@ import CardSumPrice from "../../Components/CardSumPrice/CardSumPrice";
 import { useState } from "react";
 
 export default function Card() {
-  [sum,setSum]=useState(0)
+  const [sum, setSum] = useState(0);
   return (
     <>
       <Navbar />
@@ -15,12 +15,15 @@ export default function Card() {
         <div className="p-5"></div>
         <div className="col ">
           {JSON.parse(localStorage.getItem("cards")) && (
-            <CardProductTable className="  m-md-5 p-0 p-md-4"></CardProductTable>
+            <CardProductTable
+              setSum={setSum}
+              className="  m-md-5 p-0 p-md-4"
+            ></CardProductTable>
           )}
         </div>
         <div className="col-auto ">
           {JSON.parse(localStorage.getItem("cards")) && (
-            <CardSumPrice className="  m-5"></CardSumPrice>
+            <CardSumPrice className="  m-5" sums={sum}></CardSumPrice>
           )}
         </div>
       </div>
