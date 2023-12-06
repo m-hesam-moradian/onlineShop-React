@@ -93,7 +93,6 @@ export default function Login() {
       if (email.length > 5 && password.length > 4) {
         Login.map((dataObj) => {
           if (dataObj.email == email && dataObj.password == password) {
-            console.log(dataObj);
             localStorage.setItem("UserEmail", dataObj.email);
             localStorage.setItem("UserName", dataObj.Name);
             localStorage.setItem("UserPassword", dataObj.password);
