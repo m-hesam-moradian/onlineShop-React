@@ -31,7 +31,6 @@ export default function CardProductTable({ className, setSum }) {
           countsCardProducts.map((product, index) => (
             <>
               <div class="cell ">
-                {console.log(countsCardProducts)}
                 <span class="material-symbols-outlined  ">close</span>
                 <img className="card-product-img" src={product.img} alt="" />
               </div>
@@ -59,18 +58,14 @@ export default function CardProductTable({ className, setSum }) {
                     size={5}
                     onChange={(e) => {
                       product.count = e;
-                      // Calculate the new price
                       const newPrice = product.price * product.count;
 
-                      // Update the price display
                       document.querySelector(` .num${index}`).textContent =
                         newPrice.toLocaleString();
 
-                      // Update the price display in the countCardProducts array
                       countsCardProducts[index].sumPrice = newPrice;
 
-                      // Log the new count and price
-                      console.log(product.count, product.sumPrice);
+                   
                       localStorage.setItem(
                         "countsCardProducts",
                         JSON.stringify(countsCardProducts)
