@@ -69,7 +69,6 @@ export default function App() {
         value={{
           count,
           incrementCount,
-          
         }}
       >
         {/* <FirebaseDatas></FirebaseDatas> */}

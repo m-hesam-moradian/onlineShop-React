@@ -9,7 +9,6 @@ import { useState } from "react";
 export default function Card() {
   const [justForRended, setJustForRended] = useState([]);
   const [sum, setSum] = useState(0);
-   
 
   return (
     <>
