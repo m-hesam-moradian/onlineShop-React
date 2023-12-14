@@ -3,16 +3,16 @@ import "./CardSumPrice.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-
 export default function CardSumPrice({ className, sums }) {
   const navigate = useNavigate();
   let sum = 0;
-  JSON.parse(localStorage.getItem("countsCardProducts")).map((obj, index) => {
-    obj.sumPrice
-      ? (sum += obj.sumPrice)
-      : (sum += JSON.parse(localStorage.getItem("countsCardProducts"))[index]
-          .price);
-  });
+  localStorage.getItem("cards") &&
+    JSON.parse(localStorage.getItem("cards")).map((obj, index) => {
+      obj.sumPrice
+        ? (sum += obj.sumPrice)
+        : (sum += JSON.parse(localStorage.getItem("cards"))[index]
+            .price);
+    });
 
   return (
     <div>

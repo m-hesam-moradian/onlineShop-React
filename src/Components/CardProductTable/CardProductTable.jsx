@@ -1,19 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
+import CounterContext from "../../context/CounterContext";
 
-export default function CardProductTable({ className, setSum }) {
-  const CardProducts = JSON.parse(localStorage.getItem("cards"));
-  const countsCardProducts =JSON.parse(localStorage.getItem("countsCardProducts"))|| CardProducts.reduce((acc, curr) => {
-    const found = acc.find((item) => item.id === curr.id);
-    if (found) {
-      found.count++;
-    } else {
-      acc.push({ ...curr, count: 1 });
-    }
-    return acc;
-  }, []);
-
+export default function CardProductTable({
+  className,
+  setSum,
+  setJustForRended,
+}) {
+  let countsCardProducts = JSON.parse(localStorage.getItem("cards"));
+  const { count, incrementCount } = useContext(CounterContext);
   return (
     <>
       <div class={`grid ${className}`}>
@@ -27,11 +23,27 @@ export default function CardProductTable({ className, setSum }) {
 
         <div class="cell fw-bold ">جمع جزء به تومان</div>
 
-        {CardProducts &&
+        {countsCardProducts &&
           countsCardProducts.map((product, index) => (
             <>
               <div class="cell ">
-                <span class="material-symbols-outlined  ">close</span>
+                <span
+                  class="material-symbols-outlined  "
+                  onClick={() => {
+                    // countsCardProducts.filter((item) => item !== product);
+                    incrementCount();
+                    console.log(count);
+                    countsCardProducts.splice(index, 1);
+                    setJustForRended(countsCardProducts);
+                    localStorage.setItem(
+                      "cards",
+                      JSON.stringify(countsCardProducts)
+                    );
+                    console.log(countsCardProducts);
+                  }}
+                >
+                  close
+                </span>
                 <img className="card-product-img" src={product.img} alt="" />
               </div>
 
@@ -65,9 +77,8 @@ export default function CardProductTable({ className, setSum }) {
 
                       countsCardProducts[index].sumPrice = newPrice;
 
-                   
                       localStorage.setItem(
-                        "countsCardProducts",
+                        "cards",
                         JSON.stringify(countsCardProducts)
                       );
                       setSum((e) => (e += product.sumPrice));

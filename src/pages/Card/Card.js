@@ -7,15 +7,19 @@ import CardSumPrice from "../../Components/CardSumPrice/CardSumPrice";
 import { useState } from "react";
 
 export default function Card() {
+  const [justForRended, setJustForRended] = useState([]);
   const [sum, setSum] = useState(0);
+   
+
   return (
     <>
-      <Navbar />
+      <Navbar justForRended={justForRended} />
       <div className="row m-0">
         <div className="p-5"></div>
         <div className="col ">
           {JSON.parse(localStorage.getItem("cards")) && (
             <CardProductTable
+              setJustForRended={setJustForRended}
               setSum={setSum}
               className="  m-md-5 p-0 p-md-4"
             ></CardProductTable>
@@ -23,7 +27,10 @@ export default function Card() {
         </div>
         <div className="col-auto ">
           {JSON.parse(localStorage.getItem("cards")) && (
-            <CardSumPrice className="  m-5" sums={sum}></CardSumPrice>
+            <CardSumPrice
+              className="  m-5"
+              setJustForRended={setJustForRended}
+            ></CardSumPrice>
           )}
         </div>
       </div>

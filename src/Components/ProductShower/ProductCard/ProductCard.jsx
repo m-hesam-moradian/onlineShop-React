@@ -6,13 +6,20 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import CounterContext from "../../../context/CounterContext";
 
-export const handleClick = (data) => {
-  const items = JSON.parse(localStorage.getItem("cards"))
+export const handleClick = (newObj) => {
+  const arr = JSON.parse(localStorage.getItem("cards"))
     ? JSON.parse(localStorage.getItem("cards"))
     : [];
- 
 
-  localStorage.setItem("cards", JSON.stringify([...items, data]));
+  let existingObj = arr.find((item) => item.id === newObj.id);
+  if (existingObj) {
+    existingObj.count++;
+  } else {
+    arr.push({ ...newObj, count: 1 });
+  }
+
+  console.log(arr);
+  localStorage.setItem("cards", JSON.stringify(arr));
 };
 
 function ProductCard({ dataArray }) {

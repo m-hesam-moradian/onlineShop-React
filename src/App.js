@@ -21,7 +21,7 @@ export default function App() {
   const [count, setCount] = useState(card);
 
   const incrementCount = () => {
-    setCount(count + 1);
+    setCount(JSON.parse(localStorage.getItem("cards")).length);
   };
 
   const login = (userInfos, token) => {
@@ -69,6 +69,7 @@ export default function App() {
         value={{
           count,
           incrementCount,
+          
         }}
       >
         {/* <FirebaseDatas></FirebaseDatas> */}

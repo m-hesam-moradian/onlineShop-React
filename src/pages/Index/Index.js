@@ -14,7 +14,7 @@ import CounterContext from "../../context/CounterContext";
 
 export default function Index(props) {
   const [show, setModalShow] = useState(true);
- 
+
   const [NewProductsArray, setModalNewProductsArray] = useState(true);
 
   useEffect(() => {
@@ -29,26 +29,24 @@ export default function Index(props) {
   // console.log(NewProductsArray);
   return (
     <>
-
-        <Header />
-        <ChoosenProducts />
-        <CountdownTimer />
-        {NewProductsArray.length > 0 ? (
-          <NewProducts dataArray={NewProductsArray} SecondLine={true} />
-        ) : (
-          "Loading..."
-        )}
-        <MiddleBanner />
-        <MostSales />
-        {NewProductsArray.length > 0 ? (
-          <NewProducts dataArray={NewProductsArray} />
-        ) : (
-          "Loading..."
-        )}
-        <BottomBanner />
-        <RecentArticles />
-        <Footer />
-   
+      <Header />
+      <ChoosenProducts />
+      <CountdownTimer />
+      {NewProductsArray.length > 0 ? (
+        <NewProducts dataArray={NewProductsArray} SecondLine={true} />
+      ) : (
+        "Loading..."
+      )}
+      <MiddleBanner />
+      <MostSales />
+      {NewProductsArray.length > 0 ? (
+        <NewProducts dataArray={NewProductsArray} />
+      ) : (
+        "Loading..."
+      )}
+      <BottomBanner />
+      <RecentArticles />
+      <Footer />
     </>
   );
 }
