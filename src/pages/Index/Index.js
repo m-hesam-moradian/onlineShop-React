@@ -17,7 +17,6 @@ import CounterContext from "../../context/CounterContext";
 
 
 
-// const jwt = require("jsonwebtoken");
 
 
 export default function Index(props) {
