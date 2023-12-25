@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -7,7 +7,6 @@ import { API } from "../../FirebaseDatas";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import CounterContext from "../../context/CounterContext";
-
 
 export default function Navbar() {
   const [ProductArray, setProductArray] = useState([]);
@@ -104,33 +103,33 @@ export default function Navbar() {
 
             <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
               <li class="nav-item p-2 active">
-                <Link class="nav-link" to="/">
+                <NavLink class="nav-link" to="/">
                   <span class="material-symbols-outlined ">home</span> صفحه اصلی
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item p-2">
-                <Link class="nav-link" to="/store">
+                <NavLink class="nav-link" to="/store">
                   <span class="material-symbols-outlined">storefront</span>
                   فروشگاه
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item p-2">
-                <Link class="nav-link" to="/blog">
+                <NavLink class="nav-link" to="/blog">
                   <span class="material-symbols-outlined">receipt_long</span>
                   وبلاگ
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item p-2">
-                <Link class="nav-link" to="/Ablout-Us">
+                <NavLink class="nav-link" to="/Ablout-Us">
                   <span class="material-symbols-outlined">receipt_long</span>
                   درباره ما
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item p-2">
-                <Link class="nav-link" to="/Contact-Us">
+                <NavLink class="nav-link" to="/Contact-Us">
                   <span class="material-symbols-outlined">receipt_long</span>
                   تماس با ما
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </Offcanvas.Body>
@@ -207,28 +206,28 @@ export default function Navbar() {
           </form>
 
           <div className="main-header__left">
-            <Link
+            <NavLink
               to="/Contact-Us"
               className="main-header__cart-btn contactBTN d-none d-sm-flex"
             >
               <span class="material-symbols-outlined">contacts</span>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/Card"
               className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
             >
               <span className="productCounter">{count}</span>
 
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
-            </Link>
+            </NavLink>
             {authContext.isLoggedIn ? (
-              <Link to="#" className="main-header__profile mainProfile">
+              <NavLink to="#" className="main-header__profile mainProfile">
                 <span className="main-header__profile-text">
                   {authContext.userInfos.name}
                 </span>
-              </Link>
+              </NavLink>
             ) : (
-              <Link
+              <NavLink
                 to="/login"
                 className="main-header__profile mainProfile p-2 p-sm-4"
               >
@@ -241,11 +240,11 @@ export default function Navbar() {
                 <span class="material-symbols-outlined d-flex d-sm-none">
                   login
                 </span>
-              </Link>
+              </NavLink>
             )}
           </div>
         </div>
-        <Link
+        <NavLink
           to={localStorage.getItem("UserName") ? "/Card" : `/login`}
           className={`cartBTN ${
             localStorage.getItem("UserName") ? "cartBTNActive " : "shake-button"
@@ -258,7 +257,7 @@ export default function Navbar() {
           )}
 
           <i className="fas fa-shopping-cart main-header__cart-icon"></i>
-        </Link>
+        </NavLink>
       </div>
       <div className="navbarMenu d-md-flex ">
         <ul>
@@ -295,32 +294,32 @@ export default function Navbar() {
             </div>
           </ul>
           <li>
-            <Link class="nav-link" to="/">
+            <NavLink class="nav-link" to="/">
               <span class="material-symbols-outlined ">home</span> صفحه اصلی
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link class="nav-link" to="/store">
+            <NavLink class="nav-link" to="/store">
               <span class="material-symbols-outlined">storefront</span> فروشگاه
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link class="nav-link" to="/blog">
+            <NavLink class="nav-link" to="/blog">
               <span class="material-symbols-outlined">receipt_long</span> وبلاگ
-            </Link>
+            </NavLink>
             <a href=""></a>
           </li>
           <li>
-            <Link class="nav-link" to="/Ablout-Us">
+            <NavLink class="nav-link" to="/Ablout-Us">
               <span class="material-symbols-outlined">receipt_long</span> درباره
               ما
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link class="nav-link" to="/Contact-Us">
+            <NavLink class="nav-link" to="/Contact-Us">
               <span class="material-symbols-outlined">receipt_long</span> تماس
               با ما
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -2,3 +2,8 @@
     background-image: url(https://halochin.ir/electronic-shop/wp-content/uploads/2023/08/BG-1-1-1-scaled-1.webp);
     background-size: cover;
 }
+.active {
+  color: var(--primary-color);
+  background: white;
+  font-size: 15px;
+}
