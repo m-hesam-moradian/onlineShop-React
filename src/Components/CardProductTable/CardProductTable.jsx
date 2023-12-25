@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
 import CounterContext from "../../context/CounterContext";
@@ -30,7 +30,6 @@ export default function CardProductTable({
                 <span
                   class="material-symbols-outlined  "
                   onClick={() => {
-                    // countsCardProducts.filter((item) => item !== product);
                     incrementCount();
                     console.log(count);
                     countsCardProducts.splice(index, 1);

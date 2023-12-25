@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductCard from "./ProductCard/ProductCard";
 
 import "./ProductShower.css";
 import { useNavigate } from "react-router-dom";
-// import { API } from "../../FirebaseDatas";
 
 export default function ProductShower({
   dataArrayContainer,
@@ -12,10 +11,8 @@ export default function ProductShower({
   SecondLine = false,
   InnerContainer = false,
 }) {
-  // const [LetReturner, setLetReturner] = useState(false);
 const navigate = useNavigate();
 
-  // console.log(dataArrayContainer[1]);
   return (
     <>
       <div className="ChoosenProductscontainer bg-light p-4 ">

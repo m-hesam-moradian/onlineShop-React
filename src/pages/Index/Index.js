@@ -10,7 +10,6 @@ import RecentArticles from "../../Components/RecentArticles/RecentArticles";
 import Footer from "../../Components/Footer/Footer";
 import "./Index.css";
 import { API } from "../../FirebaseDatas";
-import CounterContext from "../../context/CounterContext";
 
 
 
@@ -20,7 +19,6 @@ import CounterContext from "../../context/CounterContext";
 
 
 export default function Index(props) {
-  const [show, setModalShow] = useState(true);
 
   const [NewProductsArray, setModalNewProductsArray] = useState(true);
 

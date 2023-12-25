@@ -3,7 +3,6 @@ import "./ContactUsContainer.css";
 import { useState } from "react";
 import { API } from "../../FirebaseDatas";
 import { Alert } from "react-bootstrap";
-import swal from "sweetalert";
 import Swal from "sweetalert2";
 
 export default function ContactUsContainer() {

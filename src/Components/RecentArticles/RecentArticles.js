@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./RecentArticles.css";
 import ProductShower from "../ProductShower/ProductShower";
 
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { API } from "../../FirebaseDatas";
 import { useNavigate } from "react-router-dom";

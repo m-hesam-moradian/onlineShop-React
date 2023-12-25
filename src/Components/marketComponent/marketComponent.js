@@ -1,14 +1,11 @@
 import "./marketComponent.css";
 import React, { useEffect, useState } from "react";
 import Slider from "@mui/material/Slider";
-import Typography from "@mui/material/Typography";
 import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import Pagination from "@mui/material/Pagination";
 import ProductCard from "../ProductShower/ProductCard/ProductCard";
 import { API } from "../../FirebaseDatas";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 
 export default function MarketComponent() {

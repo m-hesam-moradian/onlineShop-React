@@ -4,12 +4,10 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { API } from "../../FirebaseDatas";
-import ProductCard from "../ProductShower/ProductCard/ProductCard";
 import { useNavigate } from "react-router-dom";
 
 export default function MostSales() {
   const [todayOff, setTodayOff] = useState([]);
-  // const [articles, setarticles] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
@@ -17,8 +15,6 @@ export default function MostSales() {
       .then((res) => res.json())
       .then((allData) => {
         setTodayOff(allData);
-        // setarticles(allData);
-        // console.log(allData);
       });
   }, []);
   function UncontrolledExample({ dataArraypromp }) {
@@ -30,9 +26,7 @@ export default function MostSales() {
               <div className="row m-0">
                 <ProductCard dataArray={data}></ProductCard>
 
-                {/* <div className="d-none d-md-flex col ">
-              <ProductCard dataArray={todayOff[0]}></ProductCard>
-            </div> */}
+
               </div>
             </Carousel.Item>
           ))}
@@ -93,10 +87,7 @@ export default function MostSales() {
     );
   }
 
-  //
-  //
-  //
-  //
+
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
@@ -135,7 +126,7 @@ export default function MostSales() {
               onClick={() => handleCategoryClick("MemoryCard")}
               type="button"
               class={`MostSalesCategoryBTN col ${
-                selectedCategory == "MemoryCard" && "active"
+                selectedCategory === "MemoryCard" && "active"
               }`}
             >
               حافظه
@@ -144,7 +135,7 @@ export default function MostSales() {
               onClick={() => handleCategoryClick("Headphones")}
               type="button"
               class={`MostSalesCategoryBTN col ${
-                selectedCategory == "Headphones" && "active"
+                selectedCategory === "Headphones" && "active"
               }`}
             >
               هدفون
@@ -153,7 +144,7 @@ export default function MostSales() {
               onClick={() => handleCategoryClick("PcAndAccessories")}
               type="button"
               class={`MostSalesCategoryBTN col ${
-                selectedCategory == "PcAndAccessories" && "active"
+                selectedCategory === "PcAndAccessories" && "active"
               }`}
             >
               لوازم جانبی کامپیوتر
