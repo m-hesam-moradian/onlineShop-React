@@ -27,7 +27,7 @@ export default function CardProductTable({ className, setSum, setRerendered }) {
                   class="material-symbols-outlined  "
                   onClick={() => {
                     incrementCount();
-                    console.log(count);
+                    // console.log(count);
                     countsCardProducts.splice(index, 1);
                     localStorage.setItem(
                       "cards",
