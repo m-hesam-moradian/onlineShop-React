@@ -18,7 +18,6 @@ export default function Card() {
         <div className="col ">
           {JSON.parse(localStorage.getItem("cards")) && (
             <CardProductTable
-              setJustForRended={setJustForRended}
               setSum={setSum}
               className="  m-md-5 p-0 p-md-4"
             ></CardProductTable>

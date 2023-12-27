@@ -6,7 +6,6 @@ import CounterContext from "../../context/CounterContext";
 export default function CardProductTable({
   className,
   setSum,
-  setJustForRended,
 }) {
   let countsCardProducts = JSON.parse(localStorage.getItem("cards"));
   const { count, incrementCount } = useContext(CounterContext);
@@ -33,7 +32,6 @@ export default function CardProductTable({
                     incrementCount();
                     console.log(count);
                     countsCardProducts.splice(index, 1);
-                    setJustForRended(countsCardProducts);
                     localStorage.setItem(
                       "cards",
                       JSON.stringify(countsCardProducts)
