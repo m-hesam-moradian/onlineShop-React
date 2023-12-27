@@ -27,6 +27,7 @@ export default function Card() {
           
             ></CardProductTable>
           )}
+          
         </div>
         <div className="col-auto ">
           {JSON.parse(localStorage.getItem("cards")) && (
