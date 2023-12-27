@@ -3,10 +3,7 @@ import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
 import CounterContext from "../../context/CounterContext";
 
-export default function CardProductTable({
-  className,
-  setSum,
-}) {
+export default function CardProductTable({ className, setSum, setRerendered }) {
   let countsCardProducts = JSON.parse(localStorage.getItem("cards"));
   const { count, incrementCount } = useContext(CounterContext);
   return (
@@ -36,6 +33,7 @@ export default function CardProductTable({
                       "cards",
                       JSON.stringify(countsCardProducts)
                     );
+                    setRerendered(true);
                     console.log(countsCardProducts);
                   }}
                 >

@@ -9,6 +9,7 @@ import "./Navbar.css";
 import CounterContext from "../../context/CounterContext";
 
 export default function Navbar() {
+
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
 
