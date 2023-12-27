@@ -4,7 +4,7 @@ import AuthContext from "../../context/authContext";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { API } from "../../FirebaseDatas";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import CounterContext from "../../context/CounterContext";
 
