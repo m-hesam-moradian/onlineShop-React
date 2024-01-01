@@ -1,14 +1,13 @@
 import React from "react";
-import "./Admin.css";
+import AdminSidebar from "./AdminSidebar/AdminSidebar";
+// import "./Admin.css";
 export default function Admin() {
   return (
-    <div className="admin">
-      <div className="admin-sidebar bg-stone-500">side bar
-        <ul>
-          <li></li>
-      </ul>
+    <div className="admin flex">
+      <div className="basis-[15%]  bg-main-400 h-screen">
+        <AdminSidebar />
       </div>
-      <div className="admin-contant bg-stone-300">whole contant</div>
+      <div className="basis-full   h-screen">1</div>
     </div>
   );
 }

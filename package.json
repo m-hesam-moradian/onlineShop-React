@@ -13,7 +13,8 @@
     "react-numeric-input": "^2.2.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
-    "sweetalert2": "^11.9.0"
+    "sweetalert2": "^11.9.0",
+    "tailwind": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
