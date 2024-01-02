@@ -16,7 +16,7 @@ export default function AdminSidebar() {
           stroke="currentColor"
           class="w-6 h-6"
         >
-          
+
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -24,6 +24,7 @@ export default function AdminSidebar() {
           />
         </svg>
 
+        
         <span>Dashboard</span>
       </div>
     </div>
