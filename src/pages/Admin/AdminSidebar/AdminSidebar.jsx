@@ -26,7 +26,7 @@ export default function AdminSidebar() {
 
 
         
-        
+
         <span>Dashboard</span>
       </div>
     </div>
