@@ -25,7 +25,7 @@ export default function AdminSidebar() {
         </svg>
 
 
-        
+      
         <span>Dashboard</span>
       </div>
     </div>
