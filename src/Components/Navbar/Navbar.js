@@ -13,7 +13,6 @@ export default function Navbar() {
   //states
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
-
   const [isHovered, setIsHovered] = useState(false);
   const [allMenus, setAllMenus] = useState(false);
 
@@ -32,23 +31,20 @@ export default function Navbar() {
         setProductArray(allData);
       });
   }, [searchResult]);
-
+  
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
+  
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
   //useMemo
-  let searchResultData;
-  const SearchResultRender = ({data}) => {
-    const [searchResultMobile, setsearchResultMobile] = useState([data]);
-    // setsearchResultMobile(data);
+  const SearchResultRender = useMemo(() => {
     return (
-      searchResultMobile &&
-      searchResultMobile.map((event) => (
+      searchResult &&
+      searchResult.map((event) => (
         <a
           onClick={() => navigate(`/products/${event.id}`)}
           href=""
@@ -59,7 +55,7 @@ export default function Navbar() {
         </a>
       ))
     );
-  };
+  }, [searchResult]);
 
   ////////////////
   function HumbergerMenu({ name, ...props }) {
@@ -100,7 +96,7 @@ export default function Navbar() {
                   if (!event.target.value) {
                     result = [];
                   }
-                  searchResultData = result;
+                  setsearchResult(result);
                 }}
               />
 
@@ -115,7 +111,7 @@ export default function Navbar() {
                 <i className="fas fa-search"></i>
               </button>
               <ul className="searchList rounded-4 d-grid gap-3">
-                <SearchResultRender data={searchResultData} />
+                {SearchResultRender}
               </ul>
             </form>
 
