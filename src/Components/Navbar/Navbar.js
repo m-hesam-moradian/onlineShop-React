@@ -40,6 +40,7 @@ export default function Navbar() {
     setIsHovered(false);
   };
 
+  
   //useMemo
   const SearchResultRender = useMemo(() => {
     return (
