@@ -40,7 +40,7 @@ export default function Navbar() {
     setIsHovered(false);
   };
 
-  
+
   //useMemo
   const SearchResultRender = useMemo(() => {
     return (
@@ -161,6 +161,7 @@ export default function Navbar() {
     );
   }
 
+  
   return (
     <div className="main-header">
       <div className="container-fluid">
