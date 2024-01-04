@@ -27,7 +27,7 @@ export default function Landing({ info }) {
   // console.log(todayOff);
   function UncontrolledExample() {
     return (
-      <Carousel className="py-5" interval={2000} role="button">
+      <Carousel className="py-2 flex items-center justify-center" interval={2000} role="button">
         {todayOff.map((todayOffIndex) => (
           <Carousel.Item key={todayOffIndex.id}>
             <OffCarousel
@@ -43,11 +43,11 @@ export default function Landing({ info }) {
       </Carousel>
     );
   }
-  function OffCarousel({ id,img, name, price, priceBeforeOff }) {
+  function OffCarousel({ id, img, name, price, priceBeforeOff }) {
     return (
       <Card
-      onClick={() => navigate(`/products/${id}`)}
-        className="w-100 d-flex align-items-center rounded-5  "
+        onClick={() => navigate(`/products/${id}`)}
+        className="w-100 d-flex align-items-center rounded-5 overflow-hidden "
         style={{ width: "18rem" }}
       >
         <span className="topTitle p-4 text-secondary ">
@@ -67,7 +67,7 @@ export default function Landing({ info }) {
                 <div className="SliderPrice-mainPriceContainer">
                   <span className="SliderPrice-price p-1 fw-bolder ">
                     {" "}
-                    {price}
+                    {price.toLocaleString("en-US")}
                   </span>
                   <span className="SliderPrice-toman text-secondary  ">
                     تومان{" "}
@@ -86,8 +86,8 @@ export default function Landing({ info }) {
   return (
     <section className="landing py-3">
       <div className="containerz  ">
-        <div className="row m-auto ">
-          <div className="col-12 col-md  p-5 m-auto">
+        <div className="row m-auto gap-3">
+          <div className="col-12 col-md   m-auto">
             <a className=" w-100 my-3">
               {" "}
               <img
@@ -99,7 +99,7 @@ export default function Landing({ info }) {
               />
             </a>
           </div>
-          <div className="col-12 px-5 p-md-0 col-md-3  mx-5  me-3 rounded-5">
+          <div className="col-12 px-2 p-md-0 col-md-3   rounded-5">
             <UncontrolledExample></UncontrolledExample>
           </div>
         </div>

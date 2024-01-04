@@ -1,31 +1,38 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { API } from "../../FirebaseDatas";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import CounterContext from "../../context/CounterContext";
+import { NavLinks } from "./NavLinks/NavLinks";
 
 export default function Navbar() {
-
+  //states
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
 
-  const { count, incrementCount } = useContext(CounterContext);
+  const [isHovered, setIsHovered] = useState(false);
+  const [allMenus, setAllMenus] = useState(false);
 
+  //navigates
+  const navigate = useNavigate();
+
+  //contexts
+  const { count, incrementCount } = useContext(CounterContext);
+  const authContext = useContext(AuthContext);
+
+  //side effect
   useEffect(() => {
     fetch(`${API}products.json`)
       .then((res) => res.json())
       .then((allData) => {
         setProductArray(allData);
       });
-  }, []);
-  const [isHovered, setIsHovered] = useState(false);
+  }, [searchResult]);
 
-  const [allMenus, setAllMenus] = useState(false);
-  const authContext = useContext(AuthContext);
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -33,10 +40,30 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-  useEffect(() => {}, []);
-  function OffCanvasExample({ name, ...props }) {
-    const [show, setShow] = useState(false);
 
+  //useMemo
+  let searchResultData;
+  const SearchResultRender = ({data}) => {
+    const [searchResultMobile, setsearchResultMobile] = useState([data]);
+    // setsearchResultMobile(data);
+    return (
+      searchResultMobile &&
+      searchResultMobile.map((event) => (
+        <a
+          onClick={() => navigate(`/products/${event.id}`)}
+          href=""
+          className=" searchListItem"
+        >
+          <img src={event.img} alt="" />
+          <span>{event.name}</span>
+        </a>
+      ))
+    );
+  };
+
+  ////////////////
+  function HumbergerMenu({ name, ...props }) {
+    const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -73,7 +100,7 @@ export default function Navbar() {
                   if (!event.target.value) {
                     result = [];
                   }
-                  setsearchResult(result);
+                  searchResultData = result;
                 }}
               />
 
@@ -88,57 +115,54 @@ export default function Navbar() {
                 <i className="fas fa-search"></i>
               </button>
               <ul className="searchList rounded-4 d-grid gap-3">
-                {searchResult &&
-                  searchResult.map((event) => (
-                    <a
-                      onClick={() => navigate(`/products/${event.id}`)}
-                      href=""
-                      className=" searchListItem"
-                    >
-                      <img src={event.img} alt="" />
-                      <span>{event.name}</span>
-                    </a>
-                  ))}
+                <SearchResultRender data={searchResultData} />
               </ul>
             </form>
 
-            <ul class="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
-              <li class="nav-item p-2 active">
-                <NavLink class="nav-link" to="/">
-                  <span class="material-symbols-outlined ">home</span> صفحه اصلی
+            <ul className="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
+              {/* <li className="nav-item p-2 active">
+                <NavLink className="nav-link" to="/">
+                  <span className="material-symbols-outlined ">home</span> صفحه
+                  اصلی
                 </NavLink>
               </li>
-              <li class="nav-item p-2">
-                <NavLink class="nav-link" to="/store">
-                  <span class="material-symbols-outlined">storefront</span>
+              <li className="nav-item p-2">
+                <NavLink className="nav-link" to="/store">
+                  <span className="material-symbols-outlined">storefront</span>
                   فروشگاه
                 </NavLink>
               </li>
-              <li class="nav-item p-2">
-                <NavLink class="nav-link" to="/blog">
-                  <span class="material-symbols-outlined">receipt_long</span>
+              <li className="nav-item p-2">
+                <NavLink className="nav-link" to="/blog">
+                  <span className="material-symbols-outlined">
+                    receipt_long
+                  </span>
                   وبلاگ
                 </NavLink>
               </li>
-              <li class="nav-item p-2">
-                <NavLink class="nav-link" to="/Ablout-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>
+              <li className="nav-item p-2">
+                <NavLink className="nav-link" to="/Ablout-Us">
+                  <span className="material-symbols-outlined">
+                    receipt_long
+                  </span>
                   درباره ما
                 </NavLink>
               </li>
-              <li class="nav-item p-2">
-                <NavLink class="nav-link" to="/Contact-Us">
-                  <span class="material-symbols-outlined">receipt_long</span>
+              <li className="nav-item p-2">
+                <NavLink className="nav-link" to="/Contact-Us">
+                  <span className="material-symbols-outlined">
+                    receipt_long
+                  </span>
                   تماس با ما
                 </NavLink>
-              </li>
+              </li> */}
+              <NavLinks />
             </ul>
           </Offcanvas.Body>
         </Offcanvas>
       </>
     );
   }
-  const navigate = useNavigate();
 
   return (
     <div className="main-header">
@@ -146,10 +170,10 @@ export default function Navbar() {
         <div className="main-header__content p-3 p-sm-5">
           <div className=" main-header__right ">
             <a className="d-flex d-md-none align-items-center ">
-              <OffCanvasExample
+              <HumbergerMenu
                 placement="end"
                 name={
-                  <span class="material-symbols-outlined  align-items-center ">
+                  <span className="material-symbols-outlined  align-items-center ">
                     menu
                   </span>
                 }
@@ -191,6 +215,7 @@ export default function Navbar() {
             >
               <i className="fas fa-search "></i>
             </button>
+
             <ul className="searchList rounded-4 d-grid gap-3">
               {searchResult &&
                 searchResult.map((event) => (
@@ -211,7 +236,7 @@ export default function Navbar() {
               to="/Contact-Us"
               className="main-header__cart-btn contactBTN d-none d-sm-flex"
             >
-              <span class="material-symbols-outlined">contacts</span>
+              <span className="material-symbols-outlined">contacts</span>
             </NavLink>
             <NavLink
               to="/Card"
@@ -238,7 +263,7 @@ export default function Navbar() {
                     ? localStorage.getItem("UserName")
                     : " ورود / ثبت نام"}
                 </span>
-                <span class="material-symbols-outlined d-flex d-sm-none">
+                <span className="material-symbols-outlined d-flex d-sm-none">
                   login
                 </span>
               </NavLink>
@@ -268,10 +293,10 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
               className="categories-container"
             >
-              <span class="material-symbols-outlined ">widgets</span>
+              <span className="material-symbols-outlined ">widgets</span>
               دسته بندی ها
               <a href="">
-                <span class="material-symbols-outlined">expand_more</span>
+                <span className="material-symbols-outlined">expand_more</span>
               </a>
             </div>
             <div
@@ -294,34 +319,8 @@ export default function Navbar() {
               </div>
             </div>
           </ul>
-          <li>
-            <NavLink class="nav-link" to="/">
-              <span class="material-symbols-outlined ">home</span> صفحه اصلی
-            </NavLink>
-          </li>
-          <li>
-            <NavLink class="nav-link" to="/store">
-              <span class="material-symbols-outlined">storefront</span> فروشگاه
-            </NavLink>
-          </li>
-          <li>
-            <NavLink class="nav-link" to="/blog">
-              <span class="material-symbols-outlined">receipt_long</span> وبلاگ
-            </NavLink>
-            <a href=""></a>
-          </li>
-          <li>
-            <NavLink class="nav-link" to="/Ablout-Us">
-              <span class="material-symbols-outlined">receipt_long</span> درباره
-              ما
-            </NavLink>
-          </li>
-          <li>
-            <NavLink class="nav-link" to="/Contact-Us">
-              <span class="material-symbols-outlined">receipt_long</span> تماس
-              با ما
-            </NavLink>
-          </li>
+
+          <NavLinks />
         </ul>
       </div>
     </div>

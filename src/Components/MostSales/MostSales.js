@@ -65,7 +65,7 @@ export default function MostSales() {
                 <div className="SliderPrice-mainPriceContainer">
                   <span className="SliderPrice-price p-1 fw-bolder ">
                     {" "}
-                    {dataArray.price}
+                    {dataArray.price.toLocaleString("en-US")}
                   </span>
                   <span className="SliderPrice-toman text-secondary  ">
                     تومان{" "}
