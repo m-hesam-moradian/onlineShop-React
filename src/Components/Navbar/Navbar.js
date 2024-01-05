@@ -58,7 +58,6 @@ export default function Navbar() {
             <a className="d-flex d-md-none align-items-center ">
               <HumbergerMenu
                 ProductArray={ProductArray}
-                SearchResultRender={SearchResultRender}
                 placement="end"
                 name={
                   <span className="material-symbols-outlined  align-items-center ">

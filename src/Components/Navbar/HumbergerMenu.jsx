@@ -3,13 +3,8 @@ import { NavLinks } from "./NavLinks/NavLinks";
 import { Button, Offcanvas } from "react-bootstrap";
 import useSearch from "../../hooks/useSearch";
 
-export default function HumbergerMenu({
-  name,
-  ProductArray,
-  SearchResultRender,
-  ...props
-}) {
-    //states
+export default function HumbergerMenu({ name, ProductArray, ...props }) {
+  //states
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
