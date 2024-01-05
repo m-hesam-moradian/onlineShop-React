@@ -29,18 +29,17 @@ export default function Navbar() {
         setProductArray(allData);
       });
   }, [searchResult]);
-  
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-  
+
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
-
   //useMemo
-  const SearchResultRender = useMemo(() => {
+  const SearchResultRender = ({searchResult}) => {
     return (
       searchResult &&
       searchResult.map((event) => (
@@ -54,13 +53,10 @@ export default function Navbar() {
         </a>
       ))
     );
-  }, [searchResult]);
+  };
 
   ////////////////
-  
 
-
-  
   return (
     <div className="main-header">
       <div className="container-fluid">
@@ -69,6 +65,7 @@ export default function Navbar() {
             <a className="d-flex d-md-none align-items-center ">
               <HumbergerMenu
                 ProductArray={ProductArray}
+                SearchResultRender={SearchResultRender}
                 placement="end"
                 name={
                   <span className="material-symbols-outlined  align-items-center ">
@@ -115,17 +112,7 @@ export default function Navbar() {
             </button>
 
             <ul className="searchList rounded-4 d-grid gap-3">
-              {searchResult &&
-                searchResult.map((event) => (
-                  <a
-                    onClick={() => navigate(`/products/${event.id}`)}
-                    href=""
-                    className=" searchListItem"
-                  >
-                    <img src={event.img} alt="" />
-                    <span>{event.name}</span>
-                  </a>
-                ))}
+              <SearchResultRender searchResult={searchResult} />
             </ul>
           </form>
 

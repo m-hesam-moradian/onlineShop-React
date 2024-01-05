@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { NavLinks } from "./NavLinks/NavLinks";
 import { Button, Offcanvas } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 
-export default function HumbergerMenu({ name, ProductArray, ...props }) {
+export default function HumbergerMenu({
+  name,
+  ProductArray,
+  SearchResultRender,
+  ...props
+}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [searchResult, setsearchResult] = useState([]);
 
-  const navigate = useNavigate();
 
   return (
     <>
@@ -59,17 +62,7 @@ export default function HumbergerMenu({ name, ProductArray, ...props }) {
               <i className="fas fa-search"></i>
             </button>
             <ul className="searchList rounded-4 d-grid gap-3">
-              {searchResult &&
-                searchResult.map((event) => (
-                  <a
-                    onClick={() => navigate(`/products/${event.id}`)}
-                    href=""
-                    className=" searchListItem"
-                  >
-                    <img src={event.img} alt="" />
-                    <span>{event.name}</span>
-                  </a>
-                ))}
+              <SearchResultRender searchResult={searchResult} />
             </ul>
           </form>
 
