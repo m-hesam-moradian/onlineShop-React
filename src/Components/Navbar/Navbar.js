@@ -39,7 +39,7 @@ export default function Navbar() {
   };
 
   //useMemo
-  const SearchResultRender = ({searchResult}) => {
+  const SearchResultRender = ({ searchResult }) => {
     return (
       searchResult &&
       searchResult.map((event) => (
@@ -125,7 +125,11 @@ export default function Navbar() {
             </NavLink>
             <NavLink
               to="/Card"
-              className="cartBTN shake-button main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none"
+              className={`cartBTN ${
+                localStorage.getItem("UserName")
+                  ? "cartBTNActive "
+                  : "shake-button"
+              } main-header__cart-btn contactBTN mobileNavCart d-flex d-md-none hover:scale-110`}
             >
               <span className="productCounter">{count}</span>
 

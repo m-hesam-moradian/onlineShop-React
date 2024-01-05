@@ -66,7 +66,7 @@ export default function HumbergerMenu({
             </ul>
           </form>
 
-          <ul className="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary ">
+          <ul className="navbar-nav justify-content-end flex-grow-1 p-4 text-secondary gap-4">
             <NavLinks />
           </ul>
         </Offcanvas.Body>
