@@ -7,8 +7,11 @@ import CounterContext from "../../context/CounterContext";
 import { NavLinks } from "./NavLinks/NavLinks";
 import HumbergerMenu from "./HumbergerMenu";
 import "./Navbar.css";
+import useSearch from "../../hooks/useSearch";
 
 export default function Navbar() {
+
+
   //states
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
@@ -30,6 +33,11 @@ export default function Navbar() {
       });
   }, [searchResult]);
 
+  //costume hook
+    const searchResultElement = useSearch(searchResult);
+  
+
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -39,21 +47,6 @@ export default function Navbar() {
   };
 
 
-  const SearchResultRender = ({ searchResult }) => {
-    return (
-      searchResult &&
-      searchResult.map((event) => (
-        <a
-          onClick={() => navigate(`/products/${event.id}`)}
-          href=""
-          className=" searchListItem"
-        >
-          <img src={event.img} alt="" />
-          <span>{event.name}</span>
-        </a>
-      ))
-    );
-  };
 
   ////////////////
 
@@ -112,7 +105,7 @@ export default function Navbar() {
             </button>
 
             <ul className="searchList rounded-4 d-grid gap-3">
-              <SearchResultRender searchResult={searchResult} />
+              {searchResultElement}
             </ul>
           </form>
 

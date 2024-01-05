@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLinks } from "./NavLinks/NavLinks";
 import { Button, Offcanvas } from "react-bootstrap";
+import useSearch from "../../hooks/useSearch";
 
 export default function HumbergerMenu({
   name,
@@ -8,11 +9,14 @@ export default function HumbergerMenu({
   SearchResultRender,
   ...props
 }) {
+    //states
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [searchResult, setsearchResult] = useState([]);
 
+  //costume hook
+  const searchResultElement = useSearch(searchResult);
 
   return (
     <>
@@ -62,7 +66,7 @@ export default function HumbergerMenu({
               <i className="fas fa-search"></i>
             </button>
             <ul className="searchList rounded-4 d-grid gap-3">
-              <SearchResultRender searchResult={searchResult} />
+              {searchResultElement}
             </ul>
           </form>
 
