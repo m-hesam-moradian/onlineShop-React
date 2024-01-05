@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect, useMemo } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import { API } from "../../FirebaseDatas";
 import { useNavigate } from "react-router-dom";
-import "./Navbar.css";
 import CounterContext from "../../context/CounterContext";
 import { NavLinks } from "./NavLinks/NavLinks";
 import HumbergerMenu from "./HumbergerMenu";
+import "./Navbar.css";
 
 export default function Navbar() {
   //states
@@ -38,7 +38,7 @@ export default function Navbar() {
     setIsHovered(false);
   };
 
-  //useMemo
+
   const SearchResultRender = ({ searchResult }) => {
     return (
       searchResult &&
