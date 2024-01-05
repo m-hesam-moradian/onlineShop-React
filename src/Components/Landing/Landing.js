@@ -75,7 +75,7 @@ export default function Landing({ info }) {
                 </div>
               </div>
             </div>
-            <Button variant="danger">
+            <Button variant="danger" className="bg-red-500">
               <span class="material-symbols-outlined p-2 ">shopping_bag</span>
             </Button>
           </Card.Text>
