@@ -10,9 +10,6 @@ import "./Navbar.css";
 import useSearch from "../../hooks/useSearch";
 
 export default function Navbar() {
-
-
-  
   //states
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
@@ -35,9 +32,7 @@ export default function Navbar() {
   }, [searchResult]);
 
   //costume hook
-    const searchResultElement = useSearch(searchResult);
-  
-
+  const searchResultElement = useSearch(searchResult);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -46,9 +41,6 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
-
-
 
   return (
     <div className="main-header">
