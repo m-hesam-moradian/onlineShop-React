@@ -9,13 +9,8 @@ import "./Landing.css";
 import { API } from "../../FirebaseDatas";
 
 export default function Landing({ info }) {
-  // const [searchValue, setSearchValue] = useState("");
   const [todayOff, setTodayOff] = useState([]);
   const navigate = useNavigate();
-
-  // const goToSearchPage = () => {
-  //   navigate(`/search/${searchValue}`);
-  // };
 
   useEffect(() => {
     fetch(`${API}products.json`)
@@ -27,7 +22,11 @@ export default function Landing({ info }) {
   // console.log(todayOff);
   function UncontrolledExample() {
     return (
-      <Carousel className="py-2 flex items-center justify-center" interval={2000} role="button">
+      <Carousel
+        className="py-2 flex items-center justify-center"
+        interval={2000}
+        role="button"
+      >
         {todayOff.map((todayOffIndex) => (
           <Carousel.Item key={todayOffIndex.id}>
             <OffCarousel

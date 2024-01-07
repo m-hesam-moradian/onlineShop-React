@@ -18,7 +18,7 @@ export default function Header() {
     <header className="header px-3 container-flud">
       {/* <Topbar info={indexInfo} /> */}
       <Navbar />
-      <Landing info={indexInfo} />
+      <Landing  />
       <HeaderBottom />
     </header>
   );
