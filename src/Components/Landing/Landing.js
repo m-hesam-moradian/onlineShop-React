@@ -39,6 +39,7 @@ export default function Landing() {
       </Carousel>
     );
   }
+  
   function OffCarousel({ id, img, name, price, priceBeforeOff }) {
     return (
       <Card
