@@ -12,6 +12,7 @@ import useSearch from "../../hooks/useSearch";
 export default function Navbar() {
 
 
+  
   //states
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
