@@ -8,23 +8,29 @@ import { API } from "../../FirebaseDatas";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SpecialCard from "../SpecialCard/SpecialCard";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
-
+  
   useEffect(() => {
     fetch(`${API}todaysOff.json`)
-      .then((res) => res.json())
-      .then((allData) => {
-        setTodayOff(allData);
-      });
+    .then((res) => res.json())
+    .then((allData) => {
+      setTodayOff(allData);
+    });
   }, []);
   // console.log(todayOff);
+  const type = {
+    color: "yellow-400",
+    title: " حراج ویژه",
+    titleSpan: " امروز  ",
+  };
   function UncontrolledExample() {
     return (
       <Carousel className="" interval={2000}>
         {todayOff &&
           todayOff.map((data, index) => (
-            <Carousel.Item className="row m-0">
+            <Carousel.Item className="row m-0 ">
               <div className="row m-0">
                 <ProductCard dataArray={data}></ProductCard>
 
@@ -45,7 +51,7 @@ export default function CountdownTimer() {
       <Card
         role="button"
         onClick={() => navigate(`/products/${dataArray.id}`)}
-        className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col "
+        className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col bg- "
         style={{ width: "18rem" }}
       >
         <span className="topTitle p-4 text-secondary ">
@@ -120,8 +126,8 @@ export default function CountdownTimer() {
         {todayOff.length > 1 ? (
           <>
             <div className="CountdownTimerProducts col row">
-              <div className="d-block d-lg-none">
-                <UncontrolledExample></UncontrolledExample>
+              <div className="d-block d-lg-none container">
+                <SpecialCard Data={todayOff} type={type}></SpecialCard>
               </div>
 
               <div className="row d-none d-lg-flex">

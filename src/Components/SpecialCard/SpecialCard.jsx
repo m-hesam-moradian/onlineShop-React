@@ -50,9 +50,9 @@ function OffCarousel({ id, img, name, price, priceBeforeOff, type }) {
         <hr />
         <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
           <div className="cardTextContainer flex items-center justify-center">
-            <div className="SliderPrice">
+            <div className="SliderPrice flex flex-col items-center">
               <span
-                className={`SliderPrice-discont small fw-light text-decoration-line-through text-${type.color}`}
+                className={`SliderPrice-discont small fw-light text-decoration-line-through text-red-600`}
               >
                 {priceBeforeOff}
               </span>
