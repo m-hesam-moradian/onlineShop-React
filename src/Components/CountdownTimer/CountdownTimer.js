@@ -8,16 +8,16 @@ import { API } from "../../FirebaseDatas";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SpecialCard from "../SpecialCard/SpecialCard";
+import SpecialCard, { SpecialCardsItems } from "../SpecialCard/SpecialCard";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
-  
+
   useEffect(() => {
     fetch(`${API}todaysOff.json`)
-    .then((res) => res.json())
-    .then((allData) => {
-      setTodayOff(allData);
-    });
+      .then((res) => res.json())
+      .then((allData) => {
+        setTodayOff(allData);
+      });
   }, []);
   // console.log(todayOff);
   const type = {
@@ -131,9 +131,28 @@ export default function CountdownTimer() {
               </div>
 
               <div className="row d-none d-lg-flex">
-                <ProductCard dataArray={todayOff[1]}></ProductCard>
-                <ProductCard dataArray={todayOff[2]}></ProductCard>
-                <ProductCard dataArray={todayOff[0]}></ProductCard>
+                {todayOff.map((todayOffIndex) => (
+                  <div className="w-min">
+                    <SpecialCardsItems
+                      type={type}
+                      key={todayOffIndex.id}
+                      id={todayOffIndex.id}
+                      img={todayOffIndex.img}
+                      name={todayOffIndex.name}
+                      price={todayOffIndex.price}
+                      priceBeforeOff={todayOffIndex.priceBeforeOff}
+                    ></SpecialCardsItems>
+                  </div>
+                ))}
+
+                {/* <SpecialCardsItems
+                  dataArray={todayOff[2]}
+                  type={type}
+                ></SpecialCardsItems>
+                <SpecialCardsItems
+                  dataArray={todayOff[0]}
+                  type={type}
+                ></SpecialCardsItems> */}
               </div>
             </div>
           </>

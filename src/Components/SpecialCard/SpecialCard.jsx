@@ -15,7 +15,7 @@ export default function SpecialCard({ Data, type }) {
     >
       {Data.map((todayOffIndex) => (
         <Carousel.Item key={todayOffIndex.id}>
-          <OffCarousel
+          <SpecialCardsItems
             type={type}
             key={todayOffIndex.id}
             id={todayOffIndex.id}
@@ -23,14 +23,14 @@ export default function SpecialCard({ Data, type }) {
             name={todayOffIndex.name}
             price={todayOffIndex.price}
             priceBeforeOff={todayOffIndex.priceBeforeOff}
-          ></OffCarousel>
+          ></SpecialCardsItems>
         </Carousel.Item>
       ))}
     </Carousel>
   );
 }
 
-function OffCarousel({ id, img, name, price, priceBeforeOff, type }) {
+export function SpecialCardsItems({ id, img, name, price, priceBeforeOff, type }) {
   const navigate = useNavigate();
   return (
     <Card
