@@ -13,10 +13,15 @@ export default function Landing() {
     fetch(`${API}products.json`)
       .then((res) => res.json())
       .then((allData) => {
-       setTodayOff( allData);
+        setTodayOff(allData);
       });
   }, []);
- 
+
+  const type = {
+    color: "red-500",
+    title: "تخفیف ویژه ",
+    titleSpan: "امروز",
+  };
   return (
     <section className="landing py-3">
       <div className="containerz  ">
@@ -34,7 +39,7 @@ export default function Landing() {
             </a>
           </div>
           <div className="col-12 px-2 p-md-0 col-md-3   rounded-5">
-            <SpecialCard Data={todayOff}></SpecialCard>
+            <SpecialCard Data={todayOff} type={type}></SpecialCard>
           </div>
         </div>
       </div>

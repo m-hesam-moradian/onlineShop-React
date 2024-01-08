@@ -6,11 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const type = {
-    
-}
-
-export default function SpecialCard({ Data ,type}) {
+export default function SpecialCard({ Data, type }) {
   return (
     <Carousel
       className="py-2 flex items-center justify-center"
@@ -20,6 +16,7 @@ export default function SpecialCard({ Data ,type}) {
       {Data.map((todayOffIndex) => (
         <Carousel.Item key={todayOffIndex.id}>
           <OffCarousel
+            type={type}
             key={todayOffIndex.id}
             id={todayOffIndex.id}
             img={todayOffIndex.img}
@@ -33,7 +30,7 @@ export default function SpecialCard({ Data ,type}) {
   );
 }
 
-function OffCarousel({ id, img, name, price, priceBeforeOff }) {
+function OffCarousel({ id, img, name, price, priceBeforeOff, type }) {
   const navigate = useNavigate();
   return (
     <Card
@@ -42,17 +39,21 @@ function OffCarousel({ id, img, name, price, priceBeforeOff }) {
       style={{ width: "18rem" }}
     >
       <span className="topTitle p-4 text-secondary ">
-        تخفیف های ویژه{" "}
-        <span className="topTitleBold fw-bolder text-danger ">امروز</span>
+        {type.title}
+        <span className={`topTitleBold fw-bolder text-${type.color}`}>
+          {type.titleSpan}
+        </span>
       </span>
       <Card.Img className="w-50" variant="top" src={img} />
       <Card.Body className="w-100 ">
         <Card.Title className="fw-bold ">{name}</Card.Title>
         <hr />
         <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
-          <div className="cardTextContainer">
+          <div className="cardTextContainer flex items-center justify-center">
             <div className="SliderPrice">
-              <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
+              <span
+                className={`SliderPrice-discont small fw-light text-decoration-line-through text-${type.color}`}
+              >
                 {priceBeforeOff}
               </span>
               <div className="SliderPrice-mainPriceContainer">
@@ -66,9 +67,11 @@ function OffCarousel({ id, img, name, price, priceBeforeOff }) {
               </div>
             </div>
           </div>
-          <Button variant="danger" className="bg-red-500">
-            <span class="material-symbols-outlined p-2 ">shopping_bag</span>
-          </Button>
+          <a href="" className={`bg-${type.color} p-1 rounded-md`}>
+            <span class="material-symbols-outlined p-2 text-white  ">
+              shopping_bag
+            </span>
+          </a>
         </Card.Text>
       </Card.Body>
     </Card>
