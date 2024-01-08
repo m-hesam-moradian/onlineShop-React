@@ -131,20 +131,19 @@ export default function CountdownTimer() {
               </div>
 
               <div className="row d-none d-lg-flex">
-                {todayOff.map((todayOffIndex) => (
-                  <div className="w-min">
-                    <SpecialCardsItems
-                      type={type}
-                      key={todayOffIndex.id}
-                      id={todayOffIndex.id}
-                      img={todayOffIndex.img}
-                      name={todayOffIndex.name}
-                      price={todayOffIndex.price}
-                      priceBeforeOff={todayOffIndex.priceBeforeOff}
-                    ></SpecialCardsItems>
-                  </div>
+                {todayOff.map(todayOffIndex => (
+                  
+                <SpecialCardsItems
+                  type={type}
+                  key={todayOffIndex.id}
+                  id={todayOffIndex.id}
+                  img={todayOffIndex.img}
+                  name={todayOffIndex.name}
+                  price={todayOffIndex.price}
+                  priceBeforeOff={todayOffIndex.priceBeforeOff}
+                ></SpecialCardsItems>
                 ))}
-
+               
                 {/* <SpecialCardsItems
                   dataArray={todayOff[2]}
                   type={type}
