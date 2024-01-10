@@ -22,6 +22,7 @@ export default function CountdownTimer() {
 
   //setinterval for countdown
 
+  
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
       <div className="CountdownTimerContainer  row  mt-44 lg:mt-[40px]">
