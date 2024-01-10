@@ -21,7 +21,7 @@ export default function CountdownTimer() {
   }, []);
   // console.log(todayOff);
   const type = {
-    color: "yellow-400",
+    color: "warning",
     title: " حراج ویژه",
     titleSpan: " امروز  ",
   };
@@ -127,23 +127,27 @@ export default function CountdownTimer() {
           <>
             <div className="CountdownTimerProducts col row">
               <div className="d-block d-lg-none container">
-                <SpecialCard Data={todayOff} type={type}></SpecialCard>
-              </div>
-
-              <div className="row d-none d-lg-flex">
-                {todayOff.map(todayOffIndex => (
-                  
-                <SpecialCardsItems
+                <SpecialCard
+                  Data={todayOff}
                   type={type}
-                  key={todayOffIndex.id}
-                  id={todayOffIndex.id}
-                  img={todayOffIndex.img}
-                  name={todayOffIndex.name}
-                  price={todayOffIndex.price}
-                  priceBeforeOff={todayOffIndex.priceBeforeOff}
-                ></SpecialCardsItems>
+                  key={todayOff}
+                ></SpecialCard>
+              </div>
+              <div className="row d-none d-lg-grid grid-cols-3 gap-5 py-8">
+                {todayOff.map((todayOffIndex) => (
+                  <div className="">
+                    <SpecialCardsItems
+                      type={type}
+                      key={todayOffIndex.id}
+                      id={todayOffIndex.id}
+                      img={todayOffIndex.img}
+                      name={todayOffIndex.name}
+                      price={todayOffIndex.price}
+                      priceBeforeOff={todayOffIndex.priceBeforeOff}
+                    ></SpecialCardsItems>
+                  </div>
                 ))}
-               
+
                 {/* <SpecialCardsItems
                   dataArray={todayOff[2]}
                   type={type}

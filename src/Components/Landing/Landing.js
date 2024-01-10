@@ -18,7 +18,7 @@ export default function Landing() {
   }, []);
 
   const type = {
-    color: "red-500",
+    color: "danger",
     title: "تخفیف ویژه ",
     titleSpan: "امروز",
   };

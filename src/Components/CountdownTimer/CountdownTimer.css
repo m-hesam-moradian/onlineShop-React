@@ -13,9 +13,7 @@
 .offerStick > * {
   width: auto;
 }
-.offerStick {
-  margin-top: 12rem;
-}
+
 .CountdownTimerSecond {
   background: var(--primary-color);
 }
