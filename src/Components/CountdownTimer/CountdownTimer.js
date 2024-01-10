@@ -20,7 +20,7 @@ export default function CountdownTimer() {
     titleSpan: " امروز  ",
   };
 
-  //setinterval
+  //setinterval for countdown
 
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
