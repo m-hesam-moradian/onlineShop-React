@@ -148,14 +148,7 @@ export default function CountdownTimer() {
                   </div>
                 ))}
 
-                {/* <SpecialCardsItems
-                  dataArray={todayOff[2]}
-                  type={type}
-                ></SpecialCardsItems>
-                <SpecialCardsItems
-                  dataArray={todayOff[0]}
-                  type={type}
-                ></SpecialCardsItems> */}
+                
               </div>
             </div>
           </>
