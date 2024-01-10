@@ -34,9 +34,7 @@ export default function CountdownTimer() {
               <div className="row m-0">
                 <ProductCard dataArray={data}></ProductCard>
 
-                {/* <div className="d-none d-md-flex col ">
-              <ProductCard dataArray={todayOff[0]}></ProductCard>
-            </div> */}
+
               </div>
             </Carousel.Item>
           ))}
