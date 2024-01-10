@@ -19,83 +19,13 @@ export default function CountdownTimer() {
         setTodayOff(allData);
       });
   }, []);
-  // console.log(todayOff);
   const type = {
     color: "warning",
     title: " حراج ویژه",
     titleSpan: " امروز  ",
   };
-  function UncontrolledExample() {
-    return (
-      <Carousel className="" interval={2000}>
-        {todayOff &&
-          todayOff.map((data, index) => (
-            <Carousel.Item className="row m-0 ">
-              <div className="row m-0">
-                <ProductCard dataArray={data}></ProductCard>
 
 
-              </div>
-            </Carousel.Item>
-          ))}
-      </Carousel>
-    );
-  }
-  function ProductCard({ dataArray }) {
-    const navigate = useNavigate();
-
-    // console.log(dataArray);
-    return (
-      <Card
-        role="button"
-        onClick={() => navigate(`/products/${dataArray.id}`)}
-        className="ProductCard  col  d-flex align-items-center rounded-5  border-0 m-5 shadow col bg- "
-        style={{ width: "18rem" }}
-      >
-        <span className="topTitle p-4 text-secondary ">
-          حراج ویژه
-          <span className="topTitleBold fw-bolder text-warning  "> امروز </span>
-        </span>
-        <Card.Img
-          className="w-50 mt-5"
-          variant="top"
-          src={`${dataArray.img}`}
-        />
-        <Card.Body className="w-100 ">
-          <Card.Title className="mx-4">{dataArray.name}</Card.Title>
-          <hr />
-          <Card.Text className="d-flex justify-content-between flex-row-reverse p-4">
-            <div className="cardTextContainer">
-              <div className="SliderPrice d-grid ">
-                {dataArray && (
-                  <span className="SliderPrice-discont small fw-light text-decoration-line-through text-danger ">
-                    {dataArray.priceBeforeOff}
-                  </span>
-                )}
-                <div className="SliderPrice-mainPriceContainer">
-                  <span className="SliderPrice-price p-1 fw-bolder ">
-                    {" "}
-                    {dataArray.price}
-                  </span>
-                  <span className="SliderPrice-toman text-secondary  ">
-                    تومان{" "}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <Button
-              variant="white"
-              className="ProductCardBTN border-secondary rounded-4  "
-            >
-              <span class="ProductCardBTNSpan material-symbols-outlined p-1 text-secondary ">
-                shopping_bag
-              </span>
-            </Button>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    );
-  }
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
       <div className="CountdownTimerContainer  row  mt-44 lg:mt-[40px]">
@@ -145,8 +75,6 @@ export default function CountdownTimer() {
                     ></SpecialCardsItems>
                   </div>
                 ))}
-
-                
               </div>
             </div>
           </>
