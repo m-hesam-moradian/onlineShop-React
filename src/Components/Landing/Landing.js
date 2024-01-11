@@ -38,7 +38,7 @@ export default function Landing() {
               />
             </a>
           </div>
-          <div className="col-12 px-2 p-md-0 col-md-3   rounded-5">
+          <div className="col-12 px-2 p-md-0 col-md-3   rounded-5 flex items-center justify-center">
             <SpecialCard Data={todayOff} type={type}></SpecialCard>
           </div>
         </div>
