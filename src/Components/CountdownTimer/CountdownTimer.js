@@ -23,8 +23,7 @@ export default function CountdownTimer() {
     titleSpan: " امروز  ",
   };
 
-  //setinterval for countdown
-
+  
   
  let CountDownTimer= SetIntervalCountDownTimer("December, 11, 2025");
 
