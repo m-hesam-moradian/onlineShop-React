@@ -3,8 +3,7 @@ import "./CountdownTimer.css";
 import { API } from "../../FirebaseDatas";
 import { useEffect } from "react";
 import { useState } from "react";
-import SpecialCard, { SpecialCardsItems } from "../SpecialCard/SpecialCard";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SpecialCardsItems } from "../SpecialCard/SpecialCard";
 import "swiper/css";
 import "swiper/css/pagination";
 export default function CountdownTimer() {
@@ -53,14 +52,8 @@ export default function CountdownTimer() {
         {todayOff.length > 1 ? (
           <>
             <div className="CountdownTimerProducts col-span-5  lg:col-span-4 row mt-8 ">
-              {/* <div className="d-block d-lg-none container">
-                <SpecialCard
-                  Data={todayOff}
-                  type={type}
-                  key={todayOff}
-                ></SpecialCard>
-              </div> */}
-              <div className="row  d-flex flex-nowrap gap-5 py-8 overflow-auto bg-stone-100 rounded-3xl">
+             
+              <div className="row  d-flex flex-nowrap gap-3 py-8 overflow-auto bg-stone-100 rounded-3xl">
                 {todayOff.map((todayOffIndex) => (
                   <div className="w-96">
                     <SpecialCardsItems
