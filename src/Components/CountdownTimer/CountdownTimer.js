@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
 
-
   useEffect(() => {
     fetch(`${API}products.json`)
       .then((res) => res.json())
@@ -25,29 +24,29 @@ export default function CountdownTimer() {
 
   //setinterval for countdown
 
+  let SetIntervalCountDownTimer = (date) => {
+    const [hours, setHours] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
 
- const [days, setDays] = useState(0);
- const [hours, setHours] = useState(0);
- const [minutes, setMinutes] = useState(0);
- const [seconds, setSeconds] = useState(0);
+    const deadline = date;
 
- const deadline = "December, 11, 2025";
+    const getTime = () => {
+      const time = Date.parse(deadline) - Date.now();
 
- const getTime = () => {
-   const time = Date.parse(deadline) - Date.now();
+      setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+      setMinutes(Math.floor((time / 1000 / 60) % 60));
+      setSeconds(Math.floor((time / 1000) % 60));
+    };
 
-   setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-   setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-   setMinutes(Math.floor((time / 1000 / 60) % 60));
-   setSeconds(Math.floor((time / 1000) % 60));
- };
+    useEffect(() => {
+      const interval = setInterval(() => getTime(deadline), 1000);
 
- useEffect(() => {
-   const interval = setInterval(() => getTime(deadline), 1000);
-
-   return () => clearInterval(interval);
- }, []);
-
+      return () => clearInterval(interval);
+    }, []);
+    return { hours, minutes, seconds };
+  };
+ let CountDownTimer= SetIntervalCountDownTimer("December, 11, 2025");
 
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
@@ -56,15 +55,15 @@ export default function CountdownTimer() {
           <span className="fs-1 fw-bold m-2">چـوب حــراج 🔥 </span>
           <div dir="ltr" className="CountdownTimerNumbers my-2 row">
             <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center  shadow-md ">
-              <span className="fs-3 text-secondary">{hours}</span>
+              <span className="fs-3 text-secondary">{CountDownTimer.hours}</span>
               <span className="fs-6 text-secondary">ساعت</span>
             </div>
             <div className="col-auto d-flex flex-column  mx-3 bg-white rounded-3 align-items-center  shadow-md ">
-              <span className="fs-3 text-secondary ">{ minutes}</span>
+              <span className="fs-3 text-secondary ">{CountDownTimer.minutes}</span>
               <span className="fs-6 text-secondary">دقیقه</span>
             </div>
             <div className="CountdownTimerSecond col-auto d-flex flex-column   rounded-3 align-items-center   shadow-md">
-              <span className="fs-3 text-white  ">{seconds}</span>
+              <span className="fs-3 text-white  ">{CountDownTimer.seconds}</span>
               <span className="fs-6  text-white">ثانیه</span>
             </div>
           </div>
