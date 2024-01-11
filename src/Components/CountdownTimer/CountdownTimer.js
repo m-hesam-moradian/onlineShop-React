@@ -8,6 +8,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
+  const [sec, setsec] = useState(5);
+  const [min, setmin] = useState(1);
+  const [hr, sethr] = useState(4);
 
   useEffect(() => {
     fetch(`${API}products.json`)
@@ -23,6 +26,7 @@ export default function CountdownTimer() {
   };
 
   //setinterval for countdown
+
 
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
@@ -52,7 +56,6 @@ export default function CountdownTimer() {
         {todayOff.length > 1 ? (
           <>
             <div className="CountdownTimerProducts col-span-5  lg:col-span-4 row mt-8 ">
-             
               <div className="row  d-flex flex-nowrap gap-3 py-8 overflow-auto bg-stone-100 rounded-3xl">
                 {todayOff.map((todayOffIndex) => (
                   <div className="w-96">
