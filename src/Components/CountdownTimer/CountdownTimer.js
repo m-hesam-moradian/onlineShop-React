@@ -31,15 +31,15 @@ export default function CountdownTimer() {
         <div className=" col-span-5 lg:col-span-1  offerStick row d-flex  justify-content-center align-items-center flex-column  w-[100%] lg:w-[30rem]  mx-auto ">
           <span className="fs-1 fw-bold m-2">چـوب حــراج 🔥 </span>
           <div dir="ltr" className="CountdownTimerNumbers my-2 row">
-            <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center   ">
+            <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center  shadow-md ">
               <span className="fs-3 text-secondary">23</span>
               <span className="fs-6 text-secondary">ساعت</span>
             </div>
-            <div className="col-auto d-flex flex-column  mx-3 bg-white rounded-3 align-items-center   ">
+            <div className="col-auto d-flex flex-column  mx-3 bg-white rounded-3 align-items-center  shadow-md ">
               <span className="fs-3 text-secondary ">18</span>
               <span className="fs-6 text-secondary">دقیقه</span>
             </div>
-            <div className="CountdownTimerSecond col-auto d-flex flex-column   rounded-3 align-items-center   ">
+            <div className="CountdownTimerSecond col-auto d-flex flex-column   rounded-3 align-items-center   shadow-md">
               <span className="fs-3 text-white  ">58</span>
               <span className="fs-6  text-white">ثانیه</span>
             </div>
