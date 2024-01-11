@@ -4,11 +4,14 @@ import { API } from "../../FirebaseDatas";
 import { useEffect } from "react";
 import { useState } from "react";
 import SpecialCard, { SpecialCardsItems } from "../SpecialCard/SpecialCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}todaysOff.json`)
+    fetch(`${API}products.json`)
       .then((res) => res.json())
       .then((allData) => {
         setTodayOff(allData);
@@ -22,7 +25,6 @@ export default function CountdownTimer() {
 
   //setinterval for countdown
 
-  
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
       <div className="CountdownTimerContainer  row  mt-44 lg:mt-[40px]">
@@ -51,16 +53,17 @@ export default function CountdownTimer() {
         {todayOff.length > 1 ? (
           <>
             <div className="CountdownTimerProducts col row mt-8">
-              <div className="d-block d-lg-none container">
+              
+              {/* <div className="d-block d-lg-none container">
                 <SpecialCard
                   Data={todayOff}
                   type={type}
                   key={todayOff}
                 ></SpecialCard>
-              </div>
-              <div className="row d-none d-lg-grid  grid-cols-3 gap-5 py-8">
+              </div> */}
+              <div className="row d-flex flex-nowrap gap-5 py-8 overflow-auto">
                 {todayOff.map((todayOffIndex) => (
-                  <div className="">
+                  <div className="w-96">
                     <SpecialCardsItems
                       type={type}
                       key={todayOffIndex.id}
