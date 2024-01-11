@@ -27,9 +27,9 @@ export default function CountdownTimer() {
 
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
-      <div className="CountdownTimerContainer  row  mt-44 lg:mt-[40px]">
-        <div className="col-12 col-xl-2  offerStick row d-flex  justify-content-center align-items-center flex-column  w-[100%] lg:w-[30rem]  mx-auto ">
-          <span className="fs-1 fw-bold m-3">چـوب حــراج 🔥 </span>
+      <div className="CountdownTimerContainer  row    grid grid-cols-5 border-none">
+        <div className=" col-span-5 lg:col-span-1  offerStick row d-flex  justify-content-center align-items-center flex-column  w-[100%] lg:w-[30rem]  mx-auto ">
+          <span className="fs-1 fw-bold m-2">چـوب حــراج 🔥 </span>
           <div dir="ltr" className="CountdownTimerNumbers my-2 row">
             <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center   ">
               <span className="fs-3 text-secondary">23</span>
@@ -52,8 +52,7 @@ export default function CountdownTimer() {
         </div>
         {todayOff.length > 1 ? (
           <>
-            <div className="CountdownTimerProducts col row mt-8">
-              
+            <div className="CountdownTimerProducts col-span-5  lg:col-span-4 row mt-8 ">
               {/* <div className="d-block d-lg-none container">
                 <SpecialCard
                   Data={todayOff}
@@ -61,7 +60,7 @@ export default function CountdownTimer() {
                   key={todayOff}
                 ></SpecialCard>
               </div> */}
-              <div className="row d-flex flex-nowrap gap-5 py-8 overflow-auto">
+              <div className="row  d-flex flex-nowrap gap-5 py-8 overflow-auto bg-stone-100 rounded-3xl">
                 {todayOff.map((todayOffIndex) => (
                   <div className="w-96">
                     <SpecialCardsItems
