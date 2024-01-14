@@ -1,6 +1,6 @@
 import React from "react";
 import "./CountdownTimer.css";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 import { useEffect } from "react";
 import { useState } from "react";
 import { SpecialCardsItems } from "../SpecialCard/SpecialCard";
@@ -11,7 +11,7 @@ export default function CountdownTimer() {
   const [todayOff, setTodayOff] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => res.json())
       .then((allData) => {
         setTodayOff(allData);
