@@ -19,6 +19,10 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+ 
+
+
+
 
     try {
       if ((email.length > 5) && (Name.length > 3) && (password.length > 5)) {
@@ -106,6 +110,12 @@ export default function Login() {
                 navigate(`/`);
               }
             });
+          } else {
+            Swal.fire({
+              title: "ایمیل یا رمز عبور اشتباه است",
+              icon: "error",
+            })
+            
           }
         });
       } else {
