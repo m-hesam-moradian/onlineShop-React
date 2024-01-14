@@ -9,7 +9,8 @@ import BottomBanner from "../../Components/BottomBanner/BottomBanner";
 import RecentArticles from "../../Components/RecentArticles/RecentArticles";
 import Footer from "../../Components/Footer/Footer";
 import "./Index.css";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
+// import { API } from "../../FirebaseDatas";
 
 
 
@@ -23,11 +24,11 @@ export default function Index(props) {
   const [NewProductsArray, setModalNewProductsArray] = useState(true);
 
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => res.json())
       .then((allData) => {
         setModalNewProductsArray(allData.reverse());
-        // console.log(allData);
+        console.log(allData);
         // setLetReturner(true);
       });
   }, []);

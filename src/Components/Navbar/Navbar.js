@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/authContext";
-import { API } from "../../FirebaseDatas";
 import { useNavigate } from "react-router-dom";
 import CounterContext from "../../context/CounterContext";
 import { NavLinks } from "./NavLinks/NavLinks";
 import HumbergerMenu from "./HumbergerMenu";
 import "./Navbar.css";
 import useSearch from "../../hooks/useSearch";
+import { API } from "../../App";
 
 export default function Navbar() {
   //states
@@ -24,7 +24,7 @@ export default function Navbar() {
 
   //side effect
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => res.json())
       .then((allData) => {
         setProductArray(allData);

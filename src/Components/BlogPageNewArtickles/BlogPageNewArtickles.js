@@ -1,24 +1,22 @@
-
 import React, { useEffect } from "react";
 import ProductShower from "../ProductShower/ProductShower";
 import "./BlogPageNewArtickles.css";
 import { ArtickleCard } from "../RecentArticles/RecentArticles";
 import Pagination from "@mui/material/Pagination";
 import { useState } from "react";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 const itemsPerPage = 8;
 const PaginationContainer = () => {
   const [ArtickleArray, setArtickleArray] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}articles.json`)
+    fetch(`${API}articles`)
       .then((res) => res.json())
       .then((allData) => {
         setArtickleArray(allData);
         console.log(allData);
       });
   }, []);
-
 
   const apiData = ArtickleArray;
 
@@ -37,12 +35,9 @@ const PaginationContainer = () => {
     <>
       {ArtickleArray &&
         currentData.map((item, itemIndex) => (
-          <div className="col">
+          <div key={item} className="col">
             {" "}
-            <ArtickleCard
-              ArtickleArray={item}
-              key={itemIndex}
-            />
+            <ArtickleCard ArtickleArray={item} key={itemIndex} />
           </div>
         ))}
 

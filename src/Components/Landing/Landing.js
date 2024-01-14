@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { API } from "../../FirebaseDatas";
 import "./Landing.css";
 import SpecialCard from "../SpecialCard/SpecialCard";
+import {API} from "../../App"
 
 export default function Landing() {
   const [todayOff, setTodayOff] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => res.json())
       .then((allData) => {
         setTodayOff(allData);

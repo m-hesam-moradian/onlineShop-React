@@ -6,6 +6,7 @@ import "./App.css";
 import FirebaseDatas from "./FirebaseDatas";
 import CounterContext from "./context/CounterContext";
 
+export const API = "https://mhm-jsonserver.liara.run/";
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState(false);
