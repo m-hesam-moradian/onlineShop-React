@@ -29,7 +29,9 @@ export default function Index(props) {
       .then((allData) => {
         setModalNewProductsArray(allData.reverse());
       });
-  }, []);
+    }, []);
+    
+    window.scrollTo(0, 0);
   return (
     <>
       <Header />

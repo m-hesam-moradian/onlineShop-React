@@ -12,7 +12,7 @@ import "./ProductInfo.css";
 import ProductShower from "../../Components/ProductShower/ProductShower";
 
 export default function ProductInfo() {
-  const [ProductData, setProductData] = useState([]);
+  const [ProductData, setProductData] = useState();
   const [AllDatas, setAllDatas] = useState([]);
   const { productID } = useParams();
 
@@ -24,18 +24,20 @@ export default function ProductInfo() {
         }
         return res.json();
       })
-      .then((allData) => {
+      .then(async (allData) => {
         // setAllDatas([...allData]);
         setAllDatas(allData);
 
         setProductData(
-          allData.find((item) => parseInt(item.id) == parseInt(productID))
+          await allData.find((item) => parseInt(item.id) == parseInt(productID))
         );
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
+     window.scrollTo(0, 0);
   }, []);
+   window.scrollTo(0, 0);
   // console.log(AllDatas);
   function Description({ ProductData }) {
     return (
@@ -87,13 +89,13 @@ export default function ProductInfo() {
       <Breadcrumb dir="ltr" className="backColor fs-3 m-5 p-2 rounded-4 d-grid">
         <Breadcrumb.Item href="#">خانه </Breadcrumb.Item>
         <Breadcrumb.Item href="#">کالای دیجیتال</Breadcrumb.Item>
-        <Breadcrumb.Item>{ProductData.name}</Breadcrumb.Item>
+        <Breadcrumb.Item>{ProductData && ProductData.name}</Breadcrumb.Item>
       </Breadcrumb>
 
-      <ProductInfoHeader ProductData={ProductData} />
-      <Description ProductData={ProductData} />
+      {ProductData && <ProductInfoHeader ProductData={ProductData} />}
+      <Description ProductData={ProductData && ProductData} />
 
-      {/* {ProductData && (
+      {/* {ProductData&&ProductData && (
         <ProductShower
           dataArrayContainer={AllDatas}
           persianTitle="محصولاتـــ مرتبط"

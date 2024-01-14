@@ -4,6 +4,7 @@ import BlogPageNewArtickles from "../../Components/BlogPageNewArtickles/BlogPage
 import "./Blog.css";
 
 export default function Blog() {
+   window.scrollTo(0, 0);
   return (
     <div>
       <BlogHeader />

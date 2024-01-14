@@ -3,6 +3,7 @@ import ContactUsContainer from '../../Components/ContactUsContainer/ContactUsCon
 
 
 export default function ContactUs() {
+  window.scrollTo(0, 0)
   return (
     <div>
       <ContactUsContainer />
