@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ProductShower from "../ProductShower/ProductShower";
 import "./ChoosenProducts.css";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 
 export default function ChoosenProducts() {
   const [dataArray, setdataArray] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => res.json())
       .then((allData) => {
         setdataArray(allData);

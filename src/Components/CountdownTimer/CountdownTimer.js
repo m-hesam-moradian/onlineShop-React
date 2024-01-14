@@ -23,9 +23,7 @@ export default function CountdownTimer() {
     titleSpan: " امروز  ",
   };
 
-  
-  
- let CountDownTimer= SetIntervalCountDownTimer("December, 11, 2025");
+  let CountDownTimer = SetIntervalCountDownTimer("December, 11, 2025");
 
   return (
     <div className="CountdownTimer d-flex justify-content-center align-items-center h-100 container-flud">
@@ -34,15 +32,21 @@ export default function CountdownTimer() {
           <span className="fs-1 fw-bold m-2">چـوب حــراج 🔥 </span>
           <div dir="ltr" className="CountdownTimerNumbers my-2 row">
             <div className="col-auto d-flex flex-column bg-white rounded-3 align-items-center  shadow-md ">
-              <span className="fs-3 text-secondary">{CountDownTimer.hours}</span>
+              <span className="fs-3 text-secondary">
+                {CountDownTimer.hours}
+              </span>
               <span className="fs-6 text-secondary">ساعت</span>
             </div>
             <div className="col-auto d-flex flex-column  mx-3 bg-white rounded-3 align-items-center  shadow-md ">
-              <span className="fs-3 text-secondary ">{CountDownTimer.minutes}</span>
+              <span className="fs-3 text-secondary ">
+                {CountDownTimer.minutes}
+              </span>
               <span className="fs-6 text-secondary">دقیقه</span>
             </div>
             <div className="CountdownTimerSecond col-auto d-flex flex-column   rounded-3 align-items-center   shadow-md">
-              <span className="fs-3 text-white  ">{CountDownTimer.seconds}</span>
+              <span className="fs-3 text-white  ">
+                {CountDownTimer.seconds}
+              </span>
               <span className="fs-6  text-white">ثانیه</span>
             </div>
           </div>

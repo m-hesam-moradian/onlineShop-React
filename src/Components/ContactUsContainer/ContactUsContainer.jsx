@@ -1,7 +1,7 @@
 import React from "react";
 import "./ContactUsContainer.css";
 import { useState } from "react";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 import { Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
 
@@ -92,13 +92,13 @@ export default function ContactUsContainer() {
                   Number: Number,
                   Message: Message,
                 };
-                fetch(`${API}ContactUsMessages.json`)
+                fetch(`${API}ContactUsMessages`)
                   .then((res) => res.json())
                   .then((data) => {
                
                     data.push(obj);
 
-                    fetch(`${API}ContactUsMessages.json`, {
+                    fetch(`${API}ContactUsMessages`, {
                       method: "PUT",
                       headers: {
                         "Content-Type": "application/json",
@@ -107,7 +107,6 @@ export default function ContactUsContainer() {
                     })
                       .then((res) => res.json())
                       .then((allData) => {
-                        // console.log(allData);
                         setactive(true);
                         setTimeout(() => {
                           setactive(false);
