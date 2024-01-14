@@ -11,7 +11,7 @@ export default function ProductShower({
   SecondLine = false,
   InnerContainer = false,
 }) {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>

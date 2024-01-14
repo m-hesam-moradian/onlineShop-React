@@ -76,7 +76,7 @@ export default function ProductInfoHeader({ ProductData }) {
             </li>
           </ul>
           <span className=" textColor fs-2 mt-4 fw-bold">
-            {ProductData.price}{" "}
+            {ProductData.price.toLocaleString("en-US")}{" "}
             <span className="text-secondary fw-light fs-4">تومان</span>
           </span>
           <a
