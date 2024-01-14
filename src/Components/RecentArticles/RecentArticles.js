@@ -3,7 +3,7 @@ import "./RecentArticles.css";
 import ProductShower from "../ProductShower/ProductShower";
 
 import Card from "react-bootstrap/Card";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 export function ArtickleCard({ Img, addClass = "", ArtickleArray }) {
@@ -91,7 +91,7 @@ export default function RecentArticles() {
   const [ArtickleArray, setArtickleArray] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}articles.json`)
+    fetch(`${API}articles`)
       .then((res) => res.json())
       .then((allData) => {
         setArtickleArray(allData);

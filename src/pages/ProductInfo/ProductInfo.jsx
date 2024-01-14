@@ -1,4 +1,4 @@
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -17,7 +17,7 @@ export default function ProductInfo() {
   const { productID } = useParams();
 
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");

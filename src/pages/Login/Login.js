@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -19,9 +19,10 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     try {
       if ((email.length > 5) && (Name.length > 3) && (password.length > 5)) {
-        const res = await fetch(`${API}/registered.json`, {
+        const res = await fetch(`${API}/registered`, {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -68,7 +69,7 @@ export default function Login() {
     }
   };
   useEffect(() => {
-    fetch(`${API}registered.json`)
+    fetch(`${API}registered`)
       .then((res) => res.json())
       .then((allData) => {
         setLogin(Object.values(allData));

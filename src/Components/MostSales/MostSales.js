@@ -3,7 +3,7 @@ import "./MostSales.css";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { API } from "../../FirebaseDatas";
+import { API } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 export default function MostSales() {
@@ -11,7 +11,7 @@ export default function MostSales() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
-    fetch(`${API}products.json`)
+    fetch(`${API}products`)
       .then((res) => res.json())
       .then((allData) => {
         setTodayOff(allData);
@@ -22,7 +22,7 @@ export default function MostSales() {
       <Carousel className="" interval={2000}>
         {todayOff &&
           dataArraypromp.map((data, index) => (
-            <Carousel.Item className="row m-0">
+            <Carousel.Item key={data} className="row m-0">
               <div className="row m-0">
                 <ProductCard dataArray={data}></ProductCard>
 

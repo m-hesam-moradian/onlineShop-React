@@ -28,11 +28,8 @@ export default function Index(props) {
       .then((res) => res.json())
       .then((allData) => {
         setModalNewProductsArray(allData.reverse());
-        console.log(allData);
-        // setLetReturner(true);
       });
   }, []);
-  // console.log(NewProductsArray);
   return (
     <>
       <Header />
