@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import "./CardProductTable.css";
 import NumericInput from "react-numeric-input";
 import CounterContext from "../../context/CounterContext";
-
+import Swal from "sweetalert2";
+ 
 export default function CardProductTable({ className, setSum, setRerendered }) {
   let countsCardProducts = JSON.parse(localStorage.getItem("cards"));
   const { count, incrementCount } = useContext(CounterContext);
   return (
     <>
-      <div class={`grid ${className}`}>
+      <div   class={`grid ${className}`}>
         <div class="cell"></div>
 
         <div class="cell fw-bold d-none d-md-flex  ">نام محصول</div>
@@ -22,19 +23,24 @@ export default function CardProductTable({ className, setSum, setRerendered }) {
         {countsCardProducts &&
           countsCardProducts.map((product, index) => (
             <>
-              <div class="cell ">
+              <div key={product} class="cell  ">
                 <span
                   class="material-symbols-outlined  "
                   onClick={() => {
                     incrementCount();
-                    // console.log(count);
                     countsCardProducts.splice(index, 1);
                     localStorage.setItem(
                       "cards",
                       JSON.stringify(countsCardProducts)
                     );
                     setRerendered(true);
-                    console.log(countsCardProducts);
+                   Swal.fire({
+                    //  position: "top-start",
+                     icon: "success",
+                     title: "آیتم با موفقیت حذف شد",
+                     showConfirmButton: false,
+                     timer: 1500,
+                   });
                   }}
                 >
                   close

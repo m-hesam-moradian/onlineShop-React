@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function Card() {
   const [justForRended, setJustForRended] = useState([]);
   const [sum, setSum] = useState(0);
+  const [Rerendered, setRerendered] = useState();
   window.scrollTo(0, 0);
   return (
     <>
@@ -20,6 +21,7 @@ export default function Card() {
             <CardProductTable
               setSum={setSum}
               className="  m-md-5 p-0 p-md-4"
+              setRerendered={setRerendered}
             ></CardProductTable>
           )}
         </div>

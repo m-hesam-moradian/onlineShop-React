@@ -3,7 +3,7 @@ import "./CardSumPrice.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-export default function CardSumPrice({ className, sums }) {
+export default function CardSumPrice({ className }) {
   const navigate = useNavigate();
   let sum = 0;
   localStorage.getItem("cards") &&

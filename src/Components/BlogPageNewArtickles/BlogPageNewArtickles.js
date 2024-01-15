@@ -14,7 +14,6 @@ const PaginationContainer = () => {
       .then((res) => res.json())
       .then((allData) => {
         setArtickleArray(allData);
-        console.log(allData);
       });
   }, []);
 
