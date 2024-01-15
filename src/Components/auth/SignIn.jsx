@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { API } from "../../FirebaseDatas";
-import { Navigate, useNavigate } from "react-router-dom";
-import Login from "../../pages/Login/Login";
-import { decode, jwtDecode } from "jwt-decode";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const tokenLocalhost = ''
 export const SignIn = () => {
@@ -25,8 +21,6 @@ export const SignIn = () => {
         }),
       });
       localStorage.setItem("token", email + "/" + password);
-      //  tokenLocalhost = localStorage.getItem("token");
-      // console.log(localStorage.getItem("token"));
       navigate(`/`);
 
 

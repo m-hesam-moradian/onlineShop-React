@@ -78,7 +78,6 @@ export default function AbloutUsConainer() {
         </div>
       </div>
 
-      {/*  ///////////////////////////////*/}
       <div className="spinner p-md-5  row m-0 gap-4 ">
         <div className="col col-md spinner-container d-flex align-items-center ">
           <div className="solar-system">
@@ -111,10 +110,6 @@ export default function AbloutUsConainer() {
           </div>
         </div>
         <div className="col-12 col-md d-grid p-5 gap-4 justify-content-lg-center  align-content-center  ">
-          {" "}
-          {/* <span className="fs-5 text-secondary opacity-75 ">
-            درباره ما بیشتر بدانید
-          </span> */}
           <span className="fs-1 fw-bold">
             <span className="textColor"> الکتروشاپ </span>
             اینجاست تا لوازم الکترونیکی رو با قیمت مناسب خرید کنی!

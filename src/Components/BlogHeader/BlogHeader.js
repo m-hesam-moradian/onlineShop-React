@@ -17,7 +17,7 @@ export default function BlogHeader() {
     fetch(`https://mhm-jsonserver.liara.run/MainBanner`)
       .then((res) => res.json())
       .then((allData) => {
-        setMainBanner((previosData) => allData);
+        setMainBanner( allData);
         console.log(MainBanner);
         
       });
