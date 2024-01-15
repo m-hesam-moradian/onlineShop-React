@@ -1,6 +1,7 @@
 import React from "react";
 
 export const ContactUsInfoCart = () => {
+  
   return (
     <div class="ContactUsWaysToRichUsCard card col d-grid gap-4 p-5 border-0  align-items-center  shadow rounded-bottom-5  m-5">
       <div className="d-grid justify-content-center ">
