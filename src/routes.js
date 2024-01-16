@@ -10,6 +10,7 @@ import Login from "./pages/Login/Login";
 import ProductInfo from "./pages/ProductInfo/ProductInfo";
 import Card from "./pages/Card/Card";
 import Admin from "./pages/Admin/Admin";
+import { Product } from "./pages/Admin/subRoutes/Product";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -56,7 +57,11 @@ const routes = [
   { path: "/products/:productID", element: <ProductInfo /> },
   { path: "/Card", element: <Card /> },
   { path: "/login", element: <Login /> },
-  { path: "/admin", element: <Admin /> },
+  {
+    path: "/admin/*",
+    element: <Admin />,
+    children: [{ path: "product", element: <Product /> }],
+  },
 ];
 
 export default routes;
