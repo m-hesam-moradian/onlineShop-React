@@ -2,15 +2,19 @@ import React from "react";
 
 export default function AdminSidebar() {
   return (
-    <div className="text-white text-[20px] ">
+    <div className="text-white  ">
       <div className=" px-4 py-8 flex items-center justify-center border-b border-solid border-gray-50/[0.3] ">
-        <span className="  font-extrabold cursor-pointer leading-[24px] text-white ">
+        <a href="" className=" flex  gap-2  text-white ">
           <img
-            className="w-28 rounded-full  p-2 border-2 border-solid border-main-200 "
+            className="w-24 rounded-full  p-2 border-2 border-solid border-main-200 "
             src="https://avatars.githubusercontent.com/u/137858394?s=400&u=c42efab78b203157feda7631149f5bc265bdafe5&v=4"
             alt=""
           />
-        </span>
+          <div className="flex flex-col justify-center items-start">
+            <span className="text-3xl">آ.مرادیان</span>
+            <span className="text-xl text-main-50">مدیر</span>
+          </div>
+        </a>
       </div>
       <a href=" " className="text-white ">
         {" "}
