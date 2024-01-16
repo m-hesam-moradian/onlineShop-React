@@ -58,7 +58,6 @@ export function SpecialCardsItems({ id, img, name, price, priceBeforeOff, type }
               </span>
               <div className="SliderPrice-mainPriceContainer">
                 <span className="SliderPrice-price p-1 fw-bolder ">
-                  {" "}
                   {price.toLocaleString("en-US")}
                 </span>
                 <span className="SliderPrice-toman text-secondary  ">

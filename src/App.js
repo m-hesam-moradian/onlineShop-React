@@ -3,8 +3,17 @@ import { useRoutes } from "react-router-dom";
 import AuthContext from "./context/authContext";
 import routes from "./routes";
 import "./App.css";
-import FirebaseDatas from "./FirebaseDatas";
+// import FirebaseDatas from "./FirebaseDatas";
 import CounterContext from "./context/CounterContext";
+
+// fetch("", {
+//   method: "POST",
+//   headers: { "Content-Type": "application/json" },
+//   body: JSON.stringify({ title: "Fetch POST Request Example" }),
+// })
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
 
 export const API = "http://localhost:3000/";
 export default function App() {
