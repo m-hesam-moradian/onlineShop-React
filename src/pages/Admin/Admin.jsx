@@ -6,12 +6,12 @@ import "./Admin.css";
 export default function Admin() {
    window.scrollTo(0, 0);
   return (
-    <div className="admin flex">
-      <div className="w-96  bg-gradient-to-r from-blue-900 to-black h-screen ">
+    <div className="admin bg-main-50 flex">
+      <div className="w-32 bg-white ">
         <AdminSidebar />
       </div>
       <div className="basis-full   h-screen">
-        <AdminNavbar/>
+        {/* <AdminNavbar/> */}
         <Outlet />
       </div>
     </div>

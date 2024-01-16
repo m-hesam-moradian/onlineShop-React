@@ -8,3 +8,8 @@
   background-color: #ffffff33 !important;
   transition: all 0.2s;
 }
+
+.btn3d{
+    box-shadow: 0px 10px 10px 0px #00000010, inset 0px 10px 10px #00000010;
+    border: 2px solid transparent;
+}

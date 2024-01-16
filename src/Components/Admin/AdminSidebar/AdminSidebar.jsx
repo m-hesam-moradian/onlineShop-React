@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AdminSidebar() {
   return (
-    <div className="text-white  ">
+    <div className="text-white flex items-center flex-col ">
       <div className=" px-4 py-8 flex items-center justify-center border-b border-solid border-gray-50/[0.3] ">
         <a href="" className=" flex  gap-2  text-white ">
           <img
@@ -10,52 +10,31 @@ export default function AdminSidebar() {
             src="https://avatars.githubusercontent.com/u/137858394?s=400&u=c42efab78b203157feda7631149f5bc265bdafe5&v=4"
             alt=""
           />
-          <div className="flex flex-col justify-center items-start">
+          {/* <div className="flex flex-col justify-center items-start">
             <span className="text-3xl">آ.مرادیان</span>
             <span className="text-xl text-main-50">مدیر</span>
-          </div>
+          </div> */}
         </a>
       </div>
-      <a href=" " className="text-white ">
+      <a href=" " className="text-main-75  btn3d rounded-full">
         {" "}
-        <div className=" pr-4 flex items-center gap-2 py-3 border-solid  border-b border-solid border-gray-50/[0.3] text-2xl transition-all duration-300 hover:text-[1.8rem] hover:bg-main-200 hover:shadow-inner hover:border-r-8 hover:border-main-500">
+        <div className=" m-2    text-2xl transition-all duration-300 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-10 "
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"
-            />
-          </svg>
-
-          <span className="">صفحه اصلی</span>
-        </div>{" "}
-      </a>
-      <a href=" " className="text-white ">
-        <div className=" pr-4 flex items-center gap-2 py-3 border-solid  border-b border-solid border-gray-50/[0.3] text-2xl transition-all duration-300 hover:text-[1.8rem] hover:bg-main-200 hover:shadow-inner hover:border-r-8 hover:border-main-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
+            fill="currentColor"
             class="w-10"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+              fill-rule="evenodd"
+              d="M1.5 9.832v1.793c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875V9.832a3 3 0 0 0-.722-1.952l-3.285-3.832A3 3 0 0 0 16.215 3h-8.43a3 3 0 0 0-2.278 1.048L2.222 7.88A3 3 0 0 0 1.5 9.832ZM7.785 4.5a1.5 1.5 0 0 0-1.139.524L3.881 8.25h3.165a3 3 0 0 1 2.496 1.336l.164.246a1.5 1.5 0 0 0 1.248.668h2.092a1.5 1.5 0 0 0 1.248-.668l.164-.246a3 3 0 0 1 2.496-1.336h3.165l-2.765-3.226a1.5 1.5 0 0 0-1.139-.524h-8.43Z"
+              clip-rule="evenodd"
             />
+            <path d="M2.813 15c-.725 0-1.313.588-1.313 1.313V18a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-1.688c0-.724-.588-1.312-1.313-1.312h-4.233a3 3 0 0 0-2.496 1.336l-.164.246a1.5 1.5 0 0 1-1.248.668h-2.092a1.5 1.5 0 0 1-1.248-.668l-.164-.246A3 3 0 0 0 7.046 15H2.812Z" />
           </svg>
 
-          <span className=""> اضافه کردن محصول</span>
-        </div>
+          {/* <span className="">صفحه اصلی</span> */}
+        </div>{" "}
       </a>
     </div>
   );
