@@ -3,13 +3,13 @@
   background-color: #0000000d !important;
 }
 .inputshadow {
-    box-shadow: 0px -1px 2px 0px white, 0px 1px 2px 0px black;
-    border: none;
+  box-shadow: 0px -1px 2px 0px white, 0px 1px 2px 0px black;
+  border: none;
   background-color: #ffffff33 !important;
   transition: all 0.2s;
 }
 
-.btn3d{
-    box-shadow: 0px 10px 10px 0px #00000010, inset 0px 10px 10px #00000010;
-    border: 2px solid transparent;
+.btn3d {
+  border: 2px solid transparent;
+  box-shadow: 0px -10px 10px 0px #ffffff, inset 0px -27px 10px #ffffffba;
 }

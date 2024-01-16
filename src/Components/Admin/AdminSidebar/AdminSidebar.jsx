@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AdminSidebar() {
   return (
-    <div className="text-white flex items-center flex-col ">
+    <div className="text-white flex items-center flex-col bg-[#e9edf2] h-full ">
       <div className=" px-4 py-8 flex items-center justify-center border-b border-solid border-gray-50/[0.3] ">
         <a href="" className=" flex  gap-2  text-white ">
           <img
@@ -18,12 +18,12 @@ export default function AdminSidebar() {
       </div>
       <a href=" " className="text-main-75  btn3d rounded-full">
         {" "}
-        <div className=" m-2    text-2xl transition-all duration-300 ">
+        <div className=" m-3  text-main-75  text-2xl transition-all duration-300 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="w-10"
+            class="text-main-75 w-10"
           >
             <path
               fill-rule="evenodd"

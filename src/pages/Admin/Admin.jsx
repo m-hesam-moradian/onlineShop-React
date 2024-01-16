@@ -6,8 +6,8 @@ import "./Admin.css";
 export default function Admin() {
    window.scrollTo(0, 0);
   return (
-    <div className="admin bg-main-50 flex">
-      <div className="w-32 bg-white ">
+    <div className="admin bg-main-75 flex">
+      <div className="w-32  ">
         <AdminSidebar />
       </div>
       <div className="basis-full   h-screen">
