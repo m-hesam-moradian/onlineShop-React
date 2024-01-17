@@ -24,7 +24,7 @@
 }
 .AdminSidebar a:hover {
   box-shadow: none;
-  border: none;
+  /* border: none; */
   background-color: #d8d8ef;
   color: #5202f6 !important;
 }

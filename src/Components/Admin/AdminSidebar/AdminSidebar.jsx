@@ -59,21 +59,37 @@ export default function AdminSidebar() {
         className="text-admin-text  rounded-full lg:w-4/5"
       >
         {" "}
-        <div className=" m-3 flex justify-start items-center gap-4   text-2xl ">
+        <div className=" m-3 flex justify-between items-center group   text-2xl ">
+          <div className="flex justify-start items-center  gap-3 ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-10"
+            >
+              <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+              <path
+                fill-rule="evenodd"
+                d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span className="hidden lg:inline">محصولات</span>
+          </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            fill="none"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-10"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 bg-admin-BG text-admin-active p-1 rounded-full group-hover:bg-admin-active group-hover:text-admin-BG"
           >
-            <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
             <path
-              fill-rule="evenodd"
-              d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z"
-              clip-rule="evenodd"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
             />
           </svg>
-          <span className="hidden lg:inline">محصولات</span>
         </div>{" "}
       </NavLink>
       <NavLink
@@ -81,17 +97,23 @@ export default function AdminSidebar() {
         className="text-admin-text  rounded-full lg:w-4/5"
       >
         {" "}
-        <div className=" m-3 flex justify-start items-center gap-4   text-2xl ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-10"
-          >
-            <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-            <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-          </svg>
-          <span className="hidden lg:inline">پیام ها</span>
+        <div className="  m-3 flex justify-between items-center    text-2xl ">
+          <div className="flex justify-start items-center  gap-3">
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-10"
+            >
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+            </svg>
+            <span className="hidden lg:inline">پیام ها</span>
+          </div>
+          <div className=" bg-admin-BG  rounded-full px-2 flex justify-center items-center  text-[13px]">
+            4
+          </div>
         </div>{" "}
       </NavLink>
       <NavLink
