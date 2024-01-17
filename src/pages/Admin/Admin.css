@@ -10,14 +10,21 @@
 }
 
 .btn3d {
-  border: 2px solid transparent;
+  border: 2px solid white;
   box-shadow: 0px -10px 10px 0px #ffffff, inset 0px -27px 10px #ffffffba;
 }
-.AdminSidebar .active{
+.AdminSidebar .active {
   background-color: #5202f6;
   color: #f5f3f9 !important;
+  box-shadow: inset 0px 0px 25px -14px black;
+  border: none;
 }
-.AdminSidebar a:hover{
+.AdminSidebar a {
+  transition: all 0.2s;
+}
+.AdminSidebar a:hover {
+  box-shadow: none;
+  border: none;
   background-color: #d8d8ef;
   color: #5202f6 !important;
 }
