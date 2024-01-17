@@ -1,46 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const SideBarItems = [
-  {
-    link: "product",
-    name:"محصولات",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-10"
-      >
-        <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
-        <path
-          fill-rule="evenodd"
-          d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-    ),
-    secondIcon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 bg-admin-BG text-admin-active p-1 rounded-full group-hover:bg-admin-active group-hover:text-admin-BG"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 4.5v15m7.5-7.5h-15"
-        />
-      </svg>
-    ),
-  },
-];
-
-export default function AdminSidebar() {
+export const Messages = () => {
   return (
+    <div >
+
     <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
       <div className="pt-6 m-3  flex items-center justify-center  ">
         <a href="" className=" flex  gap-2  text-white rounded-full p-2 ">
@@ -77,7 +41,7 @@ export default function AdminSidebar() {
           </svg>
         </div>{" "}
       </a>
-      <NavLink to="/admin/" className="text-admin-text  rounded-full lg:w-4/5">
+      <NavLink  to="/admin/" className="text-admin-text  rounded-full lg:w-4/5">
         {" "}
         <div className=" m-3 flex justify-start items-center gap-4   text-2xl ">
           <svg
@@ -172,5 +136,7 @@ export default function AdminSidebar() {
         </div>{" "}
       </NavLink>
     </div>
-  );
+
+    </div>
+  )
 }

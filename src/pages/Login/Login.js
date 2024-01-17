@@ -11,9 +11,9 @@ import Modal from "react-bootstrap/Modal";
 import Swal from "sweetalert2";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [Name, setName] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("hesamiwx@gmail.com");
+  const [Name, setName] = useState("hesamiwx");
+  const [password, setPassword] = useState("hesamiwx");
   const [Login, setLogin] = useState([]);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -110,13 +110,7 @@ export default function Login() {
                 navigate(`/`);
               }
             });
-          } else {
-            Swal.fire({
-              title: "ایمیل یا رمز عبور اشتباه است",
-              icon: "error",
-            })
-            
-          }
+          } 
         });
       } else {
         if (email.length <= 5) {
