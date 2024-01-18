@@ -6,13 +6,6 @@ import "./App.css";
 // import FirebaseDatas from "./FirebaseDatas";
 import CounterContext from "./context/CounterContext";
 
-// fetch("", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({ title: "Fetch POST Request Example" }),
-// })
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
 
 
 export const API = "http://localhost:3000/";
@@ -47,23 +40,7 @@ export default function App() {
     localStorage.removeItem("user");
   });
 
-  useEffect(() => {
-    const localStorageData = JSON.parse(localStorage.getItem("user"));
-    if (localStorageData) {
-      fetch(`http://localhost:4000/v1/auth/me`, {
-        headers: {
-          Authorization: `Bearer ${localStorageData.token}`,
-        },
-      })
-        .then((res) => res.json())
-        .then((userData) => {
-          setIsLoggedIn(true);
-          setUserInfos(userData);
-        });
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [login, logout]);
+  
 
   return (
     <AuthContext.Provider
