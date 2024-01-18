@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-
-
+import adminContext from "../../../context/adminContext";
 
 const SideBarItems = [
-
- 
-
   {
     link: "logOut",
     name: "خروج از اکانت",
@@ -25,15 +21,14 @@ const SideBarItems = [
   },
 ];
 
-export default function AdminSidebar({ usetInfo }) {
-
-  const [toggle, setToggle] = useState(false);
+export default function AdminSidebar() {
+  const usetInfo = useContext(adminContext);
+  console.log(usetInfo);
+  const [toggleMessage, setToggleMessage] = useState(false);
   function DropdownMaker() {
-      setToggle((bool)=>bool = !bool )  
-      
-
-
+    setToggleMessage((bool) => (bool = !bool));
   }
+  console.log(toggleMessage);
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
       <div className="pt-6 m-3  flex items-center justify-center  ">
@@ -159,13 +154,43 @@ export default function AdminSidebar({ usetInfo }) {
             </svg>
             <span className="hidden lg:inline">پیام ها</span>
           </div>
-          <div className="hidden  bg-admin-BG  rounded-full px-2 lg:flex justify-center items-center  text-[13px]">
+          <div className="hidden  bg-admin-BG  rounded-full px-2 lg:flex justify-center items-center  text-[13px]hidden   text-admin-active  group-hover:bg-admin-active group-hover:text-admin-BG">
             4
           </div>
         </div>
       </NavLink>
+      {toggleMessage && (
+        <ul>
+          {usetInfo.messages.map((item, index) => (
+            <li>
+              <NavLink
+                to={`/admin/Messages/${index+1}`}
+                className="text-admin-text  rounded-full lg:w-4/5"
+              >
+                <div className=" m-3 flex justify-between items-center group   text-2xl ">
+                  <div className="flex justify-start items-center  gap-3 ">
+                    <img
+                      className="w-16 rounded-full  p-1 border-2 border-solid border-[#9696dd]  "
+                      src={usetInfo && item.img}
+                      alt=""
+                    />
+                    <div className="flex flex-col">
+                      <span className="hidden lg:inline text-black font-bold">
+                        {usetInfo && item.from}
+                      </span>
+                      <span className="text-xl text-admin-text">
+                        {" "}
+                        {usetInfo && item.seniority}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      )}
 
-      
       <NavLink
         to={`/admin/logOut`}
         className="text-admin-text  rounded-full lg:w-4/5"
@@ -185,7 +210,6 @@ export default function AdminSidebar({ usetInfo }) {
           </div>
         </div>
       </NavLink>
-     
     </div>
   );
 }

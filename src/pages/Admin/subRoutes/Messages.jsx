@@ -3,7 +3,7 @@ import adminContext from "../../../context/adminContext";
 
 export const Messages = () => {
   const usetInfo = useContext(adminContext);
-  console.log(usetInfo);
+  // console.log(usetInfo);
   return (
     <div>
    
