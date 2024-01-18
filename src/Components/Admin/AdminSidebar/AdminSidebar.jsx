@@ -164,11 +164,11 @@ export default function AdminSidebar() {
           {usetInfo.messages.map((item, index) => (
             <li>
               <NavLink
-                to={`/admin/Messages/${index+1}`}
+                to={`/admin/Messages/${index + 1}`}
                 className="text-admin-text  rounded-full lg:w-4/5"
               >
                 <div className=" m-3 flex justify-between items-center group   text-2xl ">
-                  <div className="flex justify-start items-center  gap-3 ">
+                  <div className=" lg:flex justify-start items-center  gap-3 ">
                     <img
                       className="w-16 rounded-full  p-1 border-2 border-solid border-[#9696dd]  "
                       src={usetInfo && item.img}
