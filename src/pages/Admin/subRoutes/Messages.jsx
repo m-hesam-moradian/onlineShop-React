@@ -1,5 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import adminContext from "../../../context/adminContext";
 
 export const Messages = () => {
-  return <div>sss</div>;
+  const usetInfo = useContext(adminContext);
+  console.log(usetInfo);
+  return (
+    <div>
+   
+</div>
+  );
 };

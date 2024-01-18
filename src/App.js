@@ -6,14 +6,8 @@ import "./App.css";
 // import FirebaseDatas from "./FirebaseDatas";
 import CounterContext from "./context/CounterContext";
 
-
-
 export const API = "http://localhost:3000/";
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [token, setToken] = useState(false);
-  const [userInfos, setUserInfos] = useState({});
-
   const router = useRoutes(routes);
   let card = 0;
   if (JSON.parse(localStorage.getItem("cards"))) {
@@ -27,40 +21,15 @@ export default function App() {
     setCount(JSON.parse(localStorage.getItem("cards")).length);
   };
 
-  const login = (userInfos, token) => {
-    setToken(token);
-    setIsLoggedIn(true);
-    setUserInfos(userInfos);
-    localStorage.setItem("user", JSON.stringify({ token }));
-  };
-
-  const logout = useCallback(() => {
-    setToken(null);
-    setUserInfos({});
-    localStorage.removeItem("user");
-  });
-
-  
-
   return (
-    <AuthContext.Provider
+    <CounterContext.Provider
       value={{
-        isLoggedIn,
-        token,
-        userInfos,
-        login,
-        logout,
+        count,
+        incrementCount,
       }}
     >
-      <CounterContext.Provider
-        value={{
-          count,
-          incrementCount,
-        }}
-      >
-        {/* <FirebaseDatas></FirebaseDatas> */}
-        {router}
-      </CounterContext.Provider>
-    </AuthContext.Provider>
+      {/* <FirebaseDatas></FirebaseDatas> */}
+      {router}
+    </CounterContext.Provider>
   );
 }

@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { Dropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+
+
 
 const SideBarItems = [
   {
@@ -91,6 +94,17 @@ const SideBarItems = [
 ];
 
 export default function AdminSidebar({ usetInfo }) {
+
+  const [toggle, setToggle] = useState(false);
+  function DropdownMessage(itemLink) {
+    if (itemLink === "Messages") {
+      setToggle((bool)=>bool = true )  
+    } else {
+      setToggle((bool)=>bool = false )  
+      
+    }
+
+  }
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
       <div className="pt-6 m-3  flex items-center justify-center  ">
@@ -140,13 +154,18 @@ export default function AdminSidebar({ usetInfo }) {
           className="text-admin-text  rounded-full lg:w-4/5"
         >
           {" "}
-          <div className=" m-3 flex justify-between items-center group   text-2xl ">
+          <div
+            onClick={() => {
+              DropdownMessage(item.link);
+            }}
+            className=" m-3 flex justify-between items-center group   text-2xl "
+          >
             <div className="flex justify-start items-center  gap-3 ">
               {item.icon}
               <span className="hidden lg:inline">{item.name}</span>
             </div>
             {item.secondIcon}
-          </div>{" "}
+          </div>
         </NavLink>
       ))}
     </div>
