@@ -5,8 +5,8 @@ export const Messages = () => {
   const usetInfo = useContext(adminContext);
   // console.log(usetInfo);
   return (
-    <div className="h-full relative shadow-inner overflow-scroll pt-32 text-4xl">
-      <nav className="h-20 shadow bg-admin-text fixed top-0 w-full "></nav>
+    <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-4xl">
+      <nav className=" opacity-60  h-20 shadow bg-admin-text fixed top-0 w-full "></nav>
       <div className="  flex px-5  justify-end w-full">
         <p className="bg-white  rounded-t-3xl p-4 rounded-br-3xl w-full lg:w-1/3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat rem
@@ -18,7 +18,7 @@ export const Messages = () => {
           provident eligendi possimus perferendis explicabo aliquam minima!
         </p>
       </div>
-      <div className="  flex px-5   w-full">
+      <div className="  flex px-5 my-5   w-full">
         <p className="  rounded-t-3xl p-4 bg-admin-text text-white rounded-bl-3xl w-full lg:w-1/3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat rem
           culpa numquam maxime dolore nisi officia repudiandae enim? Assumenda
@@ -30,10 +30,10 @@ export const Messages = () => {
         </p>
       </div>
 
-      <footer className="h-24  fixed bottom-0 w-full flex">
+      <footer className="h-24  sticky bottom-0 w-full flex">
         <a
           href=""
-          className="m-3  bg-admin-hover shadow-lg text-admin-text hover:bg-admin-active hover:text-admin-hover rounded-full flex items-center "
+          className="m-3  bg-admin-hover shadow-lg text-admin-text  hover:bg-admin-active hover:text-admin-hover rounded-full flex items-center "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
