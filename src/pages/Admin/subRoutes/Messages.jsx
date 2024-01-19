@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import adminContext from "../../../context/adminContext";
-
+import { useParams } from "react-router-dom";
 export const Messages = () => {
+  const { username } = useParams();
+   console.log(username);
   const usetInfo = useContext(adminContext);
   return (
-    
+
     <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-4xl">
       <nav className=" opacity-60  h-20 shadow bg-admin-text fixed top-0 w-full "></nav>
       <div className="  flex px-5  justify-end w-full">
