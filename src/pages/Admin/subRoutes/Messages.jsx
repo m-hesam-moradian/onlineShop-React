@@ -22,7 +22,7 @@ export const Messages = () => {
           if (item.id) {
             return (
               <div className="  flex px-5  justify-end w-full">
-                <p className="bg-white  rounded-t-3xl p-4 rounded-br-3xl w-full lg:w-1/3">
+                <p className="bg-white  rounded-t-3xl p-4 ms-16 rounded-br-3xl w-auto lg:w-1/3 ">
                   {item.content}
                 </p>
               </div>
@@ -30,15 +30,20 @@ export const Messages = () => {
           } else {
             return (
               <div className="  flex px-5 my-5   w-full">
-                <p className="  rounded-t-3xl p-4 bg-admin-text text-white rounded-bl-3xl w-full lg:w-1/3">
+                <p className="  rounded-t-3xl p-4 bg-admin-text me-16 text-white rounded-bl-3xl w-auto lg:w-1/3">
                   {item.content}
                 </p>
               </div>
             );
           }
         })}
-      <footer className="h-24  fixed bottom-0 w-full flex">
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        let messageDataArray = [];
+      }
+      } className="h-24  fixed bottom-0 w-full flex">
         <a
+          type="submit"
           href=""
           className="m-3  bg-admin-hover shadow-lg text-admin-text  hover:bg-admin-active hover:text-admin-hover rounded-full flex items-center "
         >
@@ -54,12 +59,12 @@ export const Messages = () => {
         <input
           type="text"
           className=" w-full m-3 shadow-lg rounded-full p-3 me-0"
-          onChange={() => {
-            
+          onChange={(input) => {
+            setNewMessage(() => input.target.value);
           }}
           value={NewMessage}
         />
-      </footer>
+      </form>
     </div>
   );
 };

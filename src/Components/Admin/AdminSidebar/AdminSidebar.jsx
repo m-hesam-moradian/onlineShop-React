@@ -152,7 +152,7 @@ export default function AdminSidebar() {
             </svg>
             <span className="hidden lg:inline">پیام ها</span>
           </div>
-          <div className="hidden  bg-admin-BG  rounded-full px-2 lg:flex justify-center items-center  text-[13px]hidden   text-admin-active  group-hover:bg-admin-active group-hover:text-admin-BG">
+          <div className="hidden  bg-admin-BG  rounded-full px-2 lg:flex justify-center items-center  text-[13px]    text-admin-active  group-hover:bg-admin-active group-hover:text-admin-BG">
             4
           </div>
         </div>
