@@ -63,7 +63,7 @@ const routes = [
     element: <Admin />,
     children: [
       { path: "product", element: <Product /> },
-      { path: "Messages/*", element: <Messages /> },
+      { path: "Messages/:id", element: <Messages /> },
     ],
   },
 ];

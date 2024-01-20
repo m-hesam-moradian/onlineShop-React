@@ -23,12 +23,10 @@ const SideBarItems = [
 
 export default function AdminSidebar() {
   const usetInfo = useContext(adminContext);
-  console.log(usetInfo);
   const [toggleMessage, setToggleMessage] = useState(false);
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
-  console.log(toggleMessage);
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
       <div className="pt-6 m-3  flex items-center justify-center  ">
@@ -161,7 +159,7 @@ export default function AdminSidebar() {
       </NavLink>
       {toggleMessage && (
         <ul>
-          {usetInfo.messages.map((item, index) => (
+          {usetInfo.messagesData.map((item, index) => (
             <li>
               <NavLink
                 to={`/admin/Messages/${index + 1}`}

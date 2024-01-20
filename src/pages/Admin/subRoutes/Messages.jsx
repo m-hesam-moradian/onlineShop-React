@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 export const Messages = () => {
-  const { username } = useParams();
-   console.log(username);
-  const usetInfo = useContext(adminContext);
+  const[UserID,setUserId]=useState()
+ const UseridParams  = useParams();
+   console.log(UseridParams.id);
+   const usetInfo = useContext(adminContext);
+   console.log(usetInfo.messagesData[UseridParams.id]);
+
   return (
 
     <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-4xl">
