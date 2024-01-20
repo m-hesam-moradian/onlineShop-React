@@ -3,22 +3,19 @@ import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 import { API } from "../../../App";
 
+async function put(url, data) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
 
-
- async function put(url, data) { 
-    const response = await fetch(url, { 
-      method: 'PUT', 
-      headers: { 
-        'Content-type': 'application/json'
-      }, 
-      body: JSON.stringify(data) 
-    }); 
-      
-    const resData = await response.json(); 
+  const resData = await response.json();
   console.log(resData);
-    return resData; 
-  } 
-
+  return resData;
+}
 
 export const Messages = () => {
   const [messageState, setMessageState] = useState();
@@ -33,10 +30,10 @@ export const Messages = () => {
   }, [Userid]);
 
   return (
-    <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-4xl">
+    <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-2xl">
       <nav className=" opacity-60  h-20 shadow bg-admin-text fixed top-0 w-full "></nav>
 
-      {  messageState &&
+      {messageState &&
         messageState.map((item) => {
           if (item.id) {
             return (
@@ -64,12 +61,20 @@ export const Messages = () => {
           console.log(newMessage);
           console.log();
           setMessageState([...messageState, newMessage]);
-          put(`${API}admin/Messages/${Userid.id}`, [
+          console.log(
+            usetInfo && usetInfo.messagesData[Userid.id - 1].messages
+          );
+
+          usetInfo.messagesData[Userid.id - 1].messages = [
             ...messageState,
             newMessage,
-          ]);
-          setNewMessage("")
-          
+          ];
+          console.log(
+            usetInfo && usetInfo.messagesData[Userid.id - 1].messages
+          );
+
+          put(`registered`, usetInfo);
+          setNewMessage("");
         }}
         className="h-24  fixed bottom-0 w-full flex"
       >
