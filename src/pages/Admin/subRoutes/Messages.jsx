@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 export const Messages = () => {
-
   const [messageState, setMessageState] = useState();
   const [NewMessage, setNewMessage] = useState();
 
@@ -41,11 +40,12 @@ export const Messages = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          
-          // {
-          //   id : 0, content : NewMessage;
-          // }
 
+          let newMessage = { id: 0, content: NewMessage };
+          console.log(newMessage);
+          console.log();
+          setMessageState([...messageState, newMessage]);
+          setNewMessage("")
         }}
         className="h-24  fixed bottom-0 w-full flex"
       >
