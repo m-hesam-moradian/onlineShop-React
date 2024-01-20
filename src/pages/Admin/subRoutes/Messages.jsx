@@ -3,7 +3,6 @@ import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 import { API } from "../../../App";
 
-
 async function put(url, data) {
   const response = await fetch(url, {
     method: "POST",
