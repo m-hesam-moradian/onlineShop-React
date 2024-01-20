@@ -2,17 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 export const Messages = () => {
-  
+
   const [messageState, setMessageState] = useState();
   const [NewMessage, setNewMessage] = useState();
+
   const Userid = useParams();
-  console.log(Userid.id);
+
   const usetInfo = useContext(adminContext);
 
   useEffect(() => {
-    console.log(usetInfo && usetInfo.messagesData[Userid.id - 1].messages);
     setMessageState(usetInfo && usetInfo.messagesData[Userid.id - 1].messages);
   }, [Userid]);
+
   return (
     <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-4xl">
       <nav className=" opacity-60  h-20 shadow bg-admin-text fixed top-0 w-full "></nav>
@@ -21,7 +22,7 @@ export const Messages = () => {
         messageState.map((item) => {
           if (item.id) {
             return (
-              <div className="  flex px-5  justify-end w-full">
+              <div key={item} className="  flex px-5  justify-end w-full">
                 <p className="bg-white  rounded-t-3xl p-4 ms-16 rounded-br-3xl w-auto lg:w-1/3 ">
                   {item.content}
                 </p>
@@ -29,7 +30,7 @@ export const Messages = () => {
             );
           } else {
             return (
-              <div className="  flex px-5 my-5   w-full">
+              <div key={item} className="  flex px-5 my-5   w-full">
                 <p className="  rounded-t-3xl p-4 bg-admin-text me-16 text-white rounded-bl-3xl w-auto lg:w-1/3">
                   {item.content}
                 </p>
@@ -37,11 +38,17 @@ export const Messages = () => {
             );
           }
         })}
-      <form onSubmit={(e) => {
-        e.preventDefault()
-        let messageDataArray = [];
-      }
-      } className="h-24  fixed bottom-0 w-full flex">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          
+          // {
+          //   id : 0, content : NewMessage;
+          // }
+
+        }}
+        className="h-24  fixed bottom-0 w-full flex"
+      >
         <a
           type="submit"
           href=""
