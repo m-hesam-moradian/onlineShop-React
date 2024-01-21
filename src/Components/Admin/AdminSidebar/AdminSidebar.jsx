@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Dropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import adminContext from "../../../context/adminContext";
 
 const SideBarItems = [
@@ -24,11 +24,16 @@ const SideBarItems = [
 export default function AdminSidebar() {
   const usetInfo = useContext(adminContext);
   const [toggleMessage, setToggleMessage] = useState(false);
-  const [ActiveClass, setActiveClass] = useState();
+
+
+  
+
 
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
+
+
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
       <div className="pt-6 m-3  flex items-center justify-center  ">
@@ -133,15 +138,13 @@ export default function AdminSidebar() {
 
       <NavLink
         to={`/admin/Messages`}
-        className="text-admin-text  rounded-full lg:w-4/5"
+        className="text-admin-text  rounded-full lg:w-4/5 group "
+        onClick={() => {
+          DropdownMaker();
+        }}
       >
         {" "}
-        <div
-          onClick={() => {
-            DropdownMaker();
-          }}
-          className=" m-3 flex justify-between items-center group   text-2xl "
-        >
+        <div className=" m-3 flex justify-between items-center   text-2xl ">
           <div className="flex justify-start items-center  gap-3 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -163,8 +166,7 @@ export default function AdminSidebar() {
         <ul>
           {usetInfo.messagesData.map((item, index) => (
             <li
-              onClick={() => { setActiveClass("shadow-xl") }}
-              className={`rounded-full ${ActiveClass}`}
+          
             >
               <NavLink
                 to={`/admin/Messages/${index + 1}`}
