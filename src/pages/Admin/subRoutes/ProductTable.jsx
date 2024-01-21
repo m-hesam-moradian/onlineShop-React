@@ -18,19 +18,14 @@ async function get() {
       return res.json();
     })
     .then(async (allData) => {
-      // setAllDatas([...allData]);
-      // setAllDatas(allData);
-      // console.log(allData);
-      // setProductData(
-      // );
-      return allData ;
+      console.log(allData);
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
   window.scrollTo(0, 0);
 }
-
+get()
 const columns = [
   { id: "id", label: "id", minWidth: 30 },
   { id: "img", label: "img", minWidth: 100 },
