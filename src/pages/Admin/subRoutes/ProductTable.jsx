@@ -22,7 +22,6 @@ async function get() {
       // setAllDatas(allData);
       // console.log(allData);
       // setProductData(
-      //   await allData.find((item) => parseInt(item.id) == parseInt(productID))
       // );
       return allData ;
     })
