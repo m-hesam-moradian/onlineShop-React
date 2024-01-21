@@ -20,7 +20,7 @@ export default function Admin() {
         );
       });
   }, []);
-  console.log(usetInfo&&usetInfo[0]);
+  // console.log(usetInfo&&usetInfo[0]);
 
   return (
     <adminContext.Provider value={ usetInfo&&usetInfo[0] }>

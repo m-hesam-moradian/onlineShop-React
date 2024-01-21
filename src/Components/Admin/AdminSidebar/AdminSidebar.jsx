@@ -24,6 +24,8 @@ const SideBarItems = [
 export default function AdminSidebar() {
   const usetInfo = useContext(adminContext);
   const [toggleMessage, setToggleMessage] = useState(false);
+  const [ActiveClass, setActiveClass] = useState();
+
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
@@ -153,17 +155,20 @@ export default function AdminSidebar() {
             <span className="hidden lg:inline">پیام ها</span>
           </div>
           <div className="hidden  bg-admin-BG  rounded-full px-2 lg:flex justify-center items-center  text-[13px]    text-admin-active  group-hover:bg-admin-active group-hover:text-admin-BG">
-            4
+            {usetInfo && usetInfo.messagesData.length}
           </div>
         </div>
       </NavLink>
       {toggleMessage && (
         <ul>
           {usetInfo.messagesData.map((item, index) => (
-            <li>
+            <li
+              onClick={() => { setActiveClass("shadow-xl") }}
+              className={`rounded-full ${ActiveClass}`}
+            >
               <NavLink
                 to={`/admin/Messages/${index + 1}`}
-                className="text-admin-text  rounded-full lg:w-4/5"
+                className="text-admin-text  rounded-full lg:w-4/5 "
               >
                 <div className=" m-3 flex justify-between items-center group   text-2xl ">
                   <div className=" lg:flex justify-start items-center  gap-3 ">
