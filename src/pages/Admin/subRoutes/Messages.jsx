@@ -16,7 +16,6 @@ async function put(url, data) {
   return resData;
 }
 
-
 export const Messages = () => {
   const [messageState, setMessageState] = useState();
   const [NewMessage, setNewMessage] = useState();
@@ -58,37 +57,38 @@ export const Messages = () => {
           e.preventDefault();
 
           let newMessage = { id: 0, content: NewMessage };
-          console.log();
-          setMessageState([...messageState, newMessage]);
+          if (NewMessage) {
+            setMessageState([...messageState, newMessage]);
 
-          usetInfo.messagesData[Userid.id - 1].messages = [
-            ...messageState,
-            newMessage,
-          ];
-      
-          put(`${API}registered/${Userid.id}`, usetInfo);
-          setNewMessage("");
+            usetInfo.messagesData[Userid.id - 1].messages = [
+              ...messageState,
+              newMessage,
+            ];
+
+            put(`${API}registered/${Userid.id}`, usetInfo);
+            setNewMessage("");
+          }
         }}
         className="h-24  fixed bottom-0 w-full flex"
       >
-        <a
-          
+        <button
+          href="#"
+          role="button"
           type="submit"
-          href=""
           className="m-3  bg-admin-hover shadow-lg text-admin-text  hover:bg-admin-active hover:text-admin-hover rounded-full flex items-center "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="w-8  m-3`"
+            class="w-8  m-3"
           >
             <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
           </svg>
-        </a>
+        </button>
         <input
           type="text"
-          className=" w-full m-3 shadow-lg rounded-full p-3 me-0"
+          className=" w-full m-3 shadow-lg rounded-full p-3 me-0 "
           onChange={(input) => {
             setNewMessage(() => input.target.value);
           }}
