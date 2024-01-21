@@ -3,11 +3,9 @@ import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 import { API } from "../../../App";
 
-
-
 async function put(url, data) {
   const response = await fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-type": "application/json",
     },
@@ -15,9 +13,9 @@ async function put(url, data) {
   });
 
   const resData = await response.json();
-  console.log(resData);
   return resData;
 }
+
 
 export const Messages = () => {
   const [messageState, setMessageState] = useState();
@@ -60,22 +58,15 @@ export const Messages = () => {
           e.preventDefault();
 
           let newMessage = { id: 0, content: NewMessage };
-          console.log(newMessage);
           console.log();
           setMessageState([...messageState, newMessage]);
-          console.log(
-            usetInfo && usetInfo.messagesData[Userid.id - 1].messages
-          );
 
           usetInfo.messagesData[Userid.id - 1].messages = [
             ...messageState,
             newMessage,
           ];
-          console.log(
-            usetInfo && usetInfo.messagesData[Userid.id - 1].messages
-          );
-
-          put(`registered`, usetInfo);
+      
+          put(`${API}registered/${Userid.id}`, usetInfo);
           setNewMessage("");
         }}
         className="h-24  fixed bottom-0 w-full flex"
