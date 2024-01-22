@@ -28,3 +28,10 @@
   background-color: #d8d8ef;
   color: #5202f6 !important;
 }
+.MuiTableCell-root ,.MuiTableCell-head{
+  text-align: right !important;
+}
+.MuiTableRow-root {
+  height: 2px !important; 
+
+}
