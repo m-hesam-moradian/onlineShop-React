@@ -112,7 +112,6 @@ export const Product = () => {
                     </select>
                   </div>
                 </div>
-
               
               
 
