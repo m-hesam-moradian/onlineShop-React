@@ -113,6 +113,7 @@ export const Product = () => {
                   </div>
                 </div>
 
+                
                 <div class="text-center flex">
                   <svg
                     class="mx-auto h-12 w-12 text-gray-300"
