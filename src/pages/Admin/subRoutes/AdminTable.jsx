@@ -3,9 +3,9 @@ import React from "react";
 const AdminTable = ({ tableData }) => {
   return (
     <div className="w-[83vw] p-14">
-      <div class="relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
-        <table class="h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xl h-min  text-admin-darkmode uppercase bg-admin-text">
+      <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
+        <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class=" text-xl h-min  text-admin-darkmode uppercase bg-admin-text">
             <tr className="text-right text-xl lg:text-2xl h-min">
               <th scope="col" class="px-6 py-3">
                 آیدی
