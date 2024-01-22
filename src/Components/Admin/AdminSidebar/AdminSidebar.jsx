@@ -25,14 +25,9 @@ export default function AdminSidebar() {
   const usetInfo = useContext(adminContext);
   const [toggleMessage, setToggleMessage] = useState(false);
 
-
-  
-
-
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
-
 
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
@@ -165,9 +160,7 @@ export default function AdminSidebar() {
       {toggleMessage && (
         <ul>
           {usetInfo.messagesData.map((item, index) => (
-            <li
-          
-            >
+            <li>
               <NavLink
                 to={`/admin/Messages/${index + 1}`}
                 className="text-admin-text  rounded-full lg:w-4/5 "

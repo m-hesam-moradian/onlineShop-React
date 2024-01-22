@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { API } from "../../../App";
-// import AdminTable from ". ";
+
+
+import AdminTable from "./AdminTable.jsx";
 
 export const Product = () => {
   const [tableData, setTableData] = useState();
@@ -22,5 +24,9 @@ export const Product = () => {
   }, []);
   console.log(tableData);
 
-  return <div>{/* <AdminTable/> */}</div>;
+  return (
+    <div>
+      <AdminTable tableData={tableData && tableData} />{" "}
+    </div>
+  );
 };

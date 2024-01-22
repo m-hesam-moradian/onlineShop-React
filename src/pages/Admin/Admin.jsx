@@ -23,9 +23,9 @@ export default function Admin() {
   // console.log(usetInfo&&usetInfo[0]);
 
   return (
-    <adminContext.Provider value={ usetInfo&&usetInfo[0] }>
+    <adminContext.Provider value={usetInfo && usetInfo[0]}>
       <div className="admin bg-main-75 flex">
-        <div className="w-36 lg:w-[30rem] ">
+        <div className="lg:w-[20vw] ">
           <AdminSidebar usetInfo={usetInfo && usetInfo[0]} />
         </div>
         <div className="basis-full   h-screen">
@@ -33,6 +33,6 @@ export default function Admin() {
           <Outlet />
         </div>
       </div>
-     </adminContext.Provider>
+    </adminContext.Provider>
   );
 }
