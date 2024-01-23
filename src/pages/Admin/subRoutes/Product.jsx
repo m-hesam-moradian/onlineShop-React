@@ -24,24 +24,22 @@ export const Product = () => {
   console.log(tableData);
 
   return (
-    <div className="">
+    <div className="mt-44 md:m-0">
       <AdminTable tableData={tableData && tableData} />
-      <div className="h-full  m-14 mt-0">
+      <div className="h-full  m-14 mt-0 flex flex-col justify-center ">
         <form>
           <div class="space-y-12 ">
             <div class="border-b text-xl pb-12">
-              <h2 class="text-3xl font-semibold leading-7 text-gray-900 ">
+              <h2 class="text-3xl font-semibold leading-7 text-gray-900 mb-4 ">
                 اضافه کردن محصول جدید
               </h2>
-              <p class="mt-1 text-sm leading-6 text-gray-600">
-                Use a permanent address where you can receive mail.
-              </p>
+             
 
               <div class=" grid grid-cols-1 gap-5 sm:grid-cols-3">
                 <div class="w-full">
                   <label
                     for="first-name"
-                    class="block text-sm font-medium leading-6 text-gray-900"
+                    class="block  font-medium leading-6 text-gray-900"
                   >
                     نام محصول
                   </label>
@@ -51,7 +49,7 @@ export const Product = () => {
                       name="first-name"
                       id="first-name"
                       autocomplete="given-name"
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
                     />
                   </div>
                 </div>
@@ -59,7 +57,7 @@ export const Product = () => {
                 <div class="w-full">
                   <label
                     for="last-name"
-                    class="block text-sm font-medium leading-6 text-gray-900"
+                    class="block  font-medium leading-6 text-gray-900"
                   >
                     قیمت محصول
                   </label>
@@ -69,7 +67,7 @@ export const Product = () => {
                       name="last-name"
                       id="last-name"
                       autocomplete="family-name"
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
                     />
                   </div>
                 </div>
@@ -77,7 +75,7 @@ export const Product = () => {
                 <div class="w-full">
                   <label
                     for="email"
-                    class="block text-sm font-medium leading-6 text-gray-900"
+                    class="block  font-medium leading-6 text-gray-900"
                   >
                     تصویر محصول
                   </label>
@@ -87,28 +85,30 @@ export const Product = () => {
                       name="email"
                       type="email"
                       autocomplete="email"
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
                     />
                   </div>
                 </div>
 
                 <div class="w-full">
                   <label
-                    for="country"
-                    class="block text-sm font-medium leading-6 text-gray-900"
+                    for="category"
+                    class="block  font-medium leading-6 text-gray-900"
                   >
                     دسته بندی محصول
                   </label>
-                  <div class="mt-2">
+                  <div class="mt-2 ">
                     <select
-                      id="country"
-                      name="country"
-                      autocomplete="country-name"
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                      id="category"
+                      name="category"
+                      autocomplete="category-name"
+                      class=" w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm "
                     >
-                      <option>United States</option>
-                      <option>Canada</option>
-                      <option>Mexico</option>
+                      <option>Headphones</option>
+                      <option>DigitalProduct</option>
+                      <option>NetworkTools</option>
+                      <option>MemoryCard</option>
+                      <option>PcAndAccessories</option>
                     </select>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export const Product = () => {
                   for="file-upload"
                   class=" group w-full relative cursor-pointer rounded-md font-semibold shadow-md  text-lg text-admin-active hover:text-admin-navBG duration-300"
                 >
-                  <span className="  flex   rounded-lg items-center justify-center text-center leading-6  group-hover:bg-admin-active border-admin-active group-hover:border-transparent border-3 border-solid    gap-4 w-full">
+                  <span className="  flex   rounded-lg items-center justify-center text-end leading-6  group-hover:bg-admin-active border-admin-active group-hover:border-transparent border-3 border-solid    gap-4 w-full">
                     {" "}
                     <svg
                       class="  w-10  "
