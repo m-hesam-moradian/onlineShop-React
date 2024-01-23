@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminTable = ({ tableData }) => {
   return (
-    <div className="w-[83vw] p-14">
+    <div className=" overflow-hidden w-[83vw] p-14">
       <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
         <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
           <thead class=" text-xl h-min  text-admin-darkmode uppercase bg-admin-text">
