@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { API } from "../../../App";
-
+import React from "react";
 import AdminTable from "./AdminTable.jsx";
 import { AddProductForm } from "./AddProductForm.jsx";
-import Get from '../../../HOC/API/Get.js'
+import Get from "../../../HOC/API/Get.js";
 export const Product = () => {
   const { data, loading, error } = Get(`products`);
 
@@ -14,8 +12,6 @@ export const Product = () => {
   if (error) {
     console.log(error);
   }
-
-  
 
   // console.log(tableData);
 

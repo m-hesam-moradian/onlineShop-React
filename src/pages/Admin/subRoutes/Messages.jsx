@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
-import { API } from "../../../App";
-import put from "../../../HOC/API/Put";
+import Put from "../../../HOC/API/Put";
 
 export const Messages = () => {
   const [messageState, setMessageState] = useState();
@@ -53,7 +52,7 @@ export const Messages = () => {
               newMessage,
             ];
 
-            put(`registered/${Userid.id}`, usetInfo);
+            Put(`registered/${Userid.id}`, usetInfo);
             setNewMessage("");
           }
         }}

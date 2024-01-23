@@ -1,6 +1,6 @@
 import { API } from "../../App";
 
-async function usePut(subUrl, data) {
+async function Put(subUrl, data) {
   const response = await fetch(API + subUrl, {
     method: "PUT",
     headers: {
@@ -12,4 +12,4 @@ async function usePut(subUrl, data) {
   const resData = await response.json();
   return resData;
 }
-export default usePut
+export default Put
