@@ -3,10 +3,10 @@ import { API } from "../../../App";
 
 import AdminTable from "./AdminTable.jsx";
 import { AddProductForm } from "./AddProductForm.jsx";
-import useGet from "../../../hooks/APIHooks/Get.js";
-
+import Get from '../../../HOC/API/Get.js'
 export const Product = () => {
-  const { data, loading, error } = useGet("http://localhost:3000/products");
+  const { data, loading, error } = Get(`products`);
+
   if (loading) {
     console.log(loading);
   }
@@ -15,11 +15,13 @@ export const Product = () => {
     console.log(error);
   }
 
-  console.log(data);
+  
+
+  // console.log(tableData);
 
   return (
     <div className="mt-44 md:m-0">
-      <AdminTable tableData={data} />
+      <AdminTable tableData={data && data} />
       <AddProductForm />
     </div>
   );

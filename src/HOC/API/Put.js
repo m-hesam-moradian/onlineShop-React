@@ -1,5 +1,7 @@
-async function usePut(url, data) {
-  const response = await fetch(url, {
+import { API } from "../../App";
+
+async function usePut(subUrl, data) {
+  const response = await fetch(API + subUrl, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",

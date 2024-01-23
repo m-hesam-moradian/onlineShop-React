@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { API } from "../../App";
 
-function useGet(url) {
+function useGet(subUrl) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +9,7 @@ function useGet(url) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(API + subUrl);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -22,7 +23,7 @@ function useGet(url) {
     };
 
     fetchData();
-  }, [url]);
+  }, [subUrl]);
 
   return { data, loading, error };
 }
