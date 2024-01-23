@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdminTable from "./AdminTable.jsx";
 import { AddProductForm } from "./AddProductForm.jsx";
 import Get from "../../../HOC/API/Get.js";

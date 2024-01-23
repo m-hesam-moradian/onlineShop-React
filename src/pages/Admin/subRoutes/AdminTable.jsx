@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+
+import Delete from "../../../HOC/API/Delete.js";
 
 const AdminTable = ({ tableData }) => {
+  const [rerender, setRerender] = useState(false);
+
   return (
     <div className=" overflow-hidden w-[83vw] p-14 hidden md:block">
       <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
@@ -65,7 +69,14 @@ const AdminTable = ({ tableData }) => {
                       </a>
                     </td>
                     <td class="px-6 py-4 text-center">
-                      <a href="" className=" text-red-600 hover:bg-red-600 ">
+                      <a
+                        onClick={() => {
+                          Delete(`products/${item.id}`);
+                          setRerender((prev) => !prev);
+                        }}
+                        className=" text-red-600 hover:bg-red-600 "
+                      >
+                      
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
