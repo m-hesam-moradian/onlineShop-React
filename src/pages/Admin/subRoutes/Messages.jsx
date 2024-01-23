@@ -2,19 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import adminContext from "../../../context/adminContext";
 import { useParams } from "react-router-dom";
 import { API } from "../../../App";
+import put from "../../../hooks/APIHooks/Put";
 
-async function put(url, data) {
-  const response = await fetch(url, {
-    method: "PUT",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
 
-  const resData = await response.json();
-  return resData;
-}
 
 export const Messages = () => {
   const [messageState, setMessageState] = useState();
