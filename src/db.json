@@ -274,48 +274,74 @@
       "price": 890000
     }
   ],
-  "registered": {
-    "-NjB9xHYxEY4sYGaYQ6d": {
-      "Name": "hesamiwx",
+  "registered": [
+    {
+      "id": 1,
+      "Name": "حسام مرادیان",
       "email": "hesamiwx@gmail.com",
-      "password": "123456"
+      "password": "hesamiwx",
+      "img": "https://media.licdn.com/dms/image/D4E03AQGGOm5UUsPMKA/profile-displayphoto-shrink_400_400/0/1700501850391?e=2147483647&v=beta&t=mF1j-fA8UlNO9ouwk7F_XtlM9GuzAEIfTY5iRCvHLbU",
+      "isAdmin": true,
+      "seniority": "مدیر",
+      "messagesData": [
+        {
+          "id": 1,
+          "from": "علی قدیمی",
+          "seniority": "بک اند ",
+          "img": "https://avatars.githubusercontent.com/u/127773108?v=4",
+          "messages": [
+            {
+              "id": 1,
+              "content": "سلام حسام بک سایت تمام شد و سایت اماده اجرا هس"
+            },
+            {
+              "id": 0,
+              "content": "اوکی مرسی"
+            },
+            {
+              "id": 0,
+              "content": "xxx"
+            },
+            {
+              "id": 0,
+              "content": "ss"
+            },
+            {
+              "id": 0,
+              "content": "ss"
+            },
+            {
+              "id": 0,
+              "content": "zz"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "from": "امیر عظیمی",
+          "seniority": "UI طراح",
+          "img": "https://avatars.githubusercontent.com/u/40192550?v=4",
+          "messages": [
+            {
+              "id": 1,
+              "content": "قسمت مقاله ها ریسپانسیوش ایراد داره "
+            },
+            {
+              "id": 0,
+              "content": "چشم امروز درستش میکنم"
+            }
+          ]
+        }
+      ]
     },
-    "-NjBA2X8ltj-4gvYHGzF": {
-      "Name": "noshin",
-      "email": "noshinxanbabaii@gmail.com",
-      "password": ""
-    },
-    "-NjBfFlprwE38ARKGsu1": {
-      "Name": "hesam",
-      "email": "hesam@gmail.com",
-      "password": "hesam@gmail.com"
-    },
-    "-NjBhyxe2oIogm41d3Uo": {
-      "Name": "farnaz",
-      "email": "farnaz@gmail.com",
-      "password": "farnaz"
-    },
-    "-NjBjM8_jGPiYlO4bFkv": {
-      "Name": "Admin",
-      "email": "admin@gmail.com",
-      "password": "1234"
-    },
-    "-NkGUSo0VJ2ECfjAIXTN": {
-      "Name": "",
-      "email": "",
-      "password": ""
-    },
-    "-NkGUcKIZBo8bPmUeCIz": {
+    {
+      "id": 2,
       "Name": "admin",
       "email": "admin@gmail.com",
-      "password": "admin"
-    },
-    "-NkGcmSJzf6n_ulg_fxE": {
-      "Name": "hesammoradian",
-      "email": "hesammoradian@gmail.com",
-      "password": "hesammoradian"
+      "password": "admin",
+      "isAdmin": false
     }
-  },
+  ],
   "todaysOff": [
     {
       "category": "PcAndAccessories , Headphones",
@@ -343,6 +369,72 @@
       "name": "رم دسکتاپ DDR4 تک کاناله 2666 مگاهرتز کروشیال ظرفیت 8 گیگابایت",
       "price": 1100000,
       "priceBeforeOff": 1300000
+    }
+  ],
+  "BlogCategory": [
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/honar-cat-1.svg",
+      "title": "هنر و سینما"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/montakhab-cat-2.svg",
+      "title": "منتخب سردبیر"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/ketab-cat-3.svg",
+      "title": "کتاب و ادبیات"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/elm-cat-4.svg",
+      "title": "علم و تکنولوژی"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/sabk-cat-5.svg",
+      "title": "سبک زندگی"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/video-cat-6.svg",
+      "title": "بررسی ویدئویی"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/game-cat-7.svg",
+      "title": "بازی ویدئویی"
+    },
+    {
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2023/04/box-cat-8.svg",
+      "title": "آنباکس محصولات"
+    }
+  ],
+  "MainBanner": [
+    {
+      "date": "16 مهر 1401",
+      "comment": "2 دیدگاه ها",
+      "title": "جدیدترین رندرهای شیائومی طراحی جذاب آن را نشان می‌دهند",
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-11.jpg"
+    },
+    {
+      "date": "15  مهر  1401",
+      "comment": "بدون دیدگاه",
+      "title": "رویداد رونمایی از سرفیس‌ها در تاریخ ۲۰ مهر برگزار می‌شود",
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-10.jpg"
+    },
+    {
+      "date": "12  مهر  1401",
+      "comment": "بدون دیدگاه",
+      "title": "۶ تکنولوژی که دیرتر از رقبا به آیفون آمده‌اند",
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-9.jpg"
+    },
+    {
+      "date": "12 مهر 1401",
+      "comment": "2 دیدگاه ها",
+      "title": "۱۰ بازیگر که با نقش‌های منفی اسکار گرفتند",
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/blog-new-8.jpg"
+    },
+    {
+      "date": "11  مهر  1401",
+      "comment": "بدون دیدگاه",
+      "title": "بررسی ادوپرفیوم ویکتوریا سکرت",
+      "src": "https://halochin.ir/electronic-shop/wp-content/uploads/2022/10/perfium-3.jpg"
     }
   ]
 }

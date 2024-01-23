@@ -1,9 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Delete from "../../../HOC/API/Delete.js";
+import Get from "../../../HOC/API/Get.js";
+import { API } from "../../../App.js";
 
-const AdminTable = ({ tableData }) => {
-  const [rerender, setRerender] = useState(false);
+const AdminTable = () => {
+  const [Data, setData] = useState(null);
+
+  // useEffect(async () => {
+  //  await fetch("http://localhost:3000/products")
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         setData(response.json());
+  //       } else {
+  //         // handle error
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       // handle error
+  //     });
+  // }, []);
+  
+  useEffect(() => {
+    fetch(`${API}products`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then(async (allData) => {
+        // setAllDatas([...allData]);
+          setData(allData);
+     
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+
+  const deleteItem = (id) => {
+    fetch("http://localhost:3000/products/" + id, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          setData((previousValue) =>
+            previousValue.filter((item) => item.id !== id)
+          );
+        } else {
+          // handle error
+        }
+      })
+      .catch((error) => {
+        // handle error
+      });
+  };
+  console.log(Data && Data);
 
   return (
     <div className=" overflow-hidden w-[83vw] p-14 hidden md:block">
@@ -29,8 +83,8 @@ const AdminTable = ({ tableData }) => {
             </tr>
           </thead>
           <tbody>
-            {tableData &&
-              tableData.map((item) => {
+            {Data &&
+              Data.map((item) => {
                 return (
                   <tr class="h-min text-sm lg:text-lg odd:bg-admin-navBG  even:bg-admin-hover border-b text-admin-darkmode w-min">
                     <td class="px-6 py-4 flex items-center text-3xl w-40  justify-between">
@@ -71,12 +125,11 @@ const AdminTable = ({ tableData }) => {
                     <td class="px-6 py-4 text-center">
                       <a
                         onClick={() => {
-                          Delete(`products/${item.id}`);
-                          setRerender((prev) => !prev);
+                          // Delete(`products/${item.id}`);
+                          deleteItem(item.id);
                         }}
                         className=" text-red-600 hover:bg-red-600 "
                       >
-                      
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"

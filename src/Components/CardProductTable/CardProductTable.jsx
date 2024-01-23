@@ -23,7 +23,7 @@ export default function CardProductTable({ className, setSum, setRerendered }) {
         {countsCardProducts &&
           countsCardProducts.map((product, index) => (
             <>
-              <div key={product} class="cell  ">
+              <div key={index} class="cell  ">
                 <span
                   class="material-symbols-outlined  "
                   onClick={() => {

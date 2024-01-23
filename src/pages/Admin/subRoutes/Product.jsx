@@ -17,7 +17,7 @@ export const Product = () => {
 
   return (
     <div className="mt-44 md:m-0">
-      <AdminTable tableData={data && data} />
+      <AdminTable Data={data && data} />
       <AddProductForm />
     </div>
   );
