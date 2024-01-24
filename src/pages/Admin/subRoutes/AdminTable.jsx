@@ -105,6 +105,7 @@ const AdminTable = () => {
             handleClose={handleClose}
             open={open}
             EditData={EditData}
+            setData={setData}
           />
         )}
         <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
@@ -151,7 +152,7 @@ const AdminTable = () => {
                       {item.name}
                     </th>
                     <td class="px-6 py-4 text-xl text-center">
-                      {item.price.toLocaleString("en-US")} تومان{" "}
+                      {Number(item.price).toLocaleString("en-US")} تومان{" "}
                     </td>
                     <td class="px-6 py-4 text-xl text-center">
                       <a

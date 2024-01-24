@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Put from "../../../HOC/API/Put";
 import { useState } from "react";
+import { edit } from "fontawesome";
 
 const style = {
   position: "absolute",
@@ -21,7 +22,7 @@ const style = {
   background: "transparent",
 };
 
-export default function AdminModal({ handleOpen, handleClose, open, EditData }) {
+export default function AdminModal({ handleClose, open, EditData, setData }) {
   console.log(EditData);
 
   const [name, setName] = useState(EditData.name);
@@ -30,11 +31,10 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
   const [link, setLink] = useState(EditData.img);
   const [category, setCategory] = useState(EditData.category);
 
-
-
   const putProduct = () => {
     if (name && model && price && link && category) {
       let obj = {
+        id:EditData.id,
         category: category,
         img: link,
         model: model,
@@ -42,7 +42,16 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
         price: price,
       };
       let result = Put(`products/${EditData.id}`, obj);
-      console.log(obj);
+      // console.log(obj);
+      // setData((previousValue) => 
+      //   previousValue.map((item) => {
+      //     if (item.id === EditData.id) {
+      //      item=obj
+          
+      //     }
+      //     console.log(previousValue);
+      //   })
+      // );
       console.log(result);
     }
   };
@@ -63,7 +72,7 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
                   محصول مورد نظر را ویرایش کنید
                 </span>
                 <input
-                  value={name }
+                  value={name}
                   onChange={(input) => setName(input.target.value)}
                   placeholder="نام محصول"
                   type="text"
