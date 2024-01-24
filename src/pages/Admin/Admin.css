@@ -35,3 +35,9 @@
   height: 2px !important; 
 
 }
+.swal2-confirm{
+  background-color: #157347 !important;
+}
+.swal2-cancel{
+  background-color: #b02a37 !important;
+}

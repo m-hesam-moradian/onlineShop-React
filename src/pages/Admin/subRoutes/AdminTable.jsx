@@ -3,24 +3,30 @@ import React, { useEffect, useState } from "react";
 import Delete from "../../../HOC/API/Delete.js";
 import Get from "../../../HOC/API/Get.js";
 import { API } from "../../../App.js";
+import Swal from "sweetalert2";
 
 const AdminTable = () => {
   const [Data, setData] = useState(null);
 
-  // useEffect(async () => {
-  //  await fetch("http://localhost:3000/products")
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         setData(response.json());
-  //       } else {
-  //         // handle error
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       // handle error
-  //     });
-  // }, []);
+
+
+
+let usernameInput
+  let passwordInput
+  let category;
+  let img;
+  let model;
+  let name;
+  let napriceme;
   
+  // let obj = {
+    //   category: category,
+  //   img: link,
+  //   model: model,
+  //   name: name,
+  //   price: price,
+  // };
+
   useEffect(() => {
     fetch(`${API}products`)
       .then((res) => {
@@ -30,9 +36,7 @@ const AdminTable = () => {
         return res.json();
       })
       .then(async (allData) => {
-        // setAllDatas([...allData]);
-          setData(allData);
-     
+        setData(allData);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -41,26 +45,85 @@ const AdminTable = () => {
   }, []);
 
   const deleteItem = (id) => {
-    fetch("http://localhost:3000/products/" + id, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (response.ok) {
-          setData((previousValue) =>
-            previousValue.filter((item) => item.id !== id)
-          );
-        } else {
-          // handle error
-        }
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "مطمعنی؟",
+        text: " اگر این دیتا حذف شود دیگر برگشتی ندارد",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "بله حذف کن",
+        cancelButtonText: "نه لغو کن",
+        reverseButtons: true,
       })
-      .catch((error) => {
-        // handle error
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch("http://localhost:3000/products/" + id, {
+            method: "DELETE",
+          })
+            .then((response) => {
+              if (response.ok) {
+                setData((previousValue) =>
+                  previousValue.filter((item) => item.id !== id)
+                );
+              } else {
+                console.log(response);
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+          swalWithBootstrapButtons.fire({
+            title: "حذف شد",
+            text: "فایل شما با ما موفقیت حذف شد",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "لغو شد",
+            text: "فایل حذف نشد",
+            icon: "error",
+          });
+        }
       });
   };
-  console.log(Data && Data);
+
 
   return (
     <div className=" overflow-hidden w-[83vw] p-14 hidden md:block">
+      {Swal.fire({
+  title: 'Login Form',
+  html: `
+    <input type="text" id="username" class="swal2-input" placeholder="Username">
+    <input type="password" id="password" class="swal2-input" placeholder="Password">
+  `,
+  confirmButtonText: 'Sign in',
+  focusConfirm: false,
+  didOpen: () => {
+    const popup = Swal.getPopup()
+    usernameInput = popup.querySelector('#username') 
+    passwordInput = popup.querySelector('#password') 
+    usernameInput.onkeyup = (event) => event.key === 'Enter' && Swal.clickConfirm()
+    passwordInput.onkeyup = (event) => event.key === 'Enter' && Swal.clickConfirm()
+  },
+  preConfirm: () => {
+    const username = usernameInput.value
+    const password = passwordInput.value
+    if (!username || !password) {
+      Swal.showValidationMessage(`Please enter username and password`)
+    }
+    return { username, password }
+  },
+})}
       <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
         <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
           <thead class=" text-xl h-min  text-admin-darkmode uppercase bg-admin-text">
@@ -149,6 +212,8 @@ const AdminTable = () => {
               })}
           </tbody>
         </table>
+
+
       </div>
     </div>
   );

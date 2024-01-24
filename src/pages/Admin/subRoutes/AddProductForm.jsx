@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useState } from "react";
+import Post from "../../../HOC/API/Post";
 
 export const AddProductForm = () => {
+  const [name, setName] = useState(null);
+  const [model, setModel] = useState(null);
+  const [price, setPrice] = useState(null);
+  const [link, setLink] = useState(null);
+  const [category, setCategory] = useState(null);
+  const postProduct = () => {
+    if (name && model && price && link && category) {
+      let obj = {
+        category: category,
+        img: link,
+        model: model,
+        name: name,
+        price: price,
+      };
+      let result = Post("products/", obj);
+      console.log(result);
+    }
+  };
+
   return (
     <div className="h-full   m-14 mt-0 flex flex-col justify-center ">
       <form>
@@ -13,17 +33,38 @@ export const AddProductForm = () => {
             <div class=" shadow-inner shadow-gray-500 border-0 grid grid-cols-1 gap-5 sm:grid-cols-3">
               <div class="w-full">
                 <label
-                  for="first-name"
+                  for="name"
                   class="block  font-medium leading-6 text-gray-900"
                 >
                   نام محصول
                 </label>
                 <div class="mt-2">
                   <input
+                    value={name}
+                    onChange={(input) => setName(input.target.value)}
                     type="text"
-                    name="first-name"
-                    id="first-name"
-                    autocomplete="given-name"
+                    name="name"
+                    id="name"
+                    autocomplete="name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div class="w-full">
+                <label
+                  for="model"
+                  class="block  font-medium leading-6 text-gray-900"
+                >
+                  مدل محصول
+                </label>
+                <div class="mt-2">
+                  <input
+                    value={model}
+                    onChange={(input) => setModel(input.target.value)}
+                    type="text"
+                    name="model"
+                    id="model"
+                    autocomplete="model"
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
                   />
                 </div>
@@ -31,17 +72,19 @@ export const AddProductForm = () => {
 
               <div class="w-full">
                 <label
-                  for="last-name"
+                  for="price"
                   class="block  font-medium leading-6 text-gray-900"
                 >
                   قیمت محصول
                 </label>
                 <div class="mt-2">
                   <input
+                    value={price}
+                    onChange={(input) => setPrice(input.target.value)}
                     type="text"
-                    name="last-name"
-                    id="last-name"
-                    autocomplete="family-name"
+                    name="price"
+                    id="price"
+                    autocomplete="price"
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
                   />
                 </div>
@@ -49,17 +92,18 @@ export const AddProductForm = () => {
 
               <div class="w-full">
                 <label
-                  for="email"
+                  for="link"
                   class="block  font-medium leading-6 text-gray-900"
                 >
-                  تصویر محصول
+                  (در صورت موجود) لینک تصویر محصول
                 </label>
                 <div class="mt-2">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
+                    value={link}
+                    onChange={(input) => setLink(input.target.value)}
+                    id="link"
+                    name="link"
+                    autocomplete="link"
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
                   />
                 </div>
@@ -74,6 +118,10 @@ export const AddProductForm = () => {
                 </label>
                 <div class="mt-2 ">
                   <select
+                    value={category}
+                    onChange={(input) => {
+                      setCategory(input.target.value);
+                    }}
                     id="category"
                     name="category"
                     autocomplete="category-name"
@@ -88,7 +136,7 @@ export const AddProductForm = () => {
                 </div>
               </div>
 
-              <label
+              {/* <label
                 for="file-upload"
                 class=" group w-full relative cursor-pointer rounded-md font-semibold shadow-md  text-lg text-admin-active hover:text-admin-navBG duration-300"
               >
@@ -114,9 +162,13 @@ export const AddProductForm = () => {
                   type="file"
                   class="sr-only"
                 />
-              </label>
+              </label> */}
 
               <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  postProduct(name, model, price, link, category);
+                }}
                 type="submit"
                 class=" w-full rounded-md bg-admin-active shadow-md text-lg  px-3 py-2  font-semibold text-white  hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
@@ -128,4 +180,4 @@ export const AddProductForm = () => {
       </form>
     </div>
   );
-}
+};
