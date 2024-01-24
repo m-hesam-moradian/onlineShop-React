@@ -4,23 +4,15 @@ import Delete from "../../../HOC/API/Delete.js";
 import Get from "../../../HOC/API/Get.js";
 import { API } from "../../../App.js";
 import Swal from "sweetalert2";
+import AdminModal from "./AdminModal.jsx";
+import { Button } from "@mui/material";
 
 const AdminTable = () => {
   const [Data, setData] = useState(null);
+  const [openModal, setOpenModal] = useState(true);
 
-
-
-
-let usernameInput
-  let passwordInput
-  let category;
-  let img;
-  let model;
-  let name;
-  let napriceme;
-  
   // let obj = {
-    //   category: category,
+  //   category: category,
   //   img: link,
   //   model: model,
   //   name: name,
@@ -96,35 +88,143 @@ let usernameInput
         }
       });
   };
-
-
+  const editModal = (item) => {
+    handleOpen();
+    // setOpenModal(true);
+  };
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <div className=" overflow-hidden w-[83vw] p-14 hidden md:block">
-      {Swal.fire({
-  title: 'Login Form',
-  html: `
-    <input type="text" id="username" class="swal2-input" placeholder="Username">
-    <input type="password" id="password" class="swal2-input" placeholder="Password">
-  `,
-  confirmButtonText: 'Sign in',
-  focusConfirm: false,
-  didOpen: () => {
-    const popup = Swal.getPopup()
-    usernameInput = popup.querySelector('#username') 
-    passwordInput = popup.querySelector('#password') 
-    usernameInput.onkeyup = (event) => event.key === 'Enter' && Swal.clickConfirm()
-    passwordInput.onkeyup = (event) => event.key === 'Enter' && Swal.clickConfirm()
-  },
-  preConfirm: () => {
-    const username = usernameInput.value
-    const password = passwordInput.value
-    if (!username || !password) {
-      Swal.showValidationMessage(`Please enter username and password`)
-    }
-    return { username, password }
-  },
-})}
       <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
+        {/* {openModal && (
+          <div className=" bg-black bg-opacity-50 absolute z-10  h-[50vh] w-full ">
+            <form>
+              <div class="space-y-12 ">
+                <div class=" w-96 shadow-inner shadow-gray-500 border-0 grid grid-cols-1 gap-5 ">
+                  <div class="w-full">
+                    <label
+                      for="name"
+                      class="block  font-medium leading-6 text-gray-900"
+                    >
+                      نام محصول
+                    </label>
+                    <div class="mt-2">
+                      <input
+                        value={name}
+                        onChange={(input) => setName(input.target.value)}
+                        type="text"
+                        name="name"
+                        id="name"
+                        autocomplete="name"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    <label
+                      for="model"
+                      class="block  font-medium leading-6 text-gray-900"
+                    >
+                      مدل محصول
+                    </label>
+                    <div class="mt-2">
+                      <input
+                        value={model}
+                        onChange={(input) => setModel(input.target.value)}
+                        type="text"
+                        name="model"
+                        id="model"
+                        autocomplete="model"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="w-full">
+                    <label
+                      for="price"
+                      class="block  font-medium leading-6 text-gray-900"
+                    >
+                      قیمت محصول
+                    </label>
+                    <div class="mt-2">
+                      <input
+                        value={price}
+                        onChange={(input) => setPrice(input.target.value)}
+                        type="text"
+                        name="price"
+                        id="price"
+                        autocomplete="price"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="w-full">
+                    <label
+                      for="link"
+                      class="block  font-medium leading-6 text-gray-900"
+                    >
+                      (در صورت موجود) لینک تصویر محصول
+                    </label>
+                    <div class="mt-2">
+                      <input
+                        value={link}
+                        onChange={(input) => setLink(input.target.value)}
+                        id="link"
+                        name="link"
+                        autocomplete="link"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm: sm:leading-6"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="w-full">
+                    <label
+                      for="category"
+                      class="block  font-medium leading-6 text-gray-900"
+                    >
+                      دسته بندی محصول
+                    </label>
+                    <div class="mt-2 ">
+                      <select
+                        value={category}
+                        onChange={(input) => {
+                          setCategory(input.target.value);
+                        }}
+                        id="category"
+                        name="category"
+                        autocomplete="category-name"
+                        class=" w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm "
+                      >
+                        <option>Headphones</option>
+                        <option>DigitalProduct</option>
+                        <option>NetworkTools</option>
+                        <option>MemoryCard</option>
+                        <option>PcAndAccessories</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      postProduct(name, model, price, link, category);
+                    }}
+                    type="submit"
+                    class=" w-full rounded-md bg-admin-active shadow-md text-lg  px-3 py-2  font-semibold text-white  hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        )} */}
+
+        {<AdminModal handleOpen={handleOpen} handleClose={handleClose} open={open} />}
         <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
           <thead class=" text-xl h-min  text-admin-darkmode uppercase bg-admin-text">
             <tr className="text-right text-xl lg:text-2xl h-min">
@@ -149,7 +249,10 @@ let usernameInput
             {Data &&
               Data.map((item) => {
                 return (
-                  <tr class="h-min text-sm lg:text-lg odd:bg-admin-navBG  even:bg-admin-hover border-b text-admin-darkmode w-min">
+                  <tr
+                    key={item.id}
+                    class="h-min text-sm lg:text-lg odd:bg-admin-navBG  even:bg-admin-hover border-b text-admin-darkmode w-min"
+                  >
                     <td class="px-6 py-4 flex items-center text-3xl w-40  justify-between">
                       {item.id}
                       <img
@@ -169,9 +272,12 @@ let usernameInput
                       {item.price.toLocaleString("en-US")} تومان{" "}
                     </td>
                     <td class="px-6 py-4 text-xl text-center">
-                      <a
-                        href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:scale-125 flex items-center justify-center"
+                      <a 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          editModal(item);
+                        }}
+                        class=" cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:scale-125 flex items-center justify-center"
                       >
                         Edit
                         <svg
@@ -212,8 +318,6 @@ let usernameInput
               })}
           </tbody>
         </table>
-
-
       </div>
     </div>
   );
