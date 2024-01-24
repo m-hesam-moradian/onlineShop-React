@@ -29,16 +29,10 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
   const [price, setPrice] = useState(EditData.price);
   const [link, setLink] = useState(EditData.img);
   const [category, setCategory] = useState(EditData.category);
-  // if (EditData) {
-  //   setName(EditData.name&&EditData.name);
-  //   setModel(EditData.model&&EditData.model);
-  //   setPrice(EditData.price&&EditData.price);
-  //   setLink(EditData.link&&EditData.link);
-  //   setCategory(EditData.category && EditData.category);
-  // }
 
 
-  const postProduct = () => {
+
+  const putProduct = () => {
     if (name && model && price && link && category) {
       let obj = {
         category: category,
@@ -47,7 +41,8 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
         name: name,
         price: price,
       };
-      let result = Put("products/", obj);
+      let result = Put(`products/${EditData.id}`, obj);
+      console.log(obj);
       console.log(result);
     }
   };
@@ -68,7 +63,7 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
                   محصول مورد نظر را ویرایش کنید
                 </span>
                 <input
-                  value={name && name}
+                  value={name }
                   onChange={(input) => setName(input.target.value)}
                   placeholder="نام محصول"
                   type="text"
@@ -132,7 +127,7 @@ export default function AdminModal({ handleOpen, handleClose, open, EditData }) 
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    postProduct(name, model, price, link, category);
+                    putProduct(name, model, price, link, category);
                   }}
                   type="submit"
                   class=" w-full rounded-md bg-admin-text shadow-md text-lg  px-3 py-2  font-semibold text-admin-hover duration-200 hover:shadow-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
