@@ -9,7 +9,8 @@ import { Button } from "@mui/material";
 
 const AdminTable = () => {
   const [Data, setData] = useState(null);
-  const [openModal, setOpenModal] = useState(true);
+  const [EditData, setEditData] = useState(true);
+
 
   // let obj = {
   //   category: category,
@@ -90,6 +91,7 @@ const AdminTable = () => {
   };
   const editModal = (item) => {
     handleOpen();
+
     // setOpenModal(true);
   };
   const [open, setOpen] = React.useState(false);
