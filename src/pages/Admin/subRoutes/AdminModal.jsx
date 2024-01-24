@@ -21,13 +21,23 @@ const style = {
   background: "transparent",
 };
 
-export default function AdminModal({ handleOpen, handleClose, open }) {
-  
-  const [name, setName] = useState(null);
-  const [model, setModel] = useState(null);
-  const [price, setPrice] = useState(null);
-  const [link, setLink] = useState(null);
-  const [category, setCategory] = useState(null);
+export default function AdminModal({ handleOpen, handleClose, open, EditData }) {
+  console.log(EditData);
+
+  const [name, setName] = useState(EditData.name);
+  const [model, setModel] = useState(EditData.model);
+  const [price, setPrice] = useState(EditData.price);
+  const [link, setLink] = useState(EditData.img);
+  const [category, setCategory] = useState(EditData.category);
+  // if (EditData) {
+  //   setName(EditData.name&&EditData.name);
+  //   setModel(EditData.model&&EditData.model);
+  //   setPrice(EditData.price&&EditData.price);
+  //   setLink(EditData.link&&EditData.link);
+  //   setCategory(EditData.category && EditData.category);
+  // }
+
+
   const postProduct = () => {
     if (name && model && price && link && category) {
       let obj = {
@@ -58,7 +68,7 @@ export default function AdminModal({ handleOpen, handleClose, open }) {
                   محصول مورد نظر را ویرایش کنید
                 </span>
                 <input
-                  value={name}
+                  value={name && name}
                   onChange={(input) => setName(input.target.value)}
                   placeholder="نام محصول"
                   type="text"
