@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from "react";
-
-import Delete from "../../../HOC/API/Delete.js";
-import Get from "../../../HOC/API/Get.js";
 import { API } from "../../../App.js";
 import Swal from "sweetalert2";
 import AdminModal from "./AdminModal.jsx";
-import { Button } from "@mui/material";
 
 const AdminTable = () => {
   const [Data, setData] = useState(null);
   const [EditData, setEditData] = useState(true);
-
-  // let obj = {
-  //   category: category,
-  //   img: link,
-  //   model: model,
-  //   name: name,
-  //   price: price,
-  // };
 
   useEffect(() => {
     fetch(`${API}products`)
@@ -76,10 +64,7 @@ const AdminTable = () => {
             text: "فایل شما با ما موفقیت حذف شد",
             icon: "success",
           });
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "لغو شد",
             text: "فایل حذف نشد",
@@ -91,7 +76,6 @@ const AdminTable = () => {
   const editModal = (item) => {
     handleOpen();
     setEditData(item);
-    // setOpenModal(true);
   };
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);

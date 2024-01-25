@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Put from "../../../HOC/API/Put";
 import { useState } from "react";
+import { FetchGet } from "../../../HOC/API/FetchUpdate";
 
 const style = {
   position: "absolute",
@@ -19,9 +20,29 @@ const style = {
   background: "transparent",
 };
 
-export default function AdminModal({ handleClose, open, EditData, setData, setOpen }) {
-  // console.log(EditData);
 
+export function ModalInput(value, setState, placeholder, tagName) {
+  return (
+    <input
+      value={value}
+      onChange={(input) => setState(input.target.value)}
+      placeholder={placeholder}
+      type="text"
+      name={tagName}
+      id={tagName}
+      autocomplete={tagName}
+      class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
+    />
+  );
+}
+
+export default function AdminModal({
+  handleClose,
+  open,
+  EditData,
+  setData,
+  setOpen,
+}) {
   const [name, setName] = useState(EditData.name);
   const [model, setModel] = useState(EditData.model);
   const [price, setPrice] = useState(EditData.price);
@@ -36,23 +57,10 @@ export default function AdminModal({ handleClose, open, EditData, setData, setOp
         img: link,
         model: model,
         name: name,
-        price: price,
+        price: Number(price),
       };
-      // let result = Put(`products/${EditData.id}`, obj);
-      fetch(`http://localhost:3000/products/${EditData.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(obj),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          fetch("http://localhost:3000/products/")
-            .then((response) => response.json())
-            .then((data) => {
-              setData(data);
-              setOpen(false);
-            });
-        });
+
+      FetchGet(EditData.id, obj, "products", setData, setOpen);
     }
   };
 
@@ -81,7 +89,7 @@ export default function AdminModal({ handleClose, open, EditData, setData, setOp
                   autocomplete="name"
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
-
+              
                 <input
                   value={model}
                   onChange={(input) => setModel(input.target.value)}
