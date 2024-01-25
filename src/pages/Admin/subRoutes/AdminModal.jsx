@@ -1,11 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Put from "../../../HOC/API/Put";
 import { useState } from "react";
-import { edit } from "fontawesome";
 
 const style = {
   position: "absolute",
@@ -22,8 +19,8 @@ const style = {
   background: "transparent",
 };
 
-export default function AdminModal({ handleClose, open, EditData, setData }) {
-  console.log(EditData);
+export default function AdminModal({ handleClose, open, EditData, setData, setOpen }) {
+  // console.log(EditData);
 
   const [name, setName] = useState(EditData.name);
   const [model, setModel] = useState(EditData.model);
@@ -34,25 +31,28 @@ export default function AdminModal({ handleClose, open, EditData, setData }) {
   const putProduct = () => {
     if (name && model && price && link && category) {
       let obj = {
-        id:EditData.id,
+        id: EditData.id,
         category: category,
         img: link,
         model: model,
         name: name,
         price: price,
       };
-      let result = Put(`products/${EditData.id}`, obj);
-      // console.log(obj);
-      // setData((previousValue) => 
-      //   previousValue.map((item) => {
-      //     if (item.id === EditData.id) {
-      //      item=obj
-          
-      //     }
-      //     console.log(previousValue);
-      //   })
-      // );
-      console.log(result);
+      // let result = Put(`products/${EditData.id}`, obj);
+      fetch(`http://localhost:3000/products/${EditData.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(obj),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          fetch("http://localhost:3000/products/")
+            .then((response) => response.json())
+            .then((data) => {
+              setData(data);
+              setOpen(false);
+            });
+        });
     }
   };
 

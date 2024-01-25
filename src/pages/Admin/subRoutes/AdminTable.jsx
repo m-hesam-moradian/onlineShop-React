@@ -106,6 +106,7 @@ const AdminTable = () => {
             open={open}
             EditData={EditData}
             setData={setData}
+            setOpen={setOpen}
           />
         )}
         <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
