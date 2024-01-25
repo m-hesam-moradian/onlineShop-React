@@ -124,7 +124,7 @@ const AdminTable = () => {
                     <td class="px-6 py-4 flex items-center text-3xl w-40  justify-between">
                       {item.id}
                       <img
-                        className="w-20 rounded-full"
+                        className="w-20 h-20 rounded-full"
                         src={item.img}
                         alt=""
                       />

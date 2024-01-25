@@ -1,14 +1,15 @@
+import { API } from "../../App";
 
 
 export const FetchGet = (id, obj, subRoute, setData, setOpen) => {
-  fetch(`http://localhost:3000/${subRoute}/${id}`, {
+  fetch(`${API}${subRoute}/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(obj),
   })
     .then((response) => response.json())
     .then(() => {
-      fetch(`http://localhost:3000/${subRoute}/`)
+      fetch(`${API}${subRoute}/`)
         .then((response) => response.json())
         .then((data) => {
           setData(data);

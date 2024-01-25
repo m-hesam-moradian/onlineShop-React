@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import { FetchGet } from "../../../../HOC/API/FetchUpdate";
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -41,24 +40,22 @@ export default function UserModal({
   setData,
   setOpen,
 }) {
-  const [Name, setName] = useState(EditData.name);
-  const [model, setModel] = useState(EditData.model);
-  const [price, setPrice] = useState(EditData.price);
+  const [Name, setName] = useState(EditData.Name);
+  const [email, setemail] = useState(EditData.email);
   const [link, setLink] = useState(EditData.img);
-  const [category, setCategory] = useState(EditData.category);
+  const [seniority, setseniority] = useState(EditData.seniority);
 
   const putProduct = () => {
-    if (name && model && price && link && category) {
+    if ((Name, email, link, seniority)) {
       let obj = {
         id: EditData.id,
-        category: category,
+        seniority: seniority,
         img: link,
-        model: model,
-        name: Name,
-        price: Number(price),
+        Name: Name,
+        email: email,
       };
 
-      FetchGet(EditData.id, obj, "products", setData, setOpen);
+      FetchGet(EditData.id, obj, "registered", setData, setOpen);
     }
   };
 
@@ -78,9 +75,9 @@ export default function UserModal({
                   محصول مورد نظر را ویرایش کنید
                 </span>
                 <input
-                  value={name}
+                  value={Name}
                   onChange={(input) => setName(input.target.value)}
-                  placeholder="نام محصول"
+                  placeholder="نام کاربر"
                   type="text"
                   name="name"
                   id="name"
@@ -89,27 +86,17 @@ export default function UserModal({
                 />
 
                 <input
-                  value={model}
-                  onChange={(input) => setModel(input.target.value)}
-                  placeholder=" مدل محصول"
+                  value={email}
+                  onChange={(input) => setemail(input.target.value)}
+                  placeholder="ایمیل"
                   type="text"
-                  name="model"
-                  id="model"
-                  autocomplete="model"
+                  name="email"
+                  id="email"
+                  autocomplete="email"
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
                 <input
-                  value={price}
-                  onChange={(input) => setPrice(input.target.value)}
-                  placeholder="قیمت محصول"
-                  type="text"
-                  name="price"
-                  id="price"
-                  autocomplete="price"
-                  class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
-                />
-                <input
-                  placeholder="(در صورت موجود) لینک تصویر محصول"
+                  placeholder="(در صورت موجود) لینک تصویر کاربر"
                   value={link}
                   onChange={(input) => setLink(input.target.value)}
                   id="link"
@@ -117,19 +104,28 @@ export default function UserModal({
                   autocomplete="link"
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
+                <input
+                  placeholder="سمت"
+                  value={seniority}
+                  onChange={(input) => setseniority(input.target.value)}
+                  id="link"
+                  name="link"
+                  autocomplete="link"
+                  class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
+                />
 
-                <select
+                {/* <select
                   placeholder="
                     دسته بندی محصول
                   
                   "
-                  value={category}
+                  value={seniority}
                   onChange={(input) => {
-                    setCategory(input.target.value);
+                    setseniority(input.target.value);
                   }}
-                  id="category"
-                  name="category"
-                  autocomplete="category-name"
+                  id="seniority"
+                  name="seniority"
+                  autocomplete="seniority-name"
                   class="  text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 >
                   <option className="text-black">Headphones</option>
@@ -137,12 +133,12 @@ export default function UserModal({
                   <option className="text-black">NetworkTools</option>
                   <option className="text-black">MemoryCard</option>
                   <option className="text-black">PcAndAccessories</option>
-                </select>
+                </select> */}
 
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    putProduct(name, model, price, link, category);
+                    putProduct(Name, email, link, seniority);
                   }}
                   type="submit"
                   class=" w-full rounded-md bg-admin-text shadow-md text-lg  px-3 py-2  font-semibold text-admin-hover duration-200 hover:shadow-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

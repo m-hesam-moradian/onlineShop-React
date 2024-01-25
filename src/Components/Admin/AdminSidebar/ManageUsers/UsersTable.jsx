@@ -84,7 +84,7 @@ const UsersTable = () => {
     <div className=" overflow-hidden w-[83vw] p-14 hidden md:block">
       <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
         {open && (
-          <AdminModal
+          <UserModal
             handleOpen={handleOpen}
             handleClose={handleClose}
             open={open}
@@ -127,7 +127,7 @@ const UsersTable = () => {
                     <td class="px-6 py-4 flex items-center text-3xl w-40  justify-between">
                       {item.id}
                       <img
-                        className="w-20 rounded-full"
+                        className="w-20 h-20 rounded-full"
                         src={
                           item.img
                             ? item.img
@@ -175,7 +175,6 @@ const UsersTable = () => {
                     <td class="px-6 py-4 text-center">
                       <a
                         onClick={() => {
-                          // Delete(`products/${item.id}`);
                           deleteItem(item.id);
                         }}
                         className=" text-red-600 hover:bg-red-600 "
