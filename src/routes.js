@@ -12,6 +12,7 @@ import Card from "./pages/Card/Card";
 import Admin from "./pages/Admin/Admin";
 import { Product } from "./pages/Admin/subRoutes/Product";
 import { Messages } from "./pages/Admin/subRoutes/Messages";
+import { Users } from "./pages/Admin/subRoutes/Users";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -64,6 +65,7 @@ const routes = [
     children: [
       { path: "product", element: <Product /> },
       { path: "Messages/:id", element: <Messages /> },
+      { path: "Users", element: < Users /> },
     ],
   },
 ];
