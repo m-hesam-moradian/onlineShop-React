@@ -19,13 +19,8 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
- 
-
-
-
-
     try {
-      if ((email.length > 5) && (Name.length > 3) && (password.length > 5)) {
+      if (email.length > 5 && Name.length > 3 && password.length > 5) {
         const res = await fetch(`${API}/registered`, {
           method: "post",
           headers: { "Content-Type": "application/json" },
@@ -33,6 +28,7 @@ export default function Login() {
             email: email,
             Name: Name,
             password: password,
+            seniority: "کاربر",
           }),
         });
         localStorage.setItem("UserEmail", email);
@@ -110,7 +106,7 @@ export default function Login() {
                 navigate(`/`);
               }
             });
-          } 
+          }
         });
       } else {
         if (email.length <= 5) {

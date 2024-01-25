@@ -1,9 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Put from "../../../HOC/API/Put";
 import { useState } from "react";
-import { FetchGet } from "../../../HOC/API/FetchUpdate";
+import { FetchGet } from "../../../../HOC/API/FetchUpdate";
 
 const style = {
   position: "absolute",
@@ -20,7 +19,6 @@ const style = {
   background: "transparent",
 };
 
-
 export function ModalInput(value, setState, placeholder, tagName) {
   return (
     <input
@@ -36,7 +34,7 @@ export function ModalInput(value, setState, placeholder, tagName) {
   );
 }
 
-export default function AdminModal({
+export default function UserModal({
   handleClose,
   open,
   EditData,
@@ -44,20 +42,20 @@ export default function AdminModal({
   setOpen,
 }) {
   const [Name, setName] = useState(EditData.name);
-  const [email, setemail] = useState(EditData.email);
+  const [model, setModel] = useState(EditData.model);
+  const [price, setPrice] = useState(EditData.price);
   const [link, setLink] = useState(EditData.img);
-  const [seniority, setseniority] = useState(EditData.seniority);
+  const [category, setCategory] = useState(EditData.category);
 
-  
   const putProduct = () => {
-    if (name && model && email && link && seniority) {
+    if (name && model && price && link && category) {
       let obj = {
         id: EditData.id,
-        seniority: seniority,
+        category: category,
         img: link,
         model: model,
-        name: name,
-        email: email,
+        name: Name,
+        price: Number(price),
       };
 
       FetchGet(EditData.id, obj, "products", setData, setOpen);
@@ -89,7 +87,7 @@ export default function AdminModal({
                   autocomplete="name"
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
-              
+
                 <input
                   value={model}
                   onChange={(input) => setModel(input.target.value)}
@@ -101,13 +99,13 @@ export default function AdminModal({
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
                 <input
-                  value={email}
-                  onChange={(input) => setemail(input.target.value)}
+                  value={price}
+                  onChange={(input) => setPrice(input.target.value)}
                   placeholder="قیمت محصول"
                   type="text"
-                  name="email"
-                  id="email"
-                  autocomplete="email"
+                  name="price"
+                  id="price"
+                  autocomplete="price"
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
                 <input
@@ -125,13 +123,13 @@ export default function AdminModal({
                     دسته بندی محصول
                   
                   "
-                  value={seniority}
+                  value={category}
                   onChange={(input) => {
-                    setseniority(input.target.value);
+                    setCategory(input.target.value);
                   }}
-                  id="seniority"
-                  name="seniority"
-                  autocomplete="seniority-name"
+                  id="category"
+                  name="category"
+                  autocomplete="category-name"
                   class="  text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 >
                   <option className="text-black">Headphones</option>
@@ -144,7 +142,7 @@ export default function AdminModal({
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    putProduct(name, model, email, link, seniority);
+                    putProduct(name, model, price, link, category);
                   }}
                   type="submit"
                   class=" w-full rounded-md bg-admin-text shadow-md text-lg  px-3 py-2  font-semibold text-admin-hover duration-200 hover:shadow-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
