@@ -79,7 +79,7 @@ const TotalExpenseChart = () => {
       options: chartOptions,
       series: chartSeries,
       type: "line",
-    //   height: 350,
+      height: 230,
     });
     ReactDOM.render(apexChart, domContainer);
   }, [chartOptions, chartSeries]);

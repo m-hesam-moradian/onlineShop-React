@@ -50,7 +50,7 @@ const NewUsersChart = () => {
       options: chartOptions,
       series: chartSeries,
       type: "area",
-      // height: 350,
+      height: 230,
     });
     ReactDOM.render(apexChart, domContainer);
   }, [chartOptions, chartSeries]);

@@ -12,7 +12,7 @@ const NewOrdersChart = () => {
         breakpoint: 480,
         options: {
           chart: {
-            width: 200,
+            // width: 230,
           },
           legend: {
             position: "bottom",

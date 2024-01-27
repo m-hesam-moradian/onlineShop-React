@@ -23,7 +23,7 @@ const TotalIcomeChart = () => {
       ],
     },
     chart: {
-    //   height: 350,
+      height: 230,
       type: "bar",
     },
     plotOptions: {
@@ -97,7 +97,7 @@ const TotalIcomeChart = () => {
       options: chartOptions,
       series: chartSeries,
       type: "bar",
-    //   height: 350,
+      height: 230,
     });
     ReactDOM.render(apexChart, domContainer);
   }, [chartOptions, chartSeries]);
