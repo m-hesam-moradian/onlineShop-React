@@ -13,6 +13,7 @@ import Admin from "./pages/Admin/Admin";
 import { Product } from "./pages/Admin/subRoutes/Product";
 import { Messages } from "./pages/Admin/subRoutes/Messages";
 import { Users } from "./pages/Admin/subRoutes/Users";
+import { HomePage } from "./pages/Admin/subRoutes/HomePage";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -63,6 +64,7 @@ const routes = [
     path: "/admin/*",
     element: <Admin />,
     children: [
+      { path: "", element: <HomePage /> },
       { path: "product", element: <Product /> },
       { path: "Messages/:id", element: <Messages /> },
       { path: "Users", element: < Users /> },
