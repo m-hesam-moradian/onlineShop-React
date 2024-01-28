@@ -123,7 +123,7 @@ export const HomePage = () => {
                 {" "}
                 <div className="text-4xl">نام محصول</div>
 
-              
+            
                 <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
               </div>
             </div>
