@@ -115,13 +115,13 @@ export const HomePage = () => {
           <div className="grid grid-cols-4 border-0 m-4">
             <div>
               <div className="text-4xl font-bold">
-                ${(3569).toLocaleString("en-US")}
+                331
               </div>
               <div className="text-gray-400">محصولات</div>
             </div>
             <div>
               <div className="text-4xl font-bold">
-                ${(3569).toLocaleString("en-US")}
+               2518
               </div>
               <div className="text-gray-400">فروش</div>
             </div>
@@ -133,7 +133,7 @@ export const HomePage = () => {
             </div>
             <div>
               <div className="text-4xl font-bold">
-                ${(3569).toLocaleString("en-US")}
+                ${(9569).toLocaleString("en-US")}
               </div>
               <div className="text-gray-400">درآمد</div>
             </div>
