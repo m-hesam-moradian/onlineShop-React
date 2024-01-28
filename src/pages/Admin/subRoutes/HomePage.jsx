@@ -105,24 +105,39 @@ export const HomePage = () => {
           {/* <NewOrdersChart /> */}
         </div>
       </div>
-      <div className="grid grid-cols-2 border-none ">
-        <div className="bg-white rounded-xl p-7"></div>
+      <div className="grid grid-cols-2 border-none gap-7 w-full ">
+        {/* <div className="bg-white rounded-xl p-7"></div> */}
 
-        <div className="bg-white rounded-xl p-7">
+        <div className="bg-white rounded-xl p-7 ">
           <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400">
+            پرفوش ترین محصولات{" "}
+          </div>
+          <div className=" border-0 m-4 ">
+            <div className="flex justify-between">
+              <img
+                className="grid grid-cols-4 w-40 border-none"
+                src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
+                alt=""
+              />
+              <div>
+                {" "}
+                <div className="text-4xl">نام محصول</div>
+                <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-xl p-7  ">
+          <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
           <div className="grid grid-cols-4 border-0 m-4">
             <div>
-              <div className="text-4xl font-bold">
-                331
-              </div>
+              <div className="text-4xl font-bold">331</div>
               <div className="text-gray-400">محصولات</div>
             </div>
             <div>
-              <div className="text-4xl font-bold">
-               2518
-              </div>
+              <div className="text-4xl font-bold">2518</div>
               <div className="text-gray-400">فروش</div>
             </div>
             <div>
