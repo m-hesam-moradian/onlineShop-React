@@ -8,7 +8,7 @@ import MainChart from "../../../Components/Admin/HomePage/MainChart";
 export const HomePage = () => {
   return (
     <div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 border-none">
         <div className="bg-red-500 h-full rounded-xl shadow flex w-full p-5 justify-between ">
           <div className="  ">
             <div className="text-gray-100 text-3xl">کاربران </div>
@@ -105,8 +105,39 @@ export const HomePage = () => {
           {/* <NewOrdersChart /> */}
         </div>
       </div>
-      <div className="grid grid-cols-2 ">
-        <div className="bg-white rounded-xl">
+      <div className="grid grid-cols-2 border-none ">
+        <div className="bg-white rounded-xl p-7"></div>
+
+        <div className="bg-white rounded-xl p-7">
+          <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400">
+            خلاصه
+          </div>
+          <div className="grid grid-cols-4 border-0 m-4">
+            <div>
+              <div className="text-4xl font-bold">
+                ${(3569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400">محصولات</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold">
+                ${(3569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400">فروش</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold">
+                ${(3569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400">هزینه ها</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold">
+                ${(3569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400">درآمد</div>
+            </div>
+          </div>
           <MainChart />
         </div>
       </div>
