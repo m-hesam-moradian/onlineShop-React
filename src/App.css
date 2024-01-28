@@ -25,3 +25,6 @@
 .jic {
   justify-items: center;
 }
+.dir-ltr{
+  direction: ltr;
+}
