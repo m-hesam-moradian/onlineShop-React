@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MainChart from "../../../Components/Admin/HomePage/MainChart";
 import { API } from "../../../App";
+import adminContext from "../../../context/adminContext";
 
 // import MainChart from "../../../Components/Admin/HomePage/MainChart";
 
 export const HomePage = () => {
+  // const usetInfo = useContext(adminContext);
+  const [UsetInfo, setUsetInfo] = useState();
   window.scrollTo(0, 0);
   const [productInfo, setproductInfo] = useState();
   useEffect(() => {
@@ -13,8 +16,13 @@ export const HomePage = () => {
       .then((allData) => {
         setproductInfo(allData);
       });
+    fetch(`${API}registered`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setUsetInfo(allData);
+      });
   }, []);
-  console.log(productInfo && productInfo);
+  console.log(UsetInfo);
   return (
     <div className="h-[100vh] overflow-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-none ">
@@ -168,6 +176,40 @@ export const HomePage = () => {
           </div>
           <MainChart />
         </div>
+      </div>
+      <div className="grid md:grid-cols-3">
+        <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
+          <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
+            کاربران
+          </div>
+          {UsetInfo &&
+            UsetInfo.slice(0, 4).map((item) => (
+              <div className=" border-0 m-4 ">
+                <div className=" grid grid-cols-1 md:flex justify-between items-center ">
+                  <div className="grid grid-cols-1 border-none md:flex items-center justify-center">
+                    <img
+                      className="grid grid-cols-4 w-40 border-none  "
+                      src={item.img}
+                      alt=""
+                    />
+                    <div>
+                      {" "}
+                      <div className="text-xl font-bold">{item.Name}</div>
+                      <div className="text-lg font-thin text-gray-600">
+                        {item.email}
+                      </div>
+                      <div className="text-lg font-thin text-gray-600">
+                        {item.seniority}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold"></div>
+                </div>
+              </div>
+            ))}
+        </div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );
