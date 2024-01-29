@@ -55,7 +55,6 @@ const data = [
 ];
 
 export default class MainChart extends PureComponent {
-
   render() {
     return (
       <ResponsiveContainer width="100%" height="100%">
@@ -78,22 +77,22 @@ export default class MainChart extends PureComponent {
             type="monotone"
             dataKey="uv"
             stackId="1"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#ba3b3b"
+            fill="#ba3b3b"
           />
           <Area
             type="monotone"
             dataKey="pv"
             stackId="1"
-            stroke="#82ca9d"
-            fill="#82ca9d"
+            stroke="#ffc658"
+            fill="#ffc658"
           />
           <Area
             type="monotone"
             dataKey="amt"
             stackId="1"
-            stroke="#ffc658"
-            fill="#ffc658"
+            stroke="#82ca9d"
+            fill="#82ca9d"
           />
         </AreaChart>
       </ResponsiveContainer>

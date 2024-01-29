@@ -105,7 +105,7 @@ export const HomePage = () => {
       </div>
       <div className="grid  border-none gap-7 w-full  grid-cols-1  lg:grid-cols-2  ">
         <div className="bg-white rounded-xl p-7 w-full h-full">
-          <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400">
+          <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>
           <div className=" border-0 m-4 ">
@@ -123,30 +123,26 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-xl p-7 w-full ">
-          <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400 ">
+        <div className="bg-white rounded-xl p-7 w-full  ">
+          <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
-          <div className="grid grid-cols-4 border-0 m-4">
+          <div className="grid  md:grid-cols-3 border-0 m-4 overflow-auto gap-8">
             <div>
-              <div className="text-4xl font-bold">331</div>
-              <div className="text-gray-400">محصولات</div>
+              <div className="text-3xl font-bold text-green-600">2518</div>
+              <div className="text-gray-400">درآمد</div>
             </div>
             <div>
-              <div className="text-4xl font-bold">2518</div>
-              <div className="text-gray-400">فروش</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold">
-                ${(3569).toLocaleString("en-US")}
-              </div>
-              <div className="text-gray-400">هزینه ها</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold">
+              <div className="text-3xl font-bold text-yellow-600">
                 ${(9569).toLocaleString("en-US")}
               </div>
-              <div className="text-gray-400">درآمد</div>
+              <div className="text-gray-400"> فروش</div>
+            </div>
+            <div className="text-red-700">
+              <div className="text-3xl font-bold">
+                ${(3569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400 ">هزینه ها</div>
             </div>
           </div>
           <MainChart />
