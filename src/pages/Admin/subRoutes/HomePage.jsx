@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainChart from "../../../Components/Admin/HomePage/MainChart";
+import { API } from "../../../App";
 
 // import MainChart from "../../../Components/Admin/HomePage/MainChart";
 
 export const HomePage = () => {
+  window.scrollTo(0, 0);
+  const [productInfo, setproductInfo] = useState();
+  useEffect(() => {
+    fetch(`${API}products`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setproductInfo(allData);
+      });
+  }, []);
+  console.log(productInfo && productInfo);
   return (
     <div className="h-[100vh] overflow-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-none ">
@@ -108,75 +119,30 @@ export const HomePage = () => {
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>
-          <div className=" border-0 m-4 ">
-            <div className="flex justify-between items-center ">
-              <div className="flex items-center justify-center">
-                <img
-                  className="grid grid-cols-4 w-40 border-none "
-                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
-                  alt=""
-                />
-                <div>
-                  {" "}
-                  <div className="text-4xl">نام محصول</div>
-                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+          {productInfo &&
+            productInfo.slice(0, 4).map((item) => (
+              <div className=" border-0 m-4 ">
+                <div className=" grid grid-cols-1 md:flex justify-between items-center ">
+                  <div className="grid grid-cols-1 border-none md:flex items-center justify-center">
+                    <img
+                      className="grid grid-cols-4 w-40 border-none "
+                      src={item.img}
+                      alt=""
+                    />
+                    <div>
+                      {" "}
+                      <div className="text-xl font-bold">{item.name}</div>
+                      <div className="text-lg font-thin text-gray-600">
+                        {item.model}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold">
+                    {item.price.toLocaleString("en-US")}
+                  </div>
                 </div>
               </div>
-              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
-            </div>
-          </div>
-          
-          <div className=" border-0 m-4 ">
-            <div className="flex justify-between items-center ">
-              <div className="flex items-center justify-center">
-                <img
-                  className="grid grid-cols-4 w-40 border-none "
-                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
-                  alt=""
-                />
-                <div>
-                  {" "}
-                  <div className="text-4xl">نام محصول</div>
-                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
-                </div>
-              </div>
-              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
-            </div>
-          </div>
-          <div className=" border-0 m-4 ">
-            <div className="flex justify-between items-center ">
-              <div className="flex items-center justify-center">
-                <img
-                  className="grid grid-cols-4 w-40 border-none "
-                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
-                  alt=""
-                />
-                <div>
-                  {" "}
-                  <div className="text-4xl">نام محصول</div>
-                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
-                </div>
-              </div>
-              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
-            </div>
-          </div>
-          <div className=" border-0 m-4 ">
-            <div className="flex justify-between items-center ">
-              <div className="flex items-center justify-center">
-                <img
-                  className="grid grid-cols-4 w-40 border-none "
-                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
-                  alt=""
-                />
-                <div>
-                  {" "}
-                  <div className="text-4xl">نام محصول</div>
-                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
-                </div>
-              </div>
-              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
-            </div>
-          </div>
+            ))}
         </div>
         <div className="bg-white rounded-xl p-7 w-full h-full  ">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400 ">
