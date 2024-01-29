@@ -41,3 +41,6 @@
 .swal2-cancel{
   background-color: #b02a37 !important;
 }
+.recharts-responsive-container{
+  height: 23vw !important;
+}

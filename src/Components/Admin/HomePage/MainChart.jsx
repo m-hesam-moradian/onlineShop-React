@@ -1,50 +1,102 @@
-import React from "react";
-import ChartJS from "chart.js/auto";
-import Chart from "react-chartjs-2";
-import faker from "faker";
+import React, { PureComponent } from "react";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
-ChartJS.register(
-  ChartJS.LinearScale,
-  ChartJS.CategoryScale,
-  ChartJS.BarElement,
-  ChartJS.PointElement,
-  ChartJS.LineElement,
-  ChartJS.Legend,
-  ChartJS.Tooltip,
-  ChartJS.LineController,
-  ChartJS.BarController
-);
+const data = [
+  {
+    name: "فروردین",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: "اردیبهشت",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: "خرداد",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: "تیر ",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: "مرداد",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: "شهریور",
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: "مهر",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+export default class MainChart extends PureComponent {
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      type: "line",
-      label: "Dataset 1",
-      borderColor: "rgb(255, 99, 132)",
-      borderWidth: 2,
-      fill: false,
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-    },
-    {
-      type: "bar",
-      label: "Dataset 2",
-      backgroundColor: "rgb(75, 192, 192)",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "white",
-      borderWidth: 2,
-    },
-    {
-      type: "bar",
-      label: "Dataset 3",
-      backgroundColor: "rgb(53, 162, 235)",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-    },
-  ],
-};
-
-export function App() {
-  return <Chart type="bar" data={data} />;
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <AreaChart
+          width={500}
+          height={400}
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey="uv"
+            stackId="1"
+            stroke="#8884d8"
+            fill="#8884d8"
+          />
+          <Area
+            type="monotone"
+            dataKey="pv"
+            stackId="1"
+            stroke="#82ca9d"
+            fill="#82ca9d"
+          />
+          <Area
+            type="monotone"
+            dataKey="amt"
+            stackId="1"
+            stroke="#ffc658"
+            fill="#ffc658"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
+    );
+  }
 }

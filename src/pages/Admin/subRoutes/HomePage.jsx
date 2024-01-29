@@ -1,14 +1,12 @@
 import React from "react";
-import NewUsersChart from "../../../Components/Admin/HomePage/NewUsersChart";
-import TotalExpenseChart from "../../../Components/Admin/HomePage/TotalExpenseChart";
-import TotalIcomeChart from "../../../Components/Admin/HomePage/TotalIcomeChart";
-import NewOrdersChart from "../../../Components/Admin/HomePage/NewOrdersChart";
 import MainChart from "../../../Components/Admin/HomePage/MainChart";
+
+// import MainChart from "../../../Components/Admin/HomePage/MainChart";
 
 export const HomePage = () => {
   return (
-    <div>
-      <div className="grid grid-cols-4 gap-4 border-none">
+    <div className="h-[100vh] overflow-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-none ">
         <div className="bg-red-500 h-full rounded-xl shadow flex w-full p-5 justify-between ">
           <div className="  ">
             <div className="text-gray-100 text-3xl">کاربران </div>
@@ -105,10 +103,8 @@ export const HomePage = () => {
           {/* <NewOrdersChart /> */}
         </div>
       </div>
-      <div className="grid grid-cols-2 border-none gap-7 w-full ">
-        {/* <div className="bg-white rounded-xl p-7"></div> */}
-
-        <div className="bg-white rounded-xl p-7 w-full">
+      <div className="grid  border-none gap-7 w-full  grid-cols-1  lg:grid-cols-2  ">
+        <div className="bg-white rounded-xl p-7 w-full h-full">
           <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>
@@ -122,14 +118,12 @@ export const HomePage = () => {
               <div>
                 {" "}
                 <div className="text-4xl">نام محصول</div>
-
-            
                 <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-xl p-7  ">
+        <div className="bg-white rounded-xl p-7 w-full ">
           <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
