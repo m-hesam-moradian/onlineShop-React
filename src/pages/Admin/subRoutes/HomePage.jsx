@@ -57,7 +57,7 @@ export const HomePage = () => {
             <div className="text-gray-100 text-3xl">سود</div>
             <div className="font-extrabold text-6xl text-white pt-5">
               {" "}
-              ${(3569).toLocaleString("en-US")}
+              ${(969).toLocaleString("en-US")}
             </div>
             <div className="text-white">افزایش %60 در ماه</div>
           </div>
@@ -104,26 +104,81 @@ export const HomePage = () => {
         </div>
       </div>
       <div className="grid  border-none gap-7 w-full  grid-cols-1  lg:grid-cols-2  ">
-        <div className="bg-white rounded-xl p-7 w-full h-full">
+        <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>
           <div className=" border-0 m-4 ">
-            <div className="flex justify-between">
-              <img
-                className="grid grid-cols-4 w-40 border-none"
-                src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
-                alt=""
-              />
-              <div>
-                {" "}
-                <div className="text-4xl">نام محصول</div>
-                <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center justify-center">
+                <img
+                  className="grid grid-cols-4 w-40 border-none "
+                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
+                  alt=""
+                />
+                <div>
+                  {" "}
+                  <div className="text-4xl">نام محصول</div>
+                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+                </div>
               </div>
+              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
+            </div>
+          </div>
+          
+          <div className=" border-0 m-4 ">
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center justify-center">
+                <img
+                  className="grid grid-cols-4 w-40 border-none "
+                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
+                  alt=""
+                />
+                <div>
+                  {" "}
+                  <div className="text-4xl">نام محصول</div>
+                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+                </div>
+              </div>
+              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
+            </div>
+          </div>
+          <div className=" border-0 m-4 ">
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center justify-center">
+                <img
+                  className="grid grid-cols-4 w-40 border-none "
+                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
+                  alt=""
+                />
+                <div>
+                  {" "}
+                  <div className="text-4xl">نام محصول</div>
+                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+                </div>
+              </div>
+              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
+            </div>
+          </div>
+          <div className=" border-0 m-4 ">
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center justify-center">
+                <img
+                  className="grid grid-cols-4 w-40 border-none "
+                  src="https://demo.bootstrapdash.com/star-admin-pro/src/assets/images/product_images/Homepod.png"
+                  alt=""
+                />
+                <div>
+                  {" "}
+                  <div className="text-4xl">نام محصول</div>
+                  <div className="text-xl">توضیحات اضافی محصول یا مدل ان</div>
+                </div>
+              </div>
+              <div className="text-3xl font-bold">{(100000).toLocaleString("en-US")}</div>
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-xl p-7 w-full  ">
+        <div className="bg-white rounded-xl p-7 w-full h-full  ">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
