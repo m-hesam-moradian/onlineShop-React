@@ -108,7 +108,7 @@ export const HomePage = () => {
       <div className="grid grid-cols-2 border-none gap-7 w-full ">
         {/* <div className="bg-white rounded-xl p-7"></div> */}
 
-        <div className="bg-white rounded-xl p-7 ">
+        <div className="bg-white rounded-xl p-7 w-full">
           <div className="text-5xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>

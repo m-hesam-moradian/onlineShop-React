@@ -1,109 +1,50 @@
-import React, { useState, useEffect } from "react";
-import ReactApexChart from "react-apexcharts";
-import ReactDOM from "react-dom";
+import React from "react";
+import ChartJS from "chart.js/auto";
+import Chart from "react-chartjs-2";
+import faker from "faker";
 
+ChartJS.register(
+  ChartJS.LinearScale,
+  ChartJS.CategoryScale,
+  ChartJS.BarElement,
+  ChartJS.PointElement,
+  ChartJS.LineElement,
+  ChartJS.Legend,
+  ChartJS.Tooltip,
+  ChartJS.LineController,
+  ChartJS.BarController
+);
 
-const MainChart = () => {
-  const [chartOptions, setChartOptions] = useState({
-    chart: {
-      height: 350,
-      type: "line",
-      stacked: false,
-    },
-    stroke: {
-      width: [0, 2, 5],
-      curve: "smooth",
-    },
-    plotOptions: {
-      bar: {
-        columnWidth: "50%",
-      },
-    },
-    fill: {
-      opacity: [0.85, 0.25, 1],
-      gradient: {
-        inverseColors: false,
-        shade: "light",
-        type: "vertical",
-        opacityFrom: 0.85,
-        opacityTo: 0.55,
-        stops: [0, 100, 100, 100],
-      },
-    },
-    labels: [
-      "01/01/2003",
-      "02/01/2003",
-      "03/01/2003",
-      "04/01/2003",
-      "05/01/2003",
-      "06/01/2003",
-      "07/01/2003",
-      "08/01/2003",
-      "09/01/2003",
-      "10/01/2003",
-      "11/01/2003",
-    ],
-    markers: {
-      size: 0,
-    },
-    xaxis: {
-      type: "datetime",
-    },
-    yaxis: {
-      title: {
-        text: "Points",
-      },
-      min: 0,
-    },
-    tooltip: {
-      shared: true,
-      intersect: false,
-      y: {
-        formatter: function (y) {
-          if (typeof y !== "undefined") {
-            return y.toFixed(0) + " points";
-          }
-          return y;
-        },
-      },
-    },
-  });
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-  const [chartSeries, setChartSeries] = useState([
+export const data = {
+  labels,
+  datasets: [
     {
-      name: "TEAM A",
-      type: "column",
-      data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+      type: "line",
+      label: "Dataset 1",
+      borderColor: "rgb(255, 99, 132)",
+      borderWidth: 2,
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
     },
     {
-      name: "TEAM B",
-      type: "area",
-      data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
+      type: "bar",
+      label: "Dataset 2",
+      backgroundColor: "rgb(75, 192, 192)",
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: "white",
+      borderWidth: 2,
     },
     {
-      name: "TEAM C",
-      type: "line",
-      data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+      type: "bar",
+      label: "Dataset 3",
+      backgroundColor: "rgb(53, 162, 235)",
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
     },
-  ]);
-
-  useEffect(() => {
-    const domContainer = document.querySelector("#MainChart");
-    const apexChart = React.createElement(ReactApexChart, {
-      options: chartOptions,
-      series: chartSeries,
-      type: "line",
-      width: 600,
-    });
-    ReactDOM.render(apexChart, domContainer);
-  }, [chartOptions, chartSeries]);
-
-  return (
-    <div>
-      <div id="MainChart"></div>
-      <div id="html-dist"></div>
-    </div>
-  );
+  ],
 };
 
-export default MainChart;
+export function App() {
+  return <Chart type="bar" data={data} />;
+}
