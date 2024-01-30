@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import MainChart from "../../../Components/Admin/HomePage/MainChart";
 import { API } from "../../../App";
 import Carousel from "react-bootstrap/Carousel";
-import { ArtickleCard, MiniArtickleCard } from "../../../Components/RecentArticles/RecentArticles";
+import {
+  ArtickleCard,
+  MiniArtickleCard,
+} from "../../../Components/RecentArticles/RecentArticles";
+import PieChart from "../../../Components/Admin/HomePage/PieChart";
+import PieCharts from "../../../Components/Admin/HomePage/PieChart";
 
 export const HomePage = () => {
   const [UsetInfo, setUsetInfo] = useState();
@@ -160,7 +165,7 @@ export const HomePage = () => {
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
-          <div className="grid  md:grid-cols-3 border-0 m-4 overflow-auto gap-8">
+          <div className="grid grid-cols-2  md:grid-cols-3 border-0 m-4 overflow-auto gap-8">
             <div>
               <div className="text-3xl font-bold text-green-600">2518</div>
               <div className="text-gray-400">درآمد</div>
@@ -212,21 +217,45 @@ export const HomePage = () => {
               </div>
             ))}
         </div>
-        <div className="bg-white rounded-xl pt-7 w-full h-full overflow-auto items-center justify-center flex flex-col ">
-          <div className="text-4xl mx-7 font-bold p-2  border-b border-solid border-gray-400">
-            مقاله های اخیر
+        <div className="bg-white rounded-xl pt-7 w-full h-full overflow-auto items-center justify-around flex flex-col ">
+          <div className="grid grid-cols-1 md:grid-cols-2 border-0 m-4 overflow-auto gap-8">
+            <div>
+              <div className="text-3xl font-bold text-red-600">2518</div>
+              <div className="text-gray-400">کاربران </div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-yellow-600">
+                ${(9569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400"> مخارج</div>
+            </div>
+            <div className="text-green-700">
+              <div className="text-3xl font-bold">
+                ${(3569).toLocaleString("en-US")}
+              </div>
+              <div className="text-gray-400 ">سود</div>
+            </div>
+            <div className="text-blue-700">
+              <div className="text-3xl font-bold">569</div>
+              <div className="text-gray-400 ">سفارشات</div>
+            </div>
           </div>
+          <PieCharts />
+        </div>
+        <div className="bg-white rounded-xl pt-7 w-full h-full overflow-auto items-center justify-evenly flex flex-col p-6">
+          <div className="text-4xl mx-7 font-bold p-2  ">مقاله های اخیر</div>
           <div>
             <Carousel className="  ">
               {Artickles &&
                 Artickles.map((item, itemIndex) => (
                   <Carousel.Item className="h-full border border-solid rounded-3xl w-full ">
-                    <ArtickleCard  ArtickleArray={item} key={itemIndex} />
+                    <ArtickleCard ArtickleArray={item} key={itemIndex} />
                   </Carousel.Item>
                 ))}
             </Carousel>
           </div>
         </div>
+
         <div></div>
         <div></div>
       </div>
