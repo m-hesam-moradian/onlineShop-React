@@ -71,9 +71,10 @@ export default function AdminSidebar() {
           </svg>
         </div>{" "}
       </a>
+      
 
       <NavLink
-        to={`/admin`}
+        to={`/admin/`}
         className="text-admin-text  rounded-full lg:w-4/5"
       >
         {" "}
