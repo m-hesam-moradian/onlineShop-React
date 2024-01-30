@@ -8,6 +8,7 @@ import "./Admin.css";
 export default function Admin() {
   window.scrollTo(0, 0);
   const [usetInfo, setUsetInfo] = useState();
+  const [BG, setBG] = useState();
   useEffect(() => {
     fetch(`${API}registered`)
       .then((res) => res.json())
@@ -18,15 +19,22 @@ export default function Admin() {
           })
         );
       });
+    // fetch(`${API}BGIMG`)
+    //   .then((res) => res.json())
+    //   .then((allData) => {
+    //     setBG(allData);
+    //   });
   }, []);
-
+  // console.log(BG[2]);
   return (
     <adminContext.Provider value={usetInfo && usetInfo[0]}>
       <div className="admin bg-main-75 flex">
         <div className="lg:w-[20vw] ">
           <AdminSidebar usetInfo={usetInfo && usetInfo[0]} />
         </div>
-        <div className="basis-full   h-screen">
+        <div
+          className={`basis-full bg-contain  h-screen bg-[url(https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/preview/05.jpg?3)]`}
+        >
           <Outlet />
         </div>
       </div>
