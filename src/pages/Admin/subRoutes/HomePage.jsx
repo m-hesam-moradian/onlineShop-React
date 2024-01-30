@@ -185,10 +185,10 @@ export const HomePage = () => {
           {UsetInfo &&
             UsetInfo.slice(0, 4).map((item) => (
               <div className=" border-0 m-4 ">
-                <div className=" grid grid-cols-1 md:flex justify-between items-center ">
-                  <div className="grid grid-cols-1 border-none md:flex items-center justify-center">
+                <div className=" grid grid-cols-1 lg:flex justify-between items-center ">
+                  <div className="grid grid-cols-1 border-none lg:flex items-center justify-center p-2">
                     <img
-                      className="grid grid-cols-4 w-40 border-none  "
+                      className="grid grid-cols-4 w-24 border-none rounded-full p-0 mx-3  "
                       src={item.img}
                       alt=""
                     />
