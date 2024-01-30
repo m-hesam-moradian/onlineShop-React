@@ -1,12 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainChart from "../../../Components/Admin/HomePage/MainChart";
 import { API } from "../../../App";
-import adminContext from "../../../context/adminContext";
-
-// import MainChart from "../../../Components/Admin/HomePage/MainChart";
+import Carousel from "react-bootstrap/Carousel";
 
 export const HomePage = () => {
-  // const usetInfo = useContext(adminContext);
   const [UsetInfo, setUsetInfo] = useState();
   window.scrollTo(0, 0);
   const [productInfo, setproductInfo] = useState();
@@ -207,6 +204,51 @@ export const HomePage = () => {
                 </div>
               </div>
             ))}
+        </div>
+        <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className=" "
+                src="https://hexdl.com/wp-content/webp-express/webp-images/uploads/2023/03/john-wick-collection-60586c298370c-301x170.jpg.webp"
+                alt=""
+                // text="First slide"
+              />
+              <Carousel.Caption>
+                <h3>First slide label</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className=" "
+                src="https://hexdl.com/wp-content/webp-express/webp-images/uploads/2022/08/the-shamers-daughter-Collection-Movie-Poster-301x170.jpg.webp"
+                alt=""
+                // text="Second slide"
+              />
+              <Carousel.Caption>
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className=" "
+                src="https://hexdl.com/wp-content/webp-express/webp-images/uploads/2022/07/Monster-Family-animation-Collection-Poster-301x170.jpg.webp"
+                alt=""
+                // text="Third slide"
+              />
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
         </div>
         <div></div>
         <div></div>
