@@ -28,13 +28,11 @@ export default function Admin() {
   // console.log(BG[2]);
   return (
     <adminContext.Provider value={usetInfo && usetInfo[0]}>
-      <div className="admin bg-main-75 flex">
+      <div className="admin bg-main-75 flex bg-cover bg-[url('https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/preview/15.jpg?3')]">
         <div className="lg:w-[20vw] ">
           <AdminSidebar usetInfo={usetInfo && usetInfo[0]} />
         </div>
-        <div
-          className={`basis-full bg-contain  h-screen bg-[url(https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/preview/05.jpg?3)]`}
-        >
+        <div className={`basis-full   h-screen `}>
           <Outlet />
         </div>
       </div>

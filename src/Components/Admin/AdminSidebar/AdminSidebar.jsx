@@ -30,7 +30,7 @@ export default function AdminSidebar() {
   }
 
   return (
-    <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2] h-full gap-3  ">
+    <div className="AdminSidebar  text-white flex items-center flex-col bg-[#e9edf2c4] h-full gap-3  ">
       <div className="pt-6 m-3  flex items-center justify-center  ">
         <a href="" className=" flex  gap-2  text-white rounded-full p-2 ">
           <img
@@ -73,7 +73,7 @@ export default function AdminSidebar() {
       </a>
 
       <NavLink
-        to={`/admin/`}
+        to={`/admin`}
         className="text-admin-text  rounded-full lg:w-4/5"
       >
         {" "}
