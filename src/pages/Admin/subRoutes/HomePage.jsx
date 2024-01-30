@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import MainChart from "../../../Components/Admin/HomePage/MainChart";
 import { API } from "../../../App";
 import Carousel from "react-bootstrap/Carousel";
+import { ArtickleCard, MiniArtickleCard } from "../../../Components/RecentArticles/RecentArticles";
 
 export const HomePage = () => {
   const [UsetInfo, setUsetInfo] = useState();
   window.scrollTo(0, 0);
   const [productInfo, setproductInfo] = useState();
+  const [Artickles, setArtickles] = useState();
   useEffect(() => {
     fetch(`${API}products`)
       .then((res) => res.json())
@@ -18,8 +20,13 @@ export const HomePage = () => {
       .then((allData) => {
         setUsetInfo(allData);
       });
+    fetch(`${API}articles`)
+      .then((res) => res.json())
+      .then((allData) => {
+        setArtickles(allData);
+      });
   }, []);
-  console.log(UsetInfo);
+  console.log(Artickles);
   return (
     <div className="h-[100vh] overflow-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-none ">
@@ -174,7 +181,7 @@ export const HomePage = () => {
           <MainChart />
         </div>
       </div>
-      <div className="grid md:grid-cols-3">
+      <div className="grid md:grid-cols-3 gap-4">
         <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             کاربران
@@ -205,50 +212,20 @@ export const HomePage = () => {
               </div>
             ))}
         </div>
-        <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className=" "
-                src="https://hexdl.com/wp-content/webp-express/webp-images/uploads/2023/03/john-wick-collection-60586c298370c-301x170.jpg.webp"
-                alt=""
-                // text="First slide"
-              />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className=" "
-                src="https://hexdl.com/wp-content/webp-express/webp-images/uploads/2022/08/the-shamers-daughter-Collection-Movie-Poster-301x170.jpg.webp"
-                alt=""
-                // text="Second slide"
-              />
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className=" "
-                src="https://hexdl.com/wp-content/webp-express/webp-images/uploads/2022/07/Monster-Family-animation-Collection-Poster-301x170.jpg.webp"
-                alt=""
-                // text="Third slide"
-              />
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
+        <div className="bg-white rounded-xl pt-7 w-full h-full overflow-auto items-center justify-center flex flex-col ">
+          <div className="text-4xl mx-7 font-bold p-2  border-b border-solid border-gray-400">
+            مقاله های اخیر
+          </div>
+          <div>
+            <Carousel className="  ">
+              {Artickles &&
+                Artickles.map((item, itemIndex) => (
+                  <Carousel.Item className="h-full border border-solid rounded-3xl w-full ">
+                    <ArtickleCard  ArtickleArray={item} key={itemIndex} />
+                  </Carousel.Item>
+                ))}
+            </Carousel>
+          </div>
         </div>
         <div></div>
         <div></div>
