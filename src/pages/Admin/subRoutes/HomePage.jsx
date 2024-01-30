@@ -198,7 +198,11 @@ export const HomePage = () => {
                   <div className="grid grid-cols-1 border-none lg:flex items-center justify-center p-2">
                     <img
                       className="grid grid-cols-4 w-24 border-none rounded-full p-0 mx-3  "
-                      src={item.img}
+                      src={
+                        item.img
+                          ? item.img
+                          : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFH86fvVmmR3O-kek8ZPaLwpYjcd9DOBWkazyQqm6ABFYkfxIpgiLaxduixp-JKWSEb1Q&usqp=CAU"
+                      }
                       alt=""
                     />
                     <div>
