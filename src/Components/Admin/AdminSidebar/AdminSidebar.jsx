@@ -27,6 +27,7 @@ const SideBarItems = [
 export default function AdminSidebar() {
   const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
+  const [userinfo, setuserinfo] = useState([]);
 
   const usetInfo = useContext(adminContext);
   // console.log(usetInfo);
@@ -60,25 +61,31 @@ export default function AdminSidebar() {
           </div>
         </a>
       </div>
-      {/* // ) : (
-      //   Swal.fire({
-      //     title: "Are you sure?",
-      //     text: "You won't be able to revert this!",
-      //     icon: "warning",
-      //     showCancelButton: true,
-      //     confirmButtonColor: "#3085d6",
-      //     cancelButtonColor: "#d33",
-      //     confirmButtonText: "Yes, delete it!",
-      //   }).then((result) => {
-      //     if (result.isConfirmed) {
-      //       Swal.fire({
-      //         title: "Deleted!",
-      //         text: "Your file has been deleted.",
-      //         icon: "success",
-      //       });
-      //     }
-      //   })
-      // )} */}
+      {!localStorage.getItem("UserName") &&
+        Swal.fire({
+          title: "شما لوگین نشده اید",
+          text: "ایا مایلید با یک جیمیل پیشفرض وارد شوید",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "بله عضو شو",
+          cancelButtonText: "نه برکرد صفحه اصلی",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            localStorage.setItem("UserEmail", "hesamiwx@gmail.com");
+            localStorage.setItem("UserName", "	حسام مرادیان");
+            localStorage.setItem("UserPassword", "hesamiwx");
+            // setuserinfo('1');
+            Swal.fire({
+              title: "شما با موفقیت لوگین شدید",
+              text: "شما به صورت پیشفرض با اکانت فیک hesamiw@gmail.com وارد شدید",
+              icon: "success",
+            });
+          } else {
+            // navigate('/adminnn')
+          }
+        })}
       <a className="text-main-75   btn3d rounded-full lg:w-4/5 ">
         {" "}
         <div className=" m-3 flex    text-2xl  ">
