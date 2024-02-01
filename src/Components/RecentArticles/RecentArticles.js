@@ -12,7 +12,7 @@ export function ArtickleCard({ Img, addClass = "", ArtickleArray }) {
       className={` ProductCard ArtickleCard w-100 d-flex align-items-center rounded-5 col border-0  shadow p-3 ${addClass} `}
       style={{ width: "18rem" }}
     >
-      <div className="ArtickleCardIMGcontainer">
+      <div className="ArtickleCardIMGcontainer w-100">
         <Card.Img
           className="w-100 ArtickleCardIMG rounded-4 "
           variant="top"

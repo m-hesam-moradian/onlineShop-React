@@ -132,17 +132,17 @@ export const HomePage = () => {
         </div>
       </div>
       <div className="grid  border-none gap-7 w-full  grid-cols-1  lg:grid-cols-2  ">
-        <div className="bg-[#ffffff77] backdrop-blur-sm shadow-sm rounded-xl p-7 w-full h-full overflow-auto">
+        <div className="bg-[#ffffff33] backdrop-blur-md shadow-sm rounded-xl p-7 w-full h-full overflow-auto">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>
           {productInfo &&
-            productInfo.slice(0, 4).map((item) => (
-              <div className=" border-0 m-4 ">
+            productInfo.slice(0, 4).map((item, index) => (
+              <div key={index} className=" border-0 m-4 ">
                 <div className=" grid grid-cols-1 md:flex justify-between items-center ">
                   <div className="grid grid-cols-1 border-none md:flex items-center justify-center">
                     <img
-                      className="grid grid-cols-4 w-40 border-none "
+                      className=" grid grid-cols-4 w-24 border-none rounded-md p-0 mx-3  "
                       src={item.img}
                       alt=""
                     />
@@ -161,7 +161,7 @@ export const HomePage = () => {
               </div>
             ))}
         </div>
-        <div className="bg-[#ffffff77] backdrop-blur-sm shadow-sm rounded-xl p-7 w-full h-full  ">
+        <div className="bg-[#ffffff33] backdrop-blur-md shadow-sm rounded-xl p-7 w-full h-full  ">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
@@ -186,16 +186,16 @@ export const HomePage = () => {
           <MainChart />
         </div>
       </div>
-      <div className="grid md:grid-cols-3 gap-4 border-none">
-        <div className="bg-[#ffffff33] backdrop-blur-sm shadow-sm rounded-xl p-7 w-full h-full overflow-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 border-none">
+        <div className="bg-[#ffffff33] backdrop-blur-md shadow-sm rounded-xl p-7 w-full h-full overflow-auto">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             کاربران
           </div>
           {UsetInfo &&
             UsetInfo.slice(0, 4).map((item) => (
               <div className=" border-0 m-4 ">
-                <div className=" grid grid-cols-1 lg:flex justify-between items-center ">
-                  <div className="grid grid-cols-1 border-none lg:flex items-center justify-center p-2">
+                <div className=" grid grid-cols-1  justify-between items-center ">
+                  <div className="grid grid-cols-1 border-none  items-center justify-center p-2">
                     <img
                       className="grid grid-cols-4 w-24 border-none rounded-full p-0 mx-3  "
                       src={
@@ -221,7 +221,30 @@ export const HomePage = () => {
               </div>
             ))}
         </div>
-        <div className="bg-[#ffffff70] backdrop-blur-sm shadow-sm rounded-xl pt-7 w-full h-full overflow-auto items-center justify-around flex flex-col ">
+        <div className="col-span-2 gap-3  bg-[#ffffff33] backdrop-blur-md shadow-sm  rounded-xl pt-7 w-full h-full overflow-auto items-center justify-evenly flex flex-col p-6">
+          <div className="text-4xl mx-7 font-bold p-2  ">مقاله های اخیر</div>
+          <div>
+            <Carousel className="  ">
+              {Artickles &&
+                Artickles.map((item, itemIndex) => (
+                  <Carousel.Item className="h-full border border-solid rounded-3xl w-full ">
+                    <ArtickleCard ArtickleArray={item} key={itemIndex} />
+                  </Carousel.Item>
+                ))}
+            </Carousel>
+          </div>
+          <div>
+            <Carousel className="  ">
+              {Artickles &&
+                Artickles.reverse().map((item, itemIndex) => (
+                  <Carousel.Item className="h-full border border-solid rounded-3xl w-full ">
+                    <ArtickleCard ArtickleArray={item} key={itemIndex} />
+                  </Carousel.Item>
+                ))}
+            </Carousel>
+          </div>
+        </div>
+        <div className="bg-[#ffffff33] backdrop-blur-md shadow-sm rounded-xl pt-7 w-full h-full overflow-auto items-center justify-around flex flex-col ">
           <div className="text-4xl font-bold p-2 ">پای چارت</div>
           <div className="grid grid-cols-1 md:grid-cols-2 border-0 m-4 overflow-auto gap-8">
             <div>
@@ -245,20 +268,9 @@ export const HomePage = () => {
               <div className="text-gray-400 ">سفارشات</div>
             </div>
           </div>
-          <PieCharts />
-        </div>
-        <div className="bg-[#ffffff33] backdrop-blur-sm shadow-sm  rounded-xl pt-7 w-full h-full overflow-auto items-center justify-evenly flex flex-col p-6">
-          <div className="text-4xl mx-7 font-bold p-2  ">مقاله های اخیر</div>
-          <div>
-            <Carousel className="  ">
-              {Artickles &&
-                Artickles.map((item, itemIndex) => (
-                  <Carousel.Item className="h-full border border-solid rounded-3xl w-full ">
-                    <ArtickleCard ArtickleArray={item} key={itemIndex} />
-                  </Carousel.Item>
-                ))}
-            </Carousel>
-          </div>
+   
+            <PieCharts />
+     
         </div>
 
         <div></div>
