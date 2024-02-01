@@ -17,7 +17,7 @@ export const Messages = () => {
 
   return (
     <div className=" h-full relative shadow-inner overflow-scroll pt-32 text-2xl">
-      <nav className=" opacity-60  h-20 shadow bg-admin-text fixed top-0 w-full "></nav>
+      <nav className=" opacity-60  h-20 shadow bg-admin-text fixed top-0 w-full  backdrop-blur-md  "></nav>
 
       {messageState &&
         messageState.map((item) => {
