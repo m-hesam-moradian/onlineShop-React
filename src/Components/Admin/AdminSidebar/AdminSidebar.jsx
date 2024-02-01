@@ -1,7 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { NavLink, useParams } from "react-router-dom";
 import adminContext from "../../../context/adminContext";
+import { API } from "../../../App";
+import useSearch from "../../../hooks/useSearch";
 
 const SideBarItems = [
   {
@@ -22,12 +24,18 @@ const SideBarItems = [
 ];
 
 export default function AdminSidebar() {
+  const [ProductArray, setProductArray] = useState([]);
+  const [searchResult, setsearchResult] = useState([]);
+
   const usetInfo = useContext(adminContext);
+  console.log(usetInfo);
   const [toggleMessage, setToggleMessage] = useState(false);
 
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
+ 
+  // const searchResultElement = useSearch(searchResult);
 
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col shadow backdrop:blur-3xl bg-[#edeaf075] h-full gap-3  ">
@@ -56,6 +64,18 @@ export default function AdminSidebar() {
             type="text"
             className="hidden lg:block focus:text-admin-active bg-transparent w-full"
             placeholder="جست و جو"
+            onChange={(event) => {
+              let result = usetInfo.messagesData.filter((user) =>
+                user.from
+                  .toUpperCase()
+                  .includes(event.target.value.toUpperCase())
+              );
+              if (!event.target.value) {
+                result = [];
+              }
+              setsearchResult(result);
+              console.log(result);
+            }}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +90,37 @@ export default function AdminSidebar() {
             />
           </svg>
         </div>{" "}
+        <div className="relative">
+          <ul className=" absolute rounded-4 d-grid gap-3 w-full">
+            {searchResult.map((item, index) => (
+              <li className="bg-white w-full rounded-full shadow">
+                <NavLink
+                  to={`/admin/Messages/${index + 1}`}
+                  className="text-admin-text  rounded-full lg:w-4/5 "
+                >
+                  <div className=" m-3 flex justify-between items-center group   text-2xl ">
+                    <div className=" lg:flex justify-start items-center  gap-3 ">
+                      <img
+                        className="w-16 rounded-full  p-1 border-2 border-solid border-[#9696dd]  "
+                        src={usetInfo && item.img}
+                        alt=""
+                      />
+                      <div className="flex flex-col">
+                        <span className="hidden lg:inline text-black font-bold">
+                          {usetInfo && item.from}
+                        </span>
+                        <span className="text-xl text-admin-text">
+                          {" "}
+                          {usetInfo && item.seniority}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
       </a>
 
       <NavLink
