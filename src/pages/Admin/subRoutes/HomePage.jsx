@@ -31,11 +31,11 @@ export const HomePage = () => {
         setArtickles(allData);
       });
   }, []);
-  console.log(Artickles);
+  // console.log(Artickles);
   return (
     <div className="h-[100vh] overflow-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-none ">
-        <div className="bg-red-500 h-full rounded-xl shadow flex w-full p-5 justify-between ">
+        <div className="bg-[#ff000099] backdrop-blur-sm h-full rounded-xl shadow flex w-full p-5 justify-between ">
           <div className="  ">
             <div className="text-gray-100 text-3xl">کاربران </div>
             <div className="font-extrabold text-6xl text-white pt-5">156</div>
@@ -54,7 +54,7 @@ export const HomePage = () => {
 
           {/* <NewUsersChart /> */}
         </div>
-        <div className="bg-yellow-500  h-full rounded-xl shadow flex w-full p-5 justify-between ">
+        <div className="bg-[#ffc71999] backdrop-blur-sm h-full rounded-xl shadow flex w-full p-5 justify-between ">
           <div className="  ">
             <div className="text-gray-100 text-3xl">مخارج</div>
             <div className="font-extrabold text-6xl text-white pt-5">
@@ -80,7 +80,7 @@ export const HomePage = () => {
 
           {/* <TotalExpenseChart /> */}
         </div>
-        <div className="bg-green-500  h-full rounded-xl shadow flex w-full p-5 justify-between ">
+        <div className="bg-[#12e66099] backdrop-blur-sm  h-full rounded-xl shadow flex w-full p-5 justify-between ">
           <div>
             <div className="text-gray-100 text-3xl">سود</div>
             <div className="font-extrabold text-6xl text-white pt-5">
@@ -107,7 +107,7 @@ export const HomePage = () => {
 
           {/* <TotalIcomeChart /> */}
         </div>
-        <div className="bg-blue-500 h-full rounded-xl shadow flex w-full p-5 justify-between ">
+        <div className="bg-[#3b82f699] h-full backdrop-blur-sm  rounded-xl shadow flex w-full p-5 justify-between ">
           <div>
             <div className="text-gray-100 text-3xl">سفارشات</div>
             <div className="font-extrabold text-6xl text-white pt-5">863</div>
@@ -132,7 +132,7 @@ export const HomePage = () => {
         </div>
       </div>
       <div className="grid  border-none gap-7 w-full  grid-cols-1  lg:grid-cols-2  ">
-        <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
+        <div className="bg-[#ffffff77] backdrop-blur-sm shadow-sm rounded-xl p-7 w-full h-full overflow-auto">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             پرفوش ترین محصولات{" "}
           </div>
@@ -161,7 +161,7 @@ export const HomePage = () => {
               </div>
             ))}
         </div>
-        <div className="bg-white rounded-xl p-7 w-full h-full  ">
+        <div className="bg-[#ffffff77] backdrop-blur-sm shadow-sm rounded-xl p-7 w-full h-full  ">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400 ">
             خلاصه
           </div>
@@ -186,8 +186,8 @@ export const HomePage = () => {
           <MainChart />
         </div>
       </div>
-      <div className="grid md:grid-cols-3 gap-4">
-        <div className="bg-white rounded-xl p-7 w-full h-full overflow-auto">
+      <div className="grid md:grid-cols-3 gap-4 border-none">
+        <div className="bg-[#ffffff33] backdrop-blur-sm shadow-sm rounded-xl p-7 w-full h-full overflow-auto">
           <div className="text-4xl font-bold p-2  border-b border-solid border-gray-400">
             کاربران
           </div>
@@ -221,7 +221,8 @@ export const HomePage = () => {
               </div>
             ))}
         </div>
-        <div className="bg-white rounded-xl pt-7 w-full h-full overflow-auto items-center justify-around flex flex-col ">
+        <div className="bg-[#ffffff70] backdrop-blur-sm shadow-sm rounded-xl pt-7 w-full h-full overflow-auto items-center justify-around flex flex-col ">
+          <div className="text-4xl font-bold p-2 ">پای چارت</div>
           <div className="grid grid-cols-1 md:grid-cols-2 border-0 m-4 overflow-auto gap-8">
             <div>
               <div className="text-3xl font-bold text-red-600">2518</div>
@@ -246,7 +247,7 @@ export const HomePage = () => {
           </div>
           <PieCharts />
         </div>
-        <div className="bg-white rounded-xl pt-7 w-full h-full overflow-auto items-center justify-evenly flex flex-col p-6">
+        <div className="bg-[#ffffff33] backdrop-blur-sm shadow-sm  rounded-xl pt-7 w-full h-full overflow-auto items-center justify-evenly flex flex-col p-6">
           <div className="text-4xl mx-7 font-bold p-2  ">مقاله های اخیر</div>
           <div>
             <Carousel className="  ">
