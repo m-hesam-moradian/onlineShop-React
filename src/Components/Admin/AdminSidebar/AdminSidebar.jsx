@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import adminContext from "../../../context/adminContext";
 import { API } from "../../../App";
 import useSearch from "../../../hooks/useSearch";
+import Swal from "sweetalert2";
 
 const SideBarItems = [
   {
@@ -28,17 +29,19 @@ export default function AdminSidebar() {
   const [searchResult, setsearchResult] = useState([]);
 
   const usetInfo = useContext(adminContext);
-  console.log(usetInfo);
+  // console.log(usetInfo);
   const [toggleMessage, setToggleMessage] = useState(false);
 
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
- 
+
   // const searchResultElement = useSearch(searchResult);
+  const navigate = useNavigate();
 
   return (
     <div className="AdminSidebar  text-white flex items-center flex-col shadow backdrop:blur-3xl bg-[#edeaf075] h-full gap-3  ">
+      {/* {usetInfo ? ( */}
       <div className="pt-6 m-3  flex items-center justify-center  ">
         <a href="" className=" flex  gap-2  text-white rounded-full p-2 ">
           <img
@@ -57,6 +60,25 @@ export default function AdminSidebar() {
           </div>
         </a>
       </div>
+      {/* // ) : (
+      //   Swal.fire({
+      //     title: "Are you sure?",
+      //     text: "You won't be able to revert this!",
+      //     icon: "warning",
+      //     showCancelButton: true,
+      //     confirmButtonColor: "#3085d6",
+      //     cancelButtonColor: "#d33",
+      //     confirmButtonText: "Yes, delete it!",
+      //   }).then((result) => {
+      //     if (result.isConfirmed) {
+      //       Swal.fire({
+      //         title: "Deleted!",
+      //         text: "Your file has been deleted.",
+      //         icon: "success",
+      //       });
+      //     }
+      //   })
+      // )} */}
       <a className="text-main-75   btn3d rounded-full lg:w-4/5 ">
         {" "}
         <div className=" m-3 flex    text-2xl  ">
@@ -279,12 +301,15 @@ export default function AdminSidebar() {
       )}
 
       <NavLink
-        to={`/admin/logOut`}
+        to={`/`}
         className="text-admin-text  rounded-full lg:w-4/5"
+        onClick={() => {
+          localStorage.clear();
+        }}
       >
         {" "}
         <div className=" m-3 flex justify-between items-center group   text-2xl ">
-          <div className="flex justify-start items-center  gap-3 ">
+          <div className="flex justify-start items-center  gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
