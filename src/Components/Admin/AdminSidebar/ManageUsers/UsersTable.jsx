@@ -82,7 +82,7 @@ const UsersTable = () => {
   const handleClose = () => setOpen(false);
   return (
     <div className=" overflow-hidden w-[83vw] p-14 hidden md:block">
-      <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full shadow-md sm:rounded-lg">
+      <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full boxShadow sm:rounded-lg">
         {open && (
           <UserModal
             handleOpen={handleOpen}
@@ -93,8 +93,8 @@ const UsersTable = () => {
             setOpen={setOpen}
           />
         )}
-        <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class=" text-xl h-min  text-admin-darkmode uppercase bg-admin-text">
+        <table class=" h-min text-right w-full text-xl  rtl:text-right text-gray-500 dark:text-gray-400 backdrop-blur-md ">
+          <thead class=" text-xl h-min  text-admin-darkmode uppercase bg-tranparent backdrop-blur-md">
             <tr className="text-right text-xl lg:text-2xl h-min">
               <th scope="col" class="px-6 py-3">
                 آیدی
@@ -122,7 +122,7 @@ const UsersTable = () => {
                 return (
                   <tr
                     key={item.id}
-                    class="h-min text-sm lg:text-lg odd:bg-admin-navBG  even:bg-admin-hover border-b text-admin-darkmode w-min"
+                    class="h-min text-sm lg:text-lg odd:bg-[#ffffff42]  even:bg-transparent  border-b text-admin-darkmode w-min"
                   >
                     <td class="px-6 py-4 flex items-center text-3xl w-40  justify-between">
                       {item.id}

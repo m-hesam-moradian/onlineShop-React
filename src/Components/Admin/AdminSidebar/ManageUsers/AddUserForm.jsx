@@ -22,7 +22,7 @@ export const AddUserForm = () => {
   };
 
   return (
-    <div className="h-full   m-14 mt-0 flex flex-col justify-center ">
+    <div className="h-full   m-14 mt-0 flex flex-col justify-center  ">
       <form>
         <div class="space-y-12 ">
           <div class="border-b text-xl pb-12">
@@ -30,13 +30,13 @@ export const AddUserForm = () => {
               اضافه کردن کاربر جدید
             </h2>
 
-            <div class=" shadow-inner shadow-gray-500 border-0 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <div class=" backdrop-blur-md shadow-inner shadow-gray-500 border-0 grid grid-cols-1 gap-5 sm:grid-cols-3">
               <div class="w-full">
                 <label
                   for="name"
                   class="block  font-medium leading-6 text-gray-900"
                 >
-                  نام 
+                  نام
                 </label>
                 <div class="mt-2">
                   <input
@@ -75,7 +75,7 @@ export const AddUserForm = () => {
                   for="seniority"
                   class="block  font-medium leading-6 text-gray-900"
                 >
-                 سمت
+                  سمت
                 </label>
                 <div class="mt-2">
                   <input
@@ -108,8 +108,6 @@ export const AddUserForm = () => {
                   />
                 </div>
               </div>
-
-             
 
               {/* <label
                 for="file-upload"

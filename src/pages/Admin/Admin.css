@@ -44,3 +44,6 @@
 .recharts-responsive-container{
   height: 23vw !important;
 }
+.boxShadow{
+  box-shadow: 0px 0px 11px -1px #00000021;
+}

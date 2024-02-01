@@ -30,7 +30,7 @@ export const AddProductForm = () => {
               اضافه کردن محصول جدید
             </h2>
 
-            <div class=" shadow-inner shadow-gray-500 border-0 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <div class=" backdrop-blur-md shadow-inner shadow-gray-500 border-0 grid grid-cols-1 gap-5 sm:grid-cols-3">
               <div class="w-full">
                 <label
                   for="name"
