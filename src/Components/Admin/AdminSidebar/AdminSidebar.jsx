@@ -1,57 +1,52 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Dropdown } from "react-bootstrap";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 import adminContext from "../../../context/adminContext";
-import { API } from "../../../App";
-import useSearch from "../../../hooks/useSearch";
-import Swal from "sweetalert2";
-
-const SideBarItems = [
-  {
-    link: "logOut",
-    name: "خروج از اکانت",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-10"
-      >
-        <path d="M10.375 2.25a4.125 4.125 0 1 0 0 8.25 4.125 4.125 0 0 0 0-8.25ZM10.375 12a7.125 7.125 0 0 0-7.124 7.247.75.75 0 0 0 .363.63 13.067 13.067 0 0 0 6.761 1.873c2.472 0 4.786-.684 6.76-1.873a.75.75 0 0 0 .364-.63l.001-.12v-.002A7.125 7.125 0 0 0 10.375 12ZM16 9.75a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5h-6Z" />
-      </svg>
-    ),
-    secondIcon: "",
-  },
-];
 
 export default function AdminSidebar() {
-  const [ProductArray, setProductArray] = useState([]);
   const [searchResult, setsearchResult] = useState([]);
   const [userinfo, setuserinfo] = useState([]);
+  const [SidebarAction, setSidebarAction] = useState(false);
 
   const usetInfo = useContext(adminContext);
-  // console.log(usetInfo);
   const [toggleMessage, setToggleMessage] = useState(false);
 
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
   }
 
-  // const searchResultElement = useSearch(searchResult);
-  const navigate = useNavigate();
-
   return (
-    <div className="AdminSidebar  text-white flex items-center flex-col shadow backdrop:blur-3xl bg-[#edeaf075] h-full gap-3  ">
-      {/* {usetInfo ? ( */}
+    <div className="AdminSidebar relative  text-white flex items-center flex-col shadow backdrop:blur-3xl bg-[#edeaf075] h-full gap-3  ">
+      <div className="text-admin-text ml-[-1rem] bottom-1/2 absolute left-0 cursor-pointer hover:scale-150 duration-150" onClick={() => {
+        setSidebarAction(true);
+      }} >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-10"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
       <div className="pt-6 m-3  flex items-center justify-center  ">
         <a href="" className=" flex  gap-2  text-white rounded-full p-2 ">
-          <img
-            className="w-28 rounded-full  p-1 border-2 border-solid border-[#9696dd]  "
-            src={usetInfo && usetInfo.img}
-            alt=""
-          />
+          {userinfo && (
+            <img
+              className="w-28 rounded-full  p-1 border-2 border-solid border-[#9696dd]  "
+              src={
+                usetInfo && usetInfo.img
+                  ? usetInfo.img
+                  : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFH86fvVmmR3O-kek8ZPaLwpYjcd9DOBWkazyQqm6ABFYkfxIpgiLaxduixp-JKWSEb1Q&usqp=CAU"
+              }
+              alt=""
+            />
+          )}
           <div className=" hidden lg:flex flex-col justify-center items-start">
-            <span className="text-3xl text-admin-darkmode ">
+            <span className="text-2xl text-admin-darkmode ">
               {usetInfo && usetInfo.Name}
             </span>
             <span className="text-xl text-admin-text">
@@ -61,35 +56,7 @@ export default function AdminSidebar() {
           </div>
         </a>
       </div>
-      {!localStorage.getItem("UserName") &&
-        Swal.fire({
-          title: "شما لوگین نشده اید",
-          text: "ایا مایلید با یک جیمیل پیشفرض وارد شوید",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "بله عضو شو",
-          cancelButtonText: "نه برکرد صفحه اصلی",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            localStorage.setItem("UserEmail", "hesamiwx@gmail.com");
-            localStorage.setItem("UserName", "	حسام مرادیان");
-            localStorage.setItem("UserPassword", "hesamiwx");
-            // setuserinfo('1');
-            Swal.fire({
-              title: "شما با موفقیت لوگین شدید",
-              text: "شما به صورت پیشفرض با اکانت فیک hesamiw@gmail.com وارد شدید",
-              icon: "success",
-            });
-          } else {
-            // navigate('/adminnn')
 
-
-            
-
-          }
-        })}
       <a className="text-main-75   btn3d rounded-full lg:w-4/5 ">
         {" "}
         <div className=" m-3 flex    text-2xl  ">
@@ -286,6 +253,7 @@ export default function AdminSidebar() {
               <NavLink
                 to={`/admin/Messages/${index + 1}`}
                 className="text-admin-text  rounded-full lg:w-4/5 "
+                key={item}
               >
                 <div className=" m-3 flex justify-between items-center group   text-2xl ">
                   <div className=" lg:flex justify-start items-center  gap-3 ">

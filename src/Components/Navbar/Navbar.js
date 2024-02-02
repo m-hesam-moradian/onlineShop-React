@@ -115,7 +115,7 @@ export default function Navbar() {
 
           <div className="main-header__left">
             <NavLink
-              to="/Contact-Us"
+              to="/admin"
               className="main-header__cart-btn contactBTN d-none d-sm-flex"
             >
               <span className="material-symbols-outlined">contacts</span>
