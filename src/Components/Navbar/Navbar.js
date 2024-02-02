@@ -168,11 +168,9 @@ export default function Navbar() {
             localStorage.getItem("UserName") ? "cartBTNActive " : "shake-button"
           } d-none d-md-flex`}
         >
-          {localStorage.getItem("UserName") ? (
-            <span className="productCounter">{count}</span>
-          ) : (
-            ""
-          )}
+          {localStorage.getItem("UserName")
+            ? count && <span className="productCounter">{count}</span>
+            : ""}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
