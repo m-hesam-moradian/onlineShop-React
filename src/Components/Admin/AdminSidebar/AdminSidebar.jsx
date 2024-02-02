@@ -16,9 +16,12 @@ export default function AdminSidebar() {
 
   return (
     <div className="AdminSidebar relative  text-white flex items-center flex-col shadow backdrop:blur-3xl bg-[#edeaf075] h-full gap-3  ">
-      <div className="text-admin-text ml-[-1rem] bottom-1/2 absolute left-0 cursor-pointer hover:scale-150 duration-150" onClick={() => {
-        setSidebarAction(true);
-      }} >
+      <div
+        className=" lg:hidden block text-admin-text ml-[-1rem] bottom-1/2 absolute left-0 cursor-pointer hover:scale-150 duration-150"
+        onClick={() => {
+          setSidebarAction(true);
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
