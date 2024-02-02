@@ -169,7 +169,7 @@ export default function Navbar() {
           } d-none d-md-flex`}
         >
           {localStorage.getItem("UserName")
-            ? count && <span className="productCounter">{count}</span>
+            ?  <span className="productCounter">{count}</span>
             : ""}
           <svg
             xmlns="http://www.w3.org/2000/svg"
