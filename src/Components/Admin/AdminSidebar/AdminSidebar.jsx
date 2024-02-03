@@ -1,12 +1,7 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import adminContext from "../../../context/adminContext";
-
-
-
-
-
-
+import Swal from "sweetalert2";
 
 export default function AdminSidebar() {
   const [searchResult, setsearchResult] = useState([]);
@@ -15,6 +10,8 @@ export default function AdminSidebar() {
 
   const usetInfo = useContext(adminContext);
   const [toggleMessage, setToggleMessage] = useState(false);
+
+  const navigate = useNavigate();
 
   function DropdownMaker() {
     setToggleMessage((bool) => (bool = !bool));
@@ -365,13 +362,28 @@ export default function AdminSidebar() {
         </ul>
       )}
 
-      <NavLink
-        to={`/`}
+      <a
         className={`text-admin-text  rounded-full lg:w-4/5 ${
           SidebarAction ? "w-4/5 " : ""
         }`}
         onClick={() => {
-          localStorage.clear();
+          Swal.fire({
+            title: "ایا مطمعن هستید که میخواهید از این حساب خارج میشید",
+            text: "اگر از حساب خارج بشید منتقل میشوید به صفحه اصلی",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "بله عضو شو",
+            cancelButtonText: "نه برکرد صفحه اصلی",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              localStorage.clear();
+              navigate("/");
+            } else {
+              navigate("/admin");
+            }
+          });
         }}
       >
         {" "}
@@ -392,7 +404,7 @@ export default function AdminSidebar() {
             </span>
           </div>
         </div>
-      </NavLink>
+      </a>
     </div>
   );
 }
