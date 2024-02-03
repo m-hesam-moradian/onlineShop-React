@@ -19,6 +19,9 @@ export default function AdminSidebar() {
 
   return (
     <div
+      onMouseLeave={() => {
+        setSidebarAction(false);
+      }}
       className={`AdminSidebar  ${
         SidebarAction ? "fixed" : "relative"
       }  text-white flex items-center flex-col shadow backdrop:blur-3xl bg-[#edeaf0dd] h-full gap-3  a z-10`}
@@ -109,7 +112,6 @@ export default function AdminSidebar() {
                 result = [];
               }
               setsearchResult(result);
-              console.log(result);
             }}
           />
           <svg
@@ -374,14 +376,12 @@ export default function AdminSidebar() {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "بله عضو شو",
-            cancelButtonText: "نه برکرد صفحه اصلی",
+            confirmButtonText: "بله خارج شو شو",
+            cancelButtonText: "نه برگرد ",
           }).then((result) => {
             if (result.isConfirmed) {
               localStorage.clear();
               navigate("/");
-            } else {
-              navigate("/admin");
             }
           });
         }}

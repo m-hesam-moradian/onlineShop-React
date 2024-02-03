@@ -30,7 +30,7 @@ export default function Admin() {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "بله عضو شو",
-        cancelButtonText: "نه برکرد صفحه اصلی",
+        cancelButtonText: "نه برگرد صفحه اصلی",
       }).then((result) => {
         if (result.isConfirmed) {
           LoginDefult();
