@@ -6,7 +6,7 @@ import "./App.css";
 // import FirebaseDatas from "./FirebaseDatas";
 import CounterContext from "./context/CounterContext";
 
-export const API = "http://localhost:3000/";
+export const API = "https://mhm-jsonserver.liara.run/";
 export default function App() {
   const router = useRoutes(routes);
   let card = 0;

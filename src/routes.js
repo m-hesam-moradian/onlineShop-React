@@ -67,7 +67,24 @@ const routes = [
       { path: "", element: <HomePage /> },
       { path: "product", element: <Product /> },
       { path: "Messages/:id", element: <Messages /> },
-      { path: "Users", element: < Users /> },
+      {
+        path: "Messages",
+        element: (
+          <div className=" font-bold text-admin-active p-8 bg-[#ffffff66] backdrop-blur-md h-full flex items-center justify-center flex-col ">
+            <img
+              className="w-20"
+              src="https://img.icons8.com/?size=48&id=mXcvtsj8e1Ug&format=gif"
+              alt=""
+            />
+            <div className="flex  text-center">
+              {" "}
+              لطفا فرد مورد نظر را برای ارسال <br />
+              یا دریافت پیام انتخاب کنید
+            </div>
+          </div>
+        ),
+      },
+      { path: "Users", element: <Users /> },
     ],
   },
 ];
