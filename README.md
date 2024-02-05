@@ -4,7 +4,7 @@
 
 ### front website developed with react and backend developed with fake firebase API
 
-### URL Website:  <a href='https://m-hesam-moradian.github.io/onlineShopReactFirebase/'>https://m-hesam-moradian.github.io/onlineShopReactFirebase/</a>$${\color{orange}please \space  \color{white}Use \space \color{red} VPN }$$ 
+### URL Website:  <a href='https://electro-shop.liara.run/'>https://electro-shop.liara.run/</a>
 
 i use the project UI from a wordpress website:<a href='https://halochin.ir/electronic-shop/'>wordpress website</a>
 
@@ -21,7 +21,7 @@ i use the project UI from a wordpress website:<a href='https://halochin.ir/elect
 <h1  >  $${\color{blue}Main \space \color{lightblue} Page}$$</h1>
 
 <img src='https://github.com/m-hesam-moradian/onlineShop-React-Firebase/blob/main/public/ReadMe%20IMGs/PC1.png?raw=true' width='50%' >
-<h2> online demo of website : <a href='https://m-hesam-moradian.github.io/onlineShopReactFirebase/'>https://m-hesam-moradian.github.io/onlineShopReactFirebase/</a> $${\color{orange}please \space  \color{white}Use \space \color{red} VPN }$$  </h2>
+<h2> online demo of website : <a href='https://electro-shop.liara.run/'>https://electro-shop.liara.run/</a>
 </div>
 <br><br>
 <br><br>
@@ -29,8 +29,8 @@ i use the project UI from a wordpress website:<a href='https://halochin.ir/elect
 <div align='center' width='100%'>
 <h1  >  $${\color{blue}Admin \space \color{lightblue} Pannel}$$</h1>
 
-<img src='https://github.com/m-hesam-moradian/onlineShop-React-Firebase/blob/main/public/ReadMe%20IMGs/PC1.png?raw=true' width='50%' >
-<h2> online demo of website : <a href='https://m-hesam-moradian.github.io/onlineShopReactFirebase/'>https://m-hesam-moradian.github.io/onlineShopReactFirebase/</a> $${\color{orange}please \space  \color{white}Use \space \color{red} VPN }$$  </h2>
+<img src='https://github.com/m-hesam-moradian/onlineShop-React/blob/main/public/ReadMe%20IMGs/Screenshot%202024-02-05%20053131.png?raw=true' width='80%' >
+<h2> online demo of website : <a href='https://electro-shop.liara.run/admin'>https://electro-shop.liara.run/</a> 
 </div>
 
 <br><br>
