@@ -4,7 +4,7 @@
 
 ### front website developed with react and backend developed with fake firebase API
 
-### URL Website:  <a href='https://m-hesam-moradian.github.io/onlineShopReactFirebase/'>https://m-hesam-moradian.github.io/onlineShopReactFirebase/</a>$${\color{orange}please \space  \color{white}Use \space \color{red} VPN }$$ 
+### URL Website:  <a href='https://electro-shop.liara.run/'>https://electro-shop.liara.run/</a>
 
 i use the project UI from a wordpress website:<a href='https://halochin.ir/electronic-shop/'>wordpress website</a>
 
@@ -21,7 +21,16 @@ i use the project UI from a wordpress website:<a href='https://halochin.ir/elect
 <h1  >  $${\color{blue}Main \space \color{lightblue} Page}$$</h1>
 
 <img src='https://github.com/m-hesam-moradian/onlineShop-React-Firebase/blob/main/public/ReadMe%20IMGs/PC1.png?raw=true' width='50%' >
-<h2> online demo of website : <a href='https://m-hesam-moradian.github.io/onlineShopReactFirebase/'>https://m-hesam-moradian.github.io/onlineShopReactFirebase/</a> $${\color{orange}please \space  \color{white}Use \space \color{red} VPN }$$  </h2>
+<h2> online demo of website : <a href='https://electro-shop.liara.run/'>https://electro-shop.liara.run/</a>
+</div>
+<br><br>
+<br><br>
+<br><br>
+<div align='center' width='100%'>
+<h1  >  $${\color{blue}Admin \space \color{lightblue} Pannel}$$</h1>
+
+<img src='https://github.com/m-hesam-moradian/onlineShop-React/blob/main/public/ReadMe%20IMGs/Screenshot%202024-02-05%20053131.png?raw=true' width='80%' >
+<h2> online demo of website : <a href='https://electro-shop.liara.run/admin'>https://electro-shop.liara.run/</a> 
 </div>
 
 <br><br>
@@ -73,7 +82,8 @@ i use the project UI from a wordpress website:<a href='https://halochin.ir/elect
 
  
  <div align='center'  width='100%'>
-<img  width='30%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='150px'  >  Developed With: </span>  <img width='30%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
+<img  width='30%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='150px'  >  Developed With: 
+</span>  <img width='30%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
 </div>
  <br><br>
 
@@ -89,6 +99,10 @@ i use the project UI from a wordpress website:<a href='https://halochin.ir/elect
 </a>
 <a href="http://T.me/m-hesam-moradian" target="_blank">
      <img align="center" alt="Rafa-React" height="70" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+
+</a>
+<a href="http://T.me/m-hesam-moradian" target="_blank">
+     <img align="center" alt="Rafa-React" height="70" width="70" src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png">
 
 </a>
 
