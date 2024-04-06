@@ -22,7 +22,7 @@ const AdminTable = () => {
         console.error("Error fetching data:", error);
       });
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   const deleteItem = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({

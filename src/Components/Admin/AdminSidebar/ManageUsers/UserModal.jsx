@@ -57,6 +57,7 @@ export default function UserModal({
 
       FetchGet(EditData.id, obj, "registered", setData, setOpen);
     }
+    setOpen(false);
   };
 
   return (
@@ -72,7 +73,7 @@ export default function UserModal({
             <div class="space-y-12 ">
               <div class="text-white  border-0 grid grid-cols-1 gap-5 ">
                 <span className="text-3xl font-semibold text-admin-hover">
-                  محصول مورد نظر را ویرایش کنید
+                  کاربر مورد نظر را ویرایش کنید
                 </span>
                 <input
                   value={Name}

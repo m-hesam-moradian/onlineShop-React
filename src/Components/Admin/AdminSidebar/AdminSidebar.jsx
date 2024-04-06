@@ -317,7 +317,7 @@ export default function AdminSidebar() {
             </span>
           </div>
           <div className="hidden  bg-admin-BG  rounded-full px-2 lg:flex justify-center items-center  text-[13px]    text-admin-active  group-hover:bg-admin-active group-hover:text-admin-BG">
-            {usetInfo && usetInfo.messagesData.length}
+            {/* {usetInfo && usetInfo.messagesData.length} */}
           </div>
         </div>
       </NavLink>

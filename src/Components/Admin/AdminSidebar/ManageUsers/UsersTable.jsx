@@ -22,7 +22,7 @@ const UsersTable = () => {
         console.error("Error fetching data:", error);
       });
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   const deleteItem = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -85,6 +85,7 @@ const UsersTable = () => {
       <div class="  relative h-[50vh] overflow-scroll w-[80vw] lg:w-full boxShadow sm:rounded-lg">
         {open && (
           <UserModal
+            
             handleOpen={handleOpen}
             handleClose={handleClose}
             open={open}

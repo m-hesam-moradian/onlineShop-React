@@ -20,7 +20,6 @@ const style = {
   background: "transparent",
 };
 
-
 export function ModalInput(value, setState, placeholder, tagName) {
   return (
     <input
@@ -62,6 +61,7 @@ export default function AdminModal({
 
       FetchGet(EditData.id, obj, "products", setData, setOpen);
     }
+    setOpen(false);
   };
 
   return (
@@ -89,7 +89,7 @@ export default function AdminModal({
                   autocomplete="name"
                   class=" text-white block  w-full r border-b-2 bg-transparent border-b-gray-300 py-1.5 placeholder-gray-300 focus:border-b-white focus:placeholder-gray-100 "
                 />
-              
+
                 <input
                   value={model}
                   onChange={(input) => setModel(input.target.value)}

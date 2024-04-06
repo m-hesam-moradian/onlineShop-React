@@ -8,7 +8,8 @@ import Swal from "sweetalert2";
 
 export default function Admin() {
   window.scrollTo(0, 0);
-  const [usetInfo, setUsetInfo] = useState();
+  const [
+    usetInfo, setUsetInfo] = useState();
 
   useEffect(() => {
     if (localStorage.getItem("UserName")) {
