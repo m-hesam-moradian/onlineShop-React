@@ -10,17 +10,8 @@ import RecentArticles from "../../Components/RecentArticles/RecentArticles";
 import Footer from "../../Components/Footer/Footer";
 import "./Index.css";
 import { API } from "../../App";
-// import { API } from "../../FirebaseDatas";
-
-
-
-
-
-
-
 
 export default function Index(props) {
-
   const [NewProductsArray, setModalNewProductsArray] = useState(true);
 
   useEffect(() => {
@@ -29,9 +20,9 @@ export default function Index(props) {
       .then((allData) => {
         setModalNewProductsArray(allData.reverse());
       });
-    }, []);
-    
-    window.scrollTo(0, 0);
+  }, []);
+
+  window.scrollTo(0, 0);
   return (
     <>
       <Header />
