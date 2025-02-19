@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.72ac8699.css",
-    "main.js": "/static/js/main.5555fc8d.js",
-    "static/media/IRANSans.ttf": "/static/media/IRANSans.623768ac2bdc3c1f78df.ttf",
-    "index.html": "/index.html",
-    "main.72ac8699.css.map": "/static/css/main.72ac8699.css.map",
-    "main.5555fc8d.js.map": "/static/js/main.5555fc8d.js.map"
+    "main.css": "/onlineShop-React/static/css/main.7213ec38.css",
+    "main.js": "/onlineShop-React/static/js/main.5555fc8d.js",
+    "static/media/IRANSans.ttf": "/onlineShop-React/static/media/IRANSans.623768ac2bdc3c1f78df.ttf",
+    "index.html": "/onlineShop-React/index.html",
+    "main.7213ec38.css.map": "/onlineShop-React/static/css/main.7213ec38.css.map",
+    "main.5555fc8d.js.map": "/onlineShop-React/static/js/main.5555fc8d.js.map"
   },
   "entrypoints": [
-    "static/css/main.72ac8699.css",
+    "static/css/main.7213ec38.css",
     "static/js/main.5555fc8d.js"
   ]
 }
